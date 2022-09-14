@@ -1,0 +1,12 @@
+sources:
+  - Survey/Sources
+templates:
+  - tools/sourcery/templates
+output:
+  SurveyTests/Sources/Mocks/Sourcery 
+args:
+  autoMockableTestableImports:
+    - Survey
+  autoMockableImports:
+    - RxSwift
+    - RxCocoa

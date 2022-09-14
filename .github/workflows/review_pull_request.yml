@@ -47,7 +47,13 @@ jobs:
           gem --version
           bundler --version
 
-      - name: Run Danger
+      - name: Run Android Danger
+        env:
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec danger
+
+      - name: Run iOS Danger
+        working-directory: ./iosApp
         env:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bundle exec danger
