@@ -1,8 +1,7 @@
 name: Review pull request
 
 on:
-  pull_request:
-    types: [ opened, edited, reopened, synchronize ]
+  pull_request
 
 jobs:
   review_pull_request:
@@ -10,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.0
+        with:
+          access_token: ${{ github.token }}
 
       - name: Set up JAVA 11
         uses: actions/setup-java@v3
