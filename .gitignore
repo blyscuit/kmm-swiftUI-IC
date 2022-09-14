@@ -89,3 +89,4 @@ DerivedData
 # JetBrains IDEs
 
 .idea
+GoogleService-*.plist
