@@ -2,6 +2,7 @@
 
 require './fastlane/Constants/Constants'
 
+# TODO: Fix file not found
 # SwiftFormat
 # swiftformat.binary_path = 'Pods/SwiftFormat/CommandLineTool/swiftformat'
 # swiftformat.exclude = %w(Pods/**  **/*generated.swift)
@@ -32,6 +33,7 @@ xcode_summary.ignored_files = 'Pods/**'
 xcode_summary.inline_mode = true
 xcode_summary.report xcresultPath
 
+# TODO: Add Xcov
 # Xcov
 # xcov.report(
 #   scheme: Constants.TESTS_SCHEME,
