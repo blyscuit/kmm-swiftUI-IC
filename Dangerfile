@@ -1,4 +1,3 @@
-
 # Make it more obvious that a PR is a work in progress and shouldn't be merged yet
 warn("PR is classed as Work in Progress") if github.pr_title.include? "WIP"
 
@@ -38,18 +37,3 @@ Dir[jacoco_dir].each do |file_name|
   # or if any modified file's coverage is under 95%
   shroud.report file_name, 80, 95, false
 end
-
-# SwiftFormat
-swiftformat.binary_path = 'iosApp/Pods/SwiftFormat/CommandLineTool/swiftformat'
-swiftformat.check_format
-
-# Swiftlint
-swiftlint.binary_path = 'iosApp/Pods/SwiftLint/swiftlint'
-swiftlint.config_file = 'iosApp/.swiftlint.yml'
-swiftlint.max_num_violations = 20
-swiftlint.lint_files(
-  inline_mode: true,
-  fail_on_error: true,
-  additional_swiftlint_args: '--strict'
-)
-

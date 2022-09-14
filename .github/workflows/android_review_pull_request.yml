@@ -1,4 +1,4 @@
-name: Review pull request
+name: Android Review pull request
 
 on:
   pull_request
@@ -46,19 +46,6 @@ jobs:
           ruby --version
           gem --version
           bundler --version
-
-      - name: Cache Pods
-        uses: actions/cache@v2
-        id: cocoapodCache
-        with:
-          path: Pods
-          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-pods-
-
-      - name: Install Pods Dependencies
-        working-directory: ./iosApp
-        run: bundle exec pod install
 
       - name: Run Android Danger
         env:
