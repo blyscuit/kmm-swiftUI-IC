@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 
-require './fastlane/Constants/Constants'
-
-# Warn when there is a big PR
-warn("This pull request is quite big (#{git.lines_of_code} lines changed), please consider splitting it into multiple pull requests.") if git.lines_of_code > 500
-
-# Warn to encourage that labels should have been used on the PR
-warn("This pull request doesn't have any labels, please consider to add labels to this pull request.") if github.pr_labels.empty?
+require 'ios/fastlane/Constants/Constants'
 
 # SwiftFormat
 swiftformat.binary_path = './Pods/SwiftFormat/CommandLineTool/swiftformat'
@@ -14,8 +8,8 @@ swiftformat.exclude = %w(Pods/**  **/*generated.swift)
 swiftformat.check_format
 
 # Swiftlint
-swiftlint.binary_path = './Pods/SwiftLint/swiftlint'
-swiftlint.config_file = '.swiftlint.yml'
+swiftlint.binary_path = 'ios/Pods/SwiftLint/swiftlint'
+swiftlint.config_file = 'ios/.swiftlint.yml'
 swiftlint.max_num_violations = 20
 swiftlint.lint_files(
   inline_mode: true,
@@ -23,7 +17,7 @@ swiftlint.lint_files(
   additional_swiftlint_args: '--strict'
 )
 
-xcresultPath = "#{Constants.TEST_OUTPUT_DIRECTORY_PATH}/#{Constants.TESTS_SCHEME}.xcresult"
+xcresultPath = "ios/#{Constants.TEST_OUTPUT_DIRECTORY_PATH}/#{Constants.TESTS_SCHEME}.xcresult"
 
 # Xcode summary
 changed_files = (git.modified_files - git.deleted_files) + git.added_files
@@ -34,7 +28,7 @@ xcode_summary.ignored_results { |result|
     true
   end
 }
-xcode_summary.ignored_files = 'Pods/**'
+xcode_summary.ignored_files = 'ios/Pods/**'
 xcode_summary.inline_mode = true
 xcode_summary.report xcresultPath
 

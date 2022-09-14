@@ -47,11 +47,6 @@ jobs:
           gem --version
           bundler --version
 
-      - name: Run Android Danger
-        env:
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bundle exec danger
-
       - name: Cache Pods
         uses: actions/cache@v2
         id: cocoapodCache
@@ -65,8 +60,7 @@ jobs:
         working-directory: ./iosApp
         run: bundle exec pod install
 
-      - name: Run iOS Danger
-        working-directory: ./iosApp
+      - name: Run Android Danger
         env:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bundle exec danger
