@@ -11,6 +11,10 @@ on:
     branches: [ develop, main, chore/* ]
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: iosApp
+
 jobs:
   Lint:
     name: lint
@@ -35,6 +39,12 @@ jobs:
       with:
         access_token: ${{ github.token }}
 
+    - name: Set up JAVA 11
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '11'
+
     - uses: actions/checkout@v2
     # Set fetch-depth (default: 1) to get whole tree
       with:
@@ -44,6 +54,14 @@ jobs:
       uses: webfactory/ssh-agent@v0.5.4
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Cache gems
+      uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
             
     - name: Bundle install
       run: bundle install
@@ -67,7 +85,7 @@ jobs:
       run: |
         mkdir -p Survey/Configurations/Plists/GoogleService/Production
         touch Survey/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist
-        echo $IOS_GOOGLE_SERVICE_INFO_STAGING | base64 --decode > .Survey/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist
+        echo $IOS_GOOGLE_SERVICE_INFO_STAGING | base64 --decode > Survey/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist
 
     - name: Build and Test
       run: bundle exec fastlane build_and_test

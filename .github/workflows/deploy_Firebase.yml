@@ -11,6 +11,10 @@ on:
     branches: [ develop ]
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: iosApp
+
 jobs:
   lint:
     name: Lint
@@ -73,7 +77,7 @@ jobs:
       run: |
         mkdir -p Survey/Configurations/Plists/GoogleService/Staging
         touch Survey/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist
-        echo $IOS_GOOGLE_SERVICE_INFO_STAGING | base64 --decode > .Survey/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist
+        echo $IOS_GOOGLE_SERVICE_INFO_STAGING | base64 --decode > Survey/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist
 
     - name: Build and Test
       run: bundle exec fastlane build_and_test
