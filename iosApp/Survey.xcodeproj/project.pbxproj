@@ -1012,7 +1012,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = SurveyUITests;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1035,7 +1035,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = SurveyTests;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1059,7 +1059,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = SurveyTests;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1084,7 +1084,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = SurveyTests;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1109,7 +1109,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
@@ -1132,7 +1132,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = SurveyUITests;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1207,7 +1207,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = SurveyUITests;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1342,7 +1342,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = SurveyUITests;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1367,7 +1367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
@@ -1391,7 +1391,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
@@ -1414,7 +1414,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = SurveyTests;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1440,7 +1440,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.blisskmmic;
+				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.bliss.kmm-ic;
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;

@@ -17,12 +17,12 @@ class Constants
 
   # bundle ID for Staging app
   def self.BUNDLE_ID_STAGING
-    'co.nimblehq.blisskmmic.staging'
+    'co.nimblehq.bliss.kmm-ic.staging'
   end
 
   # bundle ID for Production app
   def self.BUNDLE_ID_PRODUCTION
-    'co.nimblehq.blisskmmic'
+    'co.nimblehq.bliss.kmm-ic'
   end
 
   #################
