@@ -28,12 +28,12 @@ class DeliverableConstants
 
   # a firebase app ID for Staging
   def self.FIREBASE_APP_ID_STAGING
-    '1:250844271609:ios:5306e068176f5b85762328'
+    '1:250844271609:ios:a42ccf6b7b37b02f762328'
   end
 
   # a firebase app ID for Production
   def self.FIREBASE_APP_ID_PRODUCTION
-    '1:250844271609:ios:367c4c6aa6ed30d2762328'
+    '1:250844271609:ios:d260fa8239a17098762328'
   end
 
   # Firebase Tester group name, seperate by comma(,) string
