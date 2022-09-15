@@ -1,4 +1,4 @@
-name: Android Review pull request
+name: KMM Shared Review pull request
 
 on:
   pull_request
@@ -22,6 +22,15 @@ jobs:
 
       - name: Checkout source code
         uses: actions/checkout@v2.3.2
+
+      - name: Run Detekt
+        run: ./gradlew shared:detekt
+
+      - name: Run Android Lint
+        run: ./gradlew shared:lint
+
+      - name: Run unit tests and Jacoco
+        run: ./gradlew shared:testDebugUnitTest
 
       - name: Set up Ruby
         uses: actions/setup-ruby@v1
