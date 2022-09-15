@@ -2,11 +2,11 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
-    id("io.gitlab.arturbosch.detekt") version "1.21.0"
+    id("io.gitlab.arturbosch.detekt")
 }
 
 apply {
-    "$project.rootDir/tools/jacoco.gradle"
+    from("../tools/detekt.gradle.kts")
 }
 
 version = "1.0"

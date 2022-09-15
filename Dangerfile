@@ -30,7 +30,7 @@ Dir[lint_dir].each do |file_name|
 end
   
 # Show Danger test coverage report from Jacoco for template
-jacoco_dir = "**/build/reports/coverage/test/debug/report.xml"
+jacoco_dir = "**/build/reports/kover/xml/report.xml"
 markdown "## template Jacoco report:"
 Dir[jacoco_dir].each do |file_name|
   # Report coverage of modified files, warn if total project coverage is under 80%
