@@ -8,7 +8,7 @@ name: Deploy Release Build To Firebase
 
 on:
   push:
-    branches: [ develop, main ]
+    branches: [ develop, main, chore/* ]
   workflow_dispatch:
 
 jobs:
