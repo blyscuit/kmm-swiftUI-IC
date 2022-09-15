@@ -2,11 +2,6 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
-    id("io.gitlab.arturbosch.detekt")
-}
-
-apply {
-    from("../tools/detekt.gradle.kts")
 }
 
 version = "1.0"
@@ -71,3 +66,26 @@ android {
     }
 }
 
+val detekt by configurations.creating
+
+val detektTask = tasks.register<JavaExec>("detekt") {
+    main = "io.gitlab.arturbosch.detekt.cli.Main"
+    classpath = detekt
+
+    val input = projectDir
+    val config = "$projectDir/detekt-config.yml"
+    val exclude = ".*/build/.*,.*/resources/.*"
+    val report = "xml:./build/reports/detekt/detekt-report.xml"
+    val reportHTML = "html:./build/reports/detekt/detekt-report.html"
+    val params = listOf("-i", input, "-c", config, "-ex", exclude, "-r", report, "-r", reportHTML)
+
+    args(params)
+}
+
+dependencies {
+    detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.21.0")
+}
+
+tasks.check {
+    dependsOn(detektTask)
+}
