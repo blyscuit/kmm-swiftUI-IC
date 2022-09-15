@@ -7,6 +7,3 @@ output:
 args:
   autoMockableTestableImports:
     - Survey
-  autoMockableImports:
-    - RxSwift
-    - RxCocoa
