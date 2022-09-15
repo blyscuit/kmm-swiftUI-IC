@@ -50,8 +50,8 @@ class MatchManager
       )
       @fastlane.update_code_signing_settings(
         use_automatic_signing: false,
-        team_id: ENV["sigh_#{app_identifier}_adhoc_team-id"],
-        profile_name: ENV["sigh_#{app_identifier}_adhoc_profile-name"],
+        team_id: ENV["sigh_#{app_identifier[0]}_adhoc_team-id"],
+        profile_name: ENV["sigh_#{app_identifier[0]}_adhoc_profile-name"],
         code_sign_identity: 'iPhone Distribution'
       )
     else
@@ -77,8 +77,8 @@ class MatchManager
       )
       @fastlane.update_code_signing_settings(
         use_automatic_signing: false,
-        team_id: ENV["sigh_#{app_identifier}_appstore_team-id"],
-        profile_name: ENV["sigh_#{app_identifier}_appstore_profile-name"],
+        team_id: ENV["sigh_#{app_identifier[0]}_appstore_team-id"],
+        profile_name: ENV["sigh_#{app_identifier[0]}_appstore_profile-name"],
         code_sign_identity: 'iPhone Distribution'
       )
     else

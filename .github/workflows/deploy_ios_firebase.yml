@@ -1,4 +1,4 @@
-name: Deploy Release Build To Firebase
+name: Deploy iOS Staging Build To Firebase
 
 # SECRETS needed:
 ### SSH_PRIVATE_KEY for Match Repo
@@ -8,7 +8,7 @@ name: Deploy Release Build To Firebase
 
 on:
   push:
-    branches: [ develop, main, chore/* ]
+    branches: [ develop ]
   workflow_dispatch:
 
 defaults:
@@ -16,8 +16,8 @@ defaults:
     working-directory: iosApp
 
 jobs:
-  Lint:
-    name: lint
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -62,8 +62,9 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gems-
-            
+
     - name: Bundle install
+      # if: steps.bundleCache.outputs.cache-hit != 'true'
       run: bundle install
 
     - name: Cache Pods
@@ -81,21 +82,21 @@ jobs:
 
     - name: Setup Google Services
       env:
-        IOS_GOOGLE_SERVICE_INFO: ${{ secrets.IOS_GOOGLE_SERVICE_INFO_PROD }}
+        IOS_GOOGLE_SERVICE_INFO: ${{ secrets.IOS_GOOGLE_SERVICE_INFO_Staging }}
       run: |
-        mkdir -p Survey/Configurations/Plists/GoogleService/Production
-        touch Survey/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist
-        echo $IOS_GOOGLE_SERVICE_INFO_STAGING | base64 --decode > Survey/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist
+        mkdir -p Survey/Configurations/Plists/GoogleService/Staging
+        touch Survey/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist
+        echo $IOS_GOOGLE_SERVICE_INFO_STAGING | base64 --decode > Survey/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist
 
     - name: Build and Test
       run: bundle exec fastlane build_and_test
 
     - name: Match Ad-hoc
-      run: bundle exec fastlane sync_adhoc_production_signing
+      run: bundle exec fastlane sync_adhoc_signing
       env:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASS }}
 
-    - name: Build Production App and Distribute to Firebase
-      run: bundle exec fastlane build_and_upload_production_app
+    - name: Build App and Distribute to Firebase
+      run: bundle exec fastlane build_and_upload_staging_app
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
