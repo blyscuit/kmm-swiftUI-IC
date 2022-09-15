@@ -2,6 +2,11 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("io.gitlab.arturbosch.detekt") version "1.21.0"
+}
+
+apply {
+    "$project.rootDir/tools/jacoco.gradle"
 }
 
 version = "1.0"
@@ -26,7 +31,7 @@ kotlin {
         xcodeConfigurationToNativeBuildType["Release Staging"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
         xcodeConfigurationToNativeBuildType["Release Production"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
     }
-    
+
     sourceSets {
         val commonMain by getting
         val commonTest by getting {
@@ -65,3 +70,4 @@ android {
         targetSdk = 32
     }
 }
+

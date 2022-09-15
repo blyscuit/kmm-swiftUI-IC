@@ -7,10 +7,14 @@ buildscript {
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
         classpath("com.android.tools.build:gradle:7.2.2")
+        classpath("org.jacoco:org.jacoco.core:0.8.7")
     }
 }
 
 allprojects {
+    apply {
+        plugin("jacoco")
+    }
     repositories {
         google()
         mavenCentral()
