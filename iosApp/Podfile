@@ -32,7 +32,7 @@ target 'Survey' do
 
   # KMM
   platform :ios, '14.0'
-  pod 'Shared', :path => '../shared'
+  pod 'shared', :path => '../shared'
 
   target 'SurveyTests' do
     inherit! :search_paths

@@ -35,8 +35,8 @@ xcode_summary.report xcresultPath
 # Xcov
 xcov.report(
   scheme: Constants.TESTS_SCHEME,
-  workspace: Constants.WORKSPACE_PATH,
-  output_directory: Constants.XCOV_OUTPUT_DIRECTORY_PATH,
+  workspace: "iosApp/#{Constants.WORKSPACE_PATH}",
+  output_directory: "iosApp/#{Constants.XCOV_OUTPUT_DIRECTORY_PATH}",
   xccov_file_direct_path: xcresultPath,
   only_project_targets: true,
   markdown_report: true,
