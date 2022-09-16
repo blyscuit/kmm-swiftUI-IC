@@ -6,7 +6,7 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
-import shared
+import Shared
 import SwiftUI
 
 @main
