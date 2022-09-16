@@ -6,14 +6,14 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
-import Shared
+//import Shared
 import SwiftUI
 
 struct ContentView: View {
-    let greet = Greeting().greeting()
+//    let greet = Greeting().greeting()
 
     var body: some View {
-        Text(greet)
+        Text("greet")
     }
 }
 
