@@ -13,12 +13,13 @@ kotlin {
     iosSimulatorArm64()
 
     cocoapods {
+        name = "Shared"
         summary = "Some description for the Shared Module"
         homepage = "Link to the Shared Module homepage"
         ios.deploymentTarget = "14.0"
         podfile = project.file("../iosApp/Podfile")
         framework {
-            baseName = "shared"
+            baseName = "Shared"
         }
         xcodeConfigurationToNativeBuildType["Debug Staging"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.DEBUG
         xcodeConfigurationToNativeBuildType["Debug Production"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.DEBUG
