@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
+
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
@@ -22,10 +24,10 @@ kotlin {
         framework {
             baseName = "Shared"
         }
-        xcodeConfigurationToNativeBuildType["Debug Staging"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.DEBUG
-        xcodeConfigurationToNativeBuildType["Debug Production"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.DEBUG
-        xcodeConfigurationToNativeBuildType["Release Staging"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
-        xcodeConfigurationToNativeBuildType["Release Production"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
+        xcodeConfigurationToNativeBuildType["Debug Staging"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["Debug Production"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["Release Staging"] = NativeBuildType.RELEASE
+        xcodeConfigurationToNativeBuildType["Release Production"] = NativeBuildType.RELEASE
     }
 
     sourceSets {
@@ -59,17 +61,17 @@ kotlin {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = Android.CompileSdk
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 26
-        targetSdk = 32
+        minSdk = Android.MinSdk
+        targetSdk = Android.CompileSdk
     }
 }
 
  detekt {
      source = files(
-         "src"
+         "./"
      )
      parallel = false
      config = files("../detekt-config.yml")
