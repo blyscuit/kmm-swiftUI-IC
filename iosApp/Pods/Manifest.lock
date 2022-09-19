@@ -55,7 +55,7 @@ PODS:
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
   - Resolver (1.5.0)
-  - shared (1.0)
+  - Shared (1.0)
   - SnapKit (5.6.0)
   - Sourcery (1.8.0):
     - Sourcery/CLI-Only (= 1.8.0)
@@ -74,7 +74,7 @@ DEPENDENCIES:
   - Quick
   - R.swift
   - Resolver
-  - shared (from `../shared`)
+  - Shared (from `../shared`)
   - SnapKit
   - Sourcery (= 1.8.0)
   - SwiftFormat/CLI
@@ -111,7 +111,7 @@ EXTERNAL SOURCES:
   NimbleExtension:
     :branch: master
     :git: https://github.com/nimblehq/NimbleExtension
-  shared:
+  Shared:
     :path: "../shared"
 
 CHECKOUT OPTIONS:
@@ -139,13 +139,13 @@ SPEC CHECKSUMS:
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
-  shared: 4e51769595639b729b1106e94055d800859a6fa4
+  Shared: 0c72e1f7649dc66d4e93f4d61ea6caa582c8de92
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Sourcery: 6f5fe49b82b7e02e8c65560cbd52e1be67a1af2e
   SwiftFormat: 2402d29b26746f169cce5454d5af88314cbb2e35
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: 7b8fe614b4e88ff8cea91607fd8315b79e9c0d1c
+PODFILE CHECKSUM: ac97fa8a6f9a5d954462b1ad5ee3f0303aa2702c
 
 COCOAPODS: 1.11.3
