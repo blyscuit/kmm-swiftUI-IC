@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
-    kotlin("multiplatform")
-    kotlin("native.cocoapods")
-    id("com.android.library")
-    id("io.gitlab.arturbosch.detekt")
+    kotlin(Plugin.MULTIPLATFORM)
+    kotlin(Plugin.COCOAPODS)
+    id(Plugin.ANDROID_LIBRARY)
+    id(Plugin.DETEKT)
 }
 
 version = "1.0"
