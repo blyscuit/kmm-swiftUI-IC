@@ -1,3 +1,4 @@
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
@@ -7,6 +8,7 @@ plugins {
     id(Plugin.DETEKT)
     kotlin(Plugin.KOTLIN_SERIALIZATION)
     id(Plugin.NATIVE_COROUTINES).version(Version.NATIVE_COROUTINES_KOTLIN)
+    id(Plugin.BUILD_KONFIG)
 }
 
 version = "1.0"
@@ -108,4 +110,42 @@ android {
 
 tasks.check {
     dependsOn(detekt)
+}
+
+buildkonfig {
+    packageName = "co.nimblehq.blisskmmic"
+
+    defaultConfigs {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.STAGING_BASE_URL
+        )
+    }
+
+    defaultConfigs("production") {
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.PRODUCTION_BASE_URL
+        )
+    }
+
+    defaultConfigs("staging") {
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.STAGING_BASE_URL
+        )
+    }
 }
