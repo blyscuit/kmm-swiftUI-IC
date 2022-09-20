@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk = Android.CompileSdk
+    compileSdk = Android.COMPILE_SDK
     defaultConfig {
         applicationId = "co.nimblehq.blisskmmic.android"
-        minSdk = Android.MinSdk
-        targetSdk = Android.CompileSdk
+        minSdk = Android.MIN_SDK
+        targetSdk = Android.TARGET_SDK
         versionCode = 1
         versionName = "1.0"
     }

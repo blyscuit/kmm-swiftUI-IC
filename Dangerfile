@@ -14,7 +14,7 @@ warn("Please add labels to this PR") if github.pr_labels.empty?
 commit_lint.check warn: :all, disable: [:subject_length]
 
 # Detekt output check
-detekt_dir = "**/build/reports/detekt/detekt.xml" 
+detekt_dir = "**/build/reports/detekt/detekt-result.xml" 
 Dir[detekt_dir].each do |file_name|
   kotlin_detekt.skip_gradle_task = true
   kotlin_detekt.report_file = file_name

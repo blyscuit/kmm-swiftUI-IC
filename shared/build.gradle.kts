@@ -61,31 +61,33 @@ kotlin {
 }
 
 android {
-    compileSdk = Android.CompileSdk
+    compileSdk = Android.COMPILE_SDK
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = Android.MinSdk
-        targetSdk = Android.CompileSdk
+        minSdk = Android.MIN_SDK
+        targetSdk = Android.TARGET_SDK
     }
 }
 
  detekt {
-     source = files(
-         "./"
-     )
-     parallel = false
-     config = files("../detekt-config.yml")
-     buildUponDefaultConfig = false
-     disableDefaultRuleSets = false
-
-     ignoreFailures = false
+    source = files(
+        "./"
+    )
+    parallel = false
+    config = files("../detekt-config.yml")
+    buildUponDefaultConfig = false
+    disableDefaultRuleSets = false
+    ignoreFailures = false
  }
 
  tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
-     reports {
+    reports {
+        xml {
+            outputLocation.set(file("build/reports/detekt/detekt-result.xml"))
+            required.set(true) // reports can also be enabled and disabled at the task level as needed
+        }
          html.required.set(true)
-         xml.required.set(true)
-     }
+    }
  }
 
 tasks.check {
