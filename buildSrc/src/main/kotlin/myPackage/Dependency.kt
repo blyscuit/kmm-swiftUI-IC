@@ -9,6 +9,7 @@ object Dependency {
     const val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.COROUTINES_CORE}"
     const val KOVER = "org.jetbrains.kotlinx:kover:${Version.KOVER}"
     const val KOTLINX_SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-core:${Version.KOTLINX_SERIALIZATION}"
+    const val COROUTINES_TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.COROUTINES_CORE}"
 
     // DETEKT
     const val DETEKT = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${Version.DETEKT}"
@@ -21,6 +22,7 @@ object Dependency {
     const val KTOR_JSON = "io.ktor:ktor-serialization-kotlinx-json:${Version.KTOR}"
     const val KTOR_ANDROID = "io.ktor:ktor-client-android:${Version.KTOR}"
     const val KTOR_IOS = "io.ktor:ktor-client-ios:${Version.KTOR}"
+    const val KTOR_MOCK = "io.ktor:ktor-client-mock:${Version.KTOR}"
 
     // BuildKonfig
     const val BUILD_KONFIG = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin:${Version.BUILD_KONFIG}"
