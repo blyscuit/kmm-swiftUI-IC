@@ -49,6 +49,14 @@ jobs:
     # Set fetch-depth (default: 1) to get whole tree
       with:
         fetch-depth: 0
+      
+    - name: Setup Konfig Properties
+      env:
+        KMM_KONFIG_PROPERTIES: ${{ secrets.KMM_KONFIG_PROPERTIES }}
+      run: |
+        cd ../buildSrc/src/main/kotlin/myPackage
+        touch BuildKonfig.kt
+        echo $KMM_KONFIG_PROPERTIES | base64 --decode > BuildKonfig.kt
 
     - name: Install SSH key
       uses: webfactory/ssh-agent@v0.5.4

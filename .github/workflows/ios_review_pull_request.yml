@@ -41,6 +41,14 @@ jobs:
 
       - name: Checkout source code
         uses: actions/checkout@v2.3.2
+      
+      - name: Setup Konfig Properties
+        env:
+          KMM_KONFIG_PROPERTIES: ${{ secrets.KMM_KONFIG_PROPERTIES }}
+        run: |
+          cd ../buildSrc/src/main/kotlin/myPackage
+          touch BuildKonfig.kt
+          echo $KMM_KONFIG_PROPERTIES | base64 --decode > BuildKonfig.kt
 
       - name: Cache gems
         uses: actions/cache@v2
