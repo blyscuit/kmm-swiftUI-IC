@@ -9,6 +9,7 @@ plugins {
     kotlin(Plugin.KOTLIN_SERIALIZATION)
     id(Plugin.NATIVE_COROUTINES).version(Version.NATIVE_COROUTINES_KOTLIN)
     id(Plugin.BUILD_KONFIG)
+    id(Plugin.NATIVE_COROUTINES).version(Version.NATIVE_COROUTINES_KOTLIN)
 }
 
 version = "1.0"
