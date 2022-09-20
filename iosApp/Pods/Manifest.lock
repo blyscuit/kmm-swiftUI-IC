@@ -42,6 +42,9 @@ PODS:
   - IQKeyboardManagerSwift (6.5.10)
   - KeychainAccess (4.2.2)
   - Kingfisher (7.3.2)
+  - KMPNativeCoroutinesCombine (0.12.6):
+    - KMPNativeCoroutinesCore (= 0.12.6)
+  - KMPNativeCoroutinesCore (0.12.6)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -69,6 +72,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - KeychainAccess
   - Kingfisher
+  - KMPNativeCoroutinesCombine (= 0.12.6)
   - Nimble
   - NimbleExtension (from `https://github.com/nimblehq/NimbleExtension`, branch `master`)
   - Quick
@@ -94,6 +98,8 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - KeychainAccess
     - Kingfisher
+    - KMPNativeCoroutinesCombine
+    - KMPNativeCoroutinesCore
     - nanopb
     - Nimble
     - PromisesObjC
@@ -131,6 +137,8 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
+  KMPNativeCoroutinesCombine: 9c82dee7ba35c6acff4b35a9757bfecae8b335fd
+  KMPNativeCoroutinesCore: 35da0312355f0e911cbb16923aea3389894affca
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   NimbleExtension: acad4290f27afd4241b1ea20f8597889085e2ce7
@@ -146,6 +154,6 @@ SPEC CHECKSUMS:
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: ac97fa8a6f9a5d954462b1ad5ee3f0303aa2702c
+PODFILE CHECKSUM: 0677659a26758d9da90546453e7b3f6ca531cc3b
 
 COCOAPODS: 1.11.3
