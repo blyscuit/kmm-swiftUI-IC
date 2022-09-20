@@ -24,4 +24,7 @@ object Dependency {
 
     // BuildKonfig
     const val BUILD_KONFIG = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin:${Version.BUILD_KONFIG}"
+
+    // Native Coroutines
+    const val NATIVE_COROUTINES = "com.rickclephas.kmp.nativecoroutines:${Version.NATIVE_COROUTINES_KOTLIN}"
 }

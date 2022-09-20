@@ -6,6 +6,7 @@ plugins {
     id(Plugin.ANDROID_LIBRARY)
     id(Plugin.DETEKT)
     kotlin(Plugin.KOTLIN_SERIALIZATION)
+    id(Plugin.NATIVE_COROUTINES).version(Version.NATIVE_COROUTINES_KOTLIN)
 }
 
 version = "1.0"
