@@ -33,6 +33,7 @@ target 'Survey' do
   # KMM
   platform :ios, '14.0'
   pod 'Shared', :path => '../shared'
+  pod 'KMPNativeCoroutinesCombine', '0.12.6'
 
   target 'SurveyTests' do
     inherit! :search_paths
