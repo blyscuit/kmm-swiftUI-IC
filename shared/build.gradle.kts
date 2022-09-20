@@ -43,6 +43,8 @@ kotlin {
                 implementation(Dependency.KTOR_LOGGING)
                 implementation(Dependency.KTOR_JSON)
                 implementation(Dependency.KTOR_CONTENT_NEGOTIATION)
+                implementation(Dependency.KTOR_MOCK)
+                implementation(Dependency.COROUTINES_TEST)
             }
         }
         val commonTest by getting {
