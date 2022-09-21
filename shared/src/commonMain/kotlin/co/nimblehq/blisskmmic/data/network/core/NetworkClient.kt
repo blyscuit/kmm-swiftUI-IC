@@ -41,6 +41,7 @@ class NetworkClient {
         }
     }
 
+    @Suppress("EmptySecondaryConstructor")
     constructor() : this(null) {}
 
     inline fun <reified T> fetch(builder: HttpRequestBuilder) : Flow<T> {
