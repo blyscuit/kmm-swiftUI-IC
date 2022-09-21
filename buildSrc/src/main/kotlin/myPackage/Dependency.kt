@@ -4,6 +4,7 @@ object Dependency {
     const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN}"
     const val GRADLE = "com.android.tools.build:gradle:${Version.GRADLE}"
     const val KOTLIN_SERIALIZATION = "org.jetbrains.kotlin:kotlin-serialization:${Version.KOTLIN}"
+    const val KOTLIN_TEST = "org.jetbrains.kotlin:kotlin-test:${Version.KOTLIN}"
 
     // Kotlinx
     const val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.COROUTINES_CORE}"

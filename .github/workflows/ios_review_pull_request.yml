@@ -26,6 +26,8 @@ jobs:
 
       - name: Checkout source code
         uses: actions/checkout@v2.3.2
+        with:
+          submodules: recursive
       
       - name: Setup Konfig Properties
         env:
