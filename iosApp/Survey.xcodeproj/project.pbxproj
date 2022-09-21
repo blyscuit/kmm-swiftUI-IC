@@ -34,6 +34,9 @@
 		09636B3628D8285700A5CB97 /* KeyboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3428D8284600A5CB97 /* KeyboardScreen.swift */; };
 		09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770B28E191B400EAA9EE /* AppCoordinator.swift */; };
 		09CE770F28E1922000EAA9EE /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770E28E1922000EAA9EE /* Screen.swift */; };
+		09CE773228E2ED2300EAA9EE /* LazyKoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772F28E2ED2300EAA9EE /* LazyKoin.swift */; };
+		09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773028E2ED2300EAA9EE /* KoinApplication.swift */; };
+		09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */; };
 		3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE1175F99D55A95E0995E9 /* OptionalUnwrapSpec.swift */; };
 		5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CA60577ABA5F7885E1DE7 /* AutoMockable.generated.swift */; };
 		686B2C185816765B3E124776 /* IOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46885A08B19F8EB7FFC5117F /* IOSApp.swift */; };
@@ -123,6 +126,9 @@
 		09636B3428D8284600A5CB97 /* KeyboardScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardScreen.swift; sourceTree = "<group>"; };
 		09CE770B28E191B400EAA9EE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		09CE770E28E1922000EAA9EE /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		09CE772F28E2ED2300EAA9EE /* LazyKoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyKoin.swift; sourceTree = "<group>"; };
+		09CE773028E2ED2300EAA9EE /* KoinApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoinApplication.swift; sourceTree = "<group>"; };
+		09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
 		0F8D46A12D575264811B98CD /* Pods_Survey_SurveyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_SurveyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		122A6B9F6217729620D91A43 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
 		16E10E52E1F7EAF6527F4E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -344,6 +350,32 @@
 				09CE770E28E1922000EAA9EE /* Screen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		09CE772C28E2ED2300EAA9EE /* KMM */ = {
+			isa = PBXGroup;
+			children = (
+				09CE772D28E2ED2300EAA9EE /* DI */,
+			);
+			path = KMM;
+			sourceTree = "<group>";
+		};
+		09CE772D28E2ED2300EAA9EE /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				09CE772E28E2ED2300EAA9EE /* Koin */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		09CE772E28E2ED2300EAA9EE /* Koin */ = {
+			isa = PBXGroup;
+			children = (
+				09CE772F28E2ED2300EAA9EE /* LazyKoin.swift */,
+				09CE773028E2ED2300EAA9EE /* KoinApplication.swift */,
+				09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */,
+			);
+			path = Koin;
 			sourceTree = "<group>";
 		};
 		0A2BA072E9C5F7AC2C58F613 /* Views */ = {
@@ -695,6 +727,7 @@
 		E8FA76B3139104BA8189B8C0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				09CE772C28E2ED2300EAA9EE /* KMM */,
 				09636B0928D48CE800A5CB97 /* Typealiases */,
 				09636AF428D47A1400A5CB97 /* Rswift */,
 			);
@@ -1100,12 +1133,15 @@
 				09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */,
 				09636AFD28D484CA00A5CB97 /* R+SwiftUI.swift in Sources */,
 				09636B0F28D80B8500A5CB97 /* View+KeyboardDismiss.swift in Sources */,
+				09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */,
 				09495F5928F92A6F0036BDFB /* RouteCoordinator.swift in Sources */,
 				09495F6828FF97490036BDFB /* ViewId+Splash.swift in Sources */,
 				09636B1728D815D100A5CB97 /* ViewId+Login.swift in Sources */,
 				EABA6D4F0FE97293430D3FC9 /* Constants.swift in Sources */,
+				09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */,
 				09636AF928D47A4D00A5CB97 /* Font+Extensions.swift in Sources */,
 				8BCA1398DA19EF4389A3E41A /* LoginView.swift in Sources */,
+				09CE773228E2ED2300EAA9EE /* LazyKoin.swift in Sources */,
 				09636B1528D8148C00A5CB97 /* ViewId.swift in Sources */,
 				09CE770F28E1922000EAA9EE /* Screen.swift in Sources */,
 				09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */,
