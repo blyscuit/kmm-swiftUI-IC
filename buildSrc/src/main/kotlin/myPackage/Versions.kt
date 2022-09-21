@@ -14,4 +14,5 @@ object Version {
     const val BUILD_KONFIG = "0.13.3"
     const val KOTLINX_SERIALIZATION = "1.2.2"
     const val NATIVE_COROUTINES_KOTLIN = "0.12.6-new-mm"
+    const val KOIN = "3.2.1"
 }

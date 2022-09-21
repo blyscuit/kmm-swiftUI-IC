@@ -1,5 +1,5 @@
 object Dependency {
-    
+
     // Kotlin
     const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN}"
     const val GRADLE = "com.android.tools.build:gradle:${Version.GRADLE}"
@@ -29,4 +29,9 @@ object Dependency {
 
     // Native Coroutines
     const val NATIVE_COROUTINES = "com.rickclephas.kmp.nativecoroutines:${Version.NATIVE_COROUTINES_KOTLIN}"
+
+    // Koin
+    const val KOIN = "io.insert-koin:koin-core:${Version.KOIN}"
+    const val KOIN_TEST = "io.insert-koin:koin-test:${Version.KOIN}"
+    const val KOIN_ANDROID = "io.insert-koin:koin-android:${Version.KOIN}"
 }
