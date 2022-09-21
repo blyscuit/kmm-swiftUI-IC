@@ -48,6 +48,12 @@ class MatchManager
         readonly: !force,
         force: force
       )
+      @fastlane.update_code_signing_settings(
+        use_automatic_signing: false,
+        team_id: ENV["sigh_#{app_identifier[0]}_adhoc_team-id"],
+        profile_name: ENV["sigh_#{app_identifier[0]}_adhoc_profile-name"],
+        code_sign_identity: 'iPhone Distribution'
+      )
     else
       @fastlane.match(
         type: 'adhoc',
@@ -68,6 +74,12 @@ class MatchManager
         keychain_password: @keychain_password,
         app_identifier: app_identifier,
         readonly: true
+      )
+      @fastlane.update_code_signing_settings(
+        use_automatic_signing: false,
+        team_id: ENV["sigh_#{app_identifier[0]}_appstore_team-id"],
+        profile_name: ENV["sigh_#{app_identifier[0]}_appstore_profile-name"],
+        code_sign_identity: 'iPhone Distribution'
       )
     else
       @fastlane.match(

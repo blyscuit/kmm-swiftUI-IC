@@ -49,7 +49,7 @@ cookiecutter.json
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## User settings
-xcuserdata/
+**/xcuserdata/
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
@@ -61,7 +61,7 @@ xcuserdata/
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-Pods/
+iosApp/Pods/
 
 # fastlane
 #
@@ -70,18 +70,18 @@ Pods/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-fastlane/README.md
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
-fastlane/xcov_output
+iosApp/fastlane/README.md
+iosApp/fastlane/report.xml
+iosApp/fastlane/Preview.html
+iosApp/fastlane/screenshots/**/*.png
+iosApp/fastlane/test_output
+iosApp/fastlane/xcov_output
 
 # Sourcery
 *.generated.swift
 
 # Derived Data folder
-DerivedData
+iosApp/DerivedData
 
 # Tuist
 .tuist-generated
@@ -89,3 +89,4 @@ DerivedData
 # JetBrains IDEs
 
 .idea
+**/GoogleService-*.plist
