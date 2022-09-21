@@ -47,6 +47,8 @@ kotlin {
                 implementation(Dependency.COROUTINES_TEST)
                 implementation(Dependency.KOIN)
                 implementation(Dependency.KOIN_TEST)
+                implementation(project(Modules.JSONAPI_CORE))
+                implementation(Dependency.KOTLIN_TEST)
             }
         }
         val commonTest by getting {
