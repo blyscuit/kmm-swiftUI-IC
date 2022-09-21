@@ -281,7 +281,7 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		09636B1128D80FB000A5CB97 /* Modules */ = {
+		0940552C28D1730C00B4A8C3 /* ContentView */ = {
 			isa = PBXGroup;
 			children = (
 				09636B1228D80FC100A5CB97 /* Login */,
@@ -1149,6 +1149,7 @@
 				09495F6628FF97080036BDFB /* SplashView.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,
 				09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */,
+				09636B4028DACE1300A5CB97 /* Typealias+Koin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
