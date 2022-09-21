@@ -45,6 +45,8 @@ kotlin {
                 implementation(Dependency.KTOR_CONTENT_NEGOTIATION)
                 implementation(Dependency.KTOR_MOCK)
                 implementation(Dependency.COROUTINES_TEST)
+                implementation(Dependency.KOIN)
+                implementation(Dependency.KOIN_TEST)
             }
         }
         val commonTest by getting {
@@ -55,6 +57,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(Dependency.KTOR_ANDROID)
+                implementation(Dependency.KOIN_ANDROID)
             }
         }
         val androidTest by getting

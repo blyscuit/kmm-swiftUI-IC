@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09636B3C28DACE0000A5CB97 /* KoinApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3B28DACE0000A5CB97 /* KoinApplication.swift */; };
+		09636B3E28DACE0A00A5CB97 /* LazyKoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3D28DACE0A00A5CB97 /* LazyKoin.swift */; };
+		09636B4028DACE1300A5CB97 /* Typealias+Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3F28DACE1300A5CB97 /* Typealias+Koin.swift */; };
 		3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE1175F99D55A95E0995E9 /* OptionalUnwrapSpec.swift */; };
 		5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CA60577ABA5F7885E1DE7 /* AutoMockable.generated.swift */; };
 		686B2C185816765B3E124776 /* IOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46885A08B19F8EB7FFC5117F /* IOSApp.swift */; };
@@ -74,6 +77,9 @@
 
 /* Begin PBXFileReference section */
 		089ECC4763AAFDC8739533DA /* Pods_Survey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09636B3B28DACE0000A5CB97 /* KoinApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoinApplication.swift; sourceTree = "<group>"; };
+		09636B3D28DACE0A00A5CB97 /* LazyKoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyKoin.swift; sourceTree = "<group>"; };
+		09636B3F28DACE1300A5CB97 /* Typealias+Koin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
 		0F8D46A12D575264811B98CD /* Pods_Survey_SurveyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_SurveyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		122A6B9F6217729620D91A43 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
 		16E10E52E1F7EAF6527F4E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +159,32 @@
 				8B0838AE1612D331EDA8D771 /* ContentView.swift */,
 			);
 			path = ContentView;
+			sourceTree = "<group>";
+		};
+		09636B3828DACDE400A5CB97 /* KMM */ = {
+			isa = PBXGroup;
+			children = (
+				09636B3928DACDED00A5CB97 /* DI */,
+			);
+			path = KMM;
+			sourceTree = "<group>";
+		};
+		09636B3928DACDED00A5CB97 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				09636B3A28DACDF200A5CB97 /* Koin */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		09636B3A28DACDF200A5CB97 /* Koin */ = {
+			isa = PBXGroup;
+			children = (
+				09636B3B28DACE0000A5CB97 /* KoinApplication.swift */,
+				09636B3D28DACE0A00A5CB97 /* LazyKoin.swift */,
+				09636B3F28DACE1300A5CB97 /* Typealias+Koin.swift */,
+			);
+			path = Koin;
 			sourceTree = "<group>";
 		};
 		0A2BA072E9C5F7AC2C58F613 /* Views */ = {
@@ -507,6 +539,7 @@
 		E8FA76B3139104BA8189B8C0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				09636B3828DACDE400A5CB97 /* KMM */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -723,11 +756,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift",
+				$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift\"\n";
 		};
 		3FF9D5A3C80227E65CBEF354 /* SwiftFormat Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -902,8 +935,11 @@
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
 				F860FAD5941956384AEA9646 /* Constants+API.swift in Sources */,
 				EABA6D4F0FE97293430D3FC9 /* Constants.swift in Sources */,
+				09636B3C28DACE0000A5CB97 /* KoinApplication.swift in Sources */,
 				8BCA1398DA19EF4389A3E41A /* ContentView.swift in Sources */,
+				09636B3E28DACE0A00A5CB97 /* LazyKoin.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,
+				09636B4028DACE1300A5CB97 /* Typealias+Koin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
