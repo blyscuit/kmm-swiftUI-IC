@@ -3,7 +3,7 @@ package co.nimblehq.blisskmmic.helpers.mock
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-const val NetworkMockModel_RESULT = """
+const val NETWORK_MOCK_MODEL_RESULT = """
     {
     "title": "Hello"
     }

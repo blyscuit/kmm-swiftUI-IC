@@ -2,7 +2,7 @@ package co.nimblehq.blisskmmic.data.network.core
 
 import co.nimblehq.blisskmmic.Greeting
 import co.nimblehq.blisskmmic.helpers.mock.NetworkMockModel
-import co.nimblehq.blisskmmic.helpers.mock.NetworkMockModel_RESULT
+import co.nimblehq.blisskmmic.helpers.mock.NETWORK_MOCK_MODEL_RESULT
 import io.ktor.client.engine.mock.*
 import io.ktor.client.request.*
 import io.ktor.http.*
@@ -14,7 +14,7 @@ class NetworkClientTest {
 
     val engine = MockEngine { request ->
         respond(
-            content = NetworkMockModel_RESULT,
+            content = NETWORK_MOCK_MODEL_RESULT,
             status = HttpStatusCode.OK,
             headers = headersOf(HttpHeaders.ContentType, "application/json")
         )
