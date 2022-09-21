@@ -1,0 +1,3 @@
+[submodule "nimble-jsonapi-kotlin"]
+	path = nimble-jsonapi-kotlin
+	url = git@github.com:blyscuit/nimble-jsonapi-kotlin.git

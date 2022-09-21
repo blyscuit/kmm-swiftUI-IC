@@ -5,12 +5,17 @@ import kotlinx.serialization.Serializable
 
 const val NETWORK_MOCK_MODEL_RESULT = """
     {
-    "title": "Hello"
+        "data": {
+            "id": 20,
+            "type": "type",
+            "attributes": {
+                "title": "Hello"
+            }
+        }
     }
 """
 
 @Serializable
 data class NetworkMockModel(
-    @SerialName("title")
     val title: String
 )
