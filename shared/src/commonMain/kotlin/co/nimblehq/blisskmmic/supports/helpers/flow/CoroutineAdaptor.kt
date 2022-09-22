@@ -5,6 +5,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.*
 
 class AnyFlow<T>(source: Flow<T>): Flow<T> by source {
+
     val source: Flow<T> = this
 }
 
@@ -12,6 +13,7 @@ class FlowAdapter<T : Any>(
     private val scope: CoroutineScope,
     private val flow: Flow<T>
 ) {
+
     fun subscribe(
         onEach: (item: T) -> Unit,
         onComplete: () -> Unit,
@@ -25,10 +27,12 @@ class FlowAdapter<T : Any>(
 }
 
 interface Canceller {
+
     fun cancel()
 }
 
 private class JobCanceller(private val job: Job) : Canceller {
+
     override fun cancel() {
         job.cancel()
     }

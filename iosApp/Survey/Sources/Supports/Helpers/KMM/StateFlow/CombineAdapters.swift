@@ -10,6 +10,7 @@ import Combine
 import Shared
 
 func createPublisher<T>(_ flowAdapter: FlowAdapter<AnyObject>, type: AnyFlow<T>) -> AnyPublisher<T, KotlinError> {
+
     return Deferred<Publishers.HandleEvents<PassthroughSubject<T, KotlinError>>> {
         let subject = PassthroughSubject<T, KotlinError>()
         let canceller = flowAdapter.subscribe(

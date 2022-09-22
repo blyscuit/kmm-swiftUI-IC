@@ -10,11 +10,11 @@ actual abstract class ViewModel {
     actual val viewModelScope = MainScope()
 
     /**
-     * Override this to do any cleanup immediately before the internal [CoroutineScope][kotlinx.coroutines.CoroutineScope]
+     * Override this to do any cleanup immediately before the 
+     * internal [CoroutineScope][kotlinx.coroutines.CoroutineScope]
      * is cancelled in [clear]
      */
-    protected actual open fun onCleared() {
-    }
+    protected actual open fun onCleared() {}
 
     fun clear() {
         onCleared()
