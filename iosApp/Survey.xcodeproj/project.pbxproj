@@ -10,9 +10,6 @@
 		09636B3C28DACE0000A5CB97 /* KoinApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3B28DACE0000A5CB97 /* KoinApplication.swift */; };
 		09636B3E28DACE0A00A5CB97 /* LazyKoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3D28DACE0A00A5CB97 /* LazyKoin.swift */; };
 		09636B4028DACE1300A5CB97 /* Typealias+Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3F28DACE1300A5CB97 /* Typealias+Koin.swift */; };
-		09636B4228DB2C6B00A5CB97 /* CombineAdapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B4128DB2C6B00A5CB97 /* CombineAdapters.swift */; };
-		09636B4528DC249900A5CB97 /* KotlinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B4428DC249900A5CB97 /* KotlinError.swift */; };
-		09636B4728DC24C600A5CB97 /* ViewModel+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B4628DC24C600A5CB97 /* ViewModel+Combine.swift */; };
 		3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE1175F99D55A95E0995E9 /* OptionalUnwrapSpec.swift */; };
 		5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CA60577ABA5F7885E1DE7 /* AutoMockable.generated.swift */; };
 		686B2C185816765B3E124776 /* IOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46885A08B19F8EB7FFC5117F /* IOSApp.swift */; };
@@ -83,9 +80,6 @@
 		09636B3B28DACE0000A5CB97 /* KoinApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoinApplication.swift; sourceTree = "<group>"; };
 		09636B3D28DACE0A00A5CB97 /* LazyKoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyKoin.swift; sourceTree = "<group>"; };
 		09636B3F28DACE1300A5CB97 /* Typealias+Koin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
-		09636B4128DB2C6B00A5CB97 /* CombineAdapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineAdapters.swift; sourceTree = "<group>"; };
-		09636B4428DC249900A5CB97 /* KotlinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinError.swift; sourceTree = "<group>"; };
-		09636B4628DC24C600A5CB97 /* ViewModel+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Combine.swift"; sourceTree = "<group>"; };
 		0F8D46A12D575264811B98CD /* Pods_Survey_SurveyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_SurveyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		122A6B9F6217729620D91A43 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
 		16E10E52E1F7EAF6527F4E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -197,9 +191,6 @@
 		09636B4328DB2C7100A5CB97 /* StateFlow */ = {
 			isa = PBXGroup;
 			children = (
-				09636B4128DB2C6B00A5CB97 /* CombineAdapters.swift */,
-				09636B4428DC249900A5CB97 /* KotlinError.swift */,
-				09636B4628DC24C600A5CB97 /* ViewModel+Combine.swift */,
 			);
 			path = StateFlow;
 			sourceTree = "<group>";
@@ -950,12 +941,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
-				09636B4528DC249900A5CB97 /* KotlinError.swift in Sources */,
 				F860FAD5941956384AEA9646 /* Constants+API.swift in Sources */,
 				EABA6D4F0FE97293430D3FC9 /* Constants.swift in Sources */,
-				09636B4228DB2C6B00A5CB97 /* CombineAdapters.swift in Sources */,
 				09636B3C28DACE0000A5CB97 /* KoinApplication.swift in Sources */,
-				09636B4728DC24C600A5CB97 /* ViewModel+Combine.swift in Sources */,
 				8BCA1398DA19EF4389A3E41A /* ContentView.swift in Sources */,
 				09636B3E28DACE0A00A5CB97 /* LazyKoin.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,

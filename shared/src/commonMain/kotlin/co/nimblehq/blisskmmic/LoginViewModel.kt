@@ -1,20 +1,20 @@
 package co.nimblehq.blisskmmic
 
 import co.nimblehq.blisskmmic.data.network.core.NetworkClient
-import co.nimblehq.blisskmmic.models.ViewModel
-import co.nimblehq.blisskmmic.supports.helpers.flow.AnyFlow
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
 class LoginViewModel(
     private val networkClient: NetworkClient
-) : ViewModel() {
+) {
     private val mutableBreedState: MutableStateFlow<BreedViewState> =
         MutableStateFlow(BreedViewState(isLoading = true))
 
-    val breedState: AnyFlow<BreedViewState> = AnyFlow(mutableBreedState)
+    val breedState: StateFlow<BreedViewState> = mutableBreedState
 
     var arr = listOf("Hello")
+
+    val viewModelScope: CoroutineScope = MainScope()
 
     init {
         observeBreeds()

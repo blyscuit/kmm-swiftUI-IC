@@ -9,6 +9,7 @@
 import Shared
 import SwiftUI
 import Combine
+import KMPNativeCoroutinesCombine
 
 struct ContentView: View {
 
@@ -19,8 +20,14 @@ struct ContentView: View {
         let viewModel = LoginViewModel(networkClient: NetworkClient())
 
         init() {
-            viewModel
-                .asPublisher(flow: viewModel.breedState)
+            createPublisher(for: viewModel.breedStateNative)
+                .replaceError(
+                    with: BreedViewState(
+                        breeds: nil,
+                        error: "Somethign went wrong.",
+                        isLoading: false,
+                        isEmpty: true)
+                )
                 .assign(to: &$list)
         }
     }
