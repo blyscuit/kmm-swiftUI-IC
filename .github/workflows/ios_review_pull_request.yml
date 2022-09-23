@@ -8,6 +8,21 @@ defaults:
     working-directory: iosApp
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: SwiftLint for files changed in the PR
+        uses: norio-nomura/action-swiftlint@3.2.1
+        env:
+          DIFF_BASE: ${{ github.base_ref }}
+        with:
+          args: --strict
+
   review_pull_request:
     name: Review pull request
     runs-on: macOS-latest
