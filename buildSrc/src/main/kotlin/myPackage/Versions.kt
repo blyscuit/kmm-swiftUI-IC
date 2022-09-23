@@ -15,4 +15,6 @@ object Version {
     const val KOTLINX_SERIALIZATION = "1.2.2"
     const val NATIVE_COROUTINES_KOTLIN = "0.12.6-new-mm"
     const val KOIN = "3.2.1"
+    const val MOCKMP = "1.6.0"
+    const val KSP = "1.7.10-1.0.6"
 }

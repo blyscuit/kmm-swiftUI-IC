@@ -20,7 +20,9 @@ extension KoinApplication {
 
 extension KoinApplication {
 
-    private static let keyPaths: [PartialKeyPath<Koin>] = []
+    private static let keyPaths: [PartialKeyPath<Koin>] = [
+        \.logInViewModel
+    ]
 
     static func inject<T>() -> T {
         shared.inject()

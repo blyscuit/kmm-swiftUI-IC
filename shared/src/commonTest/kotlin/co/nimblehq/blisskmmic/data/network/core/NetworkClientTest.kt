@@ -7,10 +7,12 @@ import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonMockEngine
 import io.ktor.client.engine.mock.*
 import io.ktor.client.request.*
 import io.ktor.http.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
+@ExperimentalCoroutinesApi
 class NetworkClientTest {
 
     val engine = jsonMockEngine(NETWORK_MOCK_MODEL_RESULT)

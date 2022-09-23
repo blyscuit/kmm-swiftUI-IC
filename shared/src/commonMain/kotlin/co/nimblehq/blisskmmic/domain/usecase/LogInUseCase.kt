@@ -4,9 +4,14 @@ import co.nimblehq.blisskmmic.domain.model.Token
 import co.nimblehq.blisskmmic.domain.repository.UserRepository
 import kotlinx.coroutines.flow.Flow
 
-class LogInUseCase(private val repository: UserRepository) {
+interface LogInUseCase {
 
-    operator fun invoke(email: String, password: String): Flow<Token> {
+    operator fun invoke(email: String, password: String): Flow<Token>
+}
+
+class LogInUseCaseImpl(private val repository: UserRepository) : LogInUseCase {
+
+    override operator fun invoke(email: String, password: String): Flow<Token> {
         return repository.logIn(email, password)
     }
 }

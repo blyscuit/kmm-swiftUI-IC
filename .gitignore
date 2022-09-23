@@ -91,3 +91,4 @@ iosApp/DerivedData
 .idea
 GoogleService-*.plist
 buildSrc/src/main/kotlin/myPackage/BuildKonfig.kt
+.vscode/settings.json
