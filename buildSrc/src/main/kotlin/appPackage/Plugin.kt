@@ -13,4 +13,7 @@ object Plugin {
 
     const val KOVER = "kover"
     const val DETEKT = "io.gitlab.arturbosch.detekt"
+
+    const val MOCKMP = "org.kodein.mock.mockmp"
+    const val KSP = "com.google.devtools.ksp"
 }

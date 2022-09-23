@@ -23,7 +23,7 @@ class LoginTargetType(email: String, password: String): UserTargetType() {
     )
 
     override var baseURL: String = BuildKonfig.BASE_URL
-    override var path: String = "/v1/oauth/token"
+    override var path: String = "oauth/token"
     override var method: HttpMethod = HttpMethod.Post
     override var body: Any? = LoginInput(
         "password",
