@@ -1,5 +1,6 @@
 package co.nimblehq.blisskmmic.presentation.modules.login
 
+import co.nimblehq.blisskmmic.data.network.helpers.jsonApiException
 import co.nimblehq.blisskmmic.domain.model.Token
 import co.nimblehq.blisskmmic.domain.usecase.LogInUseCase
 import kotlinx.coroutines.MainScope
@@ -11,7 +12,10 @@ data class LoginViewState(
     val isLoading: Boolean = false,
     val error: String? = null
 ) {
+    @Suppress("EmptySecondaryConstructor")
     constructor() : this(false, false, null) {}
+
+    @Suppress("EmptySecondaryConstructor")
     constructor(error: String?) : this(false, false, error) {}
 }
 
@@ -29,8 +33,8 @@ class LoginViewModel(private val logInUseCase: LogInUseCase) {
         }
         viewScope.launch {
             logInUseCase(email, password)
-                .catch {
-                    mutableViewState.update { LoginViewState(isLoading = false, error = it.error) }
+                .catch { error ->
+                    mutableViewState.update { LoginViewState(isLoading = false, error = error.jsonApiException()) }
                 }
                 .collect {
                     mutableViewState.update { LoginViewState(isSuccess = true, isLoading = false) }

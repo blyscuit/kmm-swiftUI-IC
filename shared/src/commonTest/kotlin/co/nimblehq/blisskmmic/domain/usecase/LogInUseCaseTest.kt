@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
 import org.kodein.mock.*
 import org.kodein.mock.tests.TestsWithMocks
+import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.fail
@@ -27,8 +28,14 @@ class LogInUseCaseTest : TestsWithMocks() {
 
     override fun setUpMocks() = injectMocks(mocker)
 
+    @BeforeTest
+    fun setUp() {
+        mocker.reset()
+    }
+
+    @Suppress("MaxLineLength")
     @Test
-    fun test_LogInUseCase_LogIn_ShouldReturnCorrectObject() = runTest {
+    fun `Given LogInRepository returns success When LogInUseCase calls login Then it should return correct object`() = runTest {
         mocker.every {
             userRepository.logIn(email, password)
         } returns flow { emit(token) }
@@ -39,11 +46,12 @@ class LogInUseCaseTest : TestsWithMocks() {
             }
     }
 
+    @Suppress("MaxLineLength")
     @Test
-    fun test_LogInUseCase_LogInFail_ShouldReturnCorrectError() = runTest {
+    fun `Given LogInRepository returns failure When LogInUseCase calls login Then it should return correct error`() = runTest {
         mocker.every {
             userRepository.logIn(email, password)
-        } returns flow { throw error("Fail") }
+        } returns flow { error("Fail") }
 
         logInUseCase(email, password)
             .catch {
@@ -53,9 +61,10 @@ class LogInUseCaseTest : TestsWithMocks() {
                 fail("Should not receive object")
             }
     }
-
+    
+    @Suppress("MaxLineLength")
     @Test
-    fun test_LogInUseCase_LogIn_CallRepositoryWithCorrectInput() = runTest {
+    fun `Given a LogInRepository When LogInUseCase calls login Then it should call repository with correct input`() = runTest {
         mocker.every {
             userRepository.logIn(email, password)
         } returns flow { emit(token) }

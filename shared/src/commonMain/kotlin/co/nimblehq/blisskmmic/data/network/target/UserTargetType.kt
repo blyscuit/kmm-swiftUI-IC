@@ -6,7 +6,7 @@ import io.ktor.http.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-sealed class UserTargetType(): TargetType
+sealed class UserTargetType: TargetType
 
 class LoginTargetType(email: String, password: String): UserTargetType() {
 
