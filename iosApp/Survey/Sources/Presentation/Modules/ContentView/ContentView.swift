@@ -8,12 +8,39 @@
 
 import Shared
 import SwiftUI
+import KMPNativeCoroutinesCombine
+import Combine
 
 struct ContentView: View {
+
+    class DataSource: ObservableObject {
+
+        @Published var viewState = LoginViewState()
+
+        @LazyKoin var viewModel: LoginViewModel
+
+        init() {
+            createPublisher(for: viewModel.viewStateNative)
+                .catch { error -> Just<LoginViewState> in
+                    let loginViewState = LoginViewState(error: error.localizedDescription)
+                    return Just(loginViewState)
+                }
+                .receive(on: DispatchQueue.main)
+                .assign(to: &$viewState)
+
+            viewModel.login(email: "dev@nimblehq.co", password: "112345678")
+        }
+    }
+
+    @ObservedObject var data = DataSource()
+
     let greet = Greeting().greeting()
 
     var body: some View {
-        Text(greet)
+        VStack {
+        Text("\(greet) \(data.viewState.isSuccess.description)")
+        Text("\(data.viewState.error ?? "What")")
+        }
     }
 }
 
