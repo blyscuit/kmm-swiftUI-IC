@@ -33,6 +33,13 @@ extension RouteCoordinator: BaseCoordinator {
 extension RouteCoordinator: SplashCoordinator {
 
     func showLogin() {
-        routes = [.root(.login)]
+        routes = [.root(.login, embedInNavigationView: true)]
+    }
+}
+
+extension RouteCoordinator: LoginCoordinator {
+
+    func showResetPassword() {
+        routes.push(.resetPassword)
     }
 }
