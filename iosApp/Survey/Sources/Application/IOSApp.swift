@@ -14,7 +14,7 @@ struct IOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            AppCoordinator()
                 .preferredColorScheme(.dark)
         }
     }

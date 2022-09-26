@@ -28,6 +28,10 @@
 		09636B3228D8272200A5CB97 /* ScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2A28D8255D00A5CB97 /* ScreenProtocol.swift */; };
 		09636B3328D8272E00A5CB97 /* ViewId+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2F28D8267D00A5CB97 /* ViewId+General.swift */; };
 		09636B3628D8285700A5CB97 /* KeyboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3428D8284600A5CB97 /* KeyboardScreen.swift */; };
+		09AB657E28E18A5900FF999D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB657D28E18A5900FF999D /* SplashView.swift */; };
+		09AB658028E18BBB00FF999D /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB657F28E18BBB00FF999D /* ViewId+Splash.swift */; };
+		09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770B28E191B400EAA9EE /* AppCoordinator.swift */; };
+		09CE770F28E1922000EAA9EE /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770E28E1922000EAA9EE /* Screen.swift */; };
 		3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE1175F99D55A95E0995E9 /* OptionalUnwrapSpec.swift */; };
 		5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CA60577ABA5F7885E1DE7 /* AutoMockable.generated.swift */; };
 		686B2C185816765B3E124776 /* IOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46885A08B19F8EB7FFC5117F /* IOSApp.swift */; };
@@ -112,6 +116,10 @@
 		09636B2A28D8255D00A5CB97 /* ScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenProtocol.swift; sourceTree = "<group>"; };
 		09636B2F28D8267D00A5CB97 /* ViewId+General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+General.swift"; sourceTree = "<group>"; };
 		09636B3428D8284600A5CB97 /* KeyboardScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardScreen.swift; sourceTree = "<group>"; };
+		09AB657D28E18A5900FF999D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		09AB657F28E18BBB00FF999D /* ViewId+Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+Splash.swift"; sourceTree = "<group>"; };
+		09CE770B28E191B400EAA9EE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		09CE770E28E1922000EAA9EE /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		0F8D46A12D575264811B98CD /* Pods_Survey_SurveyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_SurveyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		122A6B9F6217729620D91A43 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
 		16E10E52E1F7EAF6527F4E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -178,6 +186,7 @@
 		088E92BFD81177CF0AB2A747 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				09CE770A28E191A500EAA9EE /* Coordinator */,
 				B7707C4371EA10EA47E7E7B4 /* Modules */,
 				09636B1328D8146500A5CB97 /* ViewId */,
 				0A2BA072E9C5F7AC2C58F613 /* Views */,
@@ -276,6 +285,7 @@
 			children = (
 				09636B1428D8148C00A5CB97 /* ViewId.swift */,
 				09636B1628D815D100A5CB97 /* ViewId+Login.swift */,
+				09AB657F28E18BBB00FF999D /* ViewId+Splash.swift */,
 				09636B2F28D8267D00A5CB97 /* ViewId+General.swift */,
 			);
 			path = ViewId;
@@ -305,6 +315,31 @@
 				09636B3428D8284600A5CB97 /* KeyboardScreen.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		09AB657C28E18A4900FF999D /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				09AB657D28E18A5900FF999D /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		09CE770A28E191A500EAA9EE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				09CE770B28E191B400EAA9EE /* AppCoordinator.swift */,
+				09CE770D28E1921700EAA9EE /* Screens */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		09CE770D28E1921700EAA9EE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				09CE770E28E1922000EAA9EE /* Screen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		0A2BA072E9C5F7AC2C58F613 /* Views */ = {
@@ -558,6 +593,7 @@
 		B7707C4371EA10EA47E7E7B4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				09AB657C28E18A4900FF999D /* Splash */,
 				0940552C28D1730C00B4A8C3 /* Login */,
 			);
 			path = Modules;
@@ -1054,9 +1090,12 @@
 			files = (
 				09636B0D28D4917200A5CB97 /* OverlayButton.swift in Sources */,
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
+				09AB657E28E18A5900FF999D /* SplashView.swift in Sources */,
 				F860FAD5941956384AEA9646 /* Constants+API.swift in Sources */,
 				09636B3028D8267D00A5CB97 /* ViewId+General.swift in Sources */,
 				09636B0228D4876100A5CB97 /* PrimaryButton.swift in Sources */,
+				09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */,
+				09AB658028E18BBB00FF999D /* ViewId+Splash.swift in Sources */,
 				09636AFD28D484CA00A5CB97 /* R+SwiftUI.swift in Sources */,
 				09636B0F28D80B8500A5CB97 /* View+KeyboardDismiss.swift in Sources */,
 				09636B1728D815D100A5CB97 /* ViewId+Login.swift in Sources */,
@@ -1064,6 +1103,7 @@
 				09636AF928D47A4D00A5CB97 /* Font+Extensions.swift in Sources */,
 				8BCA1398DA19EF4389A3E41A /* LoginView.swift in Sources */,
 				09636B1528D8148C00A5CB97 /* ViewId.swift in Sources */,
+				09CE770F28E1922000EAA9EE /* Screen.swift in Sources */,
 				09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */,
 				09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,
