@@ -20,8 +20,9 @@ import kotlin.test.fail
 @ExperimentalCoroutinesApi
 class UserRepositoryTest {
 
+    @Suppress("MaxLineLength")
     @Test
-    fun test_UserRepository_LogIn_ShouldReturnCorrectObject() = runTest {
+    fun `Given network returns success When UserRepository calls Login Then it should return correct object`() = runTest {
         val engine = jsonMockEngine(LOG_IN_JSON_RESULT)
         val networkClient = NetworkClient(engine = engine)
         val userRepository = UserRepositoryImpl(networkClient)
@@ -32,8 +33,9 @@ class UserRepositoryTest {
             }
     }
 
+    @Suppress("MaxLineLength")
     @Test
-    fun test_UserRepository_LogInFail_ShouldReturnCorrectError() = runTest {
+    fun `Given network returns failure When UserRepository calls Login Then it should return correct error`() = runTest {
         val engine = jsonMockEngine(ERROR_JSON_RESULT)
         val networkClient = NetworkClient(engine = engine)
         val userRepository = UserRepositoryImpl(networkClient)

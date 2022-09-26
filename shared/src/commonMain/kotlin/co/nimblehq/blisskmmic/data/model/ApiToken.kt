@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class APIToken(
+data class ApiToken(
     @SerialName("access_token")
     val accessToken: String,
     @SerialName("token_type")
@@ -17,7 +17,7 @@ data class APIToken(
     val createdAt: Int
 )
 
-fun APIToken.toToken(): Token {
+fun ApiToken.toToken(): Token {
     return Token(
         accessToken,
         tokenType,
