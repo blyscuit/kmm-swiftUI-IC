@@ -15,10 +15,12 @@ struct LoginView: View {
 
     var body: some View {
         ZStack {
-            ZStack {}
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Assets.backgroundBlur.image.resizable())
+            Assets.backgroundBlur
+                .image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             VStack(
                 alignment: .center,
                 spacing: 20.0
