@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09495F5928F92A6F0036BDFB /* RouteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F5828F92A6E0036BDFB /* RouteCoordinator.swift */; };
 		09495F6628FF97080036BDFB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6528FF97070036BDFB /* SplashView.swift */; };
 		09495F6A28FFAFA20036BDFB /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		09495F6F28FFDE8C0036BDFB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6E28FFDE8C0036BDFB /* LoginView.swift */; };
 		0648A69CF16D7212BE561B24 /* Pods_Survey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6B0AEB245ACFC2B78211FD /* Pods_Survey.framework */; };
+		09495FB6290AA2C30036BDFB /* RouteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FB3290AA0760036BDFB /* RouteCoordinator.swift */; };
 		09636AF228D4779400A5CB97 /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */; };
 		09636AF328D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */; };
 		09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF528D47A1400A5CB97 /* R.generated.swift */; };
@@ -39,10 +39,12 @@
 		09CE771028E1A4FF00EAA9EE /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB657F28E18BBB00FF999D /* ViewId+Splash.swift */; };
 		09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771228E1A94600EAA9EE /* ResetPasswordView.swift */; };
 		09CE771528E1AB0B00EAA9EE /* ViewId+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771428E1AB0B00EAA9EE /* ViewId+ResetPassword.swift */; };
-		09CE771728E1B5FD00EAA9EE /* View+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771628E1B5FD00EAA9EE /* View+BackButton.swift */; };
 		09CE771B28E1BAEE00EAA9EE /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771928E1BAB200EAA9EE /* ResetPasswordSpec.swift */; };
 		09CE771F28E1BB4700EAA9EE /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771C28E1BB1E00EAA9EE /* ResetPasswordScreen.swift */; };
 		09CE772028E1BBC400EAA9EE /* ViewId+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771428E1AB0B00EAA9EE /* ViewId+ResetPassword.swift */; };
+		09CE772328E2B87700EAA9EE /* EmbedLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772228E2B87700EAA9EE /* EmbedLoadingView.swift */; };
+		09CE772528E2C1C600EAA9EE /* View+HideBackButtonTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772428E2C1C600EAA9EE /* View+HideBackButtonTitle.swift */; };
+		09CE772728E2C44D00EAA9EE /* View+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772628E2C44D00EAA9EE /* View+BackButton.swift */; };
 		09CE773228E2ED2300EAA9EE /* LazyKoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772F28E2ED2300EAA9EE /* LazyKoin.swift */; };
 		09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773028E2ED2300EAA9EE /* KoinApplication.swift */; };
 		09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */; };
@@ -139,9 +141,11 @@
 		09CE770E28E1922000EAA9EE /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		09CE771228E1A94600EAA9EE /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		09CE771428E1AB0B00EAA9EE /* ViewId+ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+ResetPassword.swift"; sourceTree = "<group>"; };
-		09CE771628E1B5FD00EAA9EE /* View+BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+BackButton.swift"; sourceTree = "<group>"; };
 		09CE771928E1BAB200EAA9EE /* ResetPasswordSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSpec.swift; sourceTree = "<group>"; };
 		09CE771C28E1BB1E00EAA9EE /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
+		09CE772228E2B87700EAA9EE /* EmbedLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedLoadingView.swift; sourceTree = "<group>"; };
+		09CE772428E2C1C600EAA9EE /* View+HideBackButtonTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HideBackButtonTitle.swift"; sourceTree = "<group>"; };
+		09CE772628E2C44D00EAA9EE /* View+BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+BackButton.swift"; sourceTree = "<group>"; };
 		09CE772F28E2ED2300EAA9EE /* LazyKoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyKoin.swift; sourceTree = "<group>"; };
 		09CE773028E2ED2300EAA9EE /* KoinApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoinApplication.swift; sourceTree = "<group>"; };
 		09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
@@ -257,7 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				09636AF828D47A4D00A5CB97 /* Font+Extensions.swift */,
-				09CE771628E1B5FD00EAA9EE /* View+BackButton.swift */,
+				09CE772428E2C1C600EAA9EE /* View+HideBackButtonTitle.swift */,
+				09CE772628E2C44D00EAA9EE /* View+BackButton.swift */,
 				09636B0E28D80B8500A5CB97 /* View+KeyboardDismiss.swift */,
 			);
 			path = SwiftUI;
@@ -431,6 +436,7 @@
 		0A2BA072E9C5F7AC2C58F613 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09CE772228E2B87700EAA9EE /* EmbedLoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1176,6 +1182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09CE772728E2C44D00EAA9EE /* View+BackButton.swift in Sources */,
 				09636B0D28D4917200A5CB97 /* OverlayButton.swift in Sources */,
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
 				09AB657E28E18A5900FF999D /* SplashView.swift in Sources */,
@@ -1196,12 +1203,13 @@
 				09CE773228E2ED2300EAA9EE /* LazyKoin.swift in Sources */,
 				09636B1528D8148C00A5CB97 /* ViewId.swift in Sources */,
 				09CE770F28E1922000EAA9EE /* Screen.swift in Sources */,
+				09CE772528E2C1C600EAA9EE /* View+HideBackButtonTitle.swift in Sources */,
 				09CE771528E1AB0B00EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */,
-				09CE771728E1B5FD00EAA9EE /* View+BackButton.swift in Sources */,
+				09495FB6290AA2C30036BDFB /* RouteCoordinator.swift in Sources */,
 				09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,
-				09495FB4290AA0760036BDFB /* RouteCoordinator.swift in Sources */,
+				09CE772328E2B87700EAA9EE /* EmbedLoadingView.swift in Sources */,
 				09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

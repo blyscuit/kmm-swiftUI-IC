@@ -11,43 +11,44 @@ import SwiftUI
 struct ResetPasswordView: View {
 
     @State private var email: String = ""
-
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State private var loading = false
 
     var body: some View {
-        ZStack {
-            GeometryReader { geometry in
-                Assets.backgroundBlur
-                    .image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .ignoresSafeArea()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+        EmbedLoadingView(loading: loading) {
+            ZStack {
+                GeometryReader { geometry in
+                    Assets.backgroundBlur
+                        .image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .ignoresSafeArea()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-                VStack(
-                    alignment: .center,
-                    spacing: 20.0
-                ) {
-                    Spacer().frame(maxHeight: geometry.size.height / 10.0)
+                    VStack(
+                        alignment: .center,
+                        spacing: 20.0
+                    ) {
+                        Spacer().frame(maxHeight: geometry.size.height / 10.0)
 
-                    Assets.logoWhite.image
+                        Assets.logoWhite.image
 
-                    Text(Localize.resetPasswordTextInstruction())
+                        Text(Localize.resetPasswordTextInstruction())
+                            .multilineTextAlignment(.center)
 
-                    Spacer().frame(maxHeight: 70.0)
+                        Spacer().frame(maxHeight: 70.0)
 
-                    emailField
-                    resetButton
+                        emailField
+                        resetButton
+                    }
+                    .padding(.horizontal, 24.0)
                 }
-                .padding(.horizontal, 24.0)
             }
+            .onTapGesture {
+                hideKeyboard()
+            }
+            .accessibilityElement(children: .contain)
+            .accessibility(.resetPassword(.view))
         }
-        .onTapGesture {
-            hideKeyboard()
-        }
-        .accessibilityElement(children: .contain)
-        .accessibility(.resetPassword(.view))
-        .defaultBackButton(presentationMode)
     }
 
     var emailField: some View {

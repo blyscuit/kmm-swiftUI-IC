@@ -17,25 +17,11 @@ extension View {
             } label: {
                 HStack(spacing: 0) {
                     Image(systemName: "chevron.left")
-                        .font(.title2)
+                        .resizable()
+                        .font(.body.weight(.semibold))
                         .foregroundColor(.white)
-                }
-            }
-        }
 
-        return navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: backButton)
-    }
-
-    func defaultBackButton(_ backAction: @escaping () -> Void) -> some View {
-        var backButton: some View {
-            Button {
-                backAction()
-            } label: {
-                HStack(spacing: 0) {
-                    Image(systemName: "chevron.left")
-                        .font(.title2)
-                        .foregroundColor(.white)
+                        .offset(x: -8.0)
                 }
             }
         }

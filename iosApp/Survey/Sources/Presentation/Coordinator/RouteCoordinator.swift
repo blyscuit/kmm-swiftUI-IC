@@ -16,7 +16,7 @@ protocol BaseCoordinator {
 
 class RouteCoordinator: ObservableObject {
 
-    @Published var routes: Routes<Screen> = [.root(.splash)]
+    @Published var routes: Routes<Screen> = [.root(.splash, embedInNavigationView: true)]
 }
 
 extension RouteCoordinator: BaseCoordinator {

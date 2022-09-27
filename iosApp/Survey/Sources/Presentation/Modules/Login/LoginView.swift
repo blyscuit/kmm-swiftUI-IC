@@ -21,7 +21,7 @@ struct LoginView: View {
 
     private let animationDuration: Double = 0.7
 
-    var coordinator: LoginCoordinator
+    let coordinator: LoginCoordinator
 
     var body: some View {
         ZStack {
@@ -48,6 +48,8 @@ struct LoginView: View {
                     Spacer().frame(maxHeight: geometry.size.height / 10.0)
 
                     Assets.logoWhite.image
+                        .frame(maxWidth: .infinity)
+                        .offset(y: animating ? 0.0 : 200.0)
 
                     Spacer().frame(maxHeight: 70.0)
 
@@ -65,6 +67,7 @@ struct LoginView: View {
         }
         .accessibilityElement(children: .contain)
         .accessibility(.login(.view))
+        .hideBackButtonTitle()
         .onAppear {
             withAnimation(.easeIn(duration: animationDuration)) {
                 animating = true
