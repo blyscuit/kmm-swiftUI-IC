@@ -52,9 +52,11 @@ struct LoginView: View {
             SecureField(Localize.loginFieldsPassword(), text: $password)
                 .accessibility(.login(.passwordField))
             if password.isEmpty {
-                Button(Localize.loginButtonForgot()) {}
-                    .overlayButton()
-                    .accessibility(.login(.forgotButton))
+                Button(Localize.loginButtonForgot()) {
+                    // TODO: Add action then press `forgot`
+                }
+                .overlayButton()
+                .accessibility(.login(.forgotButton))
             }
         }
         .primaryTextField()
@@ -62,7 +64,9 @@ struct LoginView: View {
     }
 
     var loginButton: some View {
-        Button {} label: {
+        Button {
+            // TODO: Add action when press `login`
+        } label: {
             Text(Localize.loginButtonLogin())
                 .frame(maxWidth: .infinity)
                 .primaryButton()
@@ -74,7 +78,9 @@ struct LoginView: View {
         if #available(iOS 15.0, *) {
             return AnyView(
                 passwordField
-                    .onSubmit {}
+                    .onSubmit {
+                        // TODO: Add action when press `return`
+                    }
             )
         } else {
             return AnyView(
