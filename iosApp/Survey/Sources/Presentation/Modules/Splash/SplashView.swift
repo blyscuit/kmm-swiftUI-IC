@@ -19,16 +19,20 @@ struct SplashView: View {
 
     var body: some View {
         ZStack {
-            ZStack {}
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Assets.background.image.resizable().aspectRatio(contentMode: .fill))
+            Assets.background
+                .image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             if animating {
-                ZStack {}
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Assets.backgroundBlur.image.resizable().aspectRatio(contentMode: .fill))
+                Assets.backgroundBlur
+                    .image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
 
             VStack(

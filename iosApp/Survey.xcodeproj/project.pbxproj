@@ -32,6 +32,7 @@
 		09AB658028E18BBB00FF999D /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB657F28E18BBB00FF999D /* ViewId+Splash.swift */; };
 		09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770B28E191B400EAA9EE /* AppCoordinator.swift */; };
 		09CE770F28E1922000EAA9EE /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770E28E1922000EAA9EE /* Screen.swift */; };
+		09CE772128E2956000EAA9EE /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB657F28E18BBB00FF999D /* ViewId+Splash.swift */; };
 		3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE1175F99D55A95E0995E9 /* OptionalUnwrapSpec.swift */; };
 		5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CA60577ABA5F7885E1DE7 /* AutoMockable.generated.swift */; };
 		686B2C185816765B3E124776 /* IOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46885A08B19F8EB7FFC5117F /* IOSApp.swift */; };
@@ -1119,6 +1120,7 @@
 				09636B2428D821FC00A5CB97 /* LoginSpec.swift in Sources */,
 				09636B3228D8272200A5CB97 /* ScreenProtocol.swift in Sources */,
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
+				09CE772128E2956000EAA9EE /* ViewId+Splash.swift in Sources */,
 				09636B3628D8285700A5CB97 /* KeyboardScreen.swift in Sources */,
 				09636B2228D821ED00A5CB97 /* ViewId+Login.swift in Sources */,
 				09636B3128D8271D00A5CB97 /* LoginScreen.swift in Sources */,
