@@ -22,18 +22,18 @@ Dir[detekt_dir].each do |file_name|
 end
 
 # Android Lint output check
-lint_dir = "**/**/build/reports/lint/lint-result.xml"
+lint_dir = "**/build/reports/lint-result-debug.xml"
 Dir[lint_dir].each do |file_name|
   android_lint.skip_gradle_task = true
   android_lint.report_file = file_name
   android_lint.lint(inline_mode: true)
 end
   
-# Show Danger test coverage report from Jacoco for template
-jacoco_dir = "template/**/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml"
-markdown "## template Jacoco report:"
-Dir[jacoco_dir].each do |file_name|
+# Show Danger test coverage report from Kover for template
+kover_dir = "**/build/reports/kover/xml/report.xml"
+Dir[kover_dir].each do |file_name|
   # Report coverage of modified files, warn if total project coverage is under 80%
   # or if any modified file's coverage is under 95%
-  shroud.report file_name, 80, 95, false
+  module_name = file_name.split('/', 2)[0]
+  shroud.reportKover module_name, file_name, 80, 95, false
 end

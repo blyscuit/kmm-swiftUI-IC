@@ -1,7 +1,10 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
+
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("io.gitlab.arturbosch.detekt")
 }
 
 version = "1.0"
@@ -21,12 +24,12 @@ kotlin {
         framework {
             baseName = "Shared"
         }
-        xcodeConfigurationToNativeBuildType["Debug Staging"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.DEBUG
-        xcodeConfigurationToNativeBuildType["Debug Production"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.DEBUG
-        xcodeConfigurationToNativeBuildType["Release Staging"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
-        xcodeConfigurationToNativeBuildType["Release Production"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
+        xcodeConfigurationToNativeBuildType["Debug Staging"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["Debug Production"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["Release Staging"] = NativeBuildType.RELEASE
+        xcodeConfigurationToNativeBuildType["Release Production"] = NativeBuildType.RELEASE
     }
-    
+
     sourceSets {
         val commonMain by getting
         val commonTest by getting {
@@ -58,10 +61,35 @@ kotlin {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = Android.COMPILE_SDK
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 26
-        targetSdk = 32
+        minSdk = Android.MIN_SDK
+        targetSdk = Android.TARGET_SDK
     }
+}
+
+ detekt {
+    source = files(
+        "./"
+    )
+    parallel = false
+    config = files("../detekt-config.yml")
+    buildUponDefaultConfig = false
+    disableDefaultRuleSets = false
+    ignoreFailures = false
+ }
+
+ tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
+    reports {
+        xml {
+            outputLocation.set(file("build/reports/detekt/detekt-result.xml"))
+            required.set(true) // reports can also be enabled and disabled at the task level as needed
+        }
+         html.required.set(true)
+    }
+ }
+
+tasks.check {
+    dependsOn(detekt)
 }
