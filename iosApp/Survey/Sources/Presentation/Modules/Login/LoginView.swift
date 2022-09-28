@@ -24,6 +24,8 @@ struct LoginView: View {
 
     let coordinator: LoginCoordinator
 
+    let showSurvey: () -> Void
+
     var body: some View {
         ZStack {
             GeometryReader { geometry in
