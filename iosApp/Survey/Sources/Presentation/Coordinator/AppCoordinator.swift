@@ -22,7 +22,25 @@ struct AppCoordinator: View {
                 ResetPasswordView()
             case .splash:
                 SplashView(coordinator: coordinator)
+            case .surveySelection:
+                SurveySelectionView()
             }
         }
+    }
+
+    private func showLogin() {
+        routes = [.root(.login)]
+    }
+
+    private func showSurvey() {
+        routes = [.root(.surveySelection)]
+    }
+
+    private func goBack() {
+        routes.goBack()
+    }
+
+    private func goBackToRoot() {
+        routes.goBackToRoot()
     }
 }

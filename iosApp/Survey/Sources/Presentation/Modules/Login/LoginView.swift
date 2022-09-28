@@ -101,6 +101,9 @@ struct LoginView: View {
     var loginButton: some View {
         Button {
             // TODO: Add action when press `login`
+            withAnimation {
+                showSurvey()
+            }
         } label: {
             Text(Localize.loginButtonLogin())
                 .frame(maxWidth: .infinity)
