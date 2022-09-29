@@ -19,7 +19,7 @@ class LoginTargetType(email: String, password: String): UserTargetType() {
         @SerialName("client_id")
         val clientId: String,
         @SerialName("client_secret")
-        val clientSecret: String,
+        val clientSecret: String
     )
 
     override var baseURL: String = BuildKonfig.BASE_URL

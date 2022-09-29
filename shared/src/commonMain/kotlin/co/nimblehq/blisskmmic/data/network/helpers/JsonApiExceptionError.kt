@@ -5,6 +5,6 @@ import co.nimblehq.jsonapi.model.JsonApiException
 fun Throwable.jsonApiException() : String? {
     when(this) {
         is JsonApiException -> return this.errors.first().detail
+        else -> return this.message
     }
-    return this.message
 }

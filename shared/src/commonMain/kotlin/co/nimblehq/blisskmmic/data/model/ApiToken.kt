@@ -23,6 +23,6 @@ fun ApiToken.toToken(): Token {
         tokenType,
         expiresIn,
         refreshToken,
-        createdAt,
+        createdAt
     )
 }

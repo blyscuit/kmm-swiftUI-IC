@@ -15,7 +15,6 @@ class UserRepositoryImpl(private val networkClient: NetworkClient): UserReposito
 
         return networkClient.fetch<ApiToken>(
             LoginTargetType(email, password).requestBuilder
-        )
-            .map { it.toToken() }
+        ).map { it.toToken() }
     }
 }
