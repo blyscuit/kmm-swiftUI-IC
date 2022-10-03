@@ -22,7 +22,7 @@ Dir[detekt_dir].each do |file_name|
 end
 
 # Android Lint output check
-lint_dir = "**/build/reports/lint-result-debug.xml"
+lint_dir = "**/build/reports/lint-results-debug.xml"
 Dir[lint_dir].each do |file_name|
   android_lint.skip_gradle_task = true
   android_lint.report_file = file_name
