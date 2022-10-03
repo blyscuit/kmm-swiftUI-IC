@@ -27,7 +27,7 @@ jobs:
         run: ./gradlew shared:detekt
 
       - name: Run Android Lint
-        run: ./gradlew shared:lint
+        run: ./gradlew lint
 
       - name: Run unit tests and Kover
         run: ./gradlew shared:koverXmlReport
