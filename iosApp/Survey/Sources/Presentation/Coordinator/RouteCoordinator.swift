@@ -43,6 +43,13 @@ extension RouteCoordinator: LoginCoordinator {
         routes.push(.resetPassword)
     }
 
+    func showHomeLoading() {
+        routes = [.root(.surveyLoading)]
+    }
+}
+
+extension RouteCoordinator: SurveyLoadingCoordinator {
+
     func showHome() {
         routes = [.root(.surveySelection)]
     }
