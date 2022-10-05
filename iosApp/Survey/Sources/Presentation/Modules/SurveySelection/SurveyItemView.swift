@@ -35,18 +35,20 @@ struct SurveyItemView: View {
                 .ignoresSafeArea()
 
             GeometryReader { geo in
+                let titleOffset = geo.size.height - 160.0
                 Text(survey.title)
                     .font(.boldTitle)
                     .lineLimit(2)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .offset(y: geo.size.height - 160)
+                    .offset(y: titleOffset)
                     .accessibility(.surveySelection(.titleText))
 
+                let descriptionOffset = geo.size.height - 76.0
                 Text(survey.description_)
                     .font(.regularBody)
                     .lineLimit(2)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .offset(y: geo.size.height - 76)
+                    .offset(y: descriptionOffset)
                     .accessibility(.surveySelection(.detailText))
             }
             .id(survey.id)

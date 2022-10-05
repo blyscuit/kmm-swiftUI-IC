@@ -11,6 +11,7 @@ import SwiftUI
 protocol LoginCoordinator {
 
     func showResetPassword()
+    func showSurvey()
 }
 
 struct LoginView: View {
@@ -102,7 +103,7 @@ struct LoginView: View {
         Button {
             // TODO: Add action when press `login`
             withAnimation {
-                showSurvey()
+                coordinator.showSurvey()
             }
         } label: {
             Text(Localize.loginButtonLogin())

@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09495FB6290AA2C30036BDFB /* RouteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FB3290AA0760036BDFB /* RouteCoordinator.swift */; };
 		09495FC9291106A00036BDFB /* Constants+SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FC8291106A00036BDFB /* Constants+SystemImage.swift */; };
 		09495FCB291107760036BDFB /* Image+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCA291107760036BDFB /* Image+Constants.swift */; };
 		09495FCD291109450036BDFB /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCC291109450036BDFB /* CGFloat+Extensions.swift */; };
+		09495F5928F92A6F0036BDFB /* RouteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F5828F92A6E0036BDFB /* RouteCoordinator.swift */; };
+		09495F6628FF97080036BDFB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6528FF97070036BDFB /* SplashView.swift */; };
+		09495F6828FF97490036BDFB /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
+		09495F6A28FFAFA20036BDFB /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
+		09495F6F28FFDE8C0036BDFB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6E28FFDE8C0036BDFB /* LoginView.swift */; };
+		09495F7528FFF2C50036BDFB /* SurveySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7328FFF2C40036BDFB /* SurveySelectionView.swift */; };
+		09495F7628FFF2C50036BDFB /* SurveyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7428FFF2C40036BDFB /* SurveyItemView.swift */; };
+		09495F7828FFF2D50036BDFB /* ViewId+SurveySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7728FFF2D50036BDFB /* ViewId+SurveySelection.swift */; };
+		09495F7B28FFF4340036BDFB /* FadePaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7928FFF4340036BDFB /* FadePaginationView.swift */; };
+		09495F7C28FFF4340036BDFB /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7A28FFF4340036BDFB /* PageControlView.swift */; };
+		09495F7E28FFF47F0036BDFB /* GestureVelocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7D28FFF47F0036BDFB /* GestureVelocity.swift */; };
 		09636AF228D4779400A5CB97 /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */; };
 		09636AF328D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */; };
 		09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF528D47A1400A5CB97 /* R.generated.swift */; };
@@ -113,10 +123,19 @@
 
 /* Begin PBXFileReference section */
 		03163DC877AC6E8DE71DB277 /* Pods_Survey_SurveyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_SurveyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		09495FB3290AA0760036BDFB /* RouteCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCoordinator.swift; sourceTree = "<group>"; };
 		09495FC8291106A00036BDFB /* Constants+SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+SystemImage.swift"; sourceTree = "<group>"; };
 		09495FCA291107760036BDFB /* Image+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Constants.swift"; sourceTree = "<group>"; };
 		09495FCC291109450036BDFB /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		09495F5828F92A6E0036BDFB /* RouteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCoordinator.swift; sourceTree = "<group>"; };
+		09495F6528FF97070036BDFB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		09495F6728FF97490036BDFB /* ViewId+Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+Splash.swift"; sourceTree = "<group>"; };
+		09495F6E28FFDE8C0036BDFB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		09495F7328FFF2C40036BDFB /* SurveySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionView.swift; sourceTree = "<group>"; };
+		09495F7428FFF2C40036BDFB /* SurveyItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemView.swift; sourceTree = "<group>"; };
+		09495F7728FFF2D50036BDFB /* ViewId+SurveySelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewId+SurveySelection.swift"; sourceTree = "<group>"; };
+		09495F7928FFF4340036BDFB /* FadePaginationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadePaginationView.swift; sourceTree = "<group>"; };
+		09495F7A28FFF4340036BDFB /* PageControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
+		09495F7D28FFF47F0036BDFB /* GestureVelocity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureVelocity.swift; sourceTree = "<group>"; };
 		09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-Book.otf"; sourceTree = "<group>"; };
 		09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-BookHeavy.otf"; sourceTree = "<group>"; };
 		09636AF528D47A1400A5CB97 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -223,6 +242,31 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		09495F6428FF96F50036BDFB /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				09495F6528FF97070036BDFB /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		09495F6D28FFDE8C0036BDFB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				09495F6E28FFDE8C0036BDFB /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		09495F7228FFF2C40036BDFB /* SurveySelection */ = {
+			isa = PBXGroup;
+			children = (
+				09495F7328FFF2C40036BDFB /* SurveySelectionView.swift */,
+				09495F7428FFF2C40036BDFB /* SurveyItemView.swift */,
+			);
+			path = SurveySelection;
+			sourceTree = "<group>";
+		};
 		09636AEF28D4777E00A5CB97 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				09CE772228E2B87700EAA9EE /* LoadingDialog.swift */,
+				09495F7D28FFF47F0036BDFB /* GestureVelocity.swift */,
 				09636AFF28D4860F00A5CB97 /* PrimaryTextField.swift */,
 				09636B0128D4876100A5CB97 /* PrimaryButton.swift */,
 				09636B0C28D4917200A5CB97 /* OverlayButton.swift */,
@@ -295,8 +340,9 @@
 				09636B1428D8148C00A5CB97 /* ViewId.swift */,
 				09CE771428E1AB0B00EAA9EE /* ViewId+ResetPassword.swift */,
 				09636B1628D815D100A5CB97 /* ViewId+Login.swift */,
-				09AB657F28E18BBB00FF999D /* ViewId+Splash.swift */,
 				09636B2F28D8267D00A5CB97 /* ViewId+General.swift */,
+				09495F6728FF97490036BDFB /* ViewId+Splash.swift */,
+				09495F7728FFF2D50036BDFB /* ViewId+SurveySelection.swift */,
 			);
 			path = ViewId;
 			sourceTree = "<group>";
@@ -432,6 +478,8 @@
 		0A2BA072E9C5F7AC2C58F613 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09495F7928FFF4340036BDFB /* FadePaginationView.swift */,
+				09495F7A28FFF4340036BDFB /* PageControlView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -680,9 +728,10 @@
 		B7707C4371EA10EA47E7E7B4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				0982A7A82921E00500FC1976 /* Login */,
 				09CE771128E1A93600EAA9EE /* ResetPassword */,
-				09AB657C28E18A4900FF999D /* Splash */,
+				09495F6D28FFDE8C0036BDFB /* Login */,
+				09495F6428FF96F50036BDFB /* Splash */,
+				09495F7228FFF2C40036BDFB /* SurveySelection */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1183,6 +1232,8 @@
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
 				09AB657E28E18A5900FF999D /* SplashView.swift in Sources */,
 				09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */,
+				F860FAD5941956384AEA9646 /* Constants+API.swift in Sources */,
+				09495F7528FFF2C50036BDFB /* SurveySelectionView.swift in Sources */,
 				09636B3028D8267D00A5CB97 /* ViewId+General.swift in Sources */,
 				09636B0228D4876100A5CB97 /* PrimaryButton.swift in Sources */,
 				09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */,
@@ -1192,10 +1243,14 @@
 				09636B0F28D80B8500A5CB97 /* View+KeyboardDismiss.swift in Sources */,
 				09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */,
 				09636B1728D815D100A5CB97 /* ViewId+Login.swift in Sources */,
+				09495F7E28FFF47F0036BDFB /* GestureVelocity.swift in Sources */,
 				EABA6D4F0FE97293430D3FC9 /* Constants.swift in Sources */,
 				09495FCD291109450036BDFB /* CGFloat+Extensions.swift in Sources */,
 				09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */,
+				09495F7B28FFF4340036BDFB /* FadePaginationView.swift in Sources */,
 				09636AF928D47A4D00A5CB97 /* Font+Extensions.swift in Sources */,
+				09495F7828FFF2D50036BDFB /* ViewId+SurveySelection.swift in Sources */,
+				8BCA1398DA19EF4389A3E41A /* LoginView.swift in Sources */,
 				09CE773228E2ED2300EAA9EE /* LazyKoin.swift in Sources */,
 				09636B1528D8148C00A5CB97 /* ViewId.swift in Sources */,
 				09CE770F28E1922000EAA9EE /* Screen.swift in Sources */,
@@ -1205,9 +1260,12 @@
 				09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */,
 				09495FB6290AA2C30036BDFB /* RouteCoordinator.swift in Sources */,
 				09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */,
+				09495F7C28FFF4340036BDFB /* PageControlView.swift in Sources */,
+				09495F6628FF97080036BDFB /* SplashView.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,
 				09CE772328E2B87700EAA9EE /* LoadingDialog.swift in Sources */,
 				09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */,
+				09495F7628FFF2C50036BDFB /* SurveyItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

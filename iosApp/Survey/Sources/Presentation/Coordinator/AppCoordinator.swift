@@ -27,20 +27,4 @@ struct AppCoordinator: View {
             }
         }
     }
-
-    private func showLogin() {
-        routes = [.root(.login)]
-    }
-
-    private func showSurvey() {
-        routes = [.root(.surveySelection)]
-    }
-
-    private func goBack() {
-        routes.goBack()
-    }
-
-    private func goBackToRoot() {
-        routes.goBackToRoot()
-    }
 }

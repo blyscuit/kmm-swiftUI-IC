@@ -43,3 +43,10 @@ extension RouteCoordinator: LoginCoordinator {
         routes.push(.resetPassword)
     }
 }
+
+extension RouteCoordinator: LoginCoordinator {
+
+    func showSurvey() {
+        routes = [.root(.surveySelection)]
+    }
+}
