@@ -13,8 +13,7 @@ struct AppCoordinator: View {
 
     @State var routes: Routes<Screen> = [.root(.splash)]
 
-    var body: some View {
-        Router($routes) { screen, _ in
+    var body: some View {Router($routes) { screen, _ in
             switch screen {
             case .splash:
                 SplashView {
