@@ -63,6 +63,7 @@ struct SurveySelectionView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             VStack {
+                SurveyHeaderView()
                 Spacer()
                 HStack {
                     Spacer()
