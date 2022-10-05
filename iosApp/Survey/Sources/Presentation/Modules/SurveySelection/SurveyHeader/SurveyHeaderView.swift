@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SurveyHeaderView: View {
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4.0) {
             // TODO: Use real data from ViewModel

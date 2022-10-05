@@ -54,10 +54,3 @@ extension RouteCoordinator: SurveyLoadingCoordinator {
         routes = [.root(.surveySelection)]
     }
 }
-
-extension RouteCoordinator: LoginCoordinator {
-
-    func showSurvey() {
-        routes = [.root(.surveySelection)]
-    }
-}

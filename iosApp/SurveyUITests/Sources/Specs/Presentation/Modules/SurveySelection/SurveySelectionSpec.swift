@@ -45,6 +45,9 @@ final class SurveySelectionSpec: QuickSpec {
 
                     let nextButton = surveySelectionScreen.find(\.buttons, with: .nextButton)
                     expect(nextButton.exists) == true
+
+                    let headerView = surveySelectionScreen.find(\.staticTexts, with: .header)
+                    expect(headerView.exists) == true
                 }
             }
         }

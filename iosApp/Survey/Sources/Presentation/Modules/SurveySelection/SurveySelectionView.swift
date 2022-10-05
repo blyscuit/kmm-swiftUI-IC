@@ -64,6 +64,7 @@ struct SurveySelectionView: View {
 
             VStack {
                 SurveyHeaderView()
+                    .accessibility(.surveySelection(.header))
                 Spacer()
                 HStack {
                     Spacer()
