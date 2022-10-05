@@ -20,6 +20,7 @@
 		09495F2B28EC43860036BDFB /* ViewId+SurveyLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F2928EC43760036BDFB /* ViewId+SurveyLoading.swift */; };
 		09495F3328EC44330036BDFB /* SurveyLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F3128EC442D0036BDFB /* SurveyLoadingScreen.swift */; };
 		09495F6628FF97080036BDFB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6528FF97070036BDFB /* SplashView.swift */; };
+		09495F6828FF97490036BDFB /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		09495F7528FFF2C50036BDFB /* SurveySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7328FFF2C40036BDFB /* SurveySelectionView.swift */; };
 		09495F7828FFF2D50036BDFB /* ViewId+SurveySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7728FFF2D50036BDFB /* ViewId+SurveySelection.swift */; };
 		09495F7E28FFF47F0036BDFB /* GestureVelocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7D28FFF47F0036BDFB /* GestureVelocity.swift */; };
@@ -1297,6 +1298,7 @@
 				09495FC9291106A00036BDFB /* Constants+SystemImage.swift in Sources */,
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
 				09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */,
+				F860FAD5941956384AEA9646 /* Constants+API.swift in Sources */,
 				09495F7528FFF2C50036BDFB /* SurveySelectionView.swift in Sources */,
 				09495F1F28EC28190036BDFB /* SurveyHeaderLoading.swift in Sources */,
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
@@ -1319,7 +1321,6 @@
 				09495FCD291109450036BDFB /* CGFloat+Extensions.swift in Sources */,
 				09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */,
 				0982A7E329222EFF00FC1976 /* RouteCoordinator.swift in Sources */,
-				09636AF928D47A4D00A5CB97 /* Font+Extensions.swift in Sources */,
 				09495F7828FFF2D50036BDFB /* ViewId+SurveySelection.swift in Sources */,
 				09CE773228E2ED2300EAA9EE /* LazyKoin.swift in Sources */,
 				09495F2A28EC43760036BDFB /* ViewId+SurveyLoading.swift in Sources */,
