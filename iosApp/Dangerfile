@@ -6,6 +6,6 @@ swiftlint.config_file = 'iosApp/.swiftlint.yml'
 swiftlint.max_num_violations = 20
 swiftlint.lint_files(
   inline_mode: true,
-  fail_on_error: true,
+  fail_on_error: false,
   additional_swiftlint_args: '--strict'
 )
