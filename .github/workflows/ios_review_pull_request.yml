@@ -42,6 +42,10 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2.3.2
 
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '13.4.1'
+
       - name: Cache gems
         uses: actions/cache@v2
         with:
@@ -90,7 +94,7 @@ jobs:
 
       - name: Build and Test
         run: xcodebuild test -scheme Survey -workspace Survey.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max,OS=15.5' | xcpretty
-        
+
       - name: Run iOS Danger
         uses: MeilCli/danger-action@v5
         with:
