@@ -9,3 +9,12 @@ swiftlint.lint_files(
   fail_on_error: false,
   additional_swiftlint_args: '--strict'
 )
+
+# Xcov
+xcov.report(
+  scheme: "Survey",
+  workspace: "iosApp/Survey.xcworkspace",
+  only_project_targets: true,
+  markdown_report: true,
+  html_report: false
+)
