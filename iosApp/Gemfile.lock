@@ -335,6 +335,7 @@ DEPENDENCIES
   danger
   danger-swiftlint
   danger-xcov
+  xcov
 
 BUNDLED WITH
    2.3.22
