@@ -11,14 +11,10 @@ swiftlint.lint_files(
 )
 
 # Xcov
-# Generate report
-report = xcov.produce_report(
+xcov.report(
   scheme: "Survey",
   workspace: "iosApp/Survey.xcworkspace",
   only_project_targets: true,
   markdown_report: true,
   html_report: false
 )
-
-# Post markdown report
-xcov.output_report(report)
