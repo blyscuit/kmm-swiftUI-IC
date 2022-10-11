@@ -93,7 +93,7 @@ jobs:
         run: bundle exec pod install
 
       - name: Build and Test
-        run: xcodebuild test -scheme Survey -workspace Survey.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max,OS=15.5' -enableCodeCoverage YES  | xcpretty
+        run: xcodebuild test -scheme Survey -workspace Survey.xcworkspace -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max,OS=15.5'  | xcpretty
 
       - name: Run iOS Danger
         uses: MeilCli/danger-action@v5
