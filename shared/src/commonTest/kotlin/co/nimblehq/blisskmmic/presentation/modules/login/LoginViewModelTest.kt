@@ -48,7 +48,7 @@ class LoginViewModelTest : TestsWithMocks() {
 
     @Suppress("MaxLineLength")
     @Test
-    fun `Given LogInUseCase returns success When LogInViewModel calls login Then it should change viewState to success`() = runTest {
+    fun `When calling login with success response, it changes viewState to success`() = runTest {
         mocker.every {
             logInUseCase(email, password)
         } returns flow { emit(token) }
@@ -64,7 +64,7 @@ class LoginViewModelTest : TestsWithMocks() {
 
     @Suppress("MaxLineLength")
     @Test
-    fun `Given LogInUseCase returns failure When LogInViewModel calls login Then it should change viewState to error`() = runTest {
+    fun `When calling login with faliure response, it changes viewState to error`() = runTest {
         val errorMessage = "Test Error"
         mocker.every {
             logInUseCase(email, password)

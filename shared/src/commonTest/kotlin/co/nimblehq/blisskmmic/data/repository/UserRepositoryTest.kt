@@ -22,7 +22,7 @@ class UserRepositoryTest {
 
     @Suppress("MaxLineLength")
     @Test
-    fun `Given network returns success When UserRepository calls Login Then it should return correct object`() = runTest {
+    fun `When calling login with success response, it returns correct object`() = runTest {
         val engine = jsonMockEngine(LOG_IN_JSON_RESULT)
         val networkClient = NetworkClient(engine = engine)
         val userRepository = UserRepositoryImpl(networkClient)
@@ -35,7 +35,7 @@ class UserRepositoryTest {
 
     @Suppress("MaxLineLength")
     @Test
-    fun `Given network returns failure When UserRepository calls Login Then it should return correct error`() = runTest {
+    fun `When calling login with failure response, it returns correct error`() = runTest {
         val engine = jsonMockEngine(ERROR_JSON_RESULT)
         val networkClient = NetworkClient(engine = engine)
         val userRepository = UserRepositoryImpl(networkClient)

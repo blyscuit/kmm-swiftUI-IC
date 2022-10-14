@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.map
 class UserRepositoryImpl(private val networkClient: NetworkClient): UserRepository {
 
     override fun logIn(email: String, password: String): Flow<Token> {
-
         return networkClient.fetch<ApiToken>(
             LoginTargetType(email, password).requestBuilder
         ).map { it.toToken() }

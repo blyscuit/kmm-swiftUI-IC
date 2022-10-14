@@ -35,7 +35,7 @@ class LogInUseCaseTest : TestsWithMocks() {
 
     @Suppress("MaxLineLength")
     @Test
-    fun `Given LogInRepository returns success When LogInUseCase calls login Then it should return correct object`() = runTest {
+    fun `When calling login with a success response, it returns correct object`() = runTest {
         mocker.every {
             userRepository.logIn(email, password)
         } returns flow { emit(token) }
@@ -48,7 +48,7 @@ class LogInUseCaseTest : TestsWithMocks() {
 
     @Suppress("MaxLineLength")
     @Test
-    fun `Given LogInRepository returns failure When LogInUseCase calls login Then it should return correct error`() = runTest {
+    fun `When calling login with a failure response, it returns correct error`() = runTest {
         mocker.every {
             userRepository.logIn(email, password)
         } returns flow { error("Fail") }
@@ -64,7 +64,7 @@ class LogInUseCaseTest : TestsWithMocks() {
     
     @Suppress("MaxLineLength")
     @Test
-    fun `Given a LogInRepository When LogInUseCase calls login Then it should call repository with correct input`() = runTest {
+    fun `When calling login, it calls userRepository with correct inputs`() = runTest {
         mocker.every {
             userRepository.logIn(email, password)
         } returns flow { emit(token) }
