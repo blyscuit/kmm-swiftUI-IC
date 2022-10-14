@@ -11,30 +11,16 @@ import SwiftUI
 
 struct AppCoordinator: View {
 
-    @State var routes: Routes<Screen> = [.root(.splash)]
+    @ObservedObject var coordinator = RouteCoordinator()
 
     var body: some View {
-        Router($routes) { screen, _ in
+        Router($coordinator.routes) { screen, _ in
             switch screen {
             case .splash:
-                SplashView {
-                    showLogin()
-                }
+                SplashView(coordinator: coordinator)
             case .login:
                 LoginView()
             }
         }
-    }
-
-    private func showLogin() {
-        routes = [.root(.login)]
-    }
-
-    private func goBack() {
-        routes.goBack()
-    }
-
-    private func goBackToRoot() {
-        routes.goBackToRoot()
     }
 }

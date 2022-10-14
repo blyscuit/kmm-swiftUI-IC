@@ -9,11 +9,16 @@
 import FlowStacks
 import SwiftUI
 
+protocol SplashCoordinator {
+
+    func showLogin()
+}
+
 struct SplashView: View {
 
     @State var animating = false
 
-    let showLogin: () -> Void
+    let coordinator: SplashCoordinator
 
     private let animationDuration: Double = 0.7
 
@@ -53,7 +58,7 @@ struct SplashView: View {
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration - 0.1) {
                 withAnimation(.linear(duration: 0.2)) {
-                    showLogin()
+                    coordinator.showLogin()
                 }
             }
         }
