@@ -18,3 +18,8 @@ xcov.report(
   markdown_report: true,
   html_report: false
 )
+
+# SwiftFormat
+swiftformat.binary_path = 'iosApp/Pods/SwiftFormat/CommandLineTool/swiftformat'
+swiftformat.exclude = %w(Pods/**  **/*generated.swift)
+swiftformat.check_format

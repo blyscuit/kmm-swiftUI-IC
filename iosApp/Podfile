@@ -30,6 +30,7 @@ target 'Survey' do
   # Development
   pod 'SwiftLint'
   pod 'Wormholy', :configurations => ['Debug Staging', 'Debug Production']
+  pod 'SwiftFormat/CLI'
 
   # KMM
   platform :ios, '14.0'
