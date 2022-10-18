@@ -1,7 +1,8 @@
 package co.nimblehq.blisskmmic.domain.usecase
 
 import co.nimblehq.blisskmmic.domain.model.Token
-import co.nimblehq.blisskmmic.domain.repository.UserRepository
+import co.nimblehq.blisskmmic.domain.repository.TokenRepository
+import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
@@ -10,7 +11,6 @@ import org.kodein.mock.*
 import org.kodein.mock.tests.TestsWithMocks
 import kotlin.test.BeforeTest
 import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlin.test.fail
 
 @ExperimentalCoroutinesApi
@@ -20,11 +20,11 @@ class LogInUseCaseTest : TestsWithMocks() {
     private val password = "pass"
 
     @Mock
-    lateinit var userRepository: UserRepository
+    lateinit var tokenRepository: TokenRepository
     @Fake
     lateinit var token: Token
 
-    val logInUseCase by withMocks { LogInUseCaseImpl(userRepository) }
+    val logInUseCase by withMocks { LogInUseCaseImpl(tokenRepository) }
 
     override fun setUpMocks() = injectMocks(mocker)
 
@@ -37,12 +37,12 @@ class LogInUseCaseTest : TestsWithMocks() {
     @Test
     fun `When calling login with a success response, it returns correct object`() = runTest {
         mocker.every {
-            userRepository.logIn(email, password)
+            tokenRepository.logIn(email, password)
         } returns flow { emit(token) }
 
         logInUseCase(email, password)
             .collect{
-                assertEquals(it.refreshToken, token.refreshToken)
+                it.refreshToken shouldBe token.refreshToken
             }
     }
 
@@ -50,29 +50,29 @@ class LogInUseCaseTest : TestsWithMocks() {
     @Test
     fun `When calling login with a failure response, it returns correct error`() = runTest {
         mocker.every {
-            userRepository.logIn(email, password)
+            tokenRepository.logIn(email, password)
         } returns flow { error("Fail") }
 
         logInUseCase(email, password)
             .catch {
-                assertEquals("Fail", it.message)
+                it.message shouldBe "Fail"
             }
             .collect{
                 fail("Should not receive object")
             }
     }
-    
+
     @Suppress("MaxLineLength")
     @Test
     fun `When calling login, it calls userRepository with correct inputs`() = runTest {
         mocker.every {
-            userRepository.logIn(email, password)
+            tokenRepository.logIn(email, password)
         } returns flow { emit(token) }
 
         logInUseCase(email, password)
 
         mocker.verifyWithSuspend {
-            userRepository.logIn(email, password)
+            tokenRepository.logIn(email, password)
         }
     }
 }

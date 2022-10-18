@@ -1,13 +1,8 @@
 package co.nimblehq.blisskmmic.presentation.modules.login
 
 import co.nimblehq.blisskmmic.domain.model.Token
-import co.nimblehq.blisskmmic.domain.model.fakeToken
-import co.nimblehq.blisskmmic.domain.repository.MockUserRepository
-import co.nimblehq.blisskmmic.domain.repository.UserRepository
 import co.nimblehq.blisskmmic.domain.usecase.LogInUseCase
-import co.nimblehq.blisskmmic.domain.usecase.LogInUseCaseImpl
-import co.nimblehq.jsonapi.model.JsonApiError
-import co.nimblehq.jsonapi.model.JsonApiException
+import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
@@ -58,8 +53,8 @@ class LoginViewModelTest : TestsWithMocks() {
         val result = loginViewModel
             .viewState
             .first { it.isSuccess }
-        assertTrue(result.isSuccess)
-        assertFalse(result.isLoading)
+        result.isSuccess shouldBe true
+        result.isLoading shouldBe false
     }
 
     @Suppress("MaxLineLength")
@@ -75,7 +70,7 @@ class LoginViewModelTest : TestsWithMocks() {
         val result = loginViewModel
             .viewState
             .first { it.error != null }
-        assertEquals(errorMessage, result.error)
-        assertFalse(result.isLoading)
+        errorMessage shouldBe result.error
+        result.isLoading shouldBe false
     }
 }
