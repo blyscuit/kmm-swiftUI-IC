@@ -17,4 +17,5 @@ object Version {
     const val KOIN = "3.2.1"
     const val MOCKMP = "1.6.0"
     const val KSP = "1.7.10-1.0.6"
+    const val KOTEST = "5.5.1"
 }

@@ -35,4 +35,9 @@ object Dependency {
     const val KOIN = "io.insert-koin:koin-core:${Version.KOIN}"
     const val KOIN_TEST = "io.insert-koin:koin-test:${Version.KOIN}"
     const val KOIN_ANDROID = "io.insert-koin:koin-android:${Version.KOIN}"
+
+    // KOTEST
+    const val KOTEST_FRAMEWORK = "io.kotest:kotest-framework-engine:${Version.KOTEST}"
+    const val KOTEST_ASSERTIONS = "io.kotest:kotest-assertions-core:${Version.KOTEST}"
+    const val KOTEST_PROPERTY = "io.kotest:kotest-property:${Version.KOTEST}"
 }
