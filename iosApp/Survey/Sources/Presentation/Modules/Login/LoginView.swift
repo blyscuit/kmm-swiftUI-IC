@@ -12,15 +12,28 @@ struct LoginView: View {
 
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var animating = false
+
+    private let animationDuration: Double = 0.8
 
     var body: some View {
         ZStack {
-            Assets.backgroundBlur
+            Assets.background
                 .image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            if animating {
+                Assets.backgroundBlur
+                    .image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+
             VStack(
                 alignment: .center,
                 spacing: 20.0
@@ -29,9 +42,11 @@ struct LoginView: View {
 
                 Spacer().frame(maxHeight: 70.0)
 
-                loginField
-                createPasswordField()
-                loginButton
+                if animating {
+                    loginField
+                    createPasswordField()
+                    loginButton
+                }
             }
             .padding(.horizontal, 24.0)
         }
@@ -40,6 +55,11 @@ struct LoginView: View {
         }
         .accessibilityElement(children: .contain)
         .accessibility(.login(.view))
+        .onAppear {
+            withAnimation(.easeIn(duration: animationDuration)) {
+                animating = true
+            }
+        }
     }
 
     var loginField: some View {

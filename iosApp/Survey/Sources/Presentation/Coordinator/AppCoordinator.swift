@@ -16,8 +16,6 @@ struct AppCoordinator: View {
     var body: some View {
         Router($coordinator.routes) { screen, _ in
             switch screen {
-            case .splash:
-                SplashView(coordinator: coordinator)
             case .login:
                 LoginView()
             }
