@@ -16,21 +16,6 @@ defaults:
     working-directory: iosApp
 
 jobs:
-  Lint:
-    name: lint
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-        submodules: recursive
-
-    - name: Run SwiftLint
-      uses: norio-nomura/action-swiftlint@3.1.0
-      with:
-        args: --strict
-        
   build:
     name: Build
     runs-on: macOS-latest
@@ -56,7 +41,7 @@ jobs:
       env:
         KMM_KONFIG_PROPERTIES: ${{ secrets.KMM_KONFIG_PROPERTIES }}
       run: |
-        cd ../buildSrc/src/main/kotlin/myPackage
+        cd ../buildSrc/src/main/kotlin/appPackage
         touch BuildKonfig.kt
         echo $KMM_KONFIG_PROPERTIES | base64 --decode > BuildKonfig.kt
 

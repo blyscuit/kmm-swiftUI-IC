@@ -10,7 +10,6 @@ buildscript {
         classpath(Dependency.DETEKT)
         classpath(Dependency.KOVER)
         classpath(Dependency.KOTLIN_SERIALIZATION)
-        classpath(Dependency.KOTLIN_TEST)
         classpath(Dependency.BUILD_KONFIG)
     }
 }

@@ -48,7 +48,7 @@ jobs:
         env:
           KMM_KONFIG_PROPERTIES: ${{ secrets.KMM_KONFIG_PROPERTIES }}
         run: |
-          cd ../buildSrc/src/main/kotlin/myPackage
+          cd ../buildSrc/src/main/kotlin/appPackage
           touch BuildKonfig.kt
           echo $KMM_KONFIG_PROPERTIES | base64 --decode > BuildKonfig.kt
 

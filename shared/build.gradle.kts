@@ -47,7 +47,7 @@ kotlin {
                 implementation(Dependency.COROUTINES_TEST)
                 implementation(Dependency.KOIN)
                 implementation(Dependency.KOIN_TEST)
-                implementation(project(Modules.JSONAPI_CORE))
+                implementation(project(Module.JSONAPI_CORE))
                 implementation(Dependency.KOTLIN_TEST)
             }
         }
@@ -145,12 +145,32 @@ buildkonfig {
     defaultConfigs("production") {
         buildConfigField(
             STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET
+        )
+        buildConfigField(
+            STRING,
             "BASE_URL",
             BuildKonfig.PRODUCTION_BASE_URL
         )
     }
 
     defaultConfigs("staging") {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID_STAGING",
+            BuildKonfig.CLIENT_ID
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET_STAGING",
+            BuildKonfig.CLIENT_SECRET
+        )
         buildConfigField(
             STRING,
             "BASE_URL",

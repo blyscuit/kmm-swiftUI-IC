@@ -28,11 +28,7 @@ class NetworkClient {
             client = HttpClient() {
                 install(Logging)
                 install(ContentNegotiation) {
-                    json(Json {
-                        prettyPrint = true
-                        isLenient = true
-                        ignoreUnknownKeys = true
-                    })
+                    json(json)
                 }
             }
         } else {
