@@ -23,9 +23,8 @@ struct GestureVelocity: DynamicProperty {
     }
 
     private var value: CGVector {
-        guard
-            let previous = previous,
-            let current = current
+        guard let previous = previous,
+              let current = current
         else {
             return .zero
         }
@@ -40,7 +39,7 @@ struct GestureVelocity: DynamicProperty {
             current.translation.width - previous.translation.width
         ) / timeDelta
 
-        return .init(dx: speedX, dy: speedY)
+        return CGVector(dx: speedX, dy: speedY)
     }
 
     func update(_ value: DragGesture.Value) {
