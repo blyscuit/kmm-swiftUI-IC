@@ -29,6 +29,7 @@
 		09495FCB291107760036BDFB /* Image+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCA291107760036BDFB /* Image+Constants.swift */; };
 		09495FCD291109450036BDFB /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCC291109450036BDFB /* CGFloat+Extensions.swift */; };
 		09495FCF29110E820036BDFB /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCE29110E820036BDFB /* String+URL.swift */; };
+		09495FA6290A82590036BDFB /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FA5290A82590036BDFB /* SurveySelectionSpec.swift */; };
 		09636AF228D4779400A5CB97 /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */; };
 		09636AF328D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */; };
 		09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF528D47A1400A5CB97 /* R.generated.swift */; };
@@ -157,6 +158,7 @@
 		09495FCA291107760036BDFB /* Image+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Constants.swift"; sourceTree = "<group>"; };
 		09495FCC291109450036BDFB /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		09495FCE29110E820036BDFB /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
+		09495FA5290A82590036BDFB /* SurveySelectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionSpec.swift; sourceTree = "<group>"; };
 		09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-Book.otf"; sourceTree = "<group>"; };
 		09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-BookHeavy.otf"; sourceTree = "<group>"; };
 		09636AF528D47A1400A5CB97 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -316,6 +318,14 @@
 			path = SurveySelection;
 			sourceTree = "<group>";
 		};
+		09495FA4290A82590036BDFB /* SurveySelection */ = {
+			isa = PBXGroup;
+			children = (
+				09495FA5290A82590036BDFB /* SurveySelectionSpec.swift */,
+			);
+			path = SurveySelection;
+			sourceTree = "<group>";
+		};
 		09636AEF28D4777E00A5CB97 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +392,23 @@
 				0982A7A12921DFE700FC1976 /* Modules */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		09636B1128D80FB000A5CB97 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				09636B1228D80FC100A5CB97 /* Login */,
+				09495FA4290A82590036BDFB /* SurveySelection */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		09636B1228D80FC100A5CB97 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				09636B1A28D8215C00A5CB97 /* LoginSpec.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		09636B1328D8146500A5CB97 /* ViewId */ = {
@@ -1357,7 +1384,10 @@
 				0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */,
 				09CE771F28E1BB4700EAA9EE /* ResetPasswordScreen.swift in Sources */,
 				0982A7E129222EBB00FC1976 /* ViewId+Splash.swift in Sources */,
-				0982A7EF29223DA600FC1976 /* LoginFlow.swift in Sources */,
+				09495FA6290A82590036BDFB /* SurveySelectionSpec.swift in Sources */,
+				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
+				09495F6A28FFAFA20036BDFB /* ViewId+Splash.swift in Sources */,
+				09495FA0290A82290036BDFB /* LoginFlow.swift in Sources */,
 				09495F7F2900017E0036BDFB /* ViewId+SurveySelection.swift in Sources */,
 				09495F0C28E441900036BDFB /* ViewId+SurveySelection.swift in Sources */,
 				09636B3628D8285700A5CB97 /* KeyboardScreen.swift in Sources */,
