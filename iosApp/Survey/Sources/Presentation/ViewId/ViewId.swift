@@ -13,11 +13,13 @@ protocol Viewable {}
 enum ViewId {
 
     case login(Login)
+    case splash(Splash)
     case general(General)
 
     func callAsFunction() -> String {
         switch self {
         case let .login(login): return login.rawValue
+        case let .splash(splash): return splash.rawValue
         case let .general(general): return general.rawValue
         }
     }
