@@ -14,7 +14,7 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var animating = false
 
-    private let animationDuration: Double = 0.8
+    private let animationDuration: Double = 0.7
 
     var body: some View {
         ZStack {
@@ -25,14 +25,13 @@ struct LoginView: View {
                 .ignoresSafeArea()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-            if animating {
-                Assets.backgroundBlur
-                    .image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .ignoresSafeArea()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
+            Assets.backgroundBlur
+                .image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .opacity(animating ? 1.0 : 0.001)
 
             VStack(
                 alignment: .center,
