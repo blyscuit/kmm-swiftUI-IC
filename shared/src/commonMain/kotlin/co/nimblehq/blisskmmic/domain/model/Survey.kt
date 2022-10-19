@@ -5,7 +5,4 @@ data class Survey (
     val imageUrl: String,
     val title: String,
     val description: String
-) {
-    val largeImageUrl
-    get() = imageUrl.plus("l")
-}
+)

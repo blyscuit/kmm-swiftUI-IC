@@ -12,7 +12,7 @@ import SwiftUI
 
 struct SurveyItemView: View {
 
-    let survey: Survey
+    let survey: SurveyUI
 
     var body: some View {
         ZStack {

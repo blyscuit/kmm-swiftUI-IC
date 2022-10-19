@@ -13,20 +13,20 @@ struct SurveySelectionView: View {
 
     @State private var currentPage = 0
     // TODO: Replace Example data
-    @State private var surveys: [Survey] = [
-        Survey(
+    @State private var surveys: [SurveyUI] = [
+        SurveyUI(
             id: "1",
             imageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/1ea51560991bcb7d00d0_",
             title: "Scarlett Bangkok",
             description: "We'd love ot hear from you!"
         ),
-        Survey(
+        SurveyUI(
             id: "2",
             imageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/287db81c5e4242412cc0_",
             title: "ibis Bangkok Riverside",
             description: "We'd love ot hear from you!"
         ),
-        Survey(
+        SurveyUI(
             id: "3",
             imageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/1ea51560991bcb7d00d0_",
             title: "Scarlett Bangkok",
