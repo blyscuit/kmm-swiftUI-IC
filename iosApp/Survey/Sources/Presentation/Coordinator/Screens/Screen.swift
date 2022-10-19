@@ -9,4 +9,5 @@
 enum Screen {
 
     case login
+    case splash
 }

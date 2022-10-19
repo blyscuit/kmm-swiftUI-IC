@@ -18,6 +18,8 @@ struct AppCoordinator: View {
             switch screen {
             case .login:
                 LoginView()
+            case .splash:
+                SplashView(coordinator: coordinator)
             }
         }
     }

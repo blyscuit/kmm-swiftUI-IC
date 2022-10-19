@@ -16,7 +16,7 @@ protocol BaseCoordinator {
 
 class RouteCoordinator: ObservableObject {
 
-    @Published var routes: Routes<Screen> = [.root(.login)]
+    @Published var routes: Routes<Screen> = [.root(.splash)]
 }
 
 extension RouteCoordinator: BaseCoordinator {
@@ -27,5 +27,12 @@ extension RouteCoordinator: BaseCoordinator {
 
     func goBackToRoot() {
         routes.goBackToRoot()
+    }
+}
+
+extension RouteCoordinator: SplashCoordinator {
+
+    func showLogin() {
+        routes = [.root(.login)]
     }
 }
