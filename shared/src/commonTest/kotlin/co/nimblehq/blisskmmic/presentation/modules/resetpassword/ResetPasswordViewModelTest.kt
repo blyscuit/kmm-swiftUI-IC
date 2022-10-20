@@ -23,6 +23,9 @@ class ResetPasswordViewModelTest : TestsWithMocks() {
     @Mock
     lateinit var resetPasswordUseCase: ResetPasswordUseCase
 
+    @Mock
+    lateinit var resetPasswordUseCase: ResetPasswordUseCase
+
     private val email = "email@mail.com"
     private val mainThreadSurrogate = newSingleThreadContext("UI thread")
 

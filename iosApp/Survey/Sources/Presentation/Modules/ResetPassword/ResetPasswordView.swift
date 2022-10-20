@@ -10,8 +10,7 @@ import SwiftUI
 
 struct ResetPasswordView: View {
 
-    @State private var email: String = ""
-    @State private var loading = false
+    @StateObject var dataSource: DataSource
 
     var body: some View {
         ZStack {
@@ -45,21 +44,25 @@ struct ResetPasswordView: View {
         .onTapGesture {
             hideKeyboard()
         }
-        .loadingDialog(loading: $loading)
+        .loadingDialog(loading: $dataSource.showingLoading)
         .accessibilityElement(children: .contain)
         .accessibility(.resetPassword(.view))
+        .alert(isPresented: $dataSource.showingErrorAlert, content: {
+            Alert(title: Text(dataSource.viewState.error))
+        })
     }
 
     var emailField: some View {
         TextField(String.localizeId.reset_password_field_email(), text: $email)
+            .disableAutocorrection(true)
+            .autocapitalization(.none)
             .keyboardType(.emailAddress)
             .primaryTextField()
             .accessibility(.resetPassword(.emailField))
     }
 
     var resetButton: some View {
-        Button {} label: {
-            Text(String.localizeId.reset_password_button_reset())
+            Text(String.localizeId.reset_password_button_reset.localized)
                 .frame(maxWidth: .infinity)
                 .primaryButton()
                 .accessibility(.resetPassword(.resetButton))
