@@ -30,11 +30,7 @@ class ResetPasswordRepositoryTest {
         resetPasswordRepository
             .reset("")
             .collect { meta ->
-                val item = meta.value["message"]
-                when(item) {
-                    is ApiJson.string -> item.value shouldBe "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-                    else -> fail("Should be only string")
-                }
+                meta.message shouldBe  "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
             }
     }
 

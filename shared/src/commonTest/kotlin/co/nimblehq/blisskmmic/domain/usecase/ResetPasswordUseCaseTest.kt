@@ -1,5 +1,6 @@
 package co.nimblehq.blisskmmic.domain.usecase
 
+import co.nimblehq.blisskmmic.data.model.ResetPasswordMeta
 import co.nimblehq.blisskmmic.domain.repository.ResetPasswordRepository
 import co.nimblehq.jsonapi.model.ApiJson
 import io.kotest.matchers.shouldBe
@@ -8,6 +9,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
+import org.kodein.mock.Fake
 import org.kodein.mock.Mock
 import org.kodein.mock.tests.TestsWithMocks
 import kotlin.test.BeforeTest
@@ -21,6 +23,8 @@ class ResetPasswordUseCaseTest : TestsWithMocks() {
 
     @Mock
     lateinit var resetPasswordRepository: ResetPasswordRepository
+    @Fake
+    lateinit var resetPasswordMeta: ResetPasswordMeta
 
     val resetPasswordUseCase by withMocks { ResetPasswordUseCaseImpl(resetPasswordRepository) }
 
@@ -34,34 +38,14 @@ class ResetPasswordUseCaseTest : TestsWithMocks() {
     @Suppress("MaxLineLength")
     @Test
     fun `When calling reset with a success response, it returns correct object`() = runTest {
-        var result = "result"
-        var apiJsonMap = mapOf("message" to ApiJson.string(result))
-        var apiJson = ApiJson.nested(apiJsonMap)
+        val result = ResetPasswordMeta("result")
         mocker.every {
             resetPasswordRepository.reset(email)
-        } returns flow { emit(apiJson) }
+        } returns flow { emit(result) }
 
         resetPasswordUseCase(email)
             .collect{
-                it shouldBe result
-            }
-    }
-
-    @Suppress("MaxLineLength")
-    @Test
-    fun `When calling reset with a wrong type response, it returns correct error`() = runTest {
-        var apiJsonMap = mapOf("" to ApiJson.int(0))
-        var apiJson = ApiJson.nested(apiJsonMap)
-        mocker.every {
-            resetPasswordRepository.reset(email)
-        } returns flow { emit(apiJson) }
-
-        resetPasswordUseCase(email)
-            .catch {
-                it shouldNotBe null
-            }
-            .collect{
-                fail("Should not receive object")
+                it shouldBe result.message
             }
     }
 
@@ -84,12 +68,9 @@ class ResetPasswordUseCaseTest : TestsWithMocks() {
     @Suppress("MaxLineLength")
     @Test
     fun `When calling reset, it calls resetPasswordRepository with correct inputs`() = runTest {
-        var result = "result"
-        var apiJsonMap = mapOf("message" to ApiJson.string(result))
-        var apiJson = ApiJson.nested(apiJsonMap)
         mocker.every {
             resetPasswordRepository.reset(email)
-        } returns flow { emit(apiJson) }
+        } returns flow { emit(resetPasswordMeta) }
 
         resetPasswordUseCase(email)
 

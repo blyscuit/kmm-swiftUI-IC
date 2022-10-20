@@ -19,12 +19,7 @@ class ResetPasswordUseCaseImpl(private val repository: ResetPasswordRepository) 
     override operator fun invoke(email: String): Flow<String> {
         return repository.reset(email)
             .map { meta ->
-                val item = meta.value["message"]
-                when(item) {
-                    is ApiJson.string -> item.value
-                    // TODO: Use localized error
-                    else -> error("An error occurred.")
-                }
+                meta.message
             }
     }
 }
