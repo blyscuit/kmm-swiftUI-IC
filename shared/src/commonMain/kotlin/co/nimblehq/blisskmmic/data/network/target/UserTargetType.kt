@@ -34,3 +34,31 @@ class LoginTargetType(email: String, password: String): UserTargetType() {
     )
     override var headers: Map<String, String>? = null
 }
+
+
+class ResetPasswordTargetType(email: String): UserTargetType() {
+
+    @Serializable
+    data class User(
+        val email: String
+    )
+
+    @Serializable
+    data class ResetPasswordInput(
+        val user: User,
+        @SerialName("client_id")
+        val clientId: String,
+        @SerialName("client_secret")
+        val clientSecret: String
+    )
+
+    override var baseURL: String = BuildKonfig.BASE_URL
+    override var path: String = "passwords"
+    override var method: HttpMethod = HttpMethod.Post
+    override var body: Any? = ResetPasswordInput(
+        User(email),
+        BuildKonfig.CLIENT_ID,
+        BuildKonfig.CLIENT_SECRET
+    )
+    override var headers: Map<String, String>? = null
+}
