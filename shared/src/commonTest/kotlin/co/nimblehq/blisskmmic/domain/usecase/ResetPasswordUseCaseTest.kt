@@ -1,9 +1,8 @@
 package co.nimblehq.blisskmmic.domain.usecase
 
-import co.nimblehq.blisskmmic.data.model.ResetPasswordMeta
-import co.nimblehq.blisskmmic.data.model.fakeResetPasswordMeta
-import co.nimblehq.blisskmmic.domain.repository.MockAccountRecoveryRepository
 import co.nimblehq.blisskmmic.domain.repository.AccountRecoveryRepository
+import co.nimblehq.jsonapi.model.ApiJson
+import co.nimblehq.blisskmmic.data.model.ResetPasswordMeta
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
@@ -14,16 +13,19 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.fail
 
-@UsesMocks(AccountRecoveryRepository::class)
+@UsesMocks(ResetPasswordRepository::class)
 @UsesFakes(ResetPasswordMeta::class)
 @ExperimentalCoroutinesApi
 class ResetPasswordUseCaseTest {
 
     private val email = "email@mail.com"
-    private val mocker = Mocker()
-    private val accountRecoveryRepository = MockAccountRecoveryRepository(mocker)
-    private val resetPasswordMeta = fakeResetPasswordMeta()
-    private val resetPasswordUseCase = ResetPasswordUseCaseImpl(accountRecoveryRepository)
+
+    @Mock
+    lateinit var accountRecoveryRepository: AccountRecoveryRepository
+
+    val resetPasswordUseCase by withMocks { ResetPasswordUseCaseImpl(accountRecoveryRepository) }
+
+    override fun setUpMocks() = injectMocks(mocker)
 
     @BeforeTest
     fun setUp() {

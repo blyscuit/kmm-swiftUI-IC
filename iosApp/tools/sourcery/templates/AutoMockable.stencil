@@ -4,6 +4,7 @@ import UIKit
 #elseif os(OSX)
 import AppKit
 #endif
+import UserNotifications
 
 {% for import in argument.autoMockableTestableImports %}
 @testable import {{ import }}
