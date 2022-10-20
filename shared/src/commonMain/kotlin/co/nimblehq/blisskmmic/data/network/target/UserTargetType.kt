@@ -51,10 +51,9 @@ class ResetPasswordTargetType(email: String): UserTargetType() {
         val clientSecret: String
     )
 
-    override var baseURL: String = BuildKonfig.BASE_URL
-    override var path: String = "passwords"
-    override var method: HttpMethod = HttpMethod.Post
-    override var body: Any? = ResetPasswordInput(
+    override var path = "passwords"
+    override var method = HttpMethod.Post
+    override var body = ResetPasswordInput(
         User(email),
         BuildKonfig.CLIENT_ID,
         BuildKonfig.CLIENT_SECRET

@@ -1,71 +1,48 @@
 package co.nimblehq.blisskmmic.domain.usecase
 
+import co.nimblehq.blisskmmic.data.model.ResetPasswordMeta
+import co.nimblehq.blisskmmic.data.model.fakeResetPasswordMeta
+import co.nimblehq.blisskmmic.domain.repository.MockResetPasswordRepository
 import co.nimblehq.blisskmmic.domain.repository.ResetPasswordRepository
-import co.nimblehq.jsonapi.model.ApiJson
 import io.kotest.matchers.shouldBe
-import io.kotest.matchers.shouldNotBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
-import org.kodein.mock.Mock
-import org.kodein.mock.tests.TestsWithMocks
+import org.kodein.mock.*
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.fail
 
+@UsesMocks(ResetPasswordRepository::class)
+@UsesFakes(ResetPasswordMeta::class)
 @ExperimentalCoroutinesApi
-class ResetPasswordUseCaseTest : TestsWithMocks() {
+class ResetPasswordUseCaseTest {
 
     private val email = "email@mail.com"
-
-    @Mock
-    lateinit var resetPasswordRepository: ResetPasswordRepository
-
-    val resetPasswordUseCase by withMocks { ResetPasswordUseCaseImpl(resetPasswordRepository) }
-
-    override fun setUpMocks() = injectMocks(mocker)
+    private val mocker = Mocker()
+    private val resetPasswordRepository = MockResetPasswordRepository(mocker)
+    private val resetPasswordMeta = fakeResetPasswordMeta()
+    private val resetPasswordUseCase = ResetPasswordUseCaseImpl(resetPasswordRepository)
 
     @BeforeTest
     fun setUp() {
         mocker.reset()
     }
 
-    @Suppress("MaxLineLength")
     @Test
     fun `When calling reset with a success response, it returns correct object`() = runTest {
-        var result = "result"
-        var apiJsonMap = mapOf("message" to ApiJson.string(result))
-        var apiJson = ApiJson.nested(apiJsonMap)
+        val result = ResetPasswordMeta("result")
         mocker.every {
             resetPasswordRepository.reset(email)
-        } returns flow { emit(apiJson) }
+        } returns flow { emit(result) }
 
         resetPasswordUseCase(email)
             .collect{
-                it shouldBe result
+                it shouldBe result.message
             }
     }
 
-    @Suppress("MaxLineLength")
-    @Test
-    fun `When calling reset with a wrong type response, it returns correct error`() = runTest {
-        var apiJsonMap = mapOf("" to ApiJson.int(0))
-        var apiJson = ApiJson.nested(apiJsonMap)
-        mocker.every {
-            resetPasswordRepository.reset(email)
-        } returns flow { emit(apiJson) }
-
-        resetPasswordUseCase(email)
-            .catch {
-                it shouldNotBe null
-            }
-            .collect{
-                fail("Should not receive object")
-            }
-    }
-
-    @Suppress("MaxLineLength")
     @Test
     fun `When calling reset with a failure response, it returns correct error`() = runTest {
         mocker.every {
@@ -81,15 +58,11 @@ class ResetPasswordUseCaseTest : TestsWithMocks() {
             }
     }
 
-    @Suppress("MaxLineLength")
     @Test
     fun `When calling reset, it calls resetPasswordRepository with correct inputs`() = runTest {
-        var result = "result"
-        var apiJsonMap = mapOf("message" to ApiJson.string(result))
-        var apiJson = ApiJson.nested(apiJsonMap)
         mocker.every {
             resetPasswordRepository.reset(email)
-        } returns flow { emit(apiJson) }
+        } returns flow { emit(resetPasswordMeta) }
 
         resetPasswordUseCase(email)
 
