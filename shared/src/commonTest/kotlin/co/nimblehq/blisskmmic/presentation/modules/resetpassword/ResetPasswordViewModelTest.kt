@@ -53,8 +53,8 @@ class ResetPasswordViewModelTest : TestsWithMocks() {
 
         val result = resetPasswordViewModel
             .viewState
-            .first { it.successResponse != null }
-        result.successResponse shouldBe resultMessage
+            .first { it.successNotification != null }
+        result.successNotification?.title shouldBe "Check your email."
         result.isLoading shouldBe false
     }
 

@@ -2,6 +2,7 @@ package co.nimblehq.blisskmmic.presentation.modules.resetpassword
 
 import co.nimblehq.blisskmmic.data.network.helpers.jsonApiException
 import co.nimblehq.blisskmmic.domain.usecase.ResetPasswordUseCase
+import co.nimblehq.blisskmmic.presentation.model.NotificationUI
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -10,7 +11,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 data class ResetPasswordViewState(
-    val successResponse: String? = null,
+    val successNotification: NotificationUI? = null,
     val isLoading: Boolean = false,
     val error: String? = null
 ) {
@@ -39,7 +40,12 @@ class ResetPasswordViewModel(private val resetPasswordUseCase: ResetPasswordUseC
                     mutableViewState.update { ResetPasswordViewState(isLoading = false, error = error.jsonApiException()) }
                 }
                 .collect { response ->
-                    mutableViewState.update { ResetPasswordViewState(response, false) }
+                    // TODO: Localize with MOKO
+                    val notification = NotificationUI(
+                        "Check your email.",
+                        "We’ve email you instructions to reset your password."
+                    )
+                    mutableViewState.update { ResetPasswordViewState(notification, false) }
                 }
         }
     }
