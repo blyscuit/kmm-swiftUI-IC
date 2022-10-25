@@ -8,4 +8,5 @@ import kotlinx.coroutines.flow.Flow
 interface SurveyRepository {
 
     fun survey(page: Int): Flow<Pair<List<Survey>, PaginationMeta>>
+    fun surveyDetail(id: Int): Flow<SurveyDetailApiModel>
 }

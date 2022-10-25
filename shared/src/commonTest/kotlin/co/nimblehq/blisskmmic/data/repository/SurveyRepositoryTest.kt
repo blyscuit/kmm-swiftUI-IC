@@ -60,4 +60,17 @@ class SurveyRepositoryTest: TestsWithMocks() {
                 awaitError().message shouldBe "Fail"
             }
     }
+    @Suppress("MaxLineLength")
+    @Test
+    fun `When calling surveyDetail with success response, it returns correct object`() = runTest {
+        val engine = jsonMockEngine(SURVEY_DETAIL_JSON_RESULT)
+        val networkClient = NetworkClient(engine = engine)
+        val surveyRepository = SurveyRepositoryImpl(networkClient)
+        surveyRepository
+            .surveyDetail()
+            .collect {
+                it.questions.size shouldBeGreaterThan 0
+                it.questions.first().text shouldBe "\nThank you for visiting Scarlett!\n Please take a moment to share your feedback."
+            }
+    }
 }
