@@ -33,6 +33,12 @@ extension Font {
     /// Weight: 400, Size: 17.0
     static let regularBody: Font = .neuzei()
 
+    /// Weight: 400, Size: 20.0
+    static let regularLarge: Font = .neuzei(size: 20.0)
+
+    /// Weight: 400, Size: 11.0
+    static let regularTiny: Font = .neuzei(size: 11.0)
+
     /// Weight: 800, Size: 17.0
     static let boldBody: Font = .neuzei(.bold)
 

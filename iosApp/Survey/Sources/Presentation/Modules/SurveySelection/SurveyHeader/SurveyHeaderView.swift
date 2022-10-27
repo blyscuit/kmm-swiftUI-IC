@@ -14,6 +14,8 @@ struct SurveyHeaderView: View {
 
     let surveyHeader: SurveyHeaderUiModel
 
+    var imageAction: (() -> Void)?
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4.0) {
             Text(surveyHeader.dateText)
@@ -22,12 +24,18 @@ struct SurveyHeaderView: View {
                 Text(surveyHeader.todayText())
                     .font(.boldLarge)
                 Spacer()
-                KFImage(surveyHeader.imageUrl.string.asURL)
-                    .resizable()
-                    .frame(width: 36.0, height: 36.0)
-                    .cornerRadius(18.0)
+                Button {
+                    imageAction?()
+                } label: {
+                    KFImage(surveyHeader.imageUrl.string.asURL)
+                        .resizable()
+                        .frame(width: 36.0, height: 36.0)
+                        .cornerRadius(18.0)
+                }
+                .accessibility(.surveySelection(.headerProfileImage))
             }
         }
         .padding([.top, .horizontal], 20.0)
+        .accessibilityElement(children: .contain)
     }
 }
