@@ -1,10 +1,14 @@
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
-    kotlin("multiplatform")
-    kotlin("native.cocoapods")
-    id("com.android.library")
-    id("io.gitlab.arturbosch.detekt")
+    kotlin(Plugin.MULTIPLATFORM)
+    kotlin(Plugin.COCOAPODS)
+    id(Plugin.ANDROID_LIBRARY)
+    id(Plugin.DETEKT)
+    kotlin(Plugin.KOTLIN_SERIALIZATION)
+    id(Plugin.NATIVE_COROUTINES).version(Version.NATIVE_COROUTINES_KOTLIN)
+    id(Plugin.BUILD_KONFIG)
 }
 
 version = "1.0"
@@ -31,13 +35,33 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation(Dependency.KOTLINX_SERIALIZATION)
+                implementation(Dependency.KTOR_CORE)
+                implementation(Dependency.KTOR_SERIALIZATION)
+                implementation(Dependency.KTOR_LOGGING)
+                implementation(Dependency.KTOR_JSON)
+                implementation(Dependency.KTOR_CONTENT_NEGOTIATION)
+                implementation(Dependency.KTOR_MOCK)
+                implementation(Dependency.COROUTINES_TEST)
+                implementation(Dependency.KOIN)
+                implementation(Dependency.KOIN_TEST)
+                implementation(project(Module.JSONAPI_CORE))
+                implementation(Dependency.KOTLIN_TEST)
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
             }
         }
-        val androidMain by getting
+        val androidMain by getting {
+            dependencies {
+                implementation(Dependency.KTOR_ANDROID)
+                implementation(Dependency.KOIN_ANDROID)
+            }
+        }
         val androidTest by getting
         val iosX64Main by getting
         val iosArm64Main by getting
@@ -47,6 +71,9 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+            dependencies {
+                implementation(Dependency.KTOR_IOS)
+            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting
@@ -92,4 +119,62 @@ android {
 
 tasks.check {
     dependsOn(detekt)
+}
+
+buildkonfig {
+    packageName = "co.nimblehq.blisskmmic"
+
+    defaultConfigs {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.STAGING_BASE_URL
+        )
+    }
+
+    defaultConfigs("production") {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.PRODUCTION_BASE_URL
+        )
+    }
+
+    defaultConfigs("staging") {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.STAGING_BASE_URL
+        )
+    }
 }

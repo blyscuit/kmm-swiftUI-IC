@@ -89,4 +89,5 @@ iosApp/DerivedData
 # JetBrains IDEs
 
 .idea
-**/GoogleService-*.plist
+GoogleService-*.plist
+buildSrc/src/main/kotlin/appPackage/BuildKonfig.kt

@@ -5,17 +5,18 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
-        classpath("com.android.tools.build:gradle:7.2.2")
-        classpath("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.21.0")
-        classpath("org.jetbrains.kotlinx:kover:0.6.0")
+        classpath(Dependency.KOTLIN_GRADLE_PLUGIN)
+        classpath(Dependency.GRADLE)
+        classpath(Dependency.DETEKT)
+        classpath(Dependency.KOVER)
+        classpath(Dependency.KOTLIN_SERIALIZATION)
+        classpath(Dependency.BUILD_KONFIG)
     }
 }
 
 allprojects {
     apply {
-        plugin("jacoco")
-        plugin("kover")
+        plugin(Plugin.KOVER)
     }
     repositories {
         google()
