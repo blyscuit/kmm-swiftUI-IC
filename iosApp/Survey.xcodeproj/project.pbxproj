@@ -32,6 +32,18 @@
 		09495F95290945C50036BDFB /* SurveyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F94290945C50036BDFB /* SurveyHeaderView.swift */; };
 		09495F9729094BFD0036BDFB /* SurveySelectionContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9629094BFC0036BDFB /* SurveySelectionContainerView.swift */; };
 		09495F9A29094C570036BDFB /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9929094C570036BDFB /* AccountView.swift */; };
+		09495F95290945C50036BDFB /* SurveyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F94290945C50036BDFB /* SurveyHeaderView.swift */; };
+		09495F9729094BFD0036BDFB /* SurveySelectionContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9629094BFC0036BDFB /* SurveySelectionContainerView.swift */; };
+		09495F9A29094C570036BDFB /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9929094C570036BDFB /* AccountView.swift */; };
+		09495F9C290A35BC0036BDFB /* ViewId+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9B290A35BA0036BDFB /* ViewId+Account.swift */; };
+		09495F9D290A35C60036BDFB /* ViewId+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9B290A35BA0036BDFB /* ViewId+Account.swift */; };
+		09495FA0290A82290036BDFB /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9F290A82290036BDFB /* LoginFlow.swift */; };
+		09495FA3290A823C0036BDFB /* SurveySelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FA2290A823C0036BDFB /* SurveySelectionScreen.swift */; };
+		09495FA6290A82590036BDFB /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FA5290A82590036BDFB /* SurveySelectionSpec.swift */; };
+		09495FA8290A89C10036BDFB /* AccountFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FA7290A89C00036BDFB /* AccountFlow.swift */; };
+		09495FAB290A8A2E0036BDFB /* AccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FAA290A8A2E0036BDFB /* AccountSpec.swift */; };
+		09495FAE290A8A5C0036BDFB /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FAD290A8A5C0036BDFB /* AccountScreen.swift */; };
+		09495FB1290A93650036BDFB /* XCUIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FB0290A93650036BDFB /* XCUIApplication+.swift */; };
 		09636AF228D4779400A5CB97 /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */; };
 		09636AF328D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */; };
 		09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF528D47A1400A5CB97 /* R.generated.swift */; };
@@ -187,6 +199,13 @@
 		09495F9629094BFC0036BDFB /* SurveySelectionContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySelectionContainerView.swift; sourceTree = "<group>"; };
 		09495F9929094C570036BDFB /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		09495F9B290A35BA0036BDFB /* ViewId+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+Account.swift"; sourceTree = "<group>"; };
+		09495F9F290A82290036BDFB /* LoginFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
+		09495FA2290A823C0036BDFB /* SurveySelectionScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionScreen.swift; sourceTree = "<group>"; };
+		09495FA5290A82590036BDFB /* SurveySelectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionSpec.swift; sourceTree = "<group>"; };
+		09495FA7290A89C00036BDFB /* AccountFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFlow.swift; sourceTree = "<group>"; };
+		09495FAA290A8A2E0036BDFB /* AccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSpec.swift; sourceTree = "<group>"; };
+		09495FAD290A8A5C0036BDFB /* AccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
+		09495FB0290A93650036BDFB /* XCUIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+.swift"; sourceTree = "<group>"; };
 		09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-Book.otf"; sourceTree = "<group>"; };
 		09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-BookHeavy.otf"; sourceTree = "<group>"; };
 		09636AF528D47A1400A5CB97 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -432,6 +451,30 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
+		09495FA9290A8A240036BDFB /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				09495FAA290A8A2E0036BDFB /* AccountSpec.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		09495FAC290A8A520036BDFB /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				09495FAD290A8A5C0036BDFB /* AccountScreen.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		09495FAF290A93340036BDFB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				09495FB0290A93650036BDFB /* XCUIApplication+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		09636AEF28D4777E00A5CB97 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +535,24 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		09636B1128D80FB000A5CB97 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				09495FA9290A8A240036BDFB /* Account */,
+				09636B1228D80FC100A5CB97 /* Login */,
+				09495FA4290A82590036BDFB /* SurveySelection */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		09636B1228D80FC100A5CB97 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				09636B1A28D8215C00A5CB97 /* LoginSpec.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		09636B1328D8146500A5CB97 /* ViewId */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +573,7 @@
 			children = (
 				09495F3028EC441F0036BDFB /* SurveyLoading */,
 				09495F1528E446090036BDFB /* SurveySelection */,
+				09495FAC290A8A520036BDFB /* Account */,
 				09636B3728D8286600A5CB97 /* General */,
 				09636B2728D8251300A5CB97 /* Login */,
 				09CE771E28E1BB2200EAA9EE /* ResetPassword */,
@@ -874,6 +936,7 @@
 			children = (
 				09C2F3FE2934585900F44818 /* Utilities */,
 				0982A7ED29223DA600FC1976 /* Flows */,
+				09495FAF290A93340036BDFB /* Extensions */,
 				09636B2628D8250B00A5CB97 /* Screens */,
 				CF43FB94DA987166ECF7EC52 /* Specs */,
 			);
@@ -1597,14 +1660,18 @@
 				09C2F4032934588B00F44818 /* TimeInterval+Constants.swift in Sources */,
 				0964B1CA294051CE00946FA1 /* ArgumentedXCUIApplication.swift in Sources */,
 				09C2F40A29346A8800F44818 /* XCUIElement+Label.swift in Sources */,
+				09495FB1290A93650036BDFB /* XCUIApplication+.swift in Sources */,
 				09495FA6290A82590036BDFB /* SurveySelectionSpec.swift in Sources */,
 				09495F9D290A35C60036BDFB /* ViewId+Account.swift in Sources */,
+				09495FA8290A89C10036BDFB /* AccountFlow.swift in Sources */,
+				09495FAB290A8A2E0036BDFB /* AccountSpec.swift in Sources */,
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
 				0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */,
 				09C2F4062934680000F44818 /* ScreenProtocol+Permission.swift in Sources */,
 				09CE771F28E1BB4700EAA9EE /* ResetPasswordScreen.swift in Sources */,
 				09495F7F2900017E0036BDFB /* ViewId+SurveySelection.swift in Sources */,
 				0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */,
+				09495FAE290A8A5C0036BDFB /* AccountScreen.swift in Sources */,
 				09636B3628D8285700A5CB97 /* KeyboardScreen.swift in Sources */,
 				09495F2B28EC43860036BDFB /* ViewId+SurveyLoading.swift in Sources */,
 				09636B2228D821ED00A5CB97 /* ViewId+Login.swift in Sources */,

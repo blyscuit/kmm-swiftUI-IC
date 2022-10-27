@@ -15,7 +15,8 @@ extension ViewId {
         case titleText = "survey.selection.title.text"
         case detailText = "survey.selection.detail.text"
         case mainImage = "survey.selection.main.image"
-        case header = "survey.selection.header.view"
+        case headerDateText = "survey.selection.header.date.text"
+        case headerTitleText = "survey.selection.header.title.text"
         case headerProfileImage = "survey.selection.header.profile.image"
     }
 }

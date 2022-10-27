@@ -29,19 +29,21 @@ struct SurveySelectionContainerView: View {
 
             HStack {
                 Spacer()
-                AccountView()
-                    .gesture(
-                        DragGesture(minimumDistance: 50)
-                            .onEnded { gesture in
-                                if gesture.predictedEndTranslation.width > 0 {
-                                    withAnimation {
-                                        showingAccountView = false
+                if showingAccountView {
+                    AccountView()
+                        .gesture(
+                            DragGesture(minimumDistance: 50)
+                                .onEnded { gesture in
+                                    if gesture.predictedEndTranslation.width > 0 {
+                                        withAnimation {
+                                            showingAccountView = false
+                                        }
                                     }
                                 }
-                            }
-                    )
+                        )
+                        .transition(.offset(x: 200.0))
+                }
             }
-            .offset(x: showingAccountView ? 0.0 : 200.0)
         }
     }
 }

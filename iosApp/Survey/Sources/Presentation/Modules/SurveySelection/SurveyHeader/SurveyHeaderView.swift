@@ -20,9 +20,11 @@ struct SurveyHeaderView: View {
         VStack(alignment: .leading, spacing: 4.0) {
             Text(surveyHeader.dateText)
                 .font(.boldSmall)
+                .accessibility(.surveySelection(.headerDateText))
             HStack {
                 Text(surveyHeader.todayText())
                     .font(.boldLarge)
+                    .accessibility(.surveySelection(.headerTitleText))
                 Spacer()
                 Button {
                     imageAction?()
@@ -36,6 +38,5 @@ struct SurveyHeaderView: View {
             }
         }
         .padding([.top, .horizontal], 20.0)
-        .accessibilityElement(children: .contain)
     }
 }
