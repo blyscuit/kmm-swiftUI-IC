@@ -163,13 +163,13 @@ buildkonfig {
     defaultConfigs("staging") {
         buildConfigField(
             STRING,
-            "CLIENT_ID_STAGING",
-            BuildKonfig.CLIENT_ID
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID_STAGING
         )
         buildConfigField(
             STRING,
-            "CLIENT_SECRET_STAGING",
-            BuildKonfig.CLIENT_SECRET
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET_STAGING
         )
         buildConfigField(
             STRING,
