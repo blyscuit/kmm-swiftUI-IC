@@ -51,6 +51,12 @@ post_install do |installer|
     target.build_configurations.each do |config|
       config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
       config.build_settings['ENABLE_BITCODE'] = 'NO'
+      # Fixing resources signing for xcode 14 sdk
+      if config.build_settings['WRAPPER_EXTENSION'] == 'bundle'
+        config.build_settings['DEVELOPMENT_TEAM'] = '4TWS7E2EPE'
+        config.build_settings['CODE_SIGN_IDENTITY'] = 'Apple Distribution'
+        config.build_settings['CODE_SIGN_STYLE'] = 'Manual'
+      end
     end
   end
 end
