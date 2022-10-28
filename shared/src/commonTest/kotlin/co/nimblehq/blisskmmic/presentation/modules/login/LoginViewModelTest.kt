@@ -51,7 +51,7 @@ class LoginViewModelTest : TestsWithMocks() {
             logInUseCase(email, password)
         } returns flow { emit(token) }
 
-        loginViewModel.logIn(email, password)
+        loginViewModel.login(email, password)
 
         val result = loginViewModel
             .viewState
@@ -67,12 +67,34 @@ class LoginViewModelTest : TestsWithMocks() {
             logInUseCase(email, password)
         } returns flow { error(errorMessage) }
 
-        loginViewModel.logIn(email, password)
+        loginViewModel.login(email, password)
 
         val result = loginViewModel
             .viewState
             .first { it.error != null }
         errorMessage shouldBe result.error
+        result.isLoading shouldBe false
+    }
+
+    @Test
+    fun `When calling login with an invalid email, it changes viewState to error`() = runTest {
+        loginViewModel.login("invalid", password)
+
+        val result = loginViewModel
+            .viewState
+            .value
+        result.isEmailError shouldBe true
+        result.isLoading shouldBe false
+    }
+
+    @Test
+    fun `When calling login with an empty password, it changes viewState to error`() = runTest {
+        loginViewModel.login(email, "")
+
+        val result = loginViewModel
+            .viewState
+            .value
+        result.isPasswordError shouldBe true
         result.isLoading shouldBe false
     }
 }

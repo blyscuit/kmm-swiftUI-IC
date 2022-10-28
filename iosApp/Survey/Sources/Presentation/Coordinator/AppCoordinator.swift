@@ -17,7 +17,7 @@ struct AppCoordinator: View {
         Router($coordinator.routes) { screen, _ in
             switch screen {
             case .login:
-                LoginView(coordinator: coordinator)
+                LoginView(dataSource: .init(coordinator: coordinator))
             case .resetPassword:
                 ResetPasswordView()
             case .splash:

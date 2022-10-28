@@ -22,8 +22,8 @@ final class LoginSpec: QuickSpec {
 
                 beforeEach {
                     app = ArgumentedXCUIApplication()
-                    loginScreen = LoginScreen(in: app)
                     app.launch()
+                    loginScreen = LoginScreen(in: app)
                 }
 
                 afterEach {
@@ -31,6 +31,8 @@ final class LoginSpec: QuickSpec {
                 }
 
                 it("it shows its ui components") {
+                    loginScreen.waitForExistence()
+
                     let emailField = loginScreen.find(\.textFields, with: .emailField)
                     expect(emailField.exists) == true
 
@@ -40,6 +42,7 @@ final class LoginSpec: QuickSpec {
                     let loginButton = loginScreen.find(\.buttons, with: .loginButton)
                     expect(loginButton.exists) == true
 
+//                    loginScreen.showResetPasswordButton()
                     let forgotButton = loginScreen.find(\.buttons, with: .forgotButton)
                     expect(forgotButton.exists) == true
                 }
@@ -47,9 +50,8 @@ final class LoginSpec: QuickSpec {
                 context("when fill in valid credentials") {
 
                     beforeEach {
-                        loginScreen.fillInField(.emailField, with: "dev@nimblehq.co")
-                        loginScreen.fillInSecuredField(.passwordField, with: "123456")
-                        loginScreen.tapButton(.loginButton)
+                        let loginFlow = LoginFlow(in: app)
+                        loginFlow.execute()
                     }
 
                     it("shows home screen") {

@@ -17,4 +17,12 @@ final class LoginScreen: ScreenProtocol {
     init(in application: XCUIApplication) {
         self.application = application
     }
+
+    func wrongCredentialAlert() -> XCUIElement {
+        return application.staticTexts["Your email or password is incorrect. Please try again."]
+    }
+
+    func waitForExistence() {
+        waitForExistence(timeout: .long, \.images, with: .view)
+    }
 }
