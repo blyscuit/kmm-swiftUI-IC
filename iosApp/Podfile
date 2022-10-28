@@ -11,7 +11,7 @@ def testing_pods
   pod 'SwiftFormat/CLI'
 end
 
-target 'Survey' do
+def application_pods
   # UI
   pod 'Kingfisher'
   pod 'SnapKit'
@@ -36,15 +36,21 @@ target 'Survey' do
   platform :ios, '14.0'
   pod 'Shared', :path => '../shared'
   pod 'KMPNativeCoroutinesCombine', '0.12.6'
+end
 
-  target 'SurveyTests' do
-    inherit! :search_paths
-    testing_pods
-  end
+target 'Survey' do
+  application_pods
+end
 
-  target 'SurveyUITests' do
-    testing_pods
-  end
+target 'SurveyTests' do
+  inherit! :search_paths
+  application_pods
+  testing_pods
+end
+
+target 'SurveyUITests' do
+  application_pods
+  testing_pods
 end
 
 post_install do |installer|

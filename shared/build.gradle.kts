@@ -168,6 +168,16 @@ buildkonfig {
             "BASE_URL",
             BuildKonfig.STAGING_BASE_URL
         )
+        buildConfigField(
+            STRING,
+            "UI_TEST_EMAIL",
+            BuildKonfig.UI_TEST_EMAIL
+        )
+        buildConfigField(
+            STRING,
+            "UI_TEST_PASSWORD",
+            BuildKonfig.UI_TEST_PASSWORD
+        )
     }
 
     defaultConfigs("production") {
@@ -214,7 +224,13 @@ mockmp {
 kover {
     filters {
         classes {
-            excludes += listOf("*Test*", "*Mock*", "co.nimblehq.blisskmmic.di*", "*helpers.extensions.ios*")
+            excludes += listOf(
+                "*Test*",
+                "*Mock*",
+                "co.nimblehq.blisskmmic.di*",
+                "*helpers.extensions.ios*",
+                "SharedBuildConfig*"
+            )
         }
     }
 }

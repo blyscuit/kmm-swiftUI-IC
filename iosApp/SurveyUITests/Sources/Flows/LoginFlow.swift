@@ -6,6 +6,7 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Shared
 import XCTest
 
 final class LoginFlow {
@@ -17,9 +18,11 @@ final class LoginFlow {
     }
 
     func execute() {
+        let uiTestConfig = SharedBuildConfig.UITestConfig()
         let loginScreen = LoginScreen(in: app)
-        loginScreen.fillInField(.emailField, with: "dev@nimblehq.co")
-        loginScreen.fillInSecuredField(.passwordField, with: "12345678")
+        loginScreen.waitForExistence()
+        loginScreen.replaceInInField(.emailField, with: uiTestConfig.email())
+        loginScreen.replaceInSecuredField(.passwordField, with: uiTestConfig.password())
         loginScreen.tapButton(.loginButton)
     }
 }
