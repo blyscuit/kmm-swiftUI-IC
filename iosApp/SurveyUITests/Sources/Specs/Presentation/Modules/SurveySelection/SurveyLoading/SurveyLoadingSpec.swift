@@ -26,6 +26,7 @@ final class SurveyLoadingSpec: QuickSpec {
                     let loginFlow = LoginFlow(in: app)
                     loginFlow.execute()
                     surveyLoadingScreen = SurveyLoadingScreen(in: app)
+                    surveyLoadingScreen.waitForExistence(timeout: .long, with: .view)
                 }
 
                 afterEach {

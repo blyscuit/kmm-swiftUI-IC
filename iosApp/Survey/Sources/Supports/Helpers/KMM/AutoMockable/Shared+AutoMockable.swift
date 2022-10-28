@@ -19,3 +19,14 @@ protocol ResetPasswordUseCaseKMM: ResetPasswordUseCase {
             @escaping (Error?, KotlinUnit) -> KotlinUnit
         ) -> () -> KotlinUnit
 }
+
+// sourcery: AutoMockable
+protocol LogInUseCaseKMM: LogInUseCase {
+
+    func invoke(email: String, password: String) -> Kotlinx_coroutines_coreFlow
+    func invokeNative(email: String, password: String)
+        -> (
+            @escaping (Token, KotlinUnit) -> KotlinUnit,
+            @escaping (Error?, KotlinUnit) -> KotlinUnit
+        ) -> () -> KotlinUnit
+}
