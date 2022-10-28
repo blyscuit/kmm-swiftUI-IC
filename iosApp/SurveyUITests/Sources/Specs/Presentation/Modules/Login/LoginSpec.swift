@@ -42,7 +42,7 @@ final class LoginSpec: QuickSpec {
                     let loginButton = loginScreen.find(\.buttons, with: .loginButton)
                     expect(loginButton.exists) == true
 
-//                    loginScreen.showResetPasswordButton()
+                    loginScreen.showResetPasswordButton()
                     let forgotButton = loginScreen.find(\.buttons, with: .forgotButton)
                     expect(forgotButton.exists) == true
                 }
@@ -55,22 +55,23 @@ final class LoginSpec: QuickSpec {
                     }
 
                     it("shows home screen") {
-                        // TODO: - Implement later
-                        expect(true) == true
+                        let surveyLoadingScreen = SurveyLoadingScreen(in: app)
+                        surveyLoadingScreen.waitForExistence(timeout: .default, with: .view)
                     }
                 }
 
                 context("when fill in invalid credentials") {
 
                     beforeEach {
-                        loginScreen.fillInField(.emailField, with: "test@nimblehq.co")
-                        loginScreen.fillInSecuredField(.passwordField, with: "123456")
+                        loginScreen.waitForExistence()
+                        loginScreen.replaceInInField(.emailField, with: "test@nimblehq.co")
+                        loginScreen.replaceInSecuredField(.passwordField, with: "123456")
                         loginScreen.tapButton(.loginButton)
                     }
 
                     it("shows an alert after the request fails") {
-                        // TODO: - Implement later
-                        expect(true) == true
+                        expect(loginScreen.wrongCredentialAlert().exists)
+                            .toEventually(beTrue(), timeout: .default)
                     }
                 }
             }

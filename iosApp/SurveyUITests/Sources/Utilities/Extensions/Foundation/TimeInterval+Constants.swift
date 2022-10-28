@@ -14,8 +14,8 @@ extension TimeInterval {
     static let `default` = 10.0
     /// 1.0
     static let instant = 1.0
-    /// 20.0
-    static let long = 20.0
+    /// 15.0
+    static let long = 15.0
 }
 
 extension DispatchTimeInterval {
