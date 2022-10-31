@@ -41,14 +41,13 @@ class LoginViewModelTest : TestsWithMocks() {
         mainThreadSurrogate.close()
     }
 
-    @Suppress("MaxLineLength")
     @Test
-    fun `When calling login with success response, it changes viewState to success`() = runTest {
+    fun `When calling log in with success response, it changes viewState to success`() = runTest {
         mocker.every {
             logInUseCase(email, password)
         } returns flow { emit(token) }
 
-        loginViewModel.login(email, password)
+        loginViewModel.logIn(email, password)
 
         val result = loginViewModel
             .viewState
@@ -57,15 +56,14 @@ class LoginViewModelTest : TestsWithMocks() {
         result.isLoading shouldBe false
     }
 
-    @Suppress("MaxLineLength")
     @Test
-    fun `When calling login with faliure response, it changes viewState to error`() = runTest {
+    fun `When calling log in with faliure response, it changes viewState to error`() = runTest {
         val errorMessage = "Test Error"
         mocker.every {
             logInUseCase(email, password)
         } returns flow { error(errorMessage) }
 
-        loginViewModel.login(email, password)
+        loginViewModel.logIn(email, password)
 
         val result = loginViewModel
             .viewState

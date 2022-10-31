@@ -17,12 +17,10 @@ data class TokenApiModel(
     val createdAt: Int
 )
 
-fun TokenApiModel.toToken(): Token {
-    return Token(
-        accessToken,
-        tokenType,
-        expiresIn,
-        refreshToken,
-        createdAt
-    )
-}
+fun TokenApiModel.toToken() = Token(
+    accessToken,
+    tokenType,
+    expiresIn,
+    refreshToken,
+    createdAt
+)

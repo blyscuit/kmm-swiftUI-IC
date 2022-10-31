@@ -22,15 +22,14 @@ class LoginTargetType(email: String, password: String): UserTargetType() {
         val clientSecret: String
     )
 
-    override var baseURL: String = BuildKonfig.BASE_URL
-    override var path: String = "oauth/token"
-    override var method: HttpMethod = HttpMethod.Post
-    override var body: Any? = LoginInput(
+    override val path: String = "oauth/token"
+    override val method: HttpMethod = HttpMethod.Post
+    override val body: Any? = LoginInput(
         "password",
         email,
         password,
         BuildKonfig.CLIENT_ID,
         BuildKonfig.CLIENT_SECRET
     )
-    override var headers: Map<String, String>? = null
+    override val headers: Map<String, String>? = null
 }

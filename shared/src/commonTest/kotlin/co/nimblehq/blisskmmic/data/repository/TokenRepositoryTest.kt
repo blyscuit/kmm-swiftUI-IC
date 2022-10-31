@@ -1,48 +1,59 @@
 package co.nimblehq.blisskmmic.data.repository
 
-import co.nimblehq.blisskmmic.data.network.core.NetworkClient
 import co.nimblehq.blisskmmic.data.network.repository.TokenRepositoryImpl
-import co.nimblehq.blisskmmic.helpers.json.ERROR_JSON_RESULT
-import co.nimblehq.blisskmmic.helpers.json.LOG_IN_JSON_RESULT
-import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonMockEngine
-import co.nimblehq.jsonapi.model.JsonApiException
-import io.kotest.matchers.collections.shouldContain
+import co.nimblehq.blisskmmic.data.network.service.ApiService
+import co.nimblehq.blisskmmic.data.network.target.LoginTargetType
+import co.nimblehq.blisskmmic.domain.model.TokenApiModel
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
+import org.kodein.mock.Fake
+import org.kodein.mock.Mock
+import org.kodein.mock.tests.TestsWithMocks
+import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.fail
 
 @ExperimentalCoroutinesApi
-class TokenRepositoryTest {
+class TokenRepositoryTest: TestsWithMocks() {
 
-    @Suppress("MaxLineLength")
+    @Mock
+    lateinit var service: ApiService
+    @Fake
+    lateinit var token: TokenApiModel
+
+    private val tokenRepository by withMocks { TokenRepositoryImpl(service) }
+
+    override fun setUpMocks() = injectMocks(mocker)
+
+    @BeforeTest
+    fun setUp() {
+        mocker.reset()
+    }
+
     @Test
-    fun `When calling login with success response, it returns correct object`() = runTest {
-        val engine = jsonMockEngine(LOG_IN_JSON_RESULT)
-        val networkClient = NetworkClient(engine = engine)
-        val tokenRepository = TokenRepositoryImpl(networkClient)
+    fun `When calling log in with success response, it returns correct object`() = runTest {
+        mocker.every {
+            service.logIn(isAny())
+        } returns flow { emit(token) }
         tokenRepository
             .logIn("", "")
             .collect {
-                it.refreshToken shouldBe "refresh_token"
+                it.refreshToken shouldBe token.refreshToken
             }
     }
 
-    @Suppress("MaxLineLength")
     @Test
-    fun `When calling login with failure response, it returns correct error`() = runTest {
-        val engine = jsonMockEngine(ERROR_JSON_RESULT)
-        val networkClient = NetworkClient(engine = engine)
-        val tokenRepository = TokenRepositoryImpl(networkClient)
+    fun `When calling log in with failure response, it returns correct error`() = runTest {
+        mocker.every {
+            service.logIn(isAny())
+        } returns flow { error("Fail") }
         tokenRepository
             .logIn("", "")
-            .catch { error ->
-                when(error) {
-                    is JsonApiException -> error.errors.map { it.code } shouldContain "invalid_token"
-                    else -> fail("Should not return incorrect error type")
-                }
+            .catch {
+                it.message shouldBe "Fail"
             }
             .collect {
                 fail("Should not return object")

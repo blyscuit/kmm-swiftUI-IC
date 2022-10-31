@@ -24,7 +24,7 @@ class LogInUseCaseTest : TestsWithMocks() {
     @Fake
     lateinit var token: Token
 
-    val logInUseCase by withMocks { LogInUseCaseImpl(tokenRepository) }
+    private val logInUseCase by withMocks { LogInUseCaseImpl(tokenRepository) }
 
     override fun setUpMocks() = injectMocks(mocker)
 
@@ -33,9 +33,8 @@ class LogInUseCaseTest : TestsWithMocks() {
         mocker.reset()
     }
 
-    @Suppress("MaxLineLength")
     @Test
-    fun `When calling login with a success response, it returns correct object`() = runTest {
+    fun `When calling log in with a success response, it returns correct object`() = runTest {
         mocker.every {
             tokenRepository.logIn(email, password)
         } returns flow { emit(token) }
@@ -46,9 +45,8 @@ class LogInUseCaseTest : TestsWithMocks() {
             }
     }
 
-    @Suppress("MaxLineLength")
     @Test
-    fun `When calling login with a failure response, it returns correct error`() = runTest {
+    fun `When calling log in with a failure response, it returns correct error`() = runTest {
         mocker.every {
             tokenRepository.logIn(email, password)
         } returns flow { error("Fail") }
@@ -60,19 +58,5 @@ class LogInUseCaseTest : TestsWithMocks() {
             .collect{
                 fail("Should not receive object")
             }
-    }
-
-    @Suppress("MaxLineLength")
-    @Test
-    fun `When calling login, it calls tokenRepository with correct inputs`() = runTest {
-        mocker.every {
-            tokenRepository.logIn(email, password)
-        } returns flow { emit(token) }
-
-        logInUseCase(email, password)
-
-        mocker.verifyWithSuspend {
-            tokenRepository.logIn(email, password)
-        }
     }
 }
