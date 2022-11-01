@@ -17,7 +17,7 @@ struct SurveyItemView: View {
     var body: some View {
         ZStack {
             GeometryReader { geo in
-                KFImage(URL(string: survey.largeImageUrl) ?? URL(fileURLWithPath: ""))
+                KFImage(survey.largeImageUrl.asURL)
                     .resizable()
                     .scaledToFill()
                     .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
@@ -54,7 +54,6 @@ struct SurveyItemView: View {
             .id(survey.id)
             .padding(.leading, 20.0)
             .padding(.trailing, 76.0)
-            .accessibilityElement(children: .contain)
         }
         .accessibilityElement(children: .contain)
     }

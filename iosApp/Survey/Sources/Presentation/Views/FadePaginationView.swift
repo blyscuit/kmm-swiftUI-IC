@@ -11,11 +11,16 @@ import SwiftUI
 struct FadePaginationView<T>: View {
 
     @Binding private var currentPage: Int
-    @State private var currentVisible: Double = 1.0
+
+    @State private var currentVisibility: Double = 1.0
     @State private var nextPage = 0
-    private var turnLength: Double = 160.0
-    private var turnSpeed: Double = 700.0
+
     @GestureVelocity private var velocity: CGVector
+
+    private var turningLength: Double = 160.0
+    private var turningSpeed: Double = 700.0
+    private var minimumTurnDistance: Double = 6.0
+    private var turningVisibilityMultiplier: Double = 1.17
 
     var currentView: (T) -> AnyView
     var nextView: (T) -> AnyView
@@ -25,35 +30,41 @@ struct FadePaginationView<T>: View {
         ZStack {
             nextView(items[nextPage])
             currentView(items[currentPage])
-                .opacity(currentVisible)
+                .opacity(currentVisibility)
                 .gesture(
-                    DragGesture(minimumDistance: 6.0, coordinateSpace: .local)
+                    DragGesture(minimumDistance: minimumTurnDistance, coordinateSpace: .local)
                         .onChanged { value in
                             switch value.translation.width {
                             case ...0: nextPage = min(items.count - 1, currentPage + 1)
                             case 0...: nextPage = max(0, currentPage - 1)
                             default: return
                             }
-                            let percentage = turnLength * 1.17 / abs(value.translation.width)
-                            currentVisible = 1.0 * max(0.0, percentage)
+                            let turningVisibilityPercentage =
+                                turningLength * turningVisibilityMultiplier / abs(value.translation.width)
+                            currentVisibility = 1.0 * max(0.0, turningVisibilityPercentage)
                         }
                         .onEnded { value in
                             withAnimation(.easeInOut(duration: 0.3)) {
                                 let velocity = self.velocity
-                                if velocity.dx < -turnSpeed {
+                                if velocity.dx < -turningSpeed {
+                                    // Swipe back fast
                                     previousPage()
-                                } else if velocity.dx > turnSpeed {
+                                } else if velocity.dx > turningSpeed {
+                                    // Swipe forward fast
                                     forwardPage()
                                 } else {
+                                    // Slow swipe
                                     switch value.translation.width {
-                                    case ...(-turnLength):
+                                    case ...(-turningLength):
+                                        // Swipe back reaching threshold
                                         previousPage()
-                                    case turnLength...:
+                                    case turningLength...:
+                                        // Swipe forward reaching threshold
                                         forwardPage()
                                     default: break
                                     }
                                 }
-                                currentVisible = 1.0
+                                currentVisibility = 1.0
                             }
                         }
                         .updatingVelocity($velocity)
@@ -73,11 +84,11 @@ struct FadePaginationView<T>: View {
         self.items = items
     }
 
-    func forwardPage() {
+    private func forwardPage() {
         currentPage = max(0, currentPage - 1)
     }
 
-    func previousPage() {
+    private func previousPage() {
         currentPage = min(items.count - 1, currentPage + 1)
     }
 }

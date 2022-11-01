@@ -47,6 +47,7 @@ struct SurveySelectionView: View {
                 items: surveys
             )
             .onChange(of: currentPage) { newValue in
+                // TODO: Update viewModel to new index
                 print(newValue)
             }
             VStack(alignment: .leading) {

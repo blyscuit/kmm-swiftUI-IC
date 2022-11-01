@@ -46,7 +46,7 @@ extension RouteCoordinator: LoginCoordinator {
 
 extension RouteCoordinator: LoginCoordinator {
 
-    func showSurvey() {
+    func showHome() {
         routes = [.root(.surveySelection)]
     }
 }
