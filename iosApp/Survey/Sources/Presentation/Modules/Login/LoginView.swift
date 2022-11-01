@@ -39,11 +39,11 @@ struct LoginView: View {
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .opacity(animating ? 1.0 : 0.001)
+                    .opacity(animating ? 1.0 : 0.0)
 
                 VStack(
                     alignment: .center,
-                    spacing: 20.0
+                    spacing: .itemSpacing
                 ) {
                     Spacer().frame(maxHeight: geometry.size.height / 10.0)
 
@@ -59,7 +59,7 @@ struct LoginView: View {
                         loginButton
                     }
                 }
-                .padding(.horizontal, 24.0)
+                .padding(.horizontal, .defaultPadding)
             }
         }
         .onTapGesture {

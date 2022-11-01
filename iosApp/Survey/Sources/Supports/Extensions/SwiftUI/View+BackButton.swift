@@ -16,11 +16,10 @@ extension View {
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 HStack(spacing: 0) {
-                    Image(systemName: "chevron.left")
+                    Image(systemName: .backArrow)
                         .resizable()
                         .font(.body.weight(.semibold))
                         .foregroundColor(.white)
-
                         .offset(x: -8.0)
                 }
             }

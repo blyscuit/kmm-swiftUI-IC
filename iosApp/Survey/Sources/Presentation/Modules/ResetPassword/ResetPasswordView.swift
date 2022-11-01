@@ -26,7 +26,7 @@ struct ResetPasswordView: View {
 
                     VStack(
                         alignment: .center,
-                        spacing: 20.0
+                        spacing: .itemSpacing
                     ) {
                         Spacer().frame(maxHeight: geometry.size.height / 10.0)
 
@@ -40,7 +40,7 @@ struct ResetPasswordView: View {
                         emailField
                         resetButton
                     }
-                    .padding(.horizontal, 24.0)
+                    .padding(.horizontal, .defaultPadding)
                 }
             }
             .onTapGesture {
