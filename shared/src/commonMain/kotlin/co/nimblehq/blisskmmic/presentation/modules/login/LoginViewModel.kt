@@ -2,6 +2,7 @@ package co.nimblehq.blisskmmic.presentation.modules.login
 
 import co.nimblehq.blisskmmic.data.network.helpers.toErrorMessage
 import co.nimblehq.blisskmmic.domain.usecase.LogInUseCase
+import co.nimblehq.blisskmmic.presentation.modules.ViewModel
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -16,11 +17,10 @@ data class LoginViewState(
     constructor(error: String?) : this(false, false, error)
 }
 
-class LoginViewModel(private val logInUseCase: LogInUseCase) {
+class LoginViewModel(private val logInUseCase: LogInUseCase): ViewModel() {
 
     private val mutableViewState: MutableStateFlow<LoginViewState> =
         MutableStateFlow(LoginViewState())
-    private val viewScope = MainScope()
 
     val viewState: StateFlow<LoginViewState> = mutableViewState
 
@@ -28,7 +28,7 @@ class LoginViewModel(private val logInUseCase: LogInUseCase) {
         mutableViewState.update {
             LoginViewState(isLoading = true)
         }
-        viewScope.launch {
+        viewModelScope.launch {
             logInUseCase(email, password)
                 .catch { error ->
                     mutableViewState.update { LoginViewState(isLoading = false, error = error.toErrorMessage()) }
