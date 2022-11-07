@@ -14,41 +14,40 @@ struct ResetPasswordView: View {
     @State private var loading = false
 
     var body: some View {
-        EmbedLoadingView(loading: loading) {
-            ZStack {
-                GeometryReader { geometry in
-                    Assets.backgroundBlur
-                        .image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .ignoresSafeArea()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        ZStack {
+            GeometryReader { geometry in
+                Assets.backgroundBlur
+                    .image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-                    VStack(
-                        alignment: .center,
-                        spacing: .itemSpacing
-                    ) {
-                        Spacer().frame(maxHeight: geometry.size.height / 10.0)
+                VStack(
+                    alignment: .center,
+                    spacing: .itemSpacing
+                ) {
+                    Spacer().frame(maxHeight: geometry.size.height / 10.0)
 
-                        Assets.logoWhite.image
+                    Assets.logoWhite.image
 
-                        Text(Localize.resetPasswordTextInstruction())
-                            .multilineTextAlignment(.center)
+                    Text(Localize.resetPasswordTextInstruction())
+                        .multilineTextAlignment(.center)
 
-                        Spacer().frame(maxHeight: 70.0)
+                    Spacer().frame(maxHeight: 70.0)
 
-                        emailField
-                        resetButton
-                    }
-                    .padding(.horizontal, .defaultPadding)
+                    emailField
+                    resetButton
                 }
+                .padding(.horizontal, .defaultPadding)
             }
-            .onTapGesture {
-                hideKeyboard()
-            }
-            .accessibilityElement(children: .contain)
-            .accessibility(.resetPassword(.view))
         }
+        .onTapGesture {
+            hideKeyboard()
+        }
+        .loadingDialog(loading: $loading)
+        .accessibilityElement(children: .contain)
+        .accessibility(.resetPassword(.view))
     }
 
     var emailField: some View {

@@ -1,5 +1,5 @@
 //
-//  EmbedLoadingView.swift
+//  LoadingDialog.swift
 //  Survey
 //
 //  Created by Bliss on 27/9/22.
@@ -8,19 +8,20 @@
 
 import SwiftUI
 
-struct EmbedLoadingView<Content: View>: View {
+struct LoadingDialog: ViewModifier {
 
-    @State var loading: Bool
-
-    var content: () -> Content
+    @Binding var loading: Bool
 
     @Environment(\.presentationMode) var presentationMode
 
-    var body: some View {
-        if loading {
-            ZStack {
-                content()
+    init(loading: Binding<Bool>) {
+        _loading = loading
+    }
 
+    func body(content: Content) -> some View {
+        ZStack {
+            content
+            if loading {
                 ZStack {
                     RoundedRectangle(cornerRadius: 14.0)
                         .foregroundColor(.black)
@@ -31,11 +32,16 @@ struct EmbedLoadingView<Content: View>: View {
                 }
                 .frame(alignment: .center)
                 .offset(y: -70.0)
+                .defaultBackButton(presentationMode)
             }
-            .defaultBackButton(presentationMode)
-            .disabled(loading)
-        } else {
-            content()
         }
+        .disabled(loading)
+    }
+}
+
+extension View {
+
+    func loadingDialog(loading: Binding<Bool>) -> some View {
+        modifier(LoadingDialog(loading: loading))
     }
 }
