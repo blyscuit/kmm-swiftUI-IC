@@ -1,6 +1,6 @@
 package co.nimblehq.blisskmmic.presentation.model
 
-data class SurveyUI (
+data class SurveyUiModel (
     val id: String,
     val imageUrl: String,
     val title: String,
