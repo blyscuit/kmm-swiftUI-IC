@@ -3,7 +3,7 @@ package co.nimblehq.blisskmmic.presentation.modules
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 
-actual abstract class ViewModel {
+actual abstract class BaseViewModel {
 
     actual val viewModelScope = MainScope()
 

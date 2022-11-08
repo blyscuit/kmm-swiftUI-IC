@@ -22,9 +22,9 @@ class LoginTargetType(email: String, password: String): UserTargetType() {
         val clientSecret: String
     )
 
-    override val path: String = "oauth/token"
-    override val method: HttpMethod = HttpMethod.Post
-    override val body: Any? = LoginInput(
+    override val path = "oauth/token"
+    override val method = HttpMethod.Post
+    override val body = LoginInput(
         "password",
         email,
         password,
