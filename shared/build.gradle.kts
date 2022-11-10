@@ -9,6 +9,9 @@ plugins {
     kotlin(Plugin.KOTLIN_SERIALIZATION)
     id(Plugin.NATIVE_COROUTINES).version(Version.NATIVE_COROUTINES_KOTLIN)
     id(Plugin.BUILD_KONFIG)
+    id(Plugin.MOCKMP).version(Version.MOCKMP)
+    id(Plugin.KSP).version(Version.KSP)
+    id(Plugin.KOVER)
 }
 
 version = "1.0"
@@ -49,6 +52,9 @@ kotlin {
                 implementation(Dependency.KOIN_TEST)
                 implementation(project(Module.JSONAPI_CORE))
                 implementation(Dependency.KOTLIN_TEST)
+                implementation(Dependency.KOTEST_FRAMEWORK)
+                implementation(Dependency.KOTEST_ASSERTIONS)
+                implementation(Dependency.KOTEST_PROPERTY)
             }
         }
         val commonTest by getting {
@@ -93,6 +99,18 @@ android {
     defaultConfig {
         minSdk = Android.MIN_SDK
         targetSdk = Android.TARGET_SDK
+    }
+
+    testOptions {
+        unitTests.all {
+            if (it.name == "testReleaseUnitTest") {
+                it.extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
+                    isDisabled.set(true) 
+                }
+            }
+            it.extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
+            }
+        }
     }
 }
 
@@ -176,5 +194,17 @@ buildkonfig {
             "BASE_URL",
             BuildKonfig.STAGING_BASE_URL
         )
+    }
+}
+
+mockmp {
+    usesHelper = true
+}
+
+kover {
+    filters {
+        classes {
+            excludes += listOf("*Test*", "*Mock*", "co.nimblehq.blisskmmic.di*")
+        }
     }
 }

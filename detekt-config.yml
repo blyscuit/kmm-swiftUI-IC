@@ -118,6 +118,7 @@ empty-blocks:
     active: true
   EmptySecondaryConstructor:
     active: true
+    excludes: ['*ViewModel*']
   EmptyWhenBlock:
     active: true
   EmptyWhileBlock:
@@ -297,6 +298,9 @@ style:
     maxLineLength: 120
     excludePackageStatements: false
     excludeImportStatements: false
+    excludes: &testFolders
+      - '**/commonTest/**'
+      - '**/androidTest/**'
   ModifierOrder:
     active: true
   NestedClassesVisibility:
