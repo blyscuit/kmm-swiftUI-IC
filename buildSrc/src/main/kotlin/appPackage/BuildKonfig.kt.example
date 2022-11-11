@@ -1,0 +1,10 @@
+object BuildKonfig {
+    const val CLIENT_ID = ""
+    const val CLIENT_SECRET = ""
+    const val STAGING_BASE_URL = ""
+    const val PRODUCTION_BASE_URL = ""
+    const val CLIENT_ID_STAGING = ""
+    const val CLIENT_SECRET_STAGING = ""
+    const val UI_TEST_EMAIL = ""
+    const val UI_TEST_PASSWORD = ""
+}

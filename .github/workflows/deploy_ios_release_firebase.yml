@@ -1,0 +1,112 @@
+name: Deploy iOS Release Build To Firebase
+
+# SECRETS needed:
+### SSH_PRIVATE_KEY for Match Repo
+### MATCH_PASS
+### FIREBASE_TOKEN
+### IOS_GOOGLE_SERVICE_INFO
+
+on:
+  push:
+    branches: [ develop, main ]
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: iosApp
+
+jobs:
+  build:
+    name: Build
+    runs-on: macOS-latest
+    steps:
+    - name: Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.5.0
+      with:
+        access_token: ${{ github.token }}
+
+    - name: Set up JAVA 11
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '11'
+
+    - uses: actions/checkout@v2
+    # Set fetch-depth (default: 1) to get whole tree
+      with:
+        fetch-depth: 0
+        submodules: recursive
+    
+    - name: Setup Konfig Properties
+      env:
+        KMM_KONFIG_PROPERTIES: ${{ secrets.KMM_KONFIG_PROPERTIES }}
+      run: |
+        cd ../buildSrc/src/main/kotlin/appPackage
+        touch BuildKonfig.kt
+        echo $KMM_KONFIG_PROPERTIES | base64 --decode > BuildKonfig.kt
+
+    - name: Install SSH key
+      uses: webfactory/ssh-agent@v0.5.4
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Cache gems
+      uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+            
+    - name: Bundle install
+      run: bundle install
+
+    - name: Cache Gradle
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches/modules-*
+          ~/.gradle/caches/jars-*
+          ~/.gradle/caches/build-cache-*
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+
+    - name: Generate KMM frameworks for Cocoapods
+      run: |
+        cd ..
+        ./gradlew generateDummyFramework
+
+    - name: Cache Pods
+      uses: actions/cache@v2
+      id: cocoapodCache
+      with:
+        path: Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pods-
+
+    - name: Install Pods Dependencies
+      run: bundle exec pod install
+      shell: bash
+
+    - name: Setup Google Services
+      env:
+        IOS_GOOGLE_SERVICE_INFO: ${{ secrets.IOS_GOOGLE_SERVICE_INFO_PROD }}
+      run: |
+        mkdir -p Survey/Configurations/Plists/GoogleService/Production
+        touch Survey/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist
+        echo $IOS_GOOGLE_SERVICE_INFO_STAGING | base64 --decode > Survey/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist
+
+    - name: Build and Test
+      run: bundle exec fastlane build_and_test
+
+    - name: Match Ad-hoc
+      run: bundle exec fastlane sync_adhoc_production_signing
+      env:
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASS }}
+
+    - name: Build Production App and Distribute to Firebase
+      run: bundle exec fastlane build_and_upload_production_app
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

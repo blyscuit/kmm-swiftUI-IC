@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Survey
+
+  Created by Bliss on 16/9/22.
+  Copyright © 2022 Nimble. All rights reserved.
+*/
+
+"login.fields.email" = "Email";
+"login.fields.password" = "Password";
+"login.button.login" = "Log in";
+"login.button.forgot" = "Forgot?";
