@@ -18,4 +18,8 @@ struct IOSApp: App {
                 .preferredColorScheme(.dark)
         }
     }
+
+    init() {
+        UINavigationBar.appearance().tintColor = .white
+    }
 }

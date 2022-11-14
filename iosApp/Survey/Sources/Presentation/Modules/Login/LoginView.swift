@@ -8,6 +8,11 @@
 
 import SwiftUI
 
+protocol LoginCoordinator {
+
+    func showResetPassword()
+}
+
 struct LoginView: View {
 
     @State private var email: String = ""
@@ -16,44 +21,53 @@ struct LoginView: View {
 
     private let animationDuration: Double = 0.7
 
+    let coordinator: LoginCoordinator
+
     var body: some View {
         ZStack {
-            Assets.background
-                .image
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            GeometryReader { geometry in
+                Assets.background
+                    .image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-            Assets.backgroundBlur
-                .image
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .opacity(animating ? 1.0 : 0.001)
+                Assets.backgroundBlur
+                    .image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .opacity(animating ? 1.0 : 0.0)
 
-            VStack(
-                alignment: .center,
-                spacing: 20.0
-            ) {
-                Assets.logoWhite.image
+                VStack(
+                    alignment: .center,
+                    spacing: .itemSpacing
+                ) {
+                    Spacer().frame(maxHeight: geometry.size.height / 10.0)
 
-                Spacer().frame(maxHeight: 70.0)
+                    Assets.logoWhite.image
+                        .frame(maxWidth: .infinity)
+                        .offset(y: animating ? 0.0 : 200.0)
 
-                if animating {
-                    loginField
-                    createPasswordField()
-                    loginButton
+                    Spacer().frame(maxHeight: 70.0)
+
+                    if animating {
+                        loginField
+                        createPasswordField()
+                        loginButton
+                    }
                 }
+                .padding(.horizontal, .defaultPadding)
             }
-            .padding(.horizontal, 24.0)
         }
         .onTapGesture {
             hideKeyboard()
         }
         .accessibilityElement(children: .contain)
         .accessibility(.login(.view))
+        .hideBackButtonTitle()
         .onAppear {
             withAnimation(.easeIn(duration: animationDuration)) {
                 animating = true
@@ -62,7 +76,7 @@ struct LoginView: View {
     }
 
     var loginField: some View {
-        TextField(Localize.loginFieldsEmail(), text: $email)
+        TextField(Localize.loginFieldEmail(), text: $email)
             .keyboardType(.emailAddress)
             .primaryTextField()
             .accessibility(.login(.emailField))
@@ -70,11 +84,11 @@ struct LoginView: View {
 
     var passwordField: some View {
         HStack {
-            SecureField(Localize.loginFieldsPassword(), text: $password)
+            SecureField(Localize.loginFieldPassword(), text: $password)
                 .accessibility(.login(.passwordField))
             if password.isEmpty {
                 Button(Localize.loginButtonForgot()) {
-                    // TODO: Add action then press `forgot`
+                    coordinator.showResetPassword()
                 }
                 .overlayButton()
                 .accessibility(.login(.forgotButton))
@@ -109,12 +123,5 @@ struct LoginView: View {
                     .primaryTextField()
             )
         }
-    }
-}
-
-struct LoginView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        LoginView()
     }
 }
