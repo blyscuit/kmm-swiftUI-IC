@@ -14,7 +14,7 @@ struct SurveyHeaderLoading: View {
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
-                .frame(height: 20.0)
+                .frame(height: .itemSpacing)
             SkeletonTextView(width: 118.0)
             HStack {
                 SkeletonTextView(width: 90.0)

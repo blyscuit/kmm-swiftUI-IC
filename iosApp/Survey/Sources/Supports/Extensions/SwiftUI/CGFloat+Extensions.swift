@@ -11,5 +11,6 @@ import SwiftUI
 extension CGFloat {
 
     static var itemSpacing: CGFloat = 20.0
+    static var surveyPadding: CGFloat = 20.0
     static var defaultPadding: CGFloat = 24.0
 }
