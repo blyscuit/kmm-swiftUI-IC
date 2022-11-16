@@ -22,7 +22,7 @@ struct SurveyLoading: View {
             SurveyHeaderLoading()
             SurveyItemLoading()
         }
-        .padding(.horizontal, .surveyPadding)
+        .padding(.horizontal, .smallPadding)
         .onAppear {
             // TODO: Use real loading
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {

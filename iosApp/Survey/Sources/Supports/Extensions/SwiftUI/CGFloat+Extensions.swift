@@ -9,8 +9,12 @@
 import SwiftUI
 
 extension CGFloat {
-
+    /// 16.0
+    static var lineSpacing: CGFloat = 16.0
+    /// 20.0
     static var itemSpacing: CGFloat = 20.0
-    static var surveyPadding: CGFloat = 20.0
+    /// 20.0
+    static var smallPadding: CGFloat = 20.0
+    /// 24.0
     static var defaultPadding: CGFloat = 24.0
 }

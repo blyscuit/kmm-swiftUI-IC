@@ -16,8 +16,8 @@ struct SkeletonTextView: View {
 
     var body: some View {
 
-        let calcLines = CGFloat(lines)
-        let height = (20.0 * calcLines) + (6.0 * (calcLines - 1))
+        let linesInFloat = CGFloat(lines)
+        let height = (20.0 * linesInFloat) + (6.0 * (linesInFloat - 1))
 
         Text(nil)
             .skeleton(
