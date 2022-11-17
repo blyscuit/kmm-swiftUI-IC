@@ -80,15 +80,6 @@ android {
     ignoreFailures = true
  }
 
- tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
-    reports {
-        xml {
-            outputLocation.set(file("build/reports/detekt/detekt-result.xml"))
-            required.set(true) // reports can also be enabled and disabled at the task level as needed
-        }
-         html.required.set(true)
-    }
- }
 
 tasks.check {
     dependsOn(detekt)
