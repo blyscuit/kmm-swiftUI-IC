@@ -49,6 +49,7 @@ kotlin {
                 implementation(Dependency.KTOR_JSON)
                 implementation(Dependency.KTOR_CONTENT_NEGOTIATION)
                 implementation(Dependency.KTOR_MOCK)
+                implementation(Dependency.KTOR_AUTH)
                 implementation(Dependency.COROUTINES_TEST)
                 implementation(Dependency.KOIN)
                 implementation(Dependency.KOIN_TEST)

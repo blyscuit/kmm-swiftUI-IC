@@ -68,6 +68,9 @@ complexity:
   LongMethod:
     active: true
     threshold: 20
+    excludes: &testFolders
+      - '**/commonTest/**'
+      - '**/androidTest/**'
   LongParameterList:
     active: true
     threshold: 5
@@ -298,9 +301,7 @@ style:
     maxLineLength: 120
     excludePackageStatements: false
     excludeImportStatements: false
-    excludes: &testFolders
-      - '**/commonTest/**'
-      - '**/androidTest/**'
+    excludes: *testFolders
   ModifierOrder:
     active: true
   NestedClassesVisibility:
