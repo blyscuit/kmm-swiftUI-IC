@@ -33,6 +33,9 @@ extension Font {
     /// Weight: 800, Size: 17.0
     static let boldBody: Font = .neuzei(.bold)
 
+    /// Weight: 800, Size: 28.0
+    static let boldTitle: Font = .neuzei(.bold, size: 28.0)
+
     private static func neuzei(_ weigth: Neuzei = .regular, size: CGFloat = 17.0) -> Font {
         return Font.custom(weigth.name, size: size)
     }

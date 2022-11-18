@@ -42,4 +42,8 @@ extension RouteCoordinator: LoginCoordinator {
     func showResetPassword() {
         routes.push(.resetPassword)
     }
+
+    func showHome() {
+        routes = [.root(.surveySelection)]
+    }
 }
