@@ -16,6 +16,7 @@ enum ViewId {
     case splash(Splash)
     case resetPassword(ResetPassword)
     case surveySelection(SurveySelection)
+    case surveyLoading(SurveyLoading)
     case general(General)
 
     func callAsFunction() -> String {
@@ -24,6 +25,7 @@ enum ViewId {
         case let .splash(splash): return splash.rawValue
         case let .resetPassword(resetPassword): return resetPassword.rawValue
         case let .surveySelection(surveySelection): return surveySelection.rawValue
+        case let .surveyLoading(surveyLoading): return surveyLoading.rawValue
         case let .general(general): return general.rawValue
         }
     }

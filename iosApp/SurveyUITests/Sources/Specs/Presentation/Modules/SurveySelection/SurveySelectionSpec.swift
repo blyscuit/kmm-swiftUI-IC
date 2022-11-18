@@ -26,6 +26,7 @@ final class SurveySelectionSpec: QuickSpec {
                     let loginFlow = LoginFlow(in: app)
                     loginFlow.execute()
                     surveySelectionScreen = SurveySelectionScreen(in: app)
+                    _ = surveySelectionScreen.waitForExistence(timeout: 2.0, with: .view)
                 }
 
                 afterEach {
