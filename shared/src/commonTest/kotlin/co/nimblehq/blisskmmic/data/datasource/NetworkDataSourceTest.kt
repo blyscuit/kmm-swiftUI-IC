@@ -7,6 +7,7 @@ import co.nimblehq.blisskmmic.helpers.json.ERROR_JSON_RESULT
 import co.nimblehq.blisskmmic.helpers.json.LOG_IN_JSON_RESULT
 import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonMockEngine
 import co.nimblehq.jsonapi.model.JsonApiException
+import io.kotest.matchers.collections.shouldContain
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
@@ -20,7 +21,7 @@ class NetworkDataSourceTest {
 
     @Test
     fun `When calling log in with success response, it returns correct object`() = runTest {
-        val engine = jsonMockEngine(LOG_IN_JSON_RESULT)
+        val engine = jsonMockEngine(LOG_IN_JSON_RESULT, "oauth/token")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource
@@ -32,14 +33,14 @@ class NetworkDataSourceTest {
 
     @Test
     fun `When calling log in with failure response, it returns correct error`() = runTest {
-        val engine = jsonMockEngine(ERROR_JSON_RESULT)
+        val engine = jsonMockEngine(ERROR_JSON_RESULT, "oauth/token")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource
             .logIn(LoginTargetType("", ""))
             .catch { error ->
                 when(error) {
-                    is JsonApiException -> error.errors.map { it.code }.contains("invalid_token") shouldBe true
+                    is JsonApiException -> error.errors.map { it.code } shouldContain "invalid_token"
                     else -> fail("Should not return incorrect error type")
                 }
             }
