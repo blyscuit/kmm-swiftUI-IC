@@ -24,6 +24,7 @@ object Dependency {
     const val KTOR_ANDROID = "io.ktor:ktor-client-android:${Version.KTOR}"
     const val KTOR_IOS = "io.ktor:ktor-client-ios:${Version.KTOR}"
     const val KTOR_MOCK = "io.ktor:ktor-client-mock:${Version.KTOR}"
+    const val KTOR_AUTH = "io.ktor:ktor-client-auth:${Version.KTOR}"
 
     // BuildKonfig
     const val BUILD_KONFIG = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin:${Version.BUILD_KONFIG}"
