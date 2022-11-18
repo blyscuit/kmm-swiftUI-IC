@@ -40,4 +40,8 @@ object Dependency {
     const val KOTEST_FRAMEWORK = "io.kotest:kotest-framework-engine:${Version.KOTEST}"
     const val KOTEST_ASSERTIONS = "io.kotest:kotest-assertions-core:${Version.KOTEST}"
     const val KOTEST_PROPERTY = "io.kotest:kotest-property:${Version.KOTEST}"
+
+    // Resources
+    const val MOKO_RESOURCES_GENERATOR = "dev.icerock.moko:resources-generator:${Version.MOKO_RESOURCES}"
+    const val MOKO_RESOURCES = "dev.icerock.moko:resources:${Version.MOKO_RESOURCES}"
 }

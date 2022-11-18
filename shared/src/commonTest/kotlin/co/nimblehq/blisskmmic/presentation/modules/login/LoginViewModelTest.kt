@@ -5,14 +5,18 @@ import co.nimblehq.blisskmmic.domain.usecase.LogInUseCase
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
-import org.kodein.mock.*
+import org.kodein.mock.Fake
+import org.kodein.mock.Mock
 import org.kodein.mock.tests.TestsWithMocks
-import kotlin.test.*
+import kotlin.test.AfterTest
+import kotlin.test.BeforeTest
+import kotlin.test.Test
 
 @ExperimentalCoroutinesApi
 class LoginViewModelTest : TestsWithMocks() {

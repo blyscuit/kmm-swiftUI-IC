@@ -16,4 +16,6 @@ object Plugin {
 
     const val MOCKMP = "org.kodein.mock.mockmp"
     const val KSP = "com.google.devtools.ksp"
+
+    const val MOKO_RESOURCES = "dev.icerock.mobile.multiplatform-resources"
 }

@@ -30,7 +30,6 @@
 		09636AFD28D484CA00A5CB97 /* R+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AFC28D484CA00A5CB97 /* R+SwiftUI.swift */; };
 		09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AFF28D4860F00A5CB97 /* PrimaryTextField.swift */; };
 		09636B0228D4876100A5CB97 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B0128D4876100A5CB97 /* PrimaryButton.swift */; };
-		09636B0628D48C3C00A5CB97 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09636B0828D48C3C00A5CB97 /* Localizable.strings */; };
 		09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B0A28D48CFD00A5CB97 /* Typealiases.swift */; };
 		09636B0D28D4917200A5CB97 /* OverlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B0C28D4917200A5CB97 /* OverlayButton.swift */; };
 		09636B0F28D80B8500A5CB97 /* View+KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B0E28D80B8500A5CB97 /* View+KeyboardDismiss.swift */; };
@@ -47,11 +46,11 @@
 		0982A7A62921DFE800FC1976 /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */; };
 		0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7DE29222EA800FC1976 /* LoginSpec.swift */; };
 		0982A7E029222EB900FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
-		0982A7E129222EBB00FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		0982A7E329222EFF00FC1976 /* RouteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7E229222EFF00FC1976 /* RouteCoordinator.swift */; };
 		0982A7E429222F2000FC1976 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6E28FFDE8C0036BDFB /* LoginView.swift */; };
 		0982A7E72922357C00FC1976 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF828D47A4D00A5CB97 /* Font+Extensions.swift */; };
 		0982A7EB29223C3A00FC1976 /* SurveyLoadingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EA29223C3A00FC1976 /* SurveyLoadingSpec.swift */; };
+		0982A7F6292371F000FC1976 /* StringResource+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7F5292371F000FC1976 /* StringResource+Localized.swift */; };
 		0982A80229278E9000FC1976 /* SurveySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */; };
 		0982A80329278E9000FC1976 /* SurveyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FC29278E9000FC1976 /* SurveyHeaderView.swift */; };
 		0982A80429278E9000FC1976 /* SurveyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FD29278E9000FC1976 /* SurveyItemView.swift */; };
@@ -59,6 +58,7 @@
 		0982A80629278E9000FC1976 /* SurveyItemLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A80029278E9000FC1976 /* SurveyItemLoading.swift */; };
 		0982A80729278E9000FC1976 /* SurveyHeaderLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A80129278E9000FC1976 /* SurveyHeaderLoading.swift */; };
 		0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EE29223DA600FC1976 /* LoginFlow.swift */; };
+		0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770B28E191B400EAA9EE /* AppCoordinator.swift */; };
 		09CE770F28E1922000EAA9EE /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770E28E1922000EAA9EE /* Screen.swift */; };
 		09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771228E1A94600EAA9EE /* ResetPasswordView.swift */; };
@@ -158,7 +158,6 @@
 		09636AFC28D484CA00A5CB97 /* R+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "R+SwiftUI.swift"; sourceTree = "<group>"; };
 		09636AFF28D4860F00A5CB97 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
 		09636B0128D4876100A5CB97 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
-		09636B0728D48C3C00A5CB97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09636B0A28D48CFD00A5CB97 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		09636B0C28D4917200A5CB97 /* OverlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayButton.swift; sourceTree = "<group>"; };
 		09636B0E28D80B8500A5CB97 /* View+KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+KeyboardDismiss.swift"; sourceTree = "<group>"; };
@@ -174,6 +173,7 @@
 		0982A7E229222EFF00FC1976 /* RouteCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCoordinator.swift; sourceTree = "<group>"; };
 		0982A7EA29223C3A00FC1976 /* SurveyLoadingSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyLoadingSpec.swift; sourceTree = "<group>"; };
 		0982A7EE29223DA600FC1976 /* LoginFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
+		0982A7F5292371F000FC1976 /* StringResource+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringResource+Localized.swift"; sourceTree = "<group>"; };
 		0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionView.swift; sourceTree = "<group>"; };
 		0982A7FC29278E9000FC1976 /* SurveyHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderView.swift; sourceTree = "<group>"; };
 		0982A7FD29278E9000FC1976 /* SurveyItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemView.swift; sourceTree = "<group>"; };
@@ -191,6 +191,8 @@
 		09CE772F28E2ED2300EAA9EE /* LazyKoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyKoin.swift; sourceTree = "<group>"; };
 		09CE773028E2ED2300EAA9EE /* KoinApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoinApplication.swift; sourceTree = "<group>"; };
 		09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
+		0C684934FB5BCF595928F4F0 /* Pods-SurveyTests.debugproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.debugproduction.xcconfig"; path = "Target Support Files/Pods-SurveyTests/Pods-SurveyTests.debugproduction.xcconfig"; sourceTree = "<group>"; };
+		0C82CB8A6A37BB09C0A86AFE /* Pods-Survey.releasestaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.releasestaging.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.releasestaging.xcconfig"; sourceTree = "<group>"; };
 		122A6B9F6217729620D91A43 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
 		15C39F2CB60CF0314258019E /* Pods-Survey.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.debug production.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.debug production.xcconfig"; sourceTree = "<group>"; };
 		16E10E52E1F7EAF6527F4E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -198,15 +200,24 @@
 		23540B51F2526F91AE40B8F6 /* DebugStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugStaging.xcconfig; sourceTree = "<group>"; };
 		23B0A1C25E96921A71D8B806 /* Pods-Survey-SurveyUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey-SurveyUITests.release staging.xcconfig"; path = "Target Support Files/Pods-Survey-SurveyUITests/Pods-Survey-SurveyUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		293DE1041DE212AA81536BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		29E91BDD9B8DFFFE8E3C446F /* Pods-SurveyTests.releasestaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.releasestaging.xcconfig"; path = "Target Support Files/Pods-SurveyTests/Pods-SurveyTests.releasestaging.xcconfig"; sourceTree = "<group>"; };
+		2CE4A54662C983A39FF60FFC /* Pods-Survey-SurveyUITests.releasestaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey-SurveyUITests.releasestaging.xcconfig"; path = "Target Support Files/Pods-Survey-SurveyUITests/Pods-Survey-SurveyUITests.releasestaging.xcconfig"; sourceTree = "<group>"; };
 		315DBBA2E56D199C3AC672B5 /* Pods_Survey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D58CF3290411A6952CDFD7C /* Pods-SurveyTests.debugstaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.debugstaging.xcconfig"; path = "Target Support Files/Pods-SurveyTests/Pods-SurveyTests.debugstaging.xcconfig"; sourceTree = "<group>"; };
 		46885A08B19F8EB7FFC5117F /* IOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSApp.swift; sourceTree = "<group>"; };
 		57B692AA2E3039E21B8B75CC /* Pods_SurveyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurveyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A115DAC86D72B7F2CCCC346 /* SurveyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62D89965275CAF5FAEB66287 /* Pods-SurveyTests.releaseproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.releaseproduction.xcconfig"; path = "Target Support Files/Pods-SurveyTests/Pods-SurveyTests.releaseproduction.xcconfig"; sourceTree = "<group>"; };
 		64ED519E814E897776076800 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
+		6D1689C8E91810B0DC756D52 /* Pods-Survey-SurveyUITests.releaseproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey-SurveyUITests.releaseproduction.xcconfig"; path = "Target Support Files/Pods-Survey-SurveyUITests/Pods-Survey-SurveyUITests.releaseproduction.xcconfig"; sourceTree = "<group>"; };
 		71A1F95D20E1E58589F4CD31 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		727F7D83813FA7F64C222B0F /* SurveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77249E767298CAA8AF7F4B0D /* Pods-Survey.debugstaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.debugstaging.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.debugstaging.xcconfig"; sourceTree = "<group>"; };
 		7B4D131DCE4FB9A5570AAB6D /* Pods-SurveyTests.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.release production.xcconfig"; path = "Target Support Files/Pods-SurveyTests/Pods-SurveyTests.release production.xcconfig"; sourceTree = "<group>"; };
+		825D8AC7FAAE9B0A549A9500 /* Pods-Survey-SurveyUITests.debugstaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey-SurveyUITests.debugstaging.xcconfig"; path = "Target Support Files/Pods-Survey-SurveyUITests/Pods-Survey-SurveyUITests.debugstaging.xcconfig"; sourceTree = "<group>"; };
+		8A6F20C2DE82A00BF09F5521 /* Pods-Survey.releaseproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.releaseproduction.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.releaseproduction.xcconfig"; sourceTree = "<group>"; };
 		92A9B29B68026A9545C46E25 /* Pods-Survey-SurveyUITests.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey-SurveyUITests.debug production.xcconfig"; path = "Target Support Files/Pods-Survey-SurveyUITests/Pods-Survey-SurveyUITests.debug production.xcconfig"; sourceTree = "<group>"; };
+		98D6D906A63F1E605E9A3BEA /* Pods-Survey-SurveyUITests.debugproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey-SurveyUITests.debugproduction.xcconfig"; path = "Target Support Files/Pods-Survey-SurveyUITests/Pods-Survey-SurveyUITests.debugproduction.xcconfig"; sourceTree = "<group>"; };
 		9A8A6787A8D90EE1845EEBBF /* Pods-Survey.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.debug staging.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.debug staging.xcconfig"; sourceTree = "<group>"; };
 		A0804CAD6C01AC6009D88A55 /* Survey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Survey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DE39928F5CD5E181B698FC /* Pods-SurveyTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.debug staging.xcconfig"; path = "Target Support Files/Pods-SurveyTests/Pods-SurveyTests.debug staging.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +225,7 @@
 		A962CAA8D43D396E2E17FF04 /* Pods-Survey.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.release staging.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.release staging.xcconfig"; sourceTree = "<group>"; };
 		B048440F2A03AAF218114030 /* Pods-Survey.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.release production.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.release production.xcconfig"; sourceTree = "<group>"; };
 		B2FE82E7B4336FD27093D28A /* Pods-SurveyTests.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.debug production.xcconfig"; path = "Target Support Files/Pods-SurveyTests/Pods-SurveyTests.debug production.xcconfig"; sourceTree = "<group>"; };
+		BB31EEB3EBB91867D7F0D06D /* Pods-Survey.debugproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.debugproduction.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.debugproduction.xcconfig"; sourceTree = "<group>"; };
 		CD76687B09E0F20A7CC1C054 /* ReleaseStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ReleaseStaging.xcconfig; sourceTree = "<group>"; };
 		CFE0E10E82DADFEF9BF954DF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1EE1175F99D55A95E0995E9 /* OptionalUnwrapSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalUnwrapSpec.swift; sourceTree = "<group>"; };
@@ -340,14 +352,6 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
-		09636B0328D48BA100A5CB97 /* Localizations */ = {
-			isa = PBXGroup;
-			children = (
-				09636B0828D48C3C00A5CB97 /* Localizable.strings */,
-			);
-			path = Localizations;
-			sourceTree = "<group>";
-		};
 		09636B0928D48CE800A5CB97 /* Typealiases */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +461,14 @@
 				0982A7EE29223DA600FC1976 /* LoginFlow.swift */,
 			);
 			path = Flows;
+			sourceTree = "<group>";
+		};
+		0982A7F4292371F000FC1976 /* MokoResources */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7F5292371F000FC1976 /* StringResource+Localized.swift */,
+			);
+			path = MokoResources;
 			sourceTree = "<group>";
 		};
 		0982A7F929278E9000FC1976 /* SurveySelection */ = {
@@ -576,6 +588,7 @@
 		0F3BE49893E55BC4638B90F0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0982A7F4292371F000FC1976 /* MokoResources */,
 				09636AF728D47A3800A5CB97 /* SwiftUI */,
 				0F4C0078B1B4D7C1871DDE54 /* Foundation */,
 			);
@@ -785,7 +798,6 @@
 		A60D6F6D69B2571A295C0A9E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				09636B0328D48BA100A5CB97 /* Localizations */,
 				09636AEF28D4777E00A5CB97 /* Fonts */,
 				2CF27D885DD8507482E726E1 /* Assets */,
 				6FD75B0789EE724AD6F6C58D /* LaunchScreen */,
@@ -851,6 +863,18 @@
 				A0DE39928F5CD5E181B698FC /* Pods-SurveyTests.debug staging.xcconfig */,
 				7B4D131DCE4FB9A5570AAB6D /* Pods-SurveyTests.release production.xcconfig */,
 				DA30253726B5E83A97E0834B /* Pods-SurveyTests.release staging.xcconfig */,
+				BB31EEB3EBB91867D7F0D06D /* Pods-Survey.debugproduction.xcconfig */,
+				77249E767298CAA8AF7F4B0D /* Pods-Survey.debugstaging.xcconfig */,
+				8A6F20C2DE82A00BF09F5521 /* Pods-Survey.releaseproduction.xcconfig */,
+				0C82CB8A6A37BB09C0A86AFE /* Pods-Survey.releasestaging.xcconfig */,
+				98D6D906A63F1E605E9A3BEA /* Pods-Survey-SurveyUITests.debugproduction.xcconfig */,
+				825D8AC7FAAE9B0A549A9500 /* Pods-Survey-SurveyUITests.debugstaging.xcconfig */,
+				6D1689C8E91810B0DC756D52 /* Pods-Survey-SurveyUITests.releaseproduction.xcconfig */,
+				2CE4A54662C983A39FF60FFC /* Pods-Survey-SurveyUITests.releasestaging.xcconfig */,
+				0C684934FB5BCF595928F4F0 /* Pods-SurveyTests.debugproduction.xcconfig */,
+				3D58CF3290411A6952CDFD7C /* Pods-SurveyTests.debugstaging.xcconfig */,
+				62D89965275CAF5FAEB66287 /* Pods-SurveyTests.releaseproduction.xcconfig */,
+				29E91BDD9B8DFFFE8E3C446F /* Pods-SurveyTests.releasestaging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -971,6 +995,7 @@
 				FF76644469CE368D62BA827C /* Frameworks */,
 				CC99E871FA1DDA8C64075BC0 /* Copy GoogleService-Info.plist */,
 				69E0E5555896889BE38A4490 /* [CP] Embed Pods Frameworks */,
+				0982A7F72923731100FC1976 /* Moko Resources */,
 			);
 			buildRules = (
 			);
@@ -1050,7 +1075,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09636B0628D48C3C00A5CB97 /* Localizable.strings in Resources */,
 				09636AF228D4779400A5CB97 /* NeuzeitSLTStd-Book.otf in Resources */,
 				09636AF328D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf in Resources */,
 				CA1F500707F2936D39825740 /* Assets.xcassets in Resources */,
@@ -1089,6 +1113,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		0982A7F72923731100FC1976 /* Moko Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Moko Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../\" :Shared:copyFrameworkResourcesToApp \\\n    -Pmoko.resources.PLATFORM_NAME=$PLATFORM_NAME \\\n    -Pmoko.resources.CONFIGURATION=$CONFIGURATION \\\n    -Pmoko.resources.BUILT_PRODUCTS_DIR=$BUILT_PRODUCTS_DIR \\\n    -Pmoko.resources.CONTENTS_FOLDER_PATH=$CONTENTS_FOLDER_PATH\n";
 		};
 		364701D01D6D730E26E263DF /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1341,6 +1383,7 @@
 				09CE772528E2C1C600EAA9EE /* View+HideBackButtonTitle.swift in Sources */,
 				09CE771528E1AB0B00EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */,
+				0982A7F6292371F000FC1976 /* StringResource+Localized.swift in Sources */,
 				09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */,
 				09495F6628FF97080036BDFB /* SplashView.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,
@@ -1358,6 +1401,7 @@
 				0982A7A62921DFE800FC1976 /* ResetPasswordSpec.swift in Sources */,
 				09CE772028E1BBC400EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09495F3328EC44330036BDFB /* SurveyLoadingScreen.swift in Sources */,
+				0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */,
 				09495F1828E4461C0036BDFB /* SurveySelectionScreen.swift in Sources */,
 				09636B3228D8272200A5CB97 /* ScreenProtocol.swift in Sources */,
 				0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */,
@@ -1365,7 +1409,6 @@
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
 				0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */,
 				09CE771F28E1BB4700EAA9EE /* ResetPasswordScreen.swift in Sources */,
-				0982A7E129222EBB00FC1976 /* ViewId+Splash.swift in Sources */,
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
 				09495F7F2900017E0036BDFB /* ViewId+SurveySelection.swift in Sources */,
 				09495F0C28E441900036BDFB /* ViewId+SurveySelection.swift in Sources */,
@@ -1403,19 +1446,8 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		09636B0828D48C3C00A5CB97 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09636B0728D48C3C00A5CB97 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		03C0597282ACB0F090BCE8C5 /* Debug Production */ = {
+		03C0597282ACB0F090BCE8C5 /* DebugProduction */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 122A6B9F6217729620D91A43 /* DebugProduction.xcconfig */;
 			buildSettings = {
@@ -1472,11 +1504,11 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
-			name = "Debug Production";
+			name = DebugProduction;
 		};
-		045748AB609BF8940D5B860C /* Release Production */ = {
+		045748AB609BF8940D5B860C /* ReleaseProduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E52B4685AEBB7EBEF1671EF2 /* Pods-Survey-SurveyUITests.release production.xcconfig */;
+			baseConfigurationReference = 6D1689C8E91810B0DC756D52 /* Pods-Survey-SurveyUITests.releaseproduction.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SurveyUITests/Configurations/Plists/Info.plist;
@@ -1494,11 +1526,11 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Survey;
 			};
-			name = "Release Production";
+			name = ReleaseProduction;
 		};
-		060D9CDB5BA2CAAAD9160176 /* Release Staging */ = {
+		060D9CDB5BA2CAAAD9160176 /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA30253726B5E83A97E0834B /* Pods-SurveyTests.release staging.xcconfig */;
+			baseConfigurationReference = 29E91BDD9B8DFFFE8E3C446F /* Pods-SurveyTests.releasestaging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1518,11 +1550,11 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survey.app/Survey";
 				TEST_TARGET_NAME = Survey;
 			};
-			name = "Release Staging";
+			name = ReleaseStaging;
 		};
-		06304D047007243CFFCF3F19 /* Debug Production */ = {
+		06304D047007243CFFCF3F19 /* DebugProduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2FE82E7B4336FD27093D28A /* Pods-SurveyTests.debug production.xcconfig */;
+			baseConfigurationReference = 0C684934FB5BCF595928F4F0 /* Pods-SurveyTests.debugproduction.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1543,11 +1575,11 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survey.app/Survey";
 				TEST_TARGET_NAME = Survey;
 			};
-			name = "Debug Production";
+			name = DebugProduction;
 		};
-		150050B4F5856B8C680BA857 /* Release Production */ = {
+		150050B4F5856B8C680BA857 /* ReleaseProduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B4D131DCE4FB9A5570AAB6D /* Pods-SurveyTests.release production.xcconfig */;
+			baseConfigurationReference = 62D89965275CAF5FAEB66287 /* Pods-SurveyTests.releaseproduction.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1567,11 +1599,11 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survey.app/Survey";
 				TEST_TARGET_NAME = Survey;
 			};
-			name = "Release Production";
+			name = ReleaseProduction;
 		};
-		36C8BBE6758900279E460885 /* Debug Staging */ = {
+		36C8BBE6758900279E460885 /* DebugStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A8A6787A8D90EE1845EEBBF /* Pods-Survey.debug staging.xcconfig */;
+			baseConfigurationReference = 77249E767298CAA8AF7F4B0D /* Pods-Survey.debugstaging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1594,11 +1626,11 @@
 				SWIFT_VERSION = 5.6.1;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = "Debug Staging";
+			name = DebugStaging;
 		};
-		56F1F2B77E9ABF3E64283C8A /* Release Staging */ = {
+		56F1F2B77E9ABF3E64283C8A /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23B0A1C25E96921A71D8B806 /* Pods-Survey-SurveyUITests.release staging.xcconfig */;
+			baseConfigurationReference = 2CE4A54662C983A39FF60FFC /* Pods-Survey-SurveyUITests.releasestaging.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SurveyUITests/Configurations/Plists/Info.plist;
@@ -1616,9 +1648,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Survey;
 			};
-			name = "Release Staging";
+			name = ReleaseStaging;
 		};
-		58E0042D81706C64D8614441 /* Release Staging */ = {
+		58E0042D81706C64D8614441 /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CD76687B09E0F20A7CC1C054 /* ReleaseStaging.xcconfig */;
 			buildSettings = {
@@ -1669,11 +1701,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Release Staging";
+			name = ReleaseStaging;
 		};
-		594596731BF36E1720EE07AF /* Debug Staging */ = {
+		594596731BF36E1720EE07AF /* DebugStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EADFB330FF917B43956F131E /* Pods-Survey-SurveyUITests.debug staging.xcconfig */;
+			baseConfigurationReference = 825D8AC7FAAE9B0A549A9500 /* Pods-Survey-SurveyUITests.debugstaging.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SurveyUITests/Configurations/Plists/Info.plist;
@@ -1692,9 +1724,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Survey;
 			};
-			name = "Debug Staging";
+			name = DebugStaging;
 		};
-		7E77427B96E6E3C681254B3C /* Release Production */ = {
+		7E77427B96E6E3C681254B3C /* ReleaseProduction */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D4B0B811035E1D25A7230EDA /* ReleaseProduction.xcconfig */;
 			buildSettings = {
@@ -1745,9 +1777,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Release Production";
+			name = ReleaseProduction;
 		};
-		7FAE040DC40C743D37F05FC8 /* Debug Staging */ = {
+		7FAE040DC40C743D37F05FC8 /* DebugStaging */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23540B51F2526F91AE40B8F6 /* DebugStaging.xcconfig */;
 			buildSettings = {
@@ -1804,11 +1836,11 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
-			name = "Debug Staging";
+			name = DebugStaging;
 		};
-		AC120A27DC1EA6A67DE3DF1A /* Debug Production */ = {
+		AC120A27DC1EA6A67DE3DF1A /* DebugProduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92A9B29B68026A9545C46E25 /* Pods-Survey-SurveyUITests.debug production.xcconfig */;
+			baseConfigurationReference = 98D6D906A63F1E605E9A3BEA /* Pods-Survey-SurveyUITests.debugproduction.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SurveyUITests/Configurations/Plists/Info.plist;
@@ -1827,11 +1859,11 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Survey;
 			};
-			name = "Debug Production";
+			name = DebugProduction;
 		};
-		D18CE29614745C9A7FBE61AF /* Release Production */ = {
+		D18CE29614745C9A7FBE61AF /* ReleaseProduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B048440F2A03AAF218114030 /* Pods-Survey.release production.xcconfig */;
+			baseConfigurationReference = 8A6F20C2DE82A00BF09F5521 /* Pods-Survey.releaseproduction.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1853,11 +1885,11 @@
 				SWIFT_VERSION = 5.6.1;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = "Release Production";
+			name = ReleaseProduction;
 		};
-		F4ABC77AA692EC7809953362 /* Release Staging */ = {
+		F4ABC77AA692EC7809953362 /* ReleaseStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A962CAA8D43D396E2E17FF04 /* Pods-Survey.release staging.xcconfig */;
+			baseConfigurationReference = 0C82CB8A6A37BB09C0A86AFE /* Pods-Survey.releasestaging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1879,11 +1911,11 @@
 				SWIFT_VERSION = 5.6.1;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = "Release Staging";
+			name = ReleaseStaging;
 		};
-		F877E3A3A3F9BA1A03E0315A /* Debug Staging */ = {
+		F877E3A3A3F9BA1A03E0315A /* DebugStaging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0DE39928F5CD5E181B698FC /* Pods-SurveyTests.debug staging.xcconfig */;
+			baseConfigurationReference = 3D58CF3290411A6952CDFD7C /* Pods-SurveyTests.debugstaging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1904,11 +1936,11 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survey.app/Survey";
 				TEST_TARGET_NAME = Survey;
 			};
-			name = "Debug Staging";
+			name = DebugStaging;
 		};
-		FB8889C36C898572F57D8B34 /* Debug Production */ = {
+		FB8889C36C898572F57D8B34 /* DebugProduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15C39F2CB60CF0314258019E /* Pods-Survey.debug production.xcconfig */;
+			baseConfigurationReference = BB31EEB3EBB91867D7F0D06D /* Pods-Survey.debugproduction.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1931,7 +1963,7 @@
 				SWIFT_VERSION = 5.6.1;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = "Debug Production";
+			name = DebugProduction;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1939,46 +1971,46 @@
 		052E4DE879983D4876D8EDFC /* Build configuration list for PBXProject "Survey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03C0597282ACB0F090BCE8C5 /* Debug Production */,
-				7FAE040DC40C743D37F05FC8 /* Debug Staging */,
-				7E77427B96E6E3C681254B3C /* Release Production */,
-				58E0042D81706C64D8614441 /* Release Staging */,
+				03C0597282ACB0F090BCE8C5 /* DebugProduction */,
+				7FAE040DC40C743D37F05FC8 /* DebugStaging */,
+				7E77427B96E6E3C681254B3C /* ReleaseProduction */,
+				58E0042D81706C64D8614441 /* ReleaseStaging */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release Production";
+			defaultConfigurationName = ReleaseProduction;
 		};
 		4B9656EA15699F2B52E542CF /* Build configuration list for PBXNativeTarget "SurveyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC120A27DC1EA6A67DE3DF1A /* Debug Production */,
-				594596731BF36E1720EE07AF /* Debug Staging */,
-				045748AB609BF8940D5B860C /* Release Production */,
-				56F1F2B77E9ABF3E64283C8A /* Release Staging */,
+				AC120A27DC1EA6A67DE3DF1A /* DebugProduction */,
+				594596731BF36E1720EE07AF /* DebugStaging */,
+				045748AB609BF8940D5B860C /* ReleaseProduction */,
+				56F1F2B77E9ABF3E64283C8A /* ReleaseStaging */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release Production";
+			defaultConfigurationName = ReleaseProduction;
 		};
 		92C0E02BDF2B11A44FB6CEE3 /* Build configuration list for PBXNativeTarget "Survey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FB8889C36C898572F57D8B34 /* Debug Production */,
-				36C8BBE6758900279E460885 /* Debug Staging */,
-				D18CE29614745C9A7FBE61AF /* Release Production */,
-				F4ABC77AA692EC7809953362 /* Release Staging */,
+				FB8889C36C898572F57D8B34 /* DebugProduction */,
+				36C8BBE6758900279E460885 /* DebugStaging */,
+				D18CE29614745C9A7FBE61AF /* ReleaseProduction */,
+				F4ABC77AA692EC7809953362 /* ReleaseStaging */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release Production";
+			defaultConfigurationName = ReleaseProduction;
 		};
 		EE7461BAE7F27A38307B4FA7 /* Build configuration list for PBXNativeTarget "SurveyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				06304D047007243CFFCF3F19 /* Debug Production */,
-				F877E3A3A3F9BA1A03E0315A /* Debug Staging */,
-				150050B4F5856B8C680BA857 /* Release Production */,
-				060D9CDB5BA2CAAAD9160176 /* Release Staging */,
+				06304D047007243CFFCF3F19 /* DebugProduction */,
+				F877E3A3A3F9BA1A03E0315A /* DebugStaging */,
+				150050B4F5856B8C680BA857 /* ReleaseProduction */,
+				060D9CDB5BA2CAAAD9160176 /* ReleaseStaging */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release Production";
+			defaultConfigurationName = ReleaseProduction;
 		};
 /* End XCConfigurationList section */
 	};
