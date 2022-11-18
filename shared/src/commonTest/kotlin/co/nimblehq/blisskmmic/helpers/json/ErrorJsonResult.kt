@@ -9,5 +9,5 @@ const val NOT_FOUND_JSON_RESULT = """
 """
 
 const val UNAUTHORIZED_JSON_RESULT = """
-    {"errors":[{"detail":"Not found","code":"unauthorized"}]}
+    {"errors":[{"detail":"Unauthorized","code":"unauthorized"}]}
 """

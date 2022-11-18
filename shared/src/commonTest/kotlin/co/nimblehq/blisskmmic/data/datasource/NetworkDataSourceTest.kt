@@ -56,7 +56,7 @@ class NetworkDataSourceTest {
 
     @Test
     fun `When calling reset password with success response, it returns correct object`() = runTest {
-        val engine = jsonMockEngine(RESET_PASSWORD_JSON_RESULT)
+        val engine = jsonMockEngine(RESET_PASSWORD_JSON_RESULT, "passwords")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource

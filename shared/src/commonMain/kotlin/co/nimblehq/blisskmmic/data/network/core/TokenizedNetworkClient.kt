@@ -4,7 +4,7 @@ import co.nimblehq.blisskmmic.BuildKonfig
 import co.nimblehq.blisskmmic.data.database.datasource.LocalDataSource
 import io.ktor.client.engine.*
 import io.ktor.client.plugins.auth.providers.*
-import io.ktor.http.*
+import io.ktor.client.request.*
 import kotlinx.coroutines.flow.singleOrNull
 
 class TokenizedNetworkClient: NetworkClient {
@@ -26,7 +26,9 @@ class TokenizedNetworkClient: NetworkClient {
                 }
             }
             sendWithoutRequest { request ->
-                request.url.host != Url(BuildKonfig.BASE_URL).host
+                val builder = HttpRequestBuilder()
+                builder.url("${BuildKonfig.BASE_URL}")
+                request.url.host != builder.url.host
             }
         }
     }

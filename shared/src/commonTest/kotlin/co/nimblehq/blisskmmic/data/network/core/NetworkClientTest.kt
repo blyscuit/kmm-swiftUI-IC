@@ -1,5 +1,7 @@
 package co.nimblehq.blisskmmic.data.network.core
 
+import co.nimblehq.blisskmmic.BuildKonfig
+import co.nimblehq.blisskmmic.data.network.helpers.API_VERSION
 import co.nimblehq.blisskmmic.helpers.mock.NetworkMockModel
 import co.nimblehq.blisskmmic.helpers.mock.NETWORK_MOCK_MODEL_RESULT
 import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonMockEngine
@@ -10,14 +12,20 @@ import io.ktor.client.request.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.test.runTest
+import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.fail
 
 @ExperimentalCoroutinesApi
 class NetworkClientTest {
 
-    val path = "/user"
-    val request = HttpRequestBuilder(path = path)
+    private val path = "user"
+    private val request = HttpRequestBuilder()
+
+    @BeforeTest
+    fun setUp() {
+        request.url("$BuildKonfig.BASE_URL$API_VERSION$path")
+    }
 
     @Test
     fun `when calling fetch, it returns correct object`() = runTest {
