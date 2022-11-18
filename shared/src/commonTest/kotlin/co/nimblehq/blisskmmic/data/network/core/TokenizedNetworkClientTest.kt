@@ -5,7 +5,9 @@ import co.nimblehq.blisskmmic.data.database.datasource.LocalDataSource
 import co.nimblehq.blisskmmic.data.database.datasource.MockLocalDataSource
 import co.nimblehq.blisskmmic.data.database.model.TokenDatabaseModel
 import co.nimblehq.blisskmmic.data.network.helpers.API_VERSION
+import co.nimblehq.blisskmmic.helpers.mock.NETWORK_META_MOCK_MODEL_RESULT
 import co.nimblehq.blisskmmic.helpers.mock.NETWORK_MOCK_MODEL_RESULT
+import co.nimblehq.blisskmmic.helpers.mock.NetworkMetaMockModel
 import co.nimblehq.blisskmmic.helpers.mock.NetworkMockModel
 import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonTokenizedMockEngine
 import co.nimblehq.jsonapi.model.JsonApiException
@@ -61,6 +63,27 @@ class TokenizedNetworkClientTest {
             .fetch<NetworkMockModel>(request)
             .collect {
                 it.title shouldBe "Hello"
+            }
+    }
+
+    @Test
+    fun `when calling fetchWithMeta, it returns correct object`() = runTest {
+        val mocker = Mocker()
+        val localDataSource = MockLocalDataSource(mocker)
+        mocker.every {
+            localDataSource.getToken()
+        } returns flow { emit(token) }
+        val engine = jsonTokenizedMockEngine(
+            NETWORK_META_MOCK_MODEL_RESULT,
+            token.accessToken,
+            path
+        )
+        val networkClient = TokenizedNetworkClient(engine = engine, localDataSource)
+        networkClient
+            .fetchWithMeta<NetworkMockModel, NetworkMetaMockModel>(request)
+            .collect {
+                it.first.title shouldBe "Hello"
+                it.second.page shouldBe 1
             }
     }
 
