@@ -1,19 +1,19 @@
 package co.nimblehq.blisskmmic.di.koin
 
-import co.nimblehq.blisskmmic.di.koin.modules.networkModule
-import co.nimblehq.blisskmmic.di.koin.modules.repositoryModule
-import co.nimblehq.blisskmmic.di.koin.modules.useCaseModule
-import co.nimblehq.blisskmmic.di.koin.modules.viewModelModule
+import co.nimblehq.blisskmmic.di.koin.modules.*
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
+import org.koin.core.module.Module
 
 fun initKoin() : KoinApplication {
-    val dataModules = listOf(networkModule, repositoryModule)
+    val dataModules = listOf(networkModule, repositoryModule, databaseModule)
     val domainModules = listOf(useCaseModule)
     val viewModelModules = listOf(viewModelModule)
     return startKoin {
         modules(
-            domainModules + dataModules + viewModelModules
+            domainModules + dataModules + viewModelModules + platformModule
         )
     }
 }
+
+expect val platformModule: Module

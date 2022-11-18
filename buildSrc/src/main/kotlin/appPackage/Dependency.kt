@@ -41,6 +41,12 @@ object Dependency {
     const val KOTEST_ASSERTIONS = "io.kotest:kotest-assertions-core:${Version.KOTEST}"
     const val KOTEST_PROPERTY = "io.kotest:kotest-property:${Version.KOTEST}"
 
+    // Key-Value
+    const val MULTIPLATFORM_SETTINGS = "com.russhwolf:multiplatform-settings:${Version.MULTIPLATFORM_SETTINGS}"
+    const val MULTIPLATFORM_SETTINGS_SERIALIZATION = "com.russhwolf:multiplatform-settings-serialization:${Version.MULTIPLATFORM_SETTINGS}"
+    const val MULTIPLATFORM_SETTINGS_TEST = "com.russhwolf:multiplatform-settings-test:${Version.MULTIPLATFORM_SETTINGS}"
+    const val SECURITY = "androidx.security:security-crypto-ktx:${Version.SECURITY}"
+
     // Resources
     const val MOKO_RESOURCES_GENERATOR = "dev.icerock.moko:resources-generator:${Version.MOKO_RESOURCES}"
     const val MOKO_RESOURCES = "dev.icerock.moko:resources:${Version.MOKO_RESOURCES}"
