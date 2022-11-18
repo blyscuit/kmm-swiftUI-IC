@@ -8,4 +8,3 @@
 
 typealias Assets = R.image
 typealias Fonts = R.font
-typealias Localize = R.string.localizable

@@ -11,6 +11,7 @@ buildscript {
         classpath(Dependency.KOVER)
         classpath(Dependency.KOTLIN_SERIALIZATION)
         classpath(Dependency.BUILD_KONFIG)
+        classpath(Dependency.MOKO_RESOURCES_GENERATOR)
     }
 }
 

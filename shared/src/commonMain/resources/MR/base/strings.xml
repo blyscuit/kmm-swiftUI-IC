@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="common_error">An error occurred. Please try again.</string>
+    <string name="login_fields_email">Email</string>
+    <string name="login_fields_password">Password</string>
+    <string name="login_button_login">Log in</string>
+    <string name="login_button_forgot">Forgot?</string>
+    <string name="reset_password_field_email">Email</string>
+    <string name="reset_password_text_instruction">Enter your email to receive instructions for resetting your password.</string>
+    <string name="reset_password_button_reset">Reset</string>
+</resources>
