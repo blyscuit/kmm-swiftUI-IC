@@ -3,8 +3,10 @@ package co.nimblehq.blisskmmic.data.network.core
 import app.cash.turbine.test
 import co.nimblehq.blisskmmic.BuildKonfig
 import co.nimblehq.blisskmmic.data.network.helpers.API_VERSION
+import co.nimblehq.blisskmmic.helpers.mock.NETWORK_META_MOCK_MODEL_RESULT
 import co.nimblehq.blisskmmic.helpers.mock.NetworkMockModel
 import co.nimblehq.blisskmmic.helpers.mock.NETWORK_MOCK_MODEL_RESULT
+import co.nimblehq.blisskmmic.helpers.mock.NetworkMetaMockModel
 import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonMockEngine
 import co.nimblehq.jsonapi.model.JsonApiException
 import io.kotest.matchers.collections.shouldContain
@@ -36,6 +38,18 @@ class NetworkClientTest {
             .test {
                 awaitItem().title shouldBe "Hello"
                 awaitComplete()
+            }
+    }
+
+    @Test
+    fun `when calling fetchWithMeta, it returns correct object`() = runTest {
+        val engine = jsonMockEngine(NETWORK_META_MOCK_MODEL_RESULT, path)
+        val networkClient = NetworkClient(engine = engine)
+        networkClient
+            .fetchWithMeta<NetworkMockModel, NetworkMetaMockModel>(request)
+            .collect {
+                it.first.title shouldBe "Hello"
+                it.second.page shouldBe 1
             }
     }
 

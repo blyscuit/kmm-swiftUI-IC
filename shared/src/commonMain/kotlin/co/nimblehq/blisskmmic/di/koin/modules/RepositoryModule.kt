@@ -9,4 +9,5 @@ import org.koin.dsl.module
 val repositoryModule = module {
     single<AuthenticationRepository> { AuthenticationRepositoryImpl(get(), get()) }
     single<AccountRecoveryRepository> { AccountRecoveryRepositoryImpl(get()) }
+    factory<SurveyRepository> { SurveyRepositoryImpl(get(named(TOKENIZED_NETWORK_CLIENT_KOIN))) }
 }
