@@ -57,6 +57,9 @@ kotlin {
                 implementation(Dependency.KOTEST_FRAMEWORK)
                 implementation(Dependency.KOTEST_ASSERTIONS)
                 implementation(Dependency.KOTEST_PROPERTY)
+                implementation(Dependency.MULTIPLATFORM_SETTINGS)
+                implementation(Dependency.MULTIPLATFORM_SETTINGS_SERIALIZATION)
+                implementation(Dependency.MULTIPLATFORM_SETTINGS_TEST)
             }
         }
         val commonTest by getting {
@@ -68,6 +71,7 @@ kotlin {
             dependencies {
                 implementation(Dependency.KTOR_ANDROID)
                 implementation(Dependency.KOIN_ANDROID)
+                implementation(Dependency.SECURITY)
             }
         }
         val androidTest by getting
