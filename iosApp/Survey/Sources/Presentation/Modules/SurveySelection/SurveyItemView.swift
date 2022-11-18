@@ -52,7 +52,7 @@ struct SurveyItemView: View {
                     .accessibility(.surveySelection(.detailText))
             }
             .id(survey.id)
-            .padding(.leading, 20.0)
+            .padding(.leading, .smallPadding)
             .padding(.trailing, 76.0)
         }
         .accessibilityElement(children: .contain)

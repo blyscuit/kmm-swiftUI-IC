@@ -63,6 +63,8 @@ struct SurveySelectionView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             VStack {
+                SurveyHeaderView()
+                    .accessibility(.surveySelection(.header))
                 Spacer()
                 HStack {
                     Spacer()
@@ -74,8 +76,8 @@ struct SurveySelectionView: View {
                             .resizable()
                             .frame(width: 56.0, height: 56.0)
                     }
-                    .padding(.trailing, 20.0)
-                    .padding(.bottom, 26.0)
+                    .padding(.trailing, .smallPadding)
+                    .padding(.bottom, .mediumPadding)
                     .accessibility(.surveySelection(.nextButton))
                 }
             }
