@@ -1,7 +1,6 @@
 package co.nimblehq.blisskmmic.data.repository
 
 import co.nimblehq.blisskmmic.data.model.*
-import co.nimblehq.blisskmmic.data.network.core.NetworkClient
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSource
 import co.nimblehq.blisskmmic.data.network.target.SurveySelectionTargetType
 import co.nimblehq.blisskmmic.domain.model.PaginationMeta

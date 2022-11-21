@@ -68,8 +68,6 @@ class TokenizedNetworkClientTest {
 
     @Test
     fun `when calling fetchWithMeta, it returns correct object`() = runTest {
-        val mocker = Mocker()
-        val localDataSource = MockLocalDataSource(mocker)
         mocker.every {
             localDataSource.getToken()
         } returns flow { emit(token) }

@@ -54,4 +54,7 @@ object Dependency {
 
     // Turbine
     const val TURBINE = "app.cash.turbine:turbine:${Version.TURBINE}"
+
+    // Napier
+    const val NAPIER = "io.github.aakira:napier:${Version.NAPIER}"
 }

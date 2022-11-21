@@ -5,9 +5,10 @@ import io.ktor.http.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-sealed class SurveyTargetType: TargetType
+sealed class SurveyTargetType<T>: TargetType<T>
 
-class SurveySelectionTargetType(page: Int = 1, size: Int = 3): SurveyTargetType() {
+class SurveySelectionTargetType(page: Int = 1, size: Int = 3):
+    SurveyTargetType<SurveySelectionTargetType.SurveySelectionInput>() {
 
     @Serializable
     data class SurveySelectionInput(
@@ -18,7 +19,6 @@ class SurveySelectionTargetType(page: Int = 1, size: Int = 3): SurveyTargetType(
     )
 
     override var path = "surveys"
-    override var method = HttpMethod.Post
+    override var method = HttpMethod.Get
     override var body = SurveySelectionInput(page, size)
-    override var headers: Map<String, String>? = null
 }

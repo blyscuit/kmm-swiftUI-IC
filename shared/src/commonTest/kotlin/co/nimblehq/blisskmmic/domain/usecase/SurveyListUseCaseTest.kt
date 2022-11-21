@@ -7,6 +7,7 @@ import co.nimblehq.blisskmmic.domain.model.fakeSurvey
 import co.nimblehq.blisskmmic.domain.repository.MockSurveyRepository
 import co.nimblehq.blisskmmic.domain.repository.SurveyRepository
 import io.kotest.matchers.shouldBe
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
@@ -17,6 +18,7 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.fail
 
+@OptIn(ExperimentalCoroutinesApi::class)
 @UsesMocks(SurveyRepository::class)
 @UsesFakes(Survey::class, PaginationMeta::class)
 class SurveyListUseCaseTest {

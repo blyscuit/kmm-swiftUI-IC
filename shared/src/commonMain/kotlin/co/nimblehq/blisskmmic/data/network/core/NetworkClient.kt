@@ -1,6 +1,8 @@
 package co.nimblehq.blisskmmic.data.network.core
 
 import co.nimblehq.jsonapi.json.JsonApi
+import io.github.aakira.napier.DebugAntilog
+import io.github.aakira.napier.Napier
 import io.ktor.client.*
 import io.ktor.client.engine.*
 import io.ktor.client.plugins.contentnegotiation.*
@@ -23,6 +25,8 @@ open class NetworkClient {
     }
 
     constructor(engine: HttpClientEngine? = null) {
+        Napier.takeLogarithm()
+        Napier.base(DebugAntilog())
         client = if (engine == null) {
             HttpClient(clientConfig())
         } else {
@@ -51,7 +55,14 @@ open class NetworkClient {
 
     open fun clientConfig(): HttpClientConfig<*>.() -> Unit {
         return {
-            install(Logging)
+            install(Logging) {
+                level = LogLevel.ALL
+                logger = object : Logger {
+                    override fun log(message: String) {
+                        Napier.log(io.github.aakira.napier.LogLevel.DEBUG, message = message)
+                    }
+                }
+            }
             install(ContentNegotiation) {
                 json(json)
             }
