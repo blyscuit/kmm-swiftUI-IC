@@ -51,4 +51,7 @@ object Dependency {
     // Resources
     const val MOKO_RESOURCES_GENERATOR = "dev.icerock.moko:resources-generator:${Version.MOKO_RESOURCES}"
     const val MOKO_RESOURCES = "dev.icerock.moko:resources:${Version.MOKO_RESOURCES}"
+
+    // Napier
+    const val NAPIER = "io.github.aakira:napier:${Version.NAPIER}"
 }

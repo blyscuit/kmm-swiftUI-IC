@@ -21,4 +21,5 @@ object Version {
     const val MULTIPLATFORM_SETTINGS = "1.0.0-RC"
     const val SECURITY = "1.1.0-alpha03"
     const val MOKO_RESOURCES = "0.20.1"
+    const val NAPIER = "2.6.1"
 }

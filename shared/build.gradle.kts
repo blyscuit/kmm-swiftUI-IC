@@ -61,6 +61,7 @@ kotlin {
                 implementation(Dependency.MULTIPLATFORM_SETTINGS)
                 implementation(Dependency.MULTIPLATFORM_SETTINGS_SERIALIZATION)
                 implementation(Dependency.MULTIPLATFORM_SETTINGS_TEST)
+                implementation(Dependency.NAPIER)
             }
         }
         val commonTest by getting {

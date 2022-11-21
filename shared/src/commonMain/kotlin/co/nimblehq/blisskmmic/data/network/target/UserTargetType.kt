@@ -6,9 +6,10 @@ import io.ktor.http.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-sealed class UserTargetType: TargetType
+sealed class UserTargetType<T>: TargetType<T>
 
-class LoginTargetType(email: String, password: String): UserTargetType() {
+class LoginTargetType(email: String, password: String):
+    UserTargetType<LoginTargetType.LoginInput>() {
 
     @Serializable
     data class LoginInput(
@@ -31,5 +32,4 @@ class LoginTargetType(email: String, password: String): UserTargetType() {
         BuildKonfig.CLIENT_ID,
         BuildKonfig.CLIENT_SECRET
     )
-    override val headers: Map<String, String>? = null
 }
