@@ -60,6 +60,7 @@ PODS:
   - R.swift.Library (5.3.0)
   - Resolver (1.5.0)
   - Shared (1.0)
+  - SkeletonUI (1.0.9)
   - SnapKit (5.6.0)
   - Sourcery (1.8.0):
     - Sourcery/CLI-Only (= 1.8.0)
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - R.swift
   - Resolver
   - Shared (from `../shared`)
+  - SkeletonUI
   - SnapKit
   - Sourcery (= 1.8.0)
   - SwiftFormat/CLI
@@ -110,6 +112,7 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - Resolver
+    - SkeletonUI
     - SnapKit
     - Sourcery
     - SwiftFormat
@@ -152,12 +155,13 @@ SPEC CHECKSUMS:
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
   Shared: 0c72e1f7649dc66d4e93f4d61ea6caa582c8de92
+  SkeletonUI: b5c868e6917123e3d442d6cef9c71fe048175f3b
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Sourcery: 6f5fe49b82b7e02e8c65560cbd52e1be67a1af2e
   SwiftFormat: 2402d29b26746f169cce5454d5af88314cbb2e35
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: c506be3005eec4560de93594e4fa87416d1c33d1
+PODFILE CHECKSUM: 32a0ee8c609fe271e992af202bcfb555d3f95a90
 
 COCOAPODS: 1.11.3

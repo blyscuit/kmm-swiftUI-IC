@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09495F5928F92A6F0036BDFB /* RouteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F5828F92A6E0036BDFB /* RouteCoordinator.swift */; };
+		09495F0228E40B110036BDFB /* GestureVelocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F0128E40B110036BDFB /* GestureVelocity.swift */; };
+		09495F0728E40E130036BDFB /* FadePaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F0628E40E130036BDFB /* FadePaginationView.swift */; };
+		09495F0928E410A00036BDFB /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F0828E410A00036BDFB /* PageControlView.swift */; };
+		09495F0C28E441900036BDFB /* ViewId+SurveySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F0A28E441860036BDFB /* ViewId+SurveySelection.swift */; };
+		09495F1828E4461C0036BDFB /* SurveySelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F1628E446150036BDFB /* SurveySelectionScreen.swift */; };
+		09495F2828EC38AD0036BDFB /* SkeletonTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F2728EC38AD0036BDFB /* SkeletonTextView.swift */; };
+		09495F2A28EC43760036BDFB /* ViewId+SurveyLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F2928EC43760036BDFB /* ViewId+SurveyLoading.swift */; };
+		09495F2B28EC43860036BDFB /* ViewId+SurveyLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F2928EC43760036BDFB /* ViewId+SurveyLoading.swift */; };
+		09495F3328EC44330036BDFB /* SurveyLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F3128EC442D0036BDFB /* SurveyLoadingScreen.swift */; };
 		09495F6628FF97080036BDFB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6528FF97070036BDFB /* SplashView.swift */; };
-		09495F6828FF97490036BDFB /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
-		09495F6A28FFAFA20036BDFB /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
-		09495F6F28FFDE8C0036BDFB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6E28FFDE8C0036BDFB /* LoginView.swift */; };
+		09495F7828FFF2D50036BDFB /* ViewId+SurveySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7728FFF2D50036BDFB /* ViewId+SurveySelection.swift */; };
+		09495F7E28FFF47F0036BDFB /* GestureVelocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7D28FFF47F0036BDFB /* GestureVelocity.swift */; };
+		09495F7F2900017E0036BDFB /* ViewId+SurveySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7728FFF2D50036BDFB /* ViewId+SurveySelection.swift */; };
+		09495FC9291106A00036BDFB /* Constants+SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FC8291106A00036BDFB /* Constants+SystemImage.swift */; };
+		09495FCB291107760036BDFB /* Image+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCA291107760036BDFB /* Image+Constants.swift */; };
+		09495FCD291109450036BDFB /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCC291109450036BDFB /* CGFloat+Extensions.swift */; };
+		09495FCF29110E820036BDFB /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCE29110E820036BDFB /* String+URL.swift */; };
 		09636AF228D4779400A5CB97 /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */; };
 		09636AF328D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */; };
 		09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF528D47A1400A5CB97 /* R.generated.swift */; };
-		09636AF928D47A4D00A5CB97 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF828D47A4D00A5CB97 /* Font+Extensions.swift */; };
 		09636AFD28D484CA00A5CB97 /* R+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AFC28D484CA00A5CB97 /* R+SwiftUI.swift */; };
 		09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AFF28D4860F00A5CB97 /* PrimaryTextField.swift */; };
 		09636B0228D4876100A5CB97 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B0128D4876100A5CB97 /* PrimaryButton.swift */; };
@@ -32,9 +43,31 @@
 		09636B3228D8272200A5CB97 /* ScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2A28D8255D00A5CB97 /* ScreenProtocol.swift */; };
 		09636B3328D8272E00A5CB97 /* ViewId+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2F28D8267D00A5CB97 /* ViewId+General.swift */; };
 		09636B3628D8285700A5CB97 /* KeyboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3428D8284600A5CB97 /* KeyboardScreen.swift */; };
+		0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */; };
+		0982A7A62921DFE800FC1976 /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */; };
+		0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7DE29222EA800FC1976 /* LoginSpec.swift */; };
+		0982A7E029222EB900FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
+		0982A7E129222EBB00FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
+		0982A7E329222EFF00FC1976 /* RouteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7E229222EFF00FC1976 /* RouteCoordinator.swift */; };
+		0982A7E429222F2000FC1976 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6E28FFDE8C0036BDFB /* LoginView.swift */; };
+		0982A7E72922357C00FC1976 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF828D47A4D00A5CB97 /* Font+Extensions.swift */; };
+		0982A7EB29223C3A00FC1976 /* SurveyLoadingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EA29223C3A00FC1976 /* SurveyLoadingSpec.swift */; };
+		0982A80229278E9000FC1976 /* SurveySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */; };
+		0982A80329278E9000FC1976 /* SurveyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FC29278E9000FC1976 /* SurveyHeaderView.swift */; };
+		0982A80429278E9000FC1976 /* SurveyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FD29278E9000FC1976 /* SurveyItemView.swift */; };
+		0982A80529278E9000FC1976 /* SurveyLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FF29278E9000FC1976 /* SurveyLoading.swift */; };
+		0982A80629278E9000FC1976 /* SurveyItemLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A80029278E9000FC1976 /* SurveyItemLoading.swift */; };
+		0982A80729278E9000FC1976 /* SurveyHeaderLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A80129278E9000FC1976 /* SurveyHeaderLoading.swift */; };
+		0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EE29223DA600FC1976 /* LoginFlow.swift */; };
 		09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770B28E191B400EAA9EE /* AppCoordinator.swift */; };
 		09CE770F28E1922000EAA9EE /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770E28E1922000EAA9EE /* Screen.swift */; };
-		09CE773228E2ED2300EAA9EE /* LazyKoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772F28E2ED2300EAA9EE /* LazyKoin.swift */; };
+		09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771228E1A94600EAA9EE /* ResetPasswordView.swift */; };
+		09CE771528E1AB0B00EAA9EE /* ViewId+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771428E1AB0B00EAA9EE /* ViewId+ResetPassword.swift */; };
+		09CE771F28E1BB4700EAA9EE /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771C28E1BB1E00EAA9EE /* ResetPasswordScreen.swift */; };
+		09CE772028E1BBC400EAA9EE /* ViewId+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771428E1AB0B00EAA9EE /* ViewId+ResetPassword.swift */; };
+		09CE772328E2B87700EAA9EE /* LoadingDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772228E2B87700EAA9EE /* LoadingDialog.swift */; };
+		09CE772528E2C1C600EAA9EE /* View+HideBackButtonTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772428E2C1C600EAA9EE /* View+HideBackButtonTitle.swift */; };
+		09CE772728E2C44D00EAA9EE /* View+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772628E2C44D00EAA9EE /* View+BackButton.swift */; };
 		09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773028E2ED2300EAA9EE /* KoinApplication.swift */; };
 		09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */; };
 		351F5715D07BB9ED3F8B15F8 /* Pods_Survey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315DBBA2E56D199C3AC672B5 /* Pods_Survey.framework */; };
@@ -47,7 +80,6 @@
 		D954D8D620B1653F4619CCBC /* Pods_SurveyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B692AA2E3039E21B8B75CC /* Pods_SurveyTests.framework */; };
 		EABA6D4F0FE97293430D3FC9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A1F95D20E1E58589F4CD31 /* Constants.swift */; };
 		EE08DEF68E0F23B6777E9BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE0E10E82DADFEF9BF954DF /* LaunchScreen.storyboard */; };
-		F860FAD5941956384AEA9646 /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415CD22123B29DD0BC988641 /* Constants+API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,10 +134,23 @@
 
 /* Begin PBXFileReference section */
 		03163DC877AC6E8DE71DB277 /* Pods_Survey_SurveyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_SurveyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		09495F5828F92A6E0036BDFB /* RouteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCoordinator.swift; sourceTree = "<group>"; };
+		09495F0128E40B110036BDFB /* GestureVelocity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureVelocity.swift; sourceTree = "<group>"; };
+		09495F0628E40E130036BDFB /* FadePaginationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePaginationView.swift; sourceTree = "<group>"; };
+		09495F0828E410A00036BDFB /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
+		09495F0A28E441860036BDFB /* ViewId+SurveySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+SurveySelection.swift"; sourceTree = "<group>"; };
+		09495F1628E446150036BDFB /* SurveySelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySelectionScreen.swift; sourceTree = "<group>"; };
+		09495F2728EC38AD0036BDFB /* SkeletonTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTextView.swift; sourceTree = "<group>"; };
+		09495F2928EC43760036BDFB /* ViewId+SurveyLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+SurveyLoading.swift"; sourceTree = "<group>"; };
+		09495F3128EC442D0036BDFB /* SurveyLoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyLoadingScreen.swift; sourceTree = "<group>"; };
 		09495F6528FF97070036BDFB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		09495F6728FF97490036BDFB /* ViewId+Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+Splash.swift"; sourceTree = "<group>"; };
 		09495F6E28FFDE8C0036BDFB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		09495F7728FFF2D50036BDFB /* ViewId+SurveySelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewId+SurveySelection.swift"; sourceTree = "<group>"; };
+		09495F7D28FFF47F0036BDFB /* GestureVelocity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureVelocity.swift; sourceTree = "<group>"; };
+		09495FC8291106A00036BDFB /* Constants+SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+SystemImage.swift"; sourceTree = "<group>"; };
+		09495FCA291107760036BDFB /* Image+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Constants.swift"; sourceTree = "<group>"; };
+		09495FCC291109450036BDFB /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		09495FCE29110E820036BDFB /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-Book.otf"; sourceTree = "<group>"; };
 		09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-BookHeavy.otf"; sourceTree = "<group>"; };
 		09636AF528D47A1400A5CB97 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -123,8 +168,26 @@
 		09636B2A28D8255D00A5CB97 /* ScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenProtocol.swift; sourceTree = "<group>"; };
 		09636B2F28D8267D00A5CB97 /* ViewId+General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+General.swift"; sourceTree = "<group>"; };
 		09636B3428D8284600A5CB97 /* KeyboardScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardScreen.swift; sourceTree = "<group>"; };
+		0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionSpec.swift; sourceTree = "<group>"; };
+		0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordSpec.swift; sourceTree = "<group>"; };
+		0982A7DE29222EA800FC1976 /* LoginSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSpec.swift; sourceTree = "<group>"; };
+		0982A7E229222EFF00FC1976 /* RouteCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCoordinator.swift; sourceTree = "<group>"; };
+		0982A7EA29223C3A00FC1976 /* SurveyLoadingSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyLoadingSpec.swift; sourceTree = "<group>"; };
+		0982A7EE29223DA600FC1976 /* LoginFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
+		0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionView.swift; sourceTree = "<group>"; };
+		0982A7FC29278E9000FC1976 /* SurveyHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderView.swift; sourceTree = "<group>"; };
+		0982A7FD29278E9000FC1976 /* SurveyItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemView.swift; sourceTree = "<group>"; };
+		0982A7FF29278E9000FC1976 /* SurveyLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyLoading.swift; sourceTree = "<group>"; };
+		0982A80029278E9000FC1976 /* SurveyItemLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemLoading.swift; sourceTree = "<group>"; };
+		0982A80129278E9000FC1976 /* SurveyHeaderLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderLoading.swift; sourceTree = "<group>"; };
 		09CE770B28E191B400EAA9EE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		09CE770E28E1922000EAA9EE /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		09CE771228E1A94600EAA9EE /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		09CE771428E1AB0B00EAA9EE /* ViewId+ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+ResetPassword.swift"; sourceTree = "<group>"; };
+		09CE771C28E1BB1E00EAA9EE /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
+		09CE772228E2B87700EAA9EE /* LoadingDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDialog.swift; sourceTree = "<group>"; };
+		09CE772428E2C1C600EAA9EE /* View+HideBackButtonTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HideBackButtonTitle.swift"; sourceTree = "<group>"; };
+		09CE772628E2C44D00EAA9EE /* View+BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+BackButton.swift"; sourceTree = "<group>"; };
 		09CE772F28E2ED2300EAA9EE /* LazyKoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyKoin.swift; sourceTree = "<group>"; };
 		09CE773028E2ED2300EAA9EE /* KoinApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoinApplication.swift; sourceTree = "<group>"; };
 		09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
@@ -136,7 +199,6 @@
 		23B0A1C25E96921A71D8B806 /* Pods-Survey-SurveyUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey-SurveyUITests.release staging.xcconfig"; path = "Target Support Files/Pods-Survey-SurveyUITests/Pods-Survey-SurveyUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		293DE1041DE212AA81536BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		315DBBA2E56D199C3AC672B5 /* Pods_Survey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		415CD22123B29DD0BC988641 /* Constants+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+API.swift"; sourceTree = "<group>"; };
 		46885A08B19F8EB7FFC5117F /* IOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSApp.swift; sourceTree = "<group>"; };
 		57B692AA2E3039E21B8B75CC /* Pods_SurveyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurveyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A115DAC86D72B7F2CCCC346 /* SurveyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +264,22 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		09495F1528E446090036BDFB /* SurveySelection */ = {
+			isa = PBXGroup;
+			children = (
+				09495F1628E446150036BDFB /* SurveySelectionScreen.swift */,
+			);
+			path = SurveySelection;
+			sourceTree = "<group>";
+		};
+		09495F3028EC441F0036BDFB /* SurveyLoading */ = {
+			isa = PBXGroup;
+			children = (
+				09495F3128EC442D0036BDFB /* SurveyLoadingScreen.swift */,
+			);
+			path = SurveyLoading;
+			sourceTree = "<group>";
+		};
 		09495F6428FF96F50036BDFB /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,8 +317,12 @@
 		09636AF728D47A3800A5CB97 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				09495FCC291109450036BDFB /* CGFloat+Extensions.swift */,
 				09636AF828D47A4D00A5CB97 /* Font+Extensions.swift */,
+				09CE772428E2C1C600EAA9EE /* View+HideBackButtonTitle.swift */,
+				09CE772628E2C44D00EAA9EE /* View+BackButton.swift */,
 				09636B0E28D80B8500A5CB97 /* View+KeyboardDismiss.swift */,
+				09495FCA291107760036BDFB /* Image+Constants.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -248,9 +330,12 @@
 		09636AFE28D485F600A5CB97 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				09CE772228E2B87700EAA9EE /* LoadingDialog.swift */,
+				09495F7D28FFF47F0036BDFB /* GestureVelocity.swift */,
 				09636AFF28D4860F00A5CB97 /* PrimaryTextField.swift */,
 				09636B0128D4876100A5CB97 /* PrimaryButton.swift */,
 				09636B0C28D4917200A5CB97 /* OverlayButton.swift */,
+				09495F0128E40B110036BDFB /* GestureVelocity.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -274,6 +359,7 @@
 		09636B1028D80FA400A5CB97 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0982A7A12921DFE700FC1976 /* Modules */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -282,9 +368,13 @@
 			isa = PBXGroup;
 			children = (
 				09636B1428D8148C00A5CB97 /* ViewId.swift */,
+				09CE771428E1AB0B00EAA9EE /* ViewId+ResetPassword.swift */,
+				09495F2928EC43760036BDFB /* ViewId+SurveyLoading.swift */,
 				09636B1628D815D100A5CB97 /* ViewId+Login.swift */,
+				09495F0A28E441860036BDFB /* ViewId+SurveySelection.swift */,
 				09636B2F28D8267D00A5CB97 /* ViewId+General.swift */,
 				09495F6728FF97490036BDFB /* ViewId+Splash.swift */,
+				09495F7728FFF2D50036BDFB /* ViewId+SurveySelection.swift */,
 			);
 			path = ViewId;
 			sourceTree = "<group>";
@@ -292,8 +382,11 @@
 		09636B2628D8250B00A5CB97 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				09495F3028EC441F0036BDFB /* SurveyLoading */,
+				09495F1528E446090036BDFB /* SurveySelection */,
 				09636B3728D8286600A5CB97 /* General */,
 				09636B2728D8251300A5CB97 /* Login */,
+				09CE771E28E1BB2200EAA9EE /* ResetPassword */,
 				09636B2A28D8255D00A5CB97 /* ScreenProtocol.swift */,
 			);
 			path = Screens;
@@ -315,11 +408,91 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		0982A7972921DE6700FC1976 /* SurveySelection */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7E929223C3A00FC1976 /* SurveyLoading */,
+				0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */,
+			);
+			path = SurveySelection;
+			sourceTree = "<group>";
+		};
+		0982A7A12921DFE700FC1976 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7A22921DFE700FC1976 /* ResetPassword */,
+				0982A7A42921DFE700FC1976 /* Login */,
+				0982A7972921DE6700FC1976 /* SurveySelection */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0982A7A22921DFE700FC1976 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		0982A7A42921DFE700FC1976 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7DE29222EA800FC1976 /* LoginSpec.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0982A7E929223C3A00FC1976 /* SurveyLoading */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7EA29223C3A00FC1976 /* SurveyLoadingSpec.swift */,
+			);
+			path = SurveyLoading;
+			sourceTree = "<group>";
+		};
+		0982A7ED29223DA600FC1976 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7EE29223DA600FC1976 /* LoginFlow.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		0982A7F929278E9000FC1976 /* SurveySelection */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */,
+				0982A7FB29278E9000FC1976 /* SurveyHeader */,
+				0982A7FD29278E9000FC1976 /* SurveyItemView.swift */,
+				0982A7FE29278E9000FC1976 /* SurveyLoading */,
+			);
+			path = SurveySelection;
+			sourceTree = "<group>";
+		};
+		0982A7FB29278E9000FC1976 /* SurveyHeader */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7FC29278E9000FC1976 /* SurveyHeaderView.swift */,
+			);
+			path = SurveyHeader;
+			sourceTree = "<group>";
+		};
+		0982A7FE29278E9000FC1976 /* SurveyLoading */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7FF29278E9000FC1976 /* SurveyLoading.swift */,
+				0982A80029278E9000FC1976 /* SurveyItemLoading.swift */,
+				0982A80129278E9000FC1976 /* SurveyHeaderLoading.swift */,
+			);
+			path = SurveyLoading;
+			sourceTree = "<group>";
+		};
 		09CE770A28E191A500EAA9EE /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				09CE770B28E191B400EAA9EE /* AppCoordinator.swift */,
-				09495F5828F92A6E0036BDFB /* RouteCoordinator.swift */,
+				0982A7E229222EFF00FC1976 /* RouteCoordinator.swift */,
 				09CE770D28E1921700EAA9EE /* Screens */,
 			);
 			path = Coordinator;
@@ -331,6 +504,22 @@
 				09CE770E28E1922000EAA9EE /* Screen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		09CE771128E1A93600EAA9EE /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				09CE771228E1A94600EAA9EE /* ResetPasswordView.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		09CE771E28E1BB2200EAA9EE /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				09CE771C28E1BB1E00EAA9EE /* ResetPasswordScreen.swift */,
+			);
+			path = ResetPassword;
 			sourceTree = "<group>";
 		};
 		09CE772C28E2ED2300EAA9EE /* KMM */ = {
@@ -362,6 +551,9 @@
 		0A2BA072E9C5F7AC2C58F613 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09495F0628E40E130036BDFB /* FadePaginationView.swift */,
+				09495F2728EC38AD0036BDFB /* SkeletonTextView.swift */,
+				09495F0828E410A00036BDFB /* PageControlView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -394,6 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				64ED519E814E897776076800 /* Optional+Unwrap.swift */,
+				09495FCE29110E820036BDFB /* String+URL.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -478,6 +671,7 @@
 		450B8AFFE6D899DF9189AB05 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0982A7ED29223DA600FC1976 /* Flows */,
 				09636B2628D8250B00A5CB97 /* Screens */,
 				CF43FB94DA987166ECF7EC52 /* Specs */,
 			);
@@ -522,7 +716,7 @@
 			isa = PBXGroup;
 			children = (
 				71A1F95D20E1E58589F4CD31 /* Constants.swift */,
-				415CD22123B29DD0BC988641 /* Constants+API.swift */,
+				09495FC8291106A00036BDFB /* Constants+SystemImage.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -610,6 +804,8 @@
 		B7707C4371EA10EA47E7E7B4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0982A7F929278E9000FC1976 /* SurveySelection */,
+				09CE771128E1A93600EAA9EE /* ResetPassword */,
 				09495F6D28FFDE8C0036BDFB /* Login */,
 				09495F6428FF96F50036BDFB /* Splash */,
 			);
@@ -908,7 +1104,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift",
+				$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1106,29 +1302,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0982A80729278E9000FC1976 /* SurveyHeaderLoading.swift in Sources */,
+				09CE772728E2C44D00EAA9EE /* View+BackButton.swift in Sources */,
+				0982A80329278E9000FC1976 /* SurveyHeaderView.swift in Sources */,
 				09636B0D28D4917200A5CB97 /* OverlayButton.swift in Sources */,
+				09495FC9291106A00036BDFB /* Constants+SystemImage.swift in Sources */,
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
-				F860FAD5941956384AEA9646 /* Constants+API.swift in Sources */,
+				09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */,
+				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
 				09636B3028D8267D00A5CB97 /* ViewId+General.swift in Sources */,
 				09636B0228D4876100A5CB97 /* PrimaryButton.swift in Sources */,
 				09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */,
+				09495FCF29110E820036BDFB /* String+URL.swift in Sources */,
+				09495F0728E40E130036BDFB /* FadePaginationView.swift in Sources */,
+				0982A80229278E9000FC1976 /* SurveySelectionView.swift in Sources */,
+				0982A80629278E9000FC1976 /* SurveyItemLoading.swift in Sources */,
+				09495F0928E410A00036BDFB /* PageControlView.swift in Sources */,
 				09636AFD28D484CA00A5CB97 /* R+SwiftUI.swift in Sources */,
+				09495FCB291107760036BDFB /* Image+Constants.swift in Sources */,
 				09636B0F28D80B8500A5CB97 /* View+KeyboardDismiss.swift in Sources */,
 				09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */,
-				09495F5928F92A6F0036BDFB /* RouteCoordinator.swift in Sources */,
-				09495F6828FF97490036BDFB /* ViewId+Splash.swift in Sources */,
 				09636B1728D815D100A5CB97 /* ViewId+Login.swift in Sources */,
+				09495F7E28FFF47F0036BDFB /* GestureVelocity.swift in Sources */,
+				0982A7E429222F2000FC1976 /* LoginView.swift in Sources */,
 				EABA6D4F0FE97293430D3FC9 /* Constants.swift in Sources */,
-				09495F6F28FFDE8C0036BDFB /* LoginView.swift in Sources */,
+				09495FCD291109450036BDFB /* CGFloat+Extensions.swift in Sources */,
 				09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */,
-				09636AF928D47A4D00A5CB97 /* Font+Extensions.swift in Sources */,
-				09CE773228E2ED2300EAA9EE /* LazyKoin.swift in Sources */,
+				0982A7E329222EFF00FC1976 /* RouteCoordinator.swift in Sources */,
+				09495F7828FFF2D50036BDFB /* ViewId+SurveySelection.swift in Sources */,
+				09495F2A28EC43760036BDFB /* ViewId+SurveyLoading.swift in Sources */,
+				09495F0228E40B110036BDFB /* GestureVelocity.swift in Sources */,
+				09495F2828EC38AD0036BDFB /* SkeletonTextView.swift in Sources */,
+				0982A80429278E9000FC1976 /* SurveyItemView.swift in Sources */,
 				09636B1528D8148C00A5CB97 /* ViewId.swift in Sources */,
+				0982A80529278E9000FC1976 /* SurveyLoading.swift in Sources */,
+				0982A7E029222EB900FC1976 /* ViewId+Splash.swift in Sources */,
 				09CE770F28E1922000EAA9EE /* Screen.swift in Sources */,
+				09CE772528E2C1C600EAA9EE /* View+HideBackButtonTitle.swift in Sources */,
+				09CE771528E1AB0B00EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */,
 				09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */,
 				09495F6628FF97080036BDFB /* SplashView.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,
+				0982A7E72922357C00FC1976 /* Font+Extensions.swift in Sources */,
+				09CE772328E2B87700EAA9EE /* LoadingDialog.swift in Sources */,
 				09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1138,10 +1355,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				09636B3328D8272E00A5CB97 /* ViewId+General.swift in Sources */,
+				0982A7A62921DFE800FC1976 /* ResetPasswordSpec.swift in Sources */,
+				09CE772028E1BBC400EAA9EE /* ViewId+ResetPassword.swift in Sources */,
+				09495F3328EC44330036BDFB /* SurveyLoadingScreen.swift in Sources */,
+				09495F1828E4461C0036BDFB /* SurveySelectionScreen.swift in Sources */,
 				09636B3228D8272200A5CB97 /* ScreenProtocol.swift in Sources */,
+				0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */,
+				0982A7EB29223C3A00FC1976 /* SurveyLoadingSpec.swift in Sources */,
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
-				09495F6A28FFAFA20036BDFB /* ViewId+Splash.swift in Sources */,
+				0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */,
+				09CE771F28E1BB4700EAA9EE /* ResetPasswordScreen.swift in Sources */,
+				0982A7E129222EBB00FC1976 /* ViewId+Splash.swift in Sources */,
+				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
+				09495F7F2900017E0036BDFB /* ViewId+SurveySelection.swift in Sources */,
+				09495F0C28E441900036BDFB /* ViewId+SurveySelection.swift in Sources */,
+				0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */,
 				09636B3628D8285700A5CB97 /* KeyboardScreen.swift in Sources */,
+				09495F2B28EC43860036BDFB /* ViewId+SurveyLoading.swift in Sources */,
 				09636B2228D821ED00A5CB97 /* ViewId+Login.swift in Sources */,
 				09636B3128D8271D00A5CB97 /* LoginScreen.swift in Sources */,
 			);
@@ -1353,7 +1583,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -1613,7 +1843,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -1639,7 +1869,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -1690,7 +1920,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;

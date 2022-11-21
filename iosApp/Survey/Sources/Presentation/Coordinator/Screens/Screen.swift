@@ -10,4 +10,7 @@ enum Screen {
 
     case login
     case splash
+    case resetPassword
+    case surveySelection
+    case surveyLoading
 }

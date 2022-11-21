@@ -14,12 +14,18 @@ enum ViewId {
 
     case login(Login)
     case splash(Splash)
+    case resetPassword(ResetPassword)
+    case surveySelection(SurveySelection)
+    case surveyLoading(SurveyLoading)
     case general(General)
 
     func callAsFunction() -> String {
         switch self {
         case let .login(login): return login.rawValue
         case let .splash(splash): return splash.rawValue
+        case let .resetPassword(resetPassword): return resetPassword.rawValue
+        case let .surveySelection(surveySelection): return surveySelection.rawValue
+        case let .surveyLoading(surveyLoading): return surveyLoading.rawValue
         case let .general(general): return general.rawValue
         }
     }
