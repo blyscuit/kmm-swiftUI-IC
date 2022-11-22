@@ -77,7 +77,7 @@ struct LoginView: View {
     }
 
     var loginField: some View {
-        TextField(LocalizeId().login_fields_email.localized, text: $email)
+        TextField(String.localizeId.login_fields_email.localized, text: $email)
             .keyboardType(.emailAddress)
             .primaryTextField()
             .accessibility(.login(.emailField))
@@ -85,10 +85,10 @@ struct LoginView: View {
 
     var passwordField: some View {
         HStack {
-            SecureField(LocalizeId().login_fields_password.localized, text: $password)
+            SecureField(String.localizeId.login_fields_password.localized, text: $password)
                 .accessibility(.login(.passwordField))
             if password.isEmpty {
-                Button(LocalizeId().login_button_forgot.localized) {
+                Button(String.localizeId.login_button_forgot.localized) {
                     coordinator.showResetPassword()
                 }
                 .overlayButton()
@@ -106,7 +106,7 @@ struct LoginView: View {
                 coordinator.showHomeLoading()
             }
         } label: {
-            Text(LocalizeId().login_button_login.localized)
+            Text(String.localizeId.login_button_login.localized)
                 .frame(maxWidth: .infinity)
                 .primaryButton()
                 .accessibility(.login(.loginButton))

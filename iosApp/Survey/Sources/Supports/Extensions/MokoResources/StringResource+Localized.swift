@@ -8,7 +8,10 @@
 
 import Shared
 
-typealias LocalizeId = MR.strings
+extension String {
+
+    static let localizeId = MR.strings()
+}
 
 extension StringResource {
 

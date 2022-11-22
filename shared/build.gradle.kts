@@ -217,5 +217,4 @@ kover {
 
 multiplatformResources {
     multiplatformResourcesPackage = "co.nimblehq.blisskmmic"
-    disableStaticFrameworkWarning = true
 }

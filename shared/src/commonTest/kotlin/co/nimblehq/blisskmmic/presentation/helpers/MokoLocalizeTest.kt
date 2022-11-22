@@ -10,7 +10,12 @@ class MokoLocalizeTest {
 
     @Test
     fun `When calling localize with common_error desc, it returns correct StringDesc`() {
-        StringDesc.Resource(MR.strings.common_error) shouldBe
-                MokoLocalize().localize(MR.strings.common_error.toString())
+        MokoLocalize().localize(MR.strings.common_error.toString()) shouldBe
+                StringDesc.Resource(MR.strings.common_error)
+    }
+
+    @Test
+    fun `When calling localize with an unknown desc, it returns null`() {
+        MokoLocalize().localize("unknown") shouldBe null
     }
 }
