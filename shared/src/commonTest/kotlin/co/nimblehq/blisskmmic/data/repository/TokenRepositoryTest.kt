@@ -2,10 +2,8 @@ package co.nimblehq.blisskmmic.data.repository
 
 import co.nimblehq.blisskmmic.data.database.datasource.LocalDataSource
 import co.nimblehq.blisskmmic.data.database.model.TokenDatabaseModel
-import co.nimblehq.blisskmmic.data.database.model.toToken
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSource
 import co.nimblehq.blisskmmic.domain.model.TokenApiModel
-import co.nimblehq.blisskmmic.domain.model.toToken
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch

@@ -16,10 +16,17 @@ data class TokenDatabaseModel(
     val refreshToken: String,
     @SerialName("created_at")
     val createdAt: Int
-)
+) {
 
-fun TokenDatabaseModel.toToken(): Token {
-    return Token(
+    constructor(token: Token) : this(
+        token.accessToken,
+        token.tokenType,
+        token.expiresIn,
+        token.refreshToken,
+        token.createdAt
+    )
+
+    fun toToken(): Token = Token(
         accessToken,
         tokenType,
         expiresIn,

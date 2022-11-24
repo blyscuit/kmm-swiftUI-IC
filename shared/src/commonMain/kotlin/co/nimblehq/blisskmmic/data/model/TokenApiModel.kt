@@ -15,12 +15,12 @@ data class TokenApiModel(
     val refreshToken: String,
     @SerialName("created_at")
     val createdAt: Int
-)
-
-fun TokenApiModel.toToken() = Token(
-    accessToken,
-    tokenType,
-    expiresIn,
-    refreshToken,
-    createdAt
-)
+) {
+    fun toToken(): Token = Token(
+        accessToken,
+        tokenType,
+        expiresIn,
+        refreshToken,
+        createdAt
+    )
+}
