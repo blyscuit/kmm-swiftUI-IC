@@ -15,7 +15,7 @@ extension String {
 
 extension StringResource {
 
-    var localized: String {
+    func callAsFunction() -> String {
         desc().localized()
     }
 }

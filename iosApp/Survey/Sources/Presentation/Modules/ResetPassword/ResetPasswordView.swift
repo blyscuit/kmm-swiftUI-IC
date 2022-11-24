@@ -31,7 +31,7 @@ struct ResetPasswordView: View {
 
                     Assets.logoWhite.image
 
-                    Text(String.localizeId.reset_password_text_instruction.localized)
+                    Text(String.localizeId.reset_password_text_instruction())
                         .multilineTextAlignment(.center)
 
                     Spacer().frame(maxHeight: 70.0)
@@ -51,7 +51,7 @@ struct ResetPasswordView: View {
     }
 
     var emailField: some View {
-        TextField(String.localizeId.reset_password_field_email.localized, text: $email)
+        TextField(String.localizeId.reset_password_field_email(), text: $email)
             .keyboardType(.emailAddress)
             .primaryTextField()
             .accessibility(.resetPassword(.emailField))
@@ -59,7 +59,7 @@ struct ResetPasswordView: View {
 
     var resetButton: some View {
         Button {} label: {
-            Text(String.localizeId.reset_password_button_reset.localized)
+            Text(String.localizeId.reset_password_button_reset())
                 .frame(maxWidth: .infinity)
                 .primaryButton()
                 .accessibility(.resetPassword(.resetButton))
