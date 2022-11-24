@@ -21,7 +21,7 @@ struct ResetPasswordView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
 
                 VStack(
                     alignment: .center,

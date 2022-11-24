@@ -32,14 +32,14 @@ struct LoginView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
 
                 Assets.backgroundBlur
                     .image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
                     .opacity(animating ? 1.0 : 0.0)
 
                 VStack(

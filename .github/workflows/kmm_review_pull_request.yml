@@ -43,27 +43,10 @@ jobs:
         run: ./gradlew shared:koverXmlReport
 
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7'
-
-      - name: Cache gems
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-
-      - name: Install Bundle and check environment versions
-        run: |
-          echo 'Install Bundle'
-          bundle config path vendor/bundle
-          bundle install
-          echo 'Check environment setup versions'
-          ruby --version
-          gem --version
-          bundler --version
+          bundler-cache: true
 
       - name: Run Android Danger
         env:
