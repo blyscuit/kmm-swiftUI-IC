@@ -53,7 +53,7 @@ struct ResetPasswordView: View {
     }
 
     var emailField: some View {
-        TextField(String.localizeId.reset_password_field_email(), text: $email)
+        TextField(String.localizeId.reset_password_field_email(), text: $dataSource.email)
             .disableAutocorrection(true)
             .autocapitalization(.none)
             .keyboardType(.emailAddress)
@@ -62,7 +62,10 @@ struct ResetPasswordView: View {
     }
 
     var resetButton: some View {
-            Text(String.localizeId.reset_password_button_reset.localized)
+        Button {
+            dataSource.reset()
+        } label: {
+            Text(String.localizeId.reset_password_button_reset())
                 .frame(maxWidth: .infinity)
                 .primaryButton()
                 .accessibility(.resetPassword(.resetButton))

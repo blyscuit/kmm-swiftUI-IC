@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09495F0228E40B110036BDFB /* GestureVelocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F0128E40B110036BDFB /* GestureVelocity.swift */; };
 		09495F0728E40E130036BDFB /* FadePaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F0628E40E130036BDFB /* FadePaginationView.swift */; };
 		09495F0928E410A00036BDFB /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F0828E410A00036BDFB /* PageControlView.swift */; };
 		09495F0C28E441900036BDFB /* ViewId+SurveySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F0A28E441860036BDFB /* ViewId+SurveySelection.swift */; };
@@ -23,9 +22,6 @@
 		09495F82290109760036BDFB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F81290109730036BDFB /* NotificationManager.swift */; };
 		09495F84290110640036BDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F83290110630036BDFB /* AppDelegate.swift */; };
 		09495F88290114230036BDFB /* NotificationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F86290113DC0036BDFB /* NotificationManagerSpec.swift */; };
-		09495FB9290B98580036BDFB /* Shared+AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FB8290B98580036BDFB /* Shared+AutoMockable.swift */; };
-		09495FC4290BA3D80036BDFB /* XCTestCase+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FC2290BA3AF0036BDFB /* XCTestCase+Publisher.swift */; };
-		09495FC7290BA49D0036BDFB /* Combine+Collect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FC6290BA49D0036BDFB /* Combine+Collect.swift */; };
 		09495FC9291106A00036BDFB /* Constants+SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FC8291106A00036BDFB /* Constants+SystemImage.swift */; };
 		09495FCB291107760036BDFB /* Image+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCA291107760036BDFB /* Image+Constants.swift */; };
 		09495FCD291109450036BDFB /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCC291109450036BDFB /* CGFloat+Extensions.swift */; };
@@ -65,7 +61,6 @@
 		0982A80729278E9000FC1976 /* SurveyHeaderLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A80129278E9000FC1976 /* SurveyHeaderLoading.swift */; };
 		0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EE29223DA600FC1976 /* LoginFlow.swift */; };
 		0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
-		0982A87E292F841D00FC1976 /* Shared+AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FB8290B98580036BDFB /* Shared+AutoMockable.swift */; };
 		0982A880292F847900FC1976 /* ResetPassword+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A87F292F847900FC1976 /* ResetPassword+DataSource.swift */; };
 		09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770B28E191B400EAA9EE /* AppCoordinator.swift */; };
 		09CE770F28E1922000EAA9EE /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770E28E1922000EAA9EE /* Screen.swift */; };
@@ -142,7 +137,6 @@
 
 /* Begin PBXFileReference section */
 		03163DC877AC6E8DE71DB277 /* Pods_Survey_SurveyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_SurveyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		09495F0128E40B110036BDFB /* GestureVelocity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureVelocity.swift; sourceTree = "<group>"; };
 		09495F0628E40E130036BDFB /* FadePaginationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePaginationView.swift; sourceTree = "<group>"; };
 		09495F0828E410A00036BDFB /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
 		09495F0A28E441860036BDFB /* ViewId+SurveySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+SurveySelection.swift"; sourceTree = "<group>"; };
@@ -158,9 +152,6 @@
 		09495F81290109730036BDFB /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		09495F83290110630036BDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09495F86290113DC0036BDFB /* NotificationManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerSpec.swift; sourceTree = "<group>"; };
-		09495FB8290B98580036BDFB /* Shared+AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shared+AutoMockable.swift"; sourceTree = "<group>"; };
-		09495FC2290BA3AF0036BDFB /* XCTestCase+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Publisher.swift"; sourceTree = "<group>"; };
-		09495FC6290BA49D0036BDFB /* Combine+Collect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Collect.swift"; sourceTree = "<group>"; };
 		09495FC8291106A00036BDFB /* Constants+SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+SystemImage.swift"; sourceTree = "<group>"; };
 		09495FCA291107760036BDFB /* Image+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Constants.swift"; sourceTree = "<group>"; };
 		09495FCC291109450036BDFB /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
@@ -330,7 +321,6 @@
 		09495FB7290B981B0036BDFB /* AutoMockable */ = {
 			isa = PBXGroup;
 			children = (
-				09495FB8290B98580036BDFB /* Shared+AutoMockable.swift */,
 			);
 			path = AutoMockable;
 			sourceTree = "<group>";
@@ -370,7 +360,6 @@
 		09495FC1290BA3900036BDFB /* XCTest */ = {
 			isa = PBXGroup;
 			children = (
-				09495FC2290BA3AF0036BDFB /* XCTestCase+Publisher.swift */,
 			);
 			path = XCTest;
 			sourceTree = "<group>";
@@ -378,7 +367,6 @@
 		09495FC5290BA46E0036BDFB /* Combine */ = {
 			isa = PBXGroup;
 			children = (
-				09495FC6290BA49D0036BDFB /* Combine+Collect.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -422,7 +410,6 @@
 				09636AFF28D4860F00A5CB97 /* PrimaryTextField.swift */,
 				09636B0128D4876100A5CB97 /* PrimaryButton.swift */,
 				09636B0C28D4917200A5CB97 /* OverlayButton.swift */,
-				09495F0128E40B110036BDFB /* GestureVelocity.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -450,7 +437,6 @@
 				09CE771428E1AB0B00EAA9EE /* ViewId+ResetPassword.swift */,
 				09495F2928EC43760036BDFB /* ViewId+SurveyLoading.swift */,
 				09636B1628D815D100A5CB97 /* ViewId+Login.swift */,
-				09495F0A28E441860036BDFB /* ViewId+SurveySelection.swift */,
 				09636B2F28D8267D00A5CB97 /* ViewId+General.swift */,
 				09495F6728FF97490036BDFB /* ViewId+Splash.swift */,
 				09495F7728FFF2D50036BDFB /* ViewId+SurveySelection.swift */,
@@ -1421,7 +1407,6 @@
 				09495FC9291106A00036BDFB /* Constants+SystemImage.swift in Sources */,
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
 				09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */,
-				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
 				09636B3028D8267D00A5CB97 /* ViewId+General.swift in Sources */,
 				09636B0228D4876100A5CB97 /* PrimaryButton.swift in Sources */,
 				09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */,
@@ -1440,12 +1425,10 @@
 				0982A7E429222F2000FC1976 /* LoginView.swift in Sources */,
 				EABA6D4F0FE97293430D3FC9 /* Constants.swift in Sources */,
 				09495FCD291109450036BDFB /* CGFloat+Extensions.swift in Sources */,
-				09495FB9290B98580036BDFB /* Shared+AutoMockable.swift in Sources */,
 				09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */,
 				0982A7E329222EFF00FC1976 /* RouteCoordinator.swift in Sources */,
 				09495F7828FFF2D50036BDFB /* ViewId+SurveySelection.swift in Sources */,
 				09495F2A28EC43760036BDFB /* ViewId+SurveyLoading.swift in Sources */,
-				09495F0228E40B110036BDFB /* GestureVelocity.swift in Sources */,
 				09495F2828EC38AD0036BDFB /* SkeletonTextView.swift in Sources */,
 				0982A880292F847900FC1976 /* ResetPassword+DataSource.swift in Sources */,
 				0982A80429278E9000FC1976 /* SurveyItemView.swift in Sources */,
@@ -1457,7 +1440,6 @@
 				09CE771528E1AB0B00EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */,
 				0982A7F6292371F000FC1976 /* StringResource+Localized.swift in Sources */,
-				09495FC7290BA49D0036BDFB /* Combine+Collect.swift in Sources */,
 				09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */,
 				09495F6628FF97080036BDFB /* SplashView.swift in Sources */,
 				09495F82290109760036BDFB /* NotificationManager.swift in Sources */,
@@ -1484,9 +1466,7 @@
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
 				0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */,
 				09CE771F28E1BB4700EAA9EE /* ResetPasswordScreen.swift in Sources */,
-				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
 				09495F7F2900017E0036BDFB /* ViewId+SurveySelection.swift in Sources */,
-				09495F0C28E441900036BDFB /* ViewId+SurveySelection.swift in Sources */,
 				0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */,
 				09636B3628D8285700A5CB97 /* KeyboardScreen.swift in Sources */,
 				09495F2B28EC43860036BDFB /* ViewId+SurveyLoading.swift in Sources */,
@@ -1501,9 +1481,7 @@
 			files = (
 				5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */,
 				09495F88290114230036BDFB /* NotificationManagerSpec.swift in Sources */,
-				09495FC4290BA3D80036BDFB /* XCTestCase+Publisher.swift in Sources */,
 				3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */,
-				0982A87E292F841D00FC1976 /* Shared+AutoMockable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

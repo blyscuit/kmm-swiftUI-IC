@@ -1,3 +1,4 @@
+//  swiftlint:disable:this file_name
 //
 //  ResetPassword+DataSource.swift
 //  Survey
@@ -44,8 +45,8 @@ extension ResetPasswordView {
                     self?.showingLoading = value.isLoading
                     if let notification = value.successNotification {
                         self?.notificationManager.schedule(
-                            title: String.localize(from: notification.title),
-                            message: String.localize(from: notification.message),
+                            title: notification.title(),
+                            message: notification.message(),
                             time: 0.1
                         )
                     }
