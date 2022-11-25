@@ -1,7 +1,6 @@
 package co.nimblehq.blisskmmic.presentation.modules.resetpassword
 
 import co.nimblehq.blisskmmic.MR
-import co.nimblehq.blisskmmic.domain.usecase.MockResetPasswordUseCase
 import co.nimblehq.blisskmmic.domain.usecase.ResetPasswordUseCase
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Dispatchers
@@ -12,30 +11,31 @@ import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
-import org.kodein.mock.Mocker
-import org.kodein.mock.UsesMocks
+import org.kodein.mock.Mock
+import org.kodein.mock.tests.TestsWithMocks
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 
-@UsesMocks(ResetPasswordUseCase::class)
 @ExperimentalCoroutinesApi
-class ResetPasswordViewModelTest {
+class ResetPasswordViewModelTest : TestsWithMocks() {
 
-    private val mocker = Mocker()
-    private val resetPasswordUseCase = MockResetPasswordUseCase(mocker)
+    @Mock
+    lateinit var resetPasswordUseCase: ResetPasswordUseCase
 
     private val email = "email@mail.com"
     private val mainThreadSurrogate = newSingleThreadContext("UI thread")
 
     private val resultMessage = "result"
 
-    private val resetPasswordViewModel = ResetPasswordViewModel(resetPasswordUseCase)
+    private val resetPasswordViewModel by withMocks { ResetPasswordViewModel(resetPasswordUseCase) }
+
+    override fun setUpMocks() = injectMocks(mocker)
 
     @BeforeTest
     fun setUp() {
-        mocker.reset()
         Dispatchers.setMain(mainThreadSurrogate)
+        mocker.reset()
     }
 
     @AfterTest
