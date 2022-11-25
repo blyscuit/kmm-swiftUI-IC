@@ -19,6 +19,10 @@ protocol ScreenProtocol: AnyObject {
 extension ScreenProtocol {
 
     var keyboard: KeyboardScreen { KeyboardScreen(in: application) }
+    var loadingSpinner: XCUIElement {
+        application.activityIndicators[ViewId.general(.loadingSpinner)()]
+            .firstMatch
+    }
 
     func find(
         _ elementKey: KeyPath<XCUIApplication, XCUIElementQuery>,

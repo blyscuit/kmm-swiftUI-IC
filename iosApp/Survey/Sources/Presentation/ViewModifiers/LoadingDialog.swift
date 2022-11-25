@@ -30,6 +30,7 @@ struct LoadingDialog: ViewModifier {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .white))
                 }
+                .accessibility(.general(.loadingSpinner))
                 .frame(alignment: .center)
                 .offset(y: -70.0)
                 .defaultBackButton(presentationMode)

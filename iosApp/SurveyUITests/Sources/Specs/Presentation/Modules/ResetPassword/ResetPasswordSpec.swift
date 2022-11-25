@@ -33,15 +33,44 @@ final class ResetPasswordSpec: QuickSpec {
                     app.terminate()
                 }
 
-                it("it shows its ui components") {
+                it("shows its ui components") {
                     let emailField = resetPasswordScreen.find(\.textFields, with: .emailField)
                     expect(emailField.exists) == true
 
-                    let passwordField = loginScreen.find(\.secureTextFields, with: .passwordField)
-                    expect(passwordField.exists) == true
-
                     let resetPassword = resetPasswordScreen.find(\.buttons, with: .resetButton)
                     expect(resetPassword.exists) == true
+                }
+
+                describe("its reset button") {
+
+                    context("when email is valid") {
+
+                        beforeEach {
+                            resetPasswordScreen.fillInField(.emailField, with: "email@email.com")
+                            resetPasswordScreen.tapButton(.resetButton)
+                        }
+
+                        it("shows and hides loading indicator") {
+                            expect(resetPasswordScreen.loadingSpinner.exists)
+                                .toEventually(beTrue(), timeout: .seconds(1))
+                            expect(resetPasswordScreen.loadingSpinner.exists)
+                                .toEventually(beFalse(), timeout: .seconds(10))
+                        }
+                    }
+
+                    context("when email is not valid") {
+
+                        beforeEach {
+                            resetPasswordScreen.fillInField(.emailField, with: "notemail")
+                            resetPasswordScreen.tapButton(.resetButton)
+                        }
+
+                        it("correctly shows and hides loading indicator") {
+                            let textQuery = app.staticTexts["Email is invalid"]
+                            expect(textQuery.exists)
+                                .toEventually(beTrue(), timeout: .seconds(10))
+                        }
+                    }
                 }
             }
         }
