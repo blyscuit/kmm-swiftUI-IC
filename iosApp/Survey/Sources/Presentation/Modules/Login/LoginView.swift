@@ -41,6 +41,7 @@ struct LoginView: View {
                     .ignoresSafeArea()
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .opacity(animating ? 1.0 : 0.0)
+                    .accessibility(.login(.view))
 
                 VStack(
                     alignment: .center,
@@ -67,7 +68,6 @@ struct LoginView: View {
             hideKeyboard()
         }
         .accessibilityElement(children: .contain)
-        .accessibility(.login(.view))
         .hideBackButtonTitle()
         .onAppear {
             withAnimation(.easeIn(duration: animationDuration)) {

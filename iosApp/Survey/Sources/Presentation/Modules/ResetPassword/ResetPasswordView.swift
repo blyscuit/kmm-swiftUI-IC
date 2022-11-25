@@ -21,6 +21,7 @@ struct ResetPasswordView: View {
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
                     .frame(width: geometry.size.width, height: geometry.size.height)
+                    .accessibility(.resetPassword(.view))
 
                 VStack(
                     alignment: .center,
@@ -46,7 +47,6 @@ struct ResetPasswordView: View {
         }
         .loadingDialog(loading: $dataSource.showingLoading)
         .accessibilityElement(children: .contain)
-        .accessibility(.resetPassword(.view))
         .alert(isPresented: $dataSource.showingErrorAlert, content: {
             Alert(title: Text(dataSource.viewState.error))
         })

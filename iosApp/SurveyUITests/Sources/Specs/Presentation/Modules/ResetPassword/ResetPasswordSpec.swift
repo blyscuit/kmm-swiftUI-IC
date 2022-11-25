@@ -25,8 +25,10 @@ final class ResetPasswordSpec: QuickSpec {
                     app = XCUIApplication()
                     loginScreen = LoginScreen(in: app)
                     app.launch()
+                    loginScreen.waitForExistence(timeout: .default, \.images, with: .view)
                     loginScreen.tapButton(.forgotButton)
                     resetPasswordScreen = ResetPasswordScreen(in: app)
+                    resetPasswordScreen.waitForExistence(timeout: .default, \.images, with: .view)
                 }
 
                 afterEach {
@@ -37,8 +39,8 @@ final class ResetPasswordSpec: QuickSpec {
                     let emailField = resetPasswordScreen.find(\.textFields, with: .emailField)
                     expect(emailField.exists) == true
 
-                    let resetPassword = resetPasswordScreen.find(\.buttons, with: .resetButton)
-                    expect(resetPassword.exists) == true
+                    let resetPasswordButton = resetPasswordScreen.find(\.buttons, with: .resetButton)
+                    expect(resetPasswordButton.exists) == true
                 }
 
                 describe("its reset button") {
@@ -52,9 +54,9 @@ final class ResetPasswordSpec: QuickSpec {
 
                         it("shows and hides loading indicator") {
                             expect(resetPasswordScreen.loadingSpinner.exists)
-                                .toEventually(beTrue(), timeout: .seconds(1))
+                                .toEventually(beTrue(), timeout: .long)
                             expect(resetPasswordScreen.loadingSpinner.exists)
-                                .toEventually(beFalse(), timeout: .seconds(10))
+                                .toEventually(beFalse(), timeout: .long)
                         }
                     }
 
@@ -68,7 +70,7 @@ final class ResetPasswordSpec: QuickSpec {
                         it("correctly shows and hides loading indicator") {
                             let textQuery = app.staticTexts["Email is invalid"]
                             expect(textQuery.exists)
-                                .toEventually(beTrue(), timeout: .seconds(10))
+                                .toEventually(beTrue(), timeout: .default)
                         }
                     }
                 }

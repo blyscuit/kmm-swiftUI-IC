@@ -62,6 +62,8 @@
 		0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EE29223DA600FC1976 /* LoginFlow.swift */; };
 		0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		0982A880292F847900FC1976 /* ResetPassword+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A87F292F847900FC1976 /* ResetPassword+DataSource.swift */; };
+		09C2F3FD2930943700F44818 /* ResetPasswordViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F3FB2930943200F44818 /* ResetPasswordViewDataSourceSpec.swift */; };
+		09C2F4032934588B00F44818 /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
 		09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770B28E191B400EAA9EE /* AppCoordinator.swift */; };
 		09CE770F28E1922000EAA9EE /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770E28E1922000EAA9EE /* Screen.swift */; };
 		09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771228E1A94600EAA9EE /* ResetPasswordView.swift */; };
@@ -186,6 +188,8 @@
 		0982A80029278E9000FC1976 /* SurveyItemLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemLoading.swift; sourceTree = "<group>"; };
 		0982A80129278E9000FC1976 /* SurveyHeaderLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderLoading.swift; sourceTree = "<group>"; };
 		0982A87F292F847900FC1976 /* ResetPassword+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResetPassword+DataSource.swift"; sourceTree = "<group>"; };
+		09C2F3FB2930943200F44818 /* ResetPasswordViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewDataSourceSpec.swift; sourceTree = "<group>"; };
+		09C2F4012934588400F44818 /* TimeInterval+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Constants.swift"; sourceTree = "<group>"; };
 		09CE770B28E191B400EAA9EE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		09CE770E28E1922000EAA9EE /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		09CE771228E1A94600EAA9EE /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				09495FBC290B9CBD0036BDFB /* Login */,
+				09C2F3FA293093F600F44818 /* ResetPassword */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -561,6 +566,38 @@
 			path = SurveyLoading;
 			sourceTree = "<group>";
 		};
+		09C2F3FA293093F600F44818 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				09C2F3FB2930943200F44818 /* ResetPasswordViewDataSourceSpec.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		09C2F3FE2934585900F44818 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				09C2F3FF2934586500F44818 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		09C2F3FF2934586500F44818 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				09C2F4002934586C00F44818 /* Foundation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		09C2F4002934586C00F44818 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				09C2F4012934588400F44818 /* TimeInterval+Constants.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		09CE770A28E191A500EAA9EE /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,6 +786,7 @@
 		450B8AFFE6D899DF9189AB05 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				09C2F3FE2934585900F44818 /* Utilities */,
 				0982A7ED29223DA600FC1976 /* Flows */,
 				09636B2628D8250B00A5CB97 /* Screens */,
 				CF43FB94DA987166ECF7EC52 /* Specs */,
@@ -1463,6 +1501,7 @@
 				09636B3228D8272200A5CB97 /* ScreenProtocol.swift in Sources */,
 				0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */,
 				0982A7EB29223C3A00FC1976 /* SurveyLoadingSpec.swift in Sources */,
+				09C2F4032934588B00F44818 /* TimeInterval+Constants.swift in Sources */,
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
 				0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */,
 				09CE771F28E1BB4700EAA9EE /* ResetPasswordScreen.swift in Sources */,
@@ -1481,6 +1520,8 @@
 			files = (
 				5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */,
 				09495F88290114230036BDFB /* NotificationManagerSpec.swift in Sources */,
+				09495FC4290BA3D80036BDFB /* XCTestCase+Publisher.swift in Sources */,
+				09C2F3FD2930943700F44818 /* ResetPasswordViewDataSourceSpec.swift in Sources */,
 				3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

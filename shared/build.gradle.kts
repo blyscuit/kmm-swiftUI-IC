@@ -214,7 +214,7 @@ mockmp {
 kover {
     filters {
         classes {
-            excludes += listOf("*Test*", "*Mock*", "co.nimblehq.blisskmmic.di*")
+            excludes += listOf("*Test*", "*Mock*", "co.nimblehq.blisskmmic.di*", "*helpers.extensions.ios*")
         }
     }
 }
