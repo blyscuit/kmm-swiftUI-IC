@@ -1,9 +1,8 @@
 package co.nimblehq.blisskmmic.domain.usecase
 
 import co.nimblehq.blisskmmic.domain.model.Token
-import co.nimblehq.blisskmmic.domain.repository.TokenRepository
+import co.nimblehq.blisskmmic.domain.repository.AuthenticationRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 
 interface LogInUseCase {
 
@@ -11,10 +10,11 @@ interface LogInUseCase {
 }
 
 class LogInUseCaseImpl(
-    private val tokenRepository: TokenRepository
-    ) : LogInUseCase {
+    private val authenticationRepository: AuthenticationRepository,
+): LogInUseCase {
 
-    override operator fun invoke(email: String, password: String): Flow<Token> {
-        return tokenRepository.logIn(email, password)
+    override operator fun invoke(
+        email: String, password: String): Flow<Token> {
+        return authenticationRepository.logIn(email, password)
     }
 }

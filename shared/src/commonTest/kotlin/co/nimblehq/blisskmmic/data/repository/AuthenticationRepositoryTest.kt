@@ -17,7 +17,7 @@ import kotlin.test.Test
 import kotlin.test.fail
 
 @ExperimentalCoroutinesApi
-class TokenRepositoryTest: TestsWithMocks() {
+class AuthenticationRepositoryTest: TestsWithMocks() {
 
     @Mock
     lateinit var localDataSource: LocalDataSource
@@ -28,7 +28,7 @@ class TokenRepositoryTest: TestsWithMocks() {
     @Fake
     lateinit var tokenDB: TokenDatabaseModel
 
-    private val tokenRepository by withMocks { TokenRepositoryImpl(networkDataSource, localDataSource) }
+    private val authenticationRepository by withMocks { AuthenticationRepositoryImpl(networkDataSource, localDataSource) }
 
     override fun setUpMocks() = injectMocks(mocker)
 
@@ -45,7 +45,7 @@ class TokenRepositoryTest: TestsWithMocks() {
         mocker.every {
             localDataSource.save(isAny())
         } returns Unit
-        tokenRepository
+        authenticationRepository
             .logIn("", "")
             .collect {
                 it.refreshToken shouldBe token.refreshToken
@@ -57,7 +57,7 @@ class TokenRepositoryTest: TestsWithMocks() {
         mocker.every {
             networkDataSource.logIn(isAny())
         } returns flow { error("Fail") }
-        tokenRepository
+        authenticationRepository
             .logIn("", "")
             .catch {
                 it.message shouldBe "Fail"
@@ -68,7 +68,7 @@ class TokenRepositoryTest: TestsWithMocks() {
     }
 
     @Test
-    fun `When calling log in with a success response, it calls localDataSource to save`() = runTest {
+    fun `When logging in successfully, it saves data to localDataSource`() = runTest {
         var saveCount = 0
         mocker.every {
             networkDataSource.logIn(isAny())
@@ -80,14 +80,14 @@ class TokenRepositoryTest: TestsWithMocks() {
             Unit
         }
 
-        tokenRepository.logIn("", "")
+        authenticationRepository.logIn("", "")
             .collect {
                 saveCount shouldBe 1
             }
     }
 
     @Test
-    fun `When calling save, it calls localDataSource save with correct key and value`() = runTest {
+    fun `When saving a token, it stores the correct key and value to localDataSource`() = runTest {
         var saveCount = 0
         mocker.every {
             localDataSource.save(tokenDB)
@@ -96,19 +96,19 @@ class TokenRepositoryTest: TestsWithMocks() {
             Unit
         }
 
-        tokenRepository
+        authenticationRepository
             .save(tokenDB.toToken())
 
         saveCount shouldBe 1
     }
 
     @Test
-    fun `When calling getToken, localDataSource returns with correct value`() = runTest {
+    fun `When calling getToken, it returns the correct value`() = runTest {
         mocker.every {
             localDataSource.getToken()
         } returns flow { emit(tokenDB) }
 
-        tokenRepository
+        authenticationRepository
             .getCachedToken()
             .collect {
                 it shouldBe token.toToken()
