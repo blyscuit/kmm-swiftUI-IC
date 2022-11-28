@@ -50,13 +50,14 @@ final class ResetPasswordSpec: QuickSpec {
                         beforeEach {
                             resetPasswordScreen.fillInField(.emailField, with: "email@email.com")
                             resetPasswordScreen.tapButton(.resetButton)
+                            resetPasswordScreen.grantNotificationPermissionIfNeeded()
                         }
 
-                        it("shows and hides loading indicator") {
+                        it("shows notification and hides loading indicator") {
+                            expect(resetPasswordScreen.notification.exists)
+                                .toEventually(beTrue(), timeout: .default)
                             expect(resetPasswordScreen.loadingSpinner.exists)
-                                .toEventually(beTrue(), timeout: .long)
-                            expect(resetPasswordScreen.loadingSpinner.exists)
-                                .toEventually(beFalse(), timeout: .long)
+                                .toEventually(beFalse(), timeout: .default)
                         }
                     }
 
@@ -67,7 +68,7 @@ final class ResetPasswordSpec: QuickSpec {
                             resetPasswordScreen.tapButton(.resetButton)
                         }
 
-                        it("correctly shows and hides loading indicator") {
+                        it("shows error") {
                             let textQuery = app.staticTexts["Email is invalid"]
                             expect(textQuery.exists)
                                 .toEventually(beTrue(), timeout: .default)

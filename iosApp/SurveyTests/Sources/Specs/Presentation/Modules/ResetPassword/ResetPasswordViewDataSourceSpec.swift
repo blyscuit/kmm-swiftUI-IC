@@ -78,8 +78,6 @@ final class ResetPasswordViewDataSourceSpec: QuickSpec {
 
                     it("sets successNotification state") {
                         let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2))
-                        print("=====")
-                        print(viewState)
                         expect(viewState.last?.successNotification) != nil
                     }
 

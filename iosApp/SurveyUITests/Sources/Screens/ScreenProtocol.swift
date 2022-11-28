@@ -18,10 +18,27 @@ protocol ScreenProtocol: AnyObject {
 
 extension ScreenProtocol {
 
-    var keyboard: KeyboardScreen { KeyboardScreen(in: application) }
+    var keyboard: KeyboardScreen {
+        KeyboardScreen(in: application)
+    }
+
     var loadingSpinner: XCUIElement {
         application.activityIndicators[ViewId.general(.loadingSpinner)()]
             .firstMatch
+    }
+
+    var springboard: XCUIApplication {
+        XCUIApplication(bundleIdentifier: "com.apple.springboard")
+    }
+
+    var notification: XCUIElement {
+        let notification: XCUIElement
+        if #available(iOS 14.0, *) {
+            notification = springboard.otherElements.descendants(matching: .any)["NotificationShortLookView"]
+        } else {
+            notification = springboard.otherElements["NotificationShortLookView"]
+        }
+        return notification.firstMatch
     }
 
     func find(
@@ -74,5 +91,25 @@ extension ScreenProtocol {
     func tapButton(_ viewId: Identifier) {
         let button = application.buttons[viewId.rawValue]
         button.tap()
+    }
+}
+
+// MARK: Wait
+
+extension ScreenProtocol {
+
+    func wait(
+        timeout: TimeInterval = 10,
+        assertOnFailure: Bool = true,
+        for predicateBlock: @escaping () -> Bool
+    ) {
+        let predicate = NSPredicate { _, _ in predicateBlock() }
+        let expectation = XCTNSPredicateExpectation(predicate: predicate, object: nil)
+
+        let result = XCTWaiter().wait(for: [expectation], timeout: timeout)
+
+        if assertOnFailure {
+            XCTAssert(result == .completed)
+        }
     }
 }

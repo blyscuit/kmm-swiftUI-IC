@@ -10,11 +10,14 @@ import Foundation
 
 extension TimeInterval {
 
+    /// 10.0
     static let `default` = 10.0
+    /// 1.0
+    static let instant = 1.0
 }
 
 extension DispatchTimeInterval {
 
+    /// 10 seconds
     static let `default`: Self = .seconds(10)
-    static let long: Self = .seconds(20)
 }
