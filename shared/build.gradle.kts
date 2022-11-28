@@ -12,6 +12,7 @@ plugins {
     id(Plugin.MOCKMP).version(Version.MOCKMP)
     id(Plugin.KSP).version(Version.KSP)
     id(Plugin.KOVER)
+    id(Plugin.MOKO_RESOURCES)
 }
 
 version = "1.0"
@@ -30,6 +31,7 @@ kotlin {
         podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "Shared"
+            export(Dependency.MOKO_RESOURCES)
         }
         xcodeConfigurationToNativeBuildType["Debug Staging"] = NativeBuildType.DEBUG
         xcodeConfigurationToNativeBuildType["Debug Production"] = NativeBuildType.DEBUG
@@ -93,6 +95,10 @@ kotlin {
     }
 }
 
+dependencies {
+    commonMainApi(Dependency.MOKO_RESOURCES)
+}
+
 android {
     compileSdk = Android.COMPILE_SDK
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -105,7 +111,7 @@ android {
         unitTests.all {
             if (it.name == "testReleaseUnitTest") {
                 it.extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
-                    isDisabled.set(true) 
+                    isDisabled.set(true)
                 }
             }
             it.extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
@@ -114,7 +120,7 @@ android {
     }
 }
 
- detekt {
+detekt {
     source = files(
         "./"
     )
@@ -207,4 +213,8 @@ kover {
             excludes += listOf("*Test*", "*Mock*", "co.nimblehq.blisskmmic.di*")
         }
     }
+}
+
+multiplatformResources {
+    multiplatformResourcesPackage = "co.nimblehq.blisskmmic"
 }

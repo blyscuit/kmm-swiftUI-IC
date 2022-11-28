@@ -30,7 +30,6 @@
 		09636AFD28D484CA00A5CB97 /* R+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AFC28D484CA00A5CB97 /* R+SwiftUI.swift */; };
 		09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AFF28D4860F00A5CB97 /* PrimaryTextField.swift */; };
 		09636B0228D4876100A5CB97 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B0128D4876100A5CB97 /* PrimaryButton.swift */; };
-		09636B0628D48C3C00A5CB97 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09636B0828D48C3C00A5CB97 /* Localizable.strings */; };
 		09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B0A28D48CFD00A5CB97 /* Typealiases.swift */; };
 		09636B0D28D4917200A5CB97 /* OverlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B0C28D4917200A5CB97 /* OverlayButton.swift */; };
 		09636B0F28D80B8500A5CB97 /* View+KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B0E28D80B8500A5CB97 /* View+KeyboardDismiss.swift */; };
@@ -47,11 +46,11 @@
 		0982A7A62921DFE800FC1976 /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */; };
 		0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7DE29222EA800FC1976 /* LoginSpec.swift */; };
 		0982A7E029222EB900FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
-		0982A7E129222EBB00FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		0982A7E329222EFF00FC1976 /* RouteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7E229222EFF00FC1976 /* RouteCoordinator.swift */; };
 		0982A7E429222F2000FC1976 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6E28FFDE8C0036BDFB /* LoginView.swift */; };
 		0982A7E72922357C00FC1976 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF828D47A4D00A5CB97 /* Font+Extensions.swift */; };
 		0982A7EB29223C3A00FC1976 /* SurveyLoadingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EA29223C3A00FC1976 /* SurveyLoadingSpec.swift */; };
+		0982A7F6292371F000FC1976 /* StringResource+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7F5292371F000FC1976 /* StringResource+Localized.swift */; };
 		0982A80229278E9000FC1976 /* SurveySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */; };
 		0982A80329278E9000FC1976 /* SurveyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FC29278E9000FC1976 /* SurveyHeaderView.swift */; };
 		0982A80429278E9000FC1976 /* SurveyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FD29278E9000FC1976 /* SurveyItemView.swift */; };
@@ -59,6 +58,7 @@
 		0982A80629278E9000FC1976 /* SurveyItemLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A80029278E9000FC1976 /* SurveyItemLoading.swift */; };
 		0982A80729278E9000FC1976 /* SurveyHeaderLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A80129278E9000FC1976 /* SurveyHeaderLoading.swift */; };
 		0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EE29223DA600FC1976 /* LoginFlow.swift */; };
+		0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770B28E191B400EAA9EE /* AppCoordinator.swift */; };
 		09CE770F28E1922000EAA9EE /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE770E28E1922000EAA9EE /* Screen.swift */; };
 		09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771228E1A94600EAA9EE /* ResetPasswordView.swift */; };
@@ -158,7 +158,6 @@
 		09636AFC28D484CA00A5CB97 /* R+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "R+SwiftUI.swift"; sourceTree = "<group>"; };
 		09636AFF28D4860F00A5CB97 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
 		09636B0128D4876100A5CB97 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
-		09636B0728D48C3C00A5CB97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09636B0A28D48CFD00A5CB97 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		09636B0C28D4917200A5CB97 /* OverlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayButton.swift; sourceTree = "<group>"; };
 		09636B0E28D80B8500A5CB97 /* View+KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+KeyboardDismiss.swift"; sourceTree = "<group>"; };
@@ -174,6 +173,7 @@
 		0982A7E229222EFF00FC1976 /* RouteCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCoordinator.swift; sourceTree = "<group>"; };
 		0982A7EA29223C3A00FC1976 /* SurveyLoadingSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyLoadingSpec.swift; sourceTree = "<group>"; };
 		0982A7EE29223DA600FC1976 /* LoginFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
+		0982A7F5292371F000FC1976 /* StringResource+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringResource+Localized.swift"; sourceTree = "<group>"; };
 		0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionView.swift; sourceTree = "<group>"; };
 		0982A7FC29278E9000FC1976 /* SurveyHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderView.swift; sourceTree = "<group>"; };
 		0982A7FD29278E9000FC1976 /* SurveyItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemView.swift; sourceTree = "<group>"; };
@@ -340,14 +340,6 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
-		09636B0328D48BA100A5CB97 /* Localizations */ = {
-			isa = PBXGroup;
-			children = (
-				09636B0828D48C3C00A5CB97 /* Localizable.strings */,
-			);
-			path = Localizations;
-			sourceTree = "<group>";
-		};
 		09636B0928D48CE800A5CB97 /* Typealiases */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +449,14 @@
 				0982A7EE29223DA600FC1976 /* LoginFlow.swift */,
 			);
 			path = Flows;
+			sourceTree = "<group>";
+		};
+		0982A7F4292371F000FC1976 /* MokoResources */ = {
+			isa = PBXGroup;
+			children = (
+				0982A7F5292371F000FC1976 /* StringResource+Localized.swift */,
+			);
+			path = MokoResources;
 			sourceTree = "<group>";
 		};
 		0982A7F929278E9000FC1976 /* SurveySelection */ = {
@@ -576,6 +576,7 @@
 		0F3BE49893E55BC4638B90F0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0982A7F4292371F000FC1976 /* MokoResources */,
 				09636AF728D47A3800A5CB97 /* SwiftUI */,
 				0F4C0078B1B4D7C1871DDE54 /* Foundation */,
 			);
@@ -785,7 +786,6 @@
 		A60D6F6D69B2571A295C0A9E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				09636B0328D48BA100A5CB97 /* Localizations */,
 				09636AEF28D4777E00A5CB97 /* Fonts */,
 				2CF27D885DD8507482E726E1 /* Assets */,
 				6FD75B0789EE724AD6F6C58D /* LaunchScreen */,
@@ -971,6 +971,7 @@
 				FF76644469CE368D62BA827C /* Frameworks */,
 				CC99E871FA1DDA8C64075BC0 /* Copy GoogleService-Info.plist */,
 				69E0E5555896889BE38A4490 /* [CP] Embed Pods Frameworks */,
+				0982A7F72923731100FC1976 /* Moko Resources */,
 			);
 			buildRules = (
 			);
@@ -1050,7 +1051,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09636B0628D48C3C00A5CB97 /* Localizable.strings in Resources */,
 				09636AF228D4779400A5CB97 /* NeuzeitSLTStd-Book.otf in Resources */,
 				09636AF328D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf in Resources */,
 				CA1F500707F2936D39825740 /* Assets.xcassets in Resources */,
@@ -1089,6 +1089,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		0982A7F72923731100FC1976 /* Moko Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Moko Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../\" :Shared:copyFrameworkResourcesToApp \\\n    -Pmoko.resources.PLATFORM_NAME=$PLATFORM_NAME \\\n    -Pmoko.resources.CONFIGURATION=\"${CONFIGURATION}\" \\\n    -Pmoko.resources.BUILT_PRODUCTS_DIR=\"${BUILT_PRODUCTS_DIR}\" \\\n    -Pmoko.resources.CONTENTS_FOLDER_PATH=$CONTENTS_FOLDER_PATH\n";
 		};
 		364701D01D6D730E26E263DF /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1293,7 +1311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH_TO_GOOGLE_PLISTS=\"$SRCROOT/$PROJECT_NAME/Configurations/Plists/GoogleService\"\n\ncase \"${CONFIGURATION}\" in\n\"Debug Staging\" | \"Release Staging\" )\ncp -r \"$PATH_TO_GOOGLE_PLISTS/Staging/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\n;;\n\"Debug Production\" | \"Release Production\" )\ncp -r \"$PATH_TO_GOOGLE_PLISTS/Production/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\n;;\n*)\n;;\nesac";
+			shellScript = "PATH_TO_GOOGLE_PLISTS=\"$SRCROOT/$PROJECT_NAME/Configurations/Plists/GoogleService\"\n\ncase \"${CONFIGURATION}\" in\n\"Debug Staging\" | \"Release Staging\" )\ncp -r \"$PATH_TO_GOOGLE_PLISTS/Staging/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\n;;\n\"Debug Production\" | \"Release Production\" )\ncp -r \"$PATH_TO_GOOGLE_PLISTS/Production/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\n;;\n*)\n;;\nesac\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1341,6 +1359,7 @@
 				09CE772528E2C1C600EAA9EE /* View+HideBackButtonTitle.swift in Sources */,
 				09CE771528E1AB0B00EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */,
+				0982A7F6292371F000FC1976 /* StringResource+Localized.swift in Sources */,
 				09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */,
 				09495F6628FF97080036BDFB /* SplashView.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,
@@ -1358,6 +1377,7 @@
 				0982A7A62921DFE800FC1976 /* ResetPasswordSpec.swift in Sources */,
 				09CE772028E1BBC400EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09495F3328EC44330036BDFB /* SurveyLoadingScreen.swift in Sources */,
+				0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */,
 				09495F1828E4461C0036BDFB /* SurveySelectionScreen.swift in Sources */,
 				09636B3228D8272200A5CB97 /* ScreenProtocol.swift in Sources */,
 				0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */,
@@ -1365,7 +1385,6 @@
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
 				0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */,
 				09CE771F28E1BB4700EAA9EE /* ResetPasswordScreen.swift in Sources */,
-				0982A7E129222EBB00FC1976 /* ViewId+Splash.swift in Sources */,
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
 				09495F7F2900017E0036BDFB /* ViewId+SurveySelection.swift in Sources */,
 				09495F0C28E441900036BDFB /* ViewId+SurveySelection.swift in Sources */,
@@ -1402,17 +1421,6 @@
 			targetProxy = 7C9D51BFA16A4AB724AC041C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		09636B0828D48C3C00A5CB97 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09636B0728D48C3C00A5CB97 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		03C0597282ACB0F090BCE8C5 /* Debug Production */ = {
