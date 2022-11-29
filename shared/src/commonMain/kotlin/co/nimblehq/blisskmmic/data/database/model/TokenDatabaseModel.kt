@@ -1,10 +1,11 @@
-package co.nimblehq.blisskmmic.domain.model
+package co.nimblehq.blisskmmic.data.database.model
 
+import co.nimblehq.blisskmmic.domain.model.Token
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class TokenApiModel(
+data class TokenDatabaseModel(
     @SerialName("access_token")
     val accessToken: String,
     @SerialName("token_type")
@@ -16,6 +17,15 @@ data class TokenApiModel(
     @SerialName("created_at")
     val createdAt: Int
 ) {
+
+    constructor(token: Token) : this(
+        token.accessToken,
+        token.tokenType,
+        token.expiresIn,
+        token.refreshToken,
+        token.createdAt
+    )
+
     fun toToken(): Token = Token(
         accessToken,
         tokenType,

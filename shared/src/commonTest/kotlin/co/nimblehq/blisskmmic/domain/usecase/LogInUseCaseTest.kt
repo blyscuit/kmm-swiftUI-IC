@@ -1,7 +1,7 @@
 package co.nimblehq.blisskmmic.domain.usecase
 
 import co.nimblehq.blisskmmic.domain.model.Token
-import co.nimblehq.blisskmmic.domain.repository.TokenRepository
+import co.nimblehq.blisskmmic.domain.repository.AuthenticationRepository
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
@@ -20,11 +20,11 @@ class LogInUseCaseTest : TestsWithMocks() {
     private val password = "pass"
 
     @Mock
-    lateinit var tokenRepository: TokenRepository
+    lateinit var authenticationRepository: AuthenticationRepository
     @Fake
     lateinit var token: Token
 
-    private val logInUseCase by withMocks { LogInUseCaseImpl(tokenRepository) }
+    private val logInUseCase by withMocks { LogInUseCaseImpl(authenticationRepository) }
 
     override fun setUpMocks() = injectMocks(mocker)
 
@@ -36,7 +36,7 @@ class LogInUseCaseTest : TestsWithMocks() {
     @Test
     fun `When calling log in with a success response, it returns correct object`() = runTest {
         mocker.every {
-            tokenRepository.logIn(email, password)
+            authenticationRepository.logIn(email, password)
         } returns flow { emit(token) }
 
         logInUseCase(email, password)
@@ -48,7 +48,7 @@ class LogInUseCaseTest : TestsWithMocks() {
     @Test
     fun `When calling log in with a failure response, it returns correct error`() = runTest {
         mocker.every {
-            tokenRepository.logIn(email, password)
+            authenticationRepository.logIn(email, password)
         } returns flow { error("Fail") }
 
         logInUseCase(email, password)
