@@ -19,12 +19,12 @@ import kotlin.test.fail
 @UsesMocks(NetworkDataSource::class)
 @UsesFakes(ResetPasswordMeta::class)
 @ExperimentalCoroutinesApi
-class ResetPasswordRepositoryTest {
+class AccountRecoveryRepositoryTest {
 
     private val mocker = Mocker()
     private val networkDataSource = MockNetworkDataSource(mocker)
     private val resetPasswordMeta = fakeResetPasswordMeta()
-    private val resetPasswordRepository = ResetPasswordRepositoryImpl(networkDataSource)
+    private val accountRecoveryRepository = AccountRecoveryRepositoryImpl(networkDataSource)
 
     @BeforeTest
     fun setUp() {
@@ -36,8 +36,8 @@ class ResetPasswordRepositoryTest {
         mocker.every {
             networkDataSource.resetPassword(isAny())
         } returns flow { emit(resetPasswordMeta) }
-        resetPasswordRepository
-            .reset("")
+        accountRecoveryRepository
+            .resetPasswordWith("")
             .collect {
                 it.message shouldBe resetPasswordMeta.message
             }
@@ -48,8 +48,8 @@ class ResetPasswordRepositoryTest {
         mocker.every {
             networkDataSource.resetPassword(isAny())
         } returns flow { error("Fail") }
-        resetPasswordRepository
-            .reset("")
+        accountRecoveryRepository
+            .resetPasswordWith("")
             .catch {
                 it.message shouldBe "Fail"
             }

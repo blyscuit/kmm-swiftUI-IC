@@ -2,8 +2,8 @@ package co.nimblehq.blisskmmic.domain.usecase
 
 import co.nimblehq.blisskmmic.data.model.ResetPasswordMeta
 import co.nimblehq.blisskmmic.data.model.fakeResetPasswordMeta
-import co.nimblehq.blisskmmic.domain.repository.MockResetPasswordRepository
-import co.nimblehq.blisskmmic.domain.repository.ResetPasswordRepository
+import co.nimblehq.blisskmmic.domain.repository.MockAccountRecoveryRepository
+import co.nimblehq.blisskmmic.domain.repository.AccountRecoveryRepository
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
@@ -14,16 +14,16 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.fail
 
-@UsesMocks(ResetPasswordRepository::class)
+@UsesMocks(AccountRecoveryRepository::class)
 @UsesFakes(ResetPasswordMeta::class)
 @ExperimentalCoroutinesApi
 class ResetPasswordUseCaseTest {
 
     private val email = "email@mail.com"
     private val mocker = Mocker()
-    private val resetPasswordRepository = MockResetPasswordRepository(mocker)
+    private val accountRecoveryRepository = MockAccountRecoveryRepository(mocker)
     private val resetPasswordMeta = fakeResetPasswordMeta()
-    private val resetPasswordUseCase = ResetPasswordUseCaseImpl(resetPasswordRepository)
+    private val resetPasswordUseCase = ResetPasswordUseCaseImpl(accountRecoveryRepository)
 
     @BeforeTest
     fun setUp() {
@@ -32,21 +32,20 @@ class ResetPasswordUseCaseTest {
 
     @Test
     fun `When calling reset with a success response, it returns correct object`() = runTest {
-        val result = ResetPasswordMeta("result")
         mocker.every {
-            resetPasswordRepository.reset(email)
-        } returns flow { emit(result) }
+            accountRecoveryRepository.resetPasswordWith(email)
+        } returns flow { emit(resetPasswordMeta) }
 
         resetPasswordUseCase(email)
             .collect{
-                it shouldBe result.message
+                it shouldBe resetPasswordMeta.message
             }
     }
 
     @Test
     fun `When calling reset with a failure response, it returns correct error`() = runTest {
         mocker.every {
-            resetPasswordRepository.reset(email)
+            accountRecoveryRepository.resetPasswordWith(email)
         } returns flow { error("Fail") }
 
         resetPasswordUseCase(email)
@@ -56,18 +55,5 @@ class ResetPasswordUseCaseTest {
             .collect{
                 fail("Should not receive object")
             }
-    }
-
-    @Test
-    fun `When calling reset, it calls resetPasswordRepository with correct inputs`() = runTest {
-        mocker.every {
-            resetPasswordRepository.reset(email)
-        } returns flow { emit(resetPasswordMeta) }
-
-        resetPasswordUseCase(email)
-
-        mocker.verifyWithSuspend {
-            resetPasswordRepository.reset(email)
-        }
     }
 }

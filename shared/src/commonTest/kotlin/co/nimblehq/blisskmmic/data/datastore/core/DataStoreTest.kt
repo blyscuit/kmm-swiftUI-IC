@@ -3,6 +3,7 @@ package co.nimblehq.blisskmmic.data.datastore.core
 import co.nimblehq.blisskmmic.MR
 import co.nimblehq.blisskmmic.data.database.core.DataStoreImpl
 import co.nimblehq.blisskmmic.data.database.model.TokenDatabaseModel
+import com.russhwolf.settings.ExperimentalSettingsApi
 import com.russhwolf.settings.MapSettings
 import com.russhwolf.settings.serialization.decodeValueOrNull
 import com.russhwolf.settings.serialization.encodeValue
@@ -10,12 +11,14 @@ import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.test.runTest
+import kotlinx.serialization.ExperimentalSerializationApi
 import org.kodein.mock.Fake
 import org.kodein.mock.tests.TestsWithMocks
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.fail
 
+@OptIn(ExperimentalSettingsApi::class, ExperimentalSerializationApi:: class)
 @ExperimentalCoroutinesApi
 class DataStoreTest : TestsWithMocks() {
 
