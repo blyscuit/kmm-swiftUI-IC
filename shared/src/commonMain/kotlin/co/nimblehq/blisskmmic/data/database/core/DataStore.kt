@@ -1,11 +1,13 @@
 package co.nimblehq.blisskmmic.data.database.core
 
 import co.nimblehq.blisskmmic.MR
+import com.russhwolf.settings.ExperimentalSettingsApi
 import com.russhwolf.settings.Settings
 import com.russhwolf.settings.serialization.decodeValueOrNull
 import com.russhwolf.settings.serialization.encodeValue
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.KSerializer
 
 interface DataStore {
@@ -21,6 +23,7 @@ interface DataStore {
     )
 }
 
+@OptIn(ExperimentalSettingsApi::class, ExperimentalSerializationApi:: class)
 class DataStoreImpl(private val settings: Settings): DataStore {
 
     override fun <T> get(serializer: KSerializer<T>, key: String): Flow<T> {
