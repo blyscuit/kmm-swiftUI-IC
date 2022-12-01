@@ -33,12 +33,8 @@ class ResetPasswordViewModel(
         setStateLoading()
         viewModelScope.launch {
             resetPasswordUseCase(email)
-                .catch { error ->
-                    catchResetPasswordError(error)
-                }
-                .collect { _ ->
-                    resetPasswordSuccess()
-                }
+                .catch { handleResetPasswordError(it) }
+                .collect { _ -> resetPasswordSuccess() }
         }
     }
 
@@ -48,7 +44,7 @@ class ResetPasswordViewModel(
         }
     }
 
-    private fun catchResetPasswordError(error: Throwable) {
+    private fun handleResetPasswordError(error: Throwable) {
         mutableViewState.update {
             ResetPasswordViewState(error.toErrorMessage())
         }

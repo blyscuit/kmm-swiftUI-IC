@@ -1,10 +1,10 @@
 import Foundation
+import UserNotifications
 #if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
 #elseif os(OSX)
 import AppKit
 #endif
-import UserNotifications
 
 {% for import in argument.autoMockableTestableImports %}
 @testable import {{ import }}
