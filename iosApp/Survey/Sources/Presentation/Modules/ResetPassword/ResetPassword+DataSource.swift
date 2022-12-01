@@ -13,7 +13,7 @@ import Shared
 
 extension ResetPasswordView {
 
-    class DataSource: ObservableObject {
+    final class DataSource: ObservableObject {
 
         let viewModel: ResetPasswordViewModel
         let notificationManager: NotificationManageable
@@ -40,16 +40,16 @@ extension ResetPasswordView {
                 }
                 .receive(on: DispatchQueue.main)
                 .sink { [weak self] value in
-                    self?.viewState = value
-                    self?.showingErrorAlert = !value.error.string.isEmpty
-                    self?.showingLoading = value.isLoading
-                    if let notification = value.successNotification {
-                        self?.notificationManager.schedule(
-                            title: notification.title(),
-                            message: notification.message(),
-                            time: 0.1
-                        )
-                    }
+                    guard let self = self else { return }
+                    self.viewState = value
+                    self.showingErrorAlert = !value.error.string.isEmpty
+                    self.showingLoading = value.isLoading
+                    guard let notification = value.successNotification else { return }
+                    self.notificationManager.schedule(
+                        title: notification.title(),
+                        message: notification.message(),
+                        time: 0.1
+                    )
                 }
                 .store(in: &cancellables)
         }

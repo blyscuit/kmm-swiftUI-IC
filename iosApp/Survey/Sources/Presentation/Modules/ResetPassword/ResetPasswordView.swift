@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ResetPasswordView: View {
 
-    @StateObject var dataSource: DataSource
+    @StateObject var dataSource = DataSource()
 
     var body: some View {
         ZStack {
