@@ -41,21 +41,29 @@ extension ResetPasswordView {
                 .receive(on: DispatchQueue.main)
                 .sink { [weak self] value in
                     guard let self = self else { return }
-                    self.viewState = value
-                    self.showingErrorAlert = !value.error.string.isEmpty
-                    self.showingLoading = value.isLoading
+                    self.updateStates(value)
                     guard let notification = value.successNotification else { return }
-                    self.notificationManager.schedule(
-                        title: notification.title(),
-                        message: notification.message(),
-                        time: 0.1
-                    )
+                    self.scheduleNotification(notification)
                 }
                 .store(in: &cancellables)
         }
 
         func reset() {
             viewModel.reset(email: email)
+        }
+
+        private func updateStates(_ state: ResetPasswordViewState) {
+            viewState = state
+            showingErrorAlert = !state.error.string.isEmpty
+            showingLoading = state.isLoading
+        }
+
+        private func scheduleNotification(_ notification: NotificationUiModel) {
+            notificationManager.schedule(
+                title: notification.title(),
+                message: notification.message(),
+                time: 0.1
+            )
         }
     }
 }
