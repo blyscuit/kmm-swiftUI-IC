@@ -20,9 +20,8 @@ data class ResetPasswordViewState(
     constructor(error: String?) : this(null, false, error)
 }
 
-class ResetPasswordViewModel(
-    private val resetPasswordUseCase: ResetPasswordUseCase,
-): BaseViewModel() {
+class ResetPasswordViewModel(private val resetPasswordUseCase: ResetPasswordUseCase) :
+    BaseViewModel() {
 
     private val mutableViewState: MutableStateFlow<ResetPasswordViewState> =
         MutableStateFlow(ResetPasswordViewState())
