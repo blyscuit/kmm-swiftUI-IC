@@ -43,6 +43,7 @@
 		09636B3228D8272200A5CB97 /* ScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2A28D8255D00A5CB97 /* ScreenProtocol.swift */; };
 		09636B3328D8272E00A5CB97 /* ViewId+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2F28D8267D00A5CB97 /* ViewId+General.swift */; };
 		09636B3628D8285700A5CB97 /* KeyboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3428D8284600A5CB97 /* KeyboardScreen.swift */; };
+		0964B18D293F28DC00946FA1 /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
 		0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */; };
 		0982A7A62921DFE800FC1976 /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */; };
 		0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7DE29222EA800FC1976 /* LoginSpec.swift */; };
@@ -1528,6 +1529,7 @@
 				09C2F413293777ED00F44818 /* Combine+Collect.swift in Sources */,
 				5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */,
 				09495F88290114230036BDFB /* NotificationManagerSpec.swift in Sources */,
+				0964B18D293F28DC00946FA1 /* TimeInterval+Constants.swift in Sources */,
 				09C2F3FD2930943700F44818 /* ResetPasswordViewDataSourceSpec.swift in Sources */,
 				3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */,
 				09C2F416293778BE00F44818 /* Shared+AutoMockable.swift in Sources */,

@@ -16,7 +16,7 @@ extension XCTestCase {
     @discardableResult
     func awaitPublisher<T: Publisher>(
         _ publisher: T,
-        timeout: TimeInterval = 10,
+        timeout: TimeInterval = .default,
         file: StaticString = #file,
         line: UInt = #line
     ) throws -> T.Output {

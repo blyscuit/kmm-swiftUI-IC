@@ -99,7 +99,7 @@ extension ScreenProtocol {
 extension ScreenProtocol {
 
     func wait(
-        timeout: TimeInterval = 10,
+        timeout: TimeInterval = .default,
         assertOnFailure: Bool = true,
         for predicateBlock: @escaping () -> Bool
     ) {
