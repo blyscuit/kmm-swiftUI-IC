@@ -25,23 +25,55 @@ final class ResetPasswordSpec: QuickSpec {
                     app = XCUIApplication()
                     loginScreen = LoginScreen(in: app)
                     app.launch()
+                    loginScreen.waitForExistence(timeout: .default, \.images, with: .view)
                     loginScreen.tapButton(.forgotButton)
                     resetPasswordScreen = ResetPasswordScreen(in: app)
+                    resetPasswordScreen.waitForExistence(timeout: .default, \.images, with: .view)
                 }
 
                 afterEach {
                     app.terminate()
                 }
 
-                it("it shows its ui components") {
+                it("shows its ui components") {
                     let emailField = resetPasswordScreen.find(\.textFields, with: .emailField)
                     expect(emailField.exists) == true
 
-                    let passwordField = loginScreen.find(\.secureTextFields, with: .passwordField)
-                    expect(passwordField.exists) == true
+                    let resetPasswordButton = resetPasswordScreen.find(\.buttons, with: .resetButton)
+                    expect(resetPasswordButton.exists) == true
+                }
 
-                    let resetPassword = resetPasswordScreen.find(\.buttons, with: .resetButton)
-                    expect(resetPassword.exists) == true
+                describe("its reset button") {
+
+                    context("when email is valid") {
+
+                        beforeEach {
+                            resetPasswordScreen.fillInField(.emailField, with: "email@email.com")
+                            resetPasswordScreen.tapButton(.resetButton)
+                            resetPasswordScreen.grantNotificationPermissionIfNeeded()
+                        }
+
+                        it("shows notification and hides loading indicator") {
+                            expect(resetPasswordScreen.notification.exists)
+                                .toEventually(beTrue(), timeout: .default)
+                            expect(resetPasswordScreen.loadingSpinner.exists)
+                                .toEventually(beFalse(), timeout: .default)
+                        }
+                    }
+
+                    context("when email is not valid") {
+
+                        beforeEach {
+                            resetPasswordScreen.fillInField(.emailField, with: "notemail")
+                            resetPasswordScreen.tapButton(.resetButton)
+                        }
+
+                        it("shows error") {
+                            let textQuery = app.staticTexts["Email is invalid"]
+                            expect(textQuery.exists)
+                                .toEventually(beTrue(), timeout: .default)
+                        }
+                    }
                 }
             }
         }
