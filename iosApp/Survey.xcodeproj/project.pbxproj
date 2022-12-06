@@ -24,6 +24,9 @@
 		09495FCB291107760036BDFB /* Image+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCA291107760036BDFB /* Image+Constants.swift */; };
 		09495FCD291109450036BDFB /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCC291109450036BDFB /* CGFloat+Extensions.swift */; };
 		09495FCF29110E820036BDFB /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCE29110E820036BDFB /* String+URL.swift */; };
+		09495F82290109760036BDFB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F81290109730036BDFB /* NotificationManager.swift */; };
+		09495F84290110640036BDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F83290110630036BDFB /* AppDelegate.swift */; };
+		09495F88290114230036BDFB /* NotificationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F86290113DC0036BDFB /* NotificationManagerSpec.swift */; };
 		09636AF228D4779400A5CB97 /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */; };
 		09636AF328D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */; };
 		09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF528D47A1400A5CB97 /* R.generated.swift */; };
@@ -151,6 +154,9 @@
 		09495FCA291107760036BDFB /* Image+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Constants.swift"; sourceTree = "<group>"; };
 		09495FCC291109450036BDFB /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		09495FCE29110E820036BDFB /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
+		09495F81290109730036BDFB /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		09495F83290110630036BDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		09495F86290113DC0036BDFB /* NotificationManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerSpec.swift; sourceTree = "<group>"; };
 		09636AF028D4779400A5CB97 /* NeuzeitSLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-Book.otf"; sourceTree = "<group>"; };
 		09636AF128D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-BookHeavy.otf"; sourceTree = "<group>"; };
 		09636AF528D47A1400A5CB97 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -294,6 +300,22 @@
 				09495F6E28FFDE8C0036BDFB /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		09495F802901094C0036BDFB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				09495F81290109730036BDFB /* NotificationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		09495F85290113CB0036BDFB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				09495F86290113DC0036BDFB /* NotificationManagerSpec.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		09636AEF28D4777E00A5CB97 /* Fonts */ = {
@@ -632,6 +654,7 @@
 		2D43007522AED0E7D657234E /* Supports */ = {
 			isa = PBXGroup;
 			children = (
+				09495F802901094C0036BDFB /* Managers */,
 				0F3BE49893E55BC4638B90F0 /* Extensions */,
 				E8FA76B3139104BA8189B8C0 /* Helpers */,
 			);
@@ -649,6 +672,7 @@
 		3A7558BC33CF47B1CB689345 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				09495F83290110630036BDFB /* AppDelegate.swift */,
 				46885A08B19F8EB7FFC5117F /* IOSApp.swift */,
 			);
 			path = Application;
@@ -815,6 +839,7 @@
 		B90B0AAED49EDB18D8210FEB /* Supports */ = {
 			isa = PBXGroup;
 			children = (
+				09495F85290113CB0036BDFB /* Managers */,
 				DF055850B8D2FBAE29389971 /* Extensions */,
 			);
 			path = Supports;
@@ -1293,7 +1318,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"";
+			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"\n";
 		};
 		CC99E871FA1DDA8C64075BC0 /* Copy GoogleService-Info.plist */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1339,6 +1364,7 @@
 				09636AFD28D484CA00A5CB97 /* R+SwiftUI.swift in Sources */,
 				09495FCB291107760036BDFB /* Image+Constants.swift in Sources */,
 				09636B0F28D80B8500A5CB97 /* View+KeyboardDismiss.swift in Sources */,
+				09495F84290110640036BDFB /* AppDelegate.swift in Sources */,
 				09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */,
 				09636B1728D815D100A5CB97 /* ViewId+Login.swift in Sources */,
 				09495F7E28FFF47F0036BDFB /* GestureVelocity.swift in Sources */,
@@ -1362,6 +1388,7 @@
 				0982A7F6292371F000FC1976 /* StringResource+Localized.swift in Sources */,
 				09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */,
 				09495F6628FF97080036BDFB /* SplashView.swift in Sources */,
+				09495F82290109760036BDFB /* NotificationManager.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,
 				0982A7E72922357C00FC1976 /* Font+Extensions.swift in Sources */,
 				09CE772328E2B87700EAA9EE /* LoadingDialog.swift in Sources */,
@@ -1401,6 +1428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */,
+				09495F88290114230036BDFB /* NotificationManagerSpec.swift in Sources */,
 				3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
