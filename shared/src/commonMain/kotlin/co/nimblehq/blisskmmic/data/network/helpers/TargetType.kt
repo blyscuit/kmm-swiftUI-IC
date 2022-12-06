@@ -14,7 +14,7 @@ interface TargetType {
     val requestBuilder: HttpRequestBuilder
     get() {
         val builder = HttpRequestBuilder()
-        builder.url("$BuildKonfig.BASE_URL$API_VERSION$path")
+        builder.url("${BuildKonfig.BASE_URL}$API_VERSION$path")
         builder.method = method
         builder.contentType(ContentType.Application.Json)
         builder.setBody(body)
