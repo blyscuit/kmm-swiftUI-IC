@@ -20,7 +20,7 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var animating = false
 
-    private let animationDuration: Double = 0.7
+    private let animationDuration: Double = .appearing
 
     let coordinator: LoginCoordinator
 
@@ -70,8 +70,10 @@ struct LoginView: View {
         .accessibilityElement(children: .contain)
         .hideBackButtonTitle()
         .onAppear {
-            withAnimation(.easeIn(duration: animationDuration)) {
-                animating = true
+            DispatchQueue.main.async {
+                withAnimation(.easeIn(duration: animationDuration)) {
+                    animating = true
+                }
             }
         }
     }
