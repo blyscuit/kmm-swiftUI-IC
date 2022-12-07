@@ -21,7 +21,7 @@ final class SurveySelectionSpec: QuickSpec {
             describe("its open") {
 
                 beforeEach {
-                    app = XCUIApplication()
+                    app = ArgumentedXCUIApplication()
                     app.launch()
                     let loginFlow = LoginFlow(in: app)
                     loginFlow.execute()

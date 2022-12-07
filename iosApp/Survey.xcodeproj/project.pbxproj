@@ -44,6 +44,11 @@
 		09636B3328D8272E00A5CB97 /* ViewId+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2F28D8267D00A5CB97 /* ViewId+General.swift */; };
 		09636B3628D8285700A5CB97 /* KeyboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B3428D8284600A5CB97 /* KeyboardScreen.swift */; };
 		0964B18D293F28DC00946FA1 /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
+		0964B1C62940514000946FA1 /* LaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1C52940514000946FA1 /* LaunchArgument.swift */; };
+		0964B1C72940514C00946FA1 /* LaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1C52940514000946FA1 /* LaunchArgument.swift */; };
+		0964B1CA294051CE00946FA1 /* ArgumentedXCUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1C8294051C300946FA1 /* ArgumentedXCUIApplication.swift */; };
+		0964B1CC2940530200946FA1 /* UITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1CB2940530200946FA1 /* UITestHelper.swift */; };
+		0964B1CE294054B300946FA1 /* Double+AnimationDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1CD294054B300946FA1 /* Double+AnimationDuration.swift */; };
 		0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */; };
 		0982A7A62921DFE800FC1976 /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */; };
 		0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7DE29222EA800FC1976 /* LoginSpec.swift */; };
@@ -178,6 +183,10 @@
 		09636B2A28D8255D00A5CB97 /* ScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenProtocol.swift; sourceTree = "<group>"; };
 		09636B2F28D8267D00A5CB97 /* ViewId+General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+General.swift"; sourceTree = "<group>"; };
 		09636B3428D8284600A5CB97 /* KeyboardScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardScreen.swift; sourceTree = "<group>"; };
+		0964B1C52940514000946FA1 /* LaunchArgument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchArgument.swift; sourceTree = "<group>"; };
+		0964B1C8294051C300946FA1 /* ArgumentedXCUIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentedXCUIApplication.swift; sourceTree = "<group>"; };
+		0964B1CB2940530200946FA1 /* UITestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestHelper.swift; sourceTree = "<group>"; };
+		0964B1CD294054B300946FA1 /* Double+AnimationDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+AnimationDuration.swift"; sourceTree = "<group>"; };
 		0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionSpec.swift; sourceTree = "<group>"; };
 		0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordSpec.swift; sourceTree = "<group>"; };
 		0982A7DE29222EA800FC1976 /* LoginSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSpec.swift; sourceTree = "<group>"; };
@@ -482,6 +491,15 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		0964B1C4294050E100946FA1 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				0964B1C52940514000946FA1 /* LaunchArgument.swift */,
+				0964B1CB2940530200946FA1 /* UITestHelper.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
 		0982A7972921DE6700FC1976 /* SurveySelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +625,7 @@
 			isa = PBXGroup;
 			children = (
 				09C2F40829346A8500F44818 /* XCUIElement+Label.swift */,
+				0964B1C8294051C300946FA1 /* ArgumentedXCUIApplication.swift */,
 			);
 			path = XCTest;
 			sourceTree = "<group>";
@@ -845,6 +864,7 @@
 			children = (
 				71A1F95D20E1E58589F4CD31 /* Constants.swift */,
 				09495FC8291106A00036BDFB /* Constants+SystemImage.swift */,
+				0964B1CD294054B300946FA1 /* Double+AnimationDuration.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1038,6 +1058,7 @@
 		E8FA76B3139104BA8189B8C0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0964B1C4294050E100946FA1 /* UITests */,
 				09CE772C28E2ED2300EAA9EE /* KMM */,
 				09636B0928D48CE800A5CB97 /* Typealiases */,
 				09636AF428D47A1400A5CB97 /* Rswift */,
@@ -1472,6 +1493,7 @@
 				09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */,
 				0982A7E329222EFF00FC1976 /* RouteCoordinator.swift in Sources */,
 				09495F7828FFF2D50036BDFB /* ViewId+SurveySelection.swift in Sources */,
+				0964B1CC2940530200946FA1 /* UITestHelper.swift in Sources */,
 				09495F2A28EC43760036BDFB /* ViewId+SurveyLoading.swift in Sources */,
 				09495F2828EC38AD0036BDFB /* SkeletonTextView.swift in Sources */,
 				0982A880292F847900FC1976 /* ResetPassword+DataSource.swift in Sources */,
@@ -1484,11 +1506,13 @@
 				09CE771528E1AB0B00EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09636B0B28D48CFD00A5CB97 /* Typealiases.swift in Sources */,
 				0982A7F6292371F000FC1976 /* StringResource+Localized.swift in Sources */,
+				0964B1CE294054B300946FA1 /* Double+AnimationDuration.swift in Sources */,
 				09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */,
 				09495F6628FF97080036BDFB /* SplashView.swift in Sources */,
 				09495F82290109760036BDFB /* NotificationManager.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,
 				0982A7E72922357C00FC1976 /* Font+Extensions.swift in Sources */,
+				0964B1C62940514000946FA1 /* LaunchArgument.swift in Sources */,
 				09CE772328E2B87700EAA9EE /* LoadingDialog.swift in Sources */,
 				09636AF628D47A1500A5CB97 /* R.generated.swift in Sources */,
 			);
@@ -1508,6 +1532,7 @@
 				0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */,
 				0982A7EB29223C3A00FC1976 /* SurveyLoadingSpec.swift in Sources */,
 				09C2F4032934588B00F44818 /* TimeInterval+Constants.swift in Sources */,
+				0964B1CA294051CE00946FA1 /* ArgumentedXCUIApplication.swift in Sources */,
 				09C2F40A29346A8800F44818 /* XCUIElement+Label.swift in Sources */,
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
 				0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */,
@@ -1519,6 +1544,7 @@
 				09495F2B28EC43860036BDFB /* ViewId+SurveyLoading.swift in Sources */,
 				09636B2228D821ED00A5CB97 /* ViewId+Login.swift in Sources */,
 				09636B3128D8271D00A5CB97 /* LoginScreen.swift in Sources */,
+				0964B1C72940514C00946FA1 /* LaunchArgument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
