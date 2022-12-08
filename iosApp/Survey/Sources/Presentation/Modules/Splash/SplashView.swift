@@ -29,7 +29,7 @@ struct SplashView: View {
         }
         .accessibility(.splash(.view))
         .onAppear {
-            withAnimation(.linear(duration: 0.2)) {
+            withAnimation(.linear(duration: .fast)) {
                 coordinator.showLogin()
             }
         }

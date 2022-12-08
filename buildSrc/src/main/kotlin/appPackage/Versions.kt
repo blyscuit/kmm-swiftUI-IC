@@ -18,4 +18,7 @@ object Version {
     const val MOCKMP = "1.6.0"
     const val KSP = "1.7.10-1.0.6"
     const val KOTEST = "5.5.1"
+    const val MULTIPLATFORM_SETTINGS = "1.0.0-RC"
+    const val SECURITY = "1.1.0-alpha03"
+    const val MOKO_RESOURCES = "0.20.1"
 }

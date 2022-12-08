@@ -12,6 +12,7 @@ plugins {
     id(Plugin.MOCKMP).version(Version.MOCKMP)
     id(Plugin.KSP).version(Version.KSP)
     id(Plugin.KOVER)
+    id(Plugin.MOKO_RESOURCES)
 }
 
 version = "1.0"
@@ -30,6 +31,7 @@ kotlin {
         podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "Shared"
+            export(Dependency.MOKO_RESOURCES)
         }
         xcodeConfigurationToNativeBuildType["Debug Staging"] = NativeBuildType.DEBUG
         xcodeConfigurationToNativeBuildType["Debug Production"] = NativeBuildType.DEBUG
@@ -55,6 +57,9 @@ kotlin {
                 implementation(Dependency.KOTEST_FRAMEWORK)
                 implementation(Dependency.KOTEST_ASSERTIONS)
                 implementation(Dependency.KOTEST_PROPERTY)
+                implementation(Dependency.MULTIPLATFORM_SETTINGS)
+                implementation(Dependency.MULTIPLATFORM_SETTINGS_SERIALIZATION)
+                implementation(Dependency.MULTIPLATFORM_SETTINGS_TEST)
             }
         }
         val commonTest by getting {
@@ -66,6 +71,7 @@ kotlin {
             dependencies {
                 implementation(Dependency.KTOR_ANDROID)
                 implementation(Dependency.KOIN_ANDROID)
+                implementation(Dependency.SECURITY)
             }
         }
         val androidTest by getting
@@ -93,6 +99,10 @@ kotlin {
     }
 }
 
+dependencies {
+    commonMainApi(Dependency.MOKO_RESOURCES)
+}
+
 android {
     compileSdk = Android.COMPILE_SDK
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -105,7 +115,7 @@ android {
         unitTests.all {
             if (it.name == "testReleaseUnitTest") {
                 it.extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
-                    isDisabled.set(true) 
+                    isDisabled.set(true)
                 }
             }
             it.extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
@@ -114,7 +124,7 @@ android {
     }
 }
 
- detekt {
+detekt {
     source = files(
         "./"
     )
@@ -204,7 +214,11 @@ mockmp {
 kover {
     filters {
         classes {
-            excludes += listOf("*Test*", "*Mock*", "co.nimblehq.blisskmmic.di*")
+            excludes += listOf("*Test*", "*Mock*", "co.nimblehq.blisskmmic.di*", "*helpers.extensions.ios*")
         }
     }
+}
+
+multiplatformResources {
+    multiplatformResourcesPackage = "co.nimblehq.blisskmmic"
 }

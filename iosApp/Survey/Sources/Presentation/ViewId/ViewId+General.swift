@@ -11,5 +11,6 @@ extension ViewId {
     enum General: String {
 
         case keyboard = "general.keyboard"
+        case loadingSpinner = "general.loading.spinner"
     }
 }

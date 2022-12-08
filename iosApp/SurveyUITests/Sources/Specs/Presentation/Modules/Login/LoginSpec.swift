@@ -21,7 +21,7 @@ final class LoginSpec: QuickSpec {
             describe("its open") {
 
                 beforeEach {
-                    app = XCUIApplication()
+                    app = ArgumentedXCUIApplication()
                     loginScreen = LoginScreen(in: app)
                     app.launch()
                 }

@@ -44,7 +44,7 @@ struct FadePaginationView<T>: View {
                             currentVisibility = 1.0 * max(0.0, turningVisibilityPercentage)
                         }
                         .onEnded { value in
-                            withAnimation(.easeInOut(duration: 0.3)) {
+                            withAnimation(.easeInOut(duration: .default)) {
                                 let velocity = self.velocity
                                 if velocity.dx < -turningSpeed {
                                     // Swipe back fast

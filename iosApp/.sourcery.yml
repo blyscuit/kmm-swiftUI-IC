@@ -7,3 +7,4 @@ output:
 args:
   autoMockableTestableImports:
     - Survey
+    - Shared

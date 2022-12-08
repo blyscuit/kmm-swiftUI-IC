@@ -1,7 +1,7 @@
 package co.nimblehq.blisskmmic.data.network.core
 
-import co.nimblehq.blisskmmic.helpers.mock.NetworkMockModel
 import co.nimblehq.blisskmmic.helpers.mock.NETWORK_MOCK_MODEL_RESULT
+import co.nimblehq.blisskmmic.helpers.mock.NetworkMockModel
 import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonMockEngine
 import io.kotest.matchers.shouldBe
 import io.ktor.client.request.*

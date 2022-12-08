@@ -20,7 +20,7 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var animating = false
 
-    private let animationDuration: Double = 0.7
+    private let animationDuration: Double = .appearing
 
     let coordinator: LoginCoordinator
 
@@ -32,15 +32,16 @@ struct LoginView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
 
                 Assets.backgroundBlur
                     .image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
                     .opacity(animating ? 1.0 : 0.0)
+                    .accessibility(.login(.view))
 
                 VStack(
                     alignment: .center,
@@ -67,17 +68,18 @@ struct LoginView: View {
             hideKeyboard()
         }
         .accessibilityElement(children: .contain)
-        .accessibility(.login(.view))
         .hideBackButtonTitle()
         .onAppear {
-            withAnimation(.easeIn(duration: animationDuration)) {
-                animating = true
+            DispatchQueue.main.async {
+                withAnimation(.easeIn(duration: animationDuration)) {
+                    animating = true
+                }
             }
         }
     }
 
     var loginField: some View {
-        TextField(Localize.loginFieldEmail(), text: $email)
+        TextField(String.localizeId.login_fields_email(), text: $email)
             .keyboardType(.emailAddress)
             .primaryTextField()
             .accessibility(.login(.emailField))
@@ -85,10 +87,10 @@ struct LoginView: View {
 
     var passwordField: some View {
         HStack {
-            SecureField(Localize.loginFieldPassword(), text: $password)
+            SecureField(String.localizeId.login_fields_password(), text: $password)
                 .accessibility(.login(.passwordField))
             if password.isEmpty {
-                Button(Localize.loginButtonForgot()) {
+                Button(String.localizeId.login_button_forgot()) {
                     coordinator.showResetPassword()
                 }
                 .overlayButton()
@@ -106,7 +108,7 @@ struct LoginView: View {
                 coordinator.showHomeLoading()
             }
         } label: {
-            Text(Localize.loginButtonLogin())
+            Text(String.localizeId.login_button_login())
                 .frame(maxWidth: .infinity)
                 .primaryButton()
                 .accessibility(.login(.loginButton))
