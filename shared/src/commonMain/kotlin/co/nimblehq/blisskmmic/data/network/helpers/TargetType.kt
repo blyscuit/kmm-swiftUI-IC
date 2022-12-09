@@ -30,8 +30,6 @@ internal inline fun <reified BodyType> TargetType<BodyType>.requestBuilder(): Ht
 private inline fun <reified BodyType> HttpRequestBuilder.setQueryParameters(parameters: BodyType?) {
     parameters?.run {
         val queryParameters = Json.encodeToJsonElement(this).jsonObject
-        for ((key, value) in queryParameters) {
-            parameter(key, value)
-        }
+        queryParameters.forEach { parameter(it.key, it.value) }
     }
 }

@@ -11,5 +11,5 @@ import org.koin.dsl.module
 val useCaseModule = module {
     single<LogInUseCase> { LogInUseCaseImpl(get()) }
     single<ResetPasswordUseCase> { ResetPasswordUseCaseImpl(get()) }
-    factory<SurveyListUseCase> { SurveyListUseCaseImpl(get()) }
+    single<SurveyListUseCase> { SurveyListUseCaseImpl(get()) }
 }

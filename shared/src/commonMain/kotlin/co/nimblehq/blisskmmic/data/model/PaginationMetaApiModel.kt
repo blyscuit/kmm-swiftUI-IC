@@ -5,11 +5,10 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-class PaginationMetaApiModel(
+data class PaginationMetaApiModel(
     val page: Int,
     val pages: Int,
-    @SerialName("page_size")
-    val pageSize: Int,
+    @SerialName("page_size") val pageSize: Int,
     val records: Int
 )
 

@@ -13,7 +13,7 @@ interface SurveyListUseCase {
 
 class SurveyListUseCaseImpl(
     private val repository: SurveyRepository
-    ) : SurveyListUseCase {
+) : SurveyListUseCase {
 
     override operator fun invoke(page: Int): Flow<List<Survey>> {
         return repository

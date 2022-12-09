@@ -12,7 +12,7 @@ import org.koin.dsl.module
 val networkModule = module {
     single { NetworkClient() }
     single<NetworkDataSource>(named(NETWORK_CLIENT_KOIN)) { NetworkDataSourceImpl(get()) }
-    factory<NetworkDataSource>(named(TOKENIZED_NETWORK_CLIENT_KOIN)) {
+    single<NetworkDataSource>(named(TOKENIZED_NETWORK_CLIENT_KOIN)) {
         NetworkDataSourceImpl(TokenizedNetworkClient(null, get()))
     }
 }

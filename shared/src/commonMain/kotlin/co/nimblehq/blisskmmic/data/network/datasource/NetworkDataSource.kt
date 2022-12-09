@@ -29,7 +29,7 @@ class NetworkDataSourceImpl(private val networkClient: NetworkClient): NetworkDa
     }
 
     override fun survey(target: SurveySelectionTargetType):
-            Flow<Pair<List<SurveyApiModel>, PaginationMetaApiModel>> {
+        Flow<Pair<List<SurveyApiModel>, PaginationMetaApiModel>> {
         return networkClient.fetchWithMeta(target.requestBuilder())
     }
 }
