@@ -1,5 +1,6 @@
 package co.nimblehq.blisskmmic.data.network.core
 
+import app.cash.turbine.test
 import co.nimblehq.blisskmmic.BuildKonfig
 import co.nimblehq.blisskmmic.data.network.helpers.API_VERSION
 import co.nimblehq.blisskmmic.helpers.mock.NetworkMockModel
@@ -10,7 +11,6 @@ import io.kotest.matchers.collections.shouldContain
 import io.kotest.matchers.shouldBe
 import io.ktor.client.request.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -33,8 +33,9 @@ class NetworkClientTest {
         val networkClient = NetworkClient(engine = engine)
         networkClient
             .fetch<NetworkMockModel>(request)
-            .collect {
-                it.title shouldBe "Hello"
+            .test {
+                awaitItem().title shouldBe "Hello"
+                awaitComplete()
             }
     }
 
@@ -44,14 +45,11 @@ class NetworkClientTest {
         val networkClient = NetworkClient(engine = engine)
         networkClient
             .fetch<NetworkMockModel>(request)
-            .catch { error ->
-                when(error) {
+            .test {
+                when(val error = awaitError()) {
                     is JsonApiException -> error.errors.map { it.code } shouldContain "not_found"
                     else -> fail("Should not return incorrect error type")
                 }
-            }
-            .collect {
-                fail("Should not return object")
             }
     }
 }

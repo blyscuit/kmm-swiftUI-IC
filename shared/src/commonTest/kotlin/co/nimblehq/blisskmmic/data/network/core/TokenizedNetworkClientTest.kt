@@ -1,5 +1,6 @@
 package co.nimblehq.blisskmmic.data.network.core
 
+import app.cash.turbine.test
 import co.nimblehq.blisskmmic.BuildKonfig
 import co.nimblehq.blisskmmic.data.database.datasource.LocalDataSource
 import co.nimblehq.blisskmmic.data.database.datasource.MockLocalDataSource
@@ -12,10 +13,8 @@ import co.nimblehq.jsonapi.model.JsonApiException
 import io.kotest.matchers.collections.shouldContain
 import io.kotest.matchers.shouldBe
 import io.ktor.client.request.*
-import io.ktor.http.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.kodein.mock.Mocker
 import org.kodein.mock.UsesMocks
@@ -31,11 +30,11 @@ class TokenizedNetworkClientTest {
     private val localDataSource = MockLocalDataSource(mocker)
 
     private val token = TokenDatabaseModel(
-        "Access",
-        "",
-        1,
-        "",
-        1
+        accessToken = "Access",
+        tokenType = "",
+        expiresIn = 1,
+        refreshToken = "",
+        createdAt = 1
     )
     private val path = "user"
     private val request = HttpRequestBuilder()
@@ -50,7 +49,7 @@ class TokenizedNetworkClientTest {
     fun `when calling fetch, it returns correct object`() = runTest {
         mocker.every {
             localDataSource.getToken()
-        } returns flow { emit(token) }
+        } returns flowOf(token)
         val engine = jsonTokenizedMockEngine(
             NETWORK_MOCK_MODEL_RESULT,
             token.accessToken,
@@ -59,8 +58,9 @@ class TokenizedNetworkClientTest {
         val networkClient = TokenizedNetworkClient(engine = engine, localDataSource)
         networkClient
             .fetch<NetworkMockModel>(request)
-            .collect {
-                it.title shouldBe "Hello"
+            .test {
+                awaitItem().title shouldBe "Hello"
+                awaitComplete()
             }
     }
 
@@ -68,7 +68,7 @@ class TokenizedNetworkClientTest {
     fun `when calling fetch with incorrect token, it returns correct error`() = runTest {
         mocker.every {
             localDataSource.getToken()
-        } returns flow { emit(token) }
+        } returns flowOf(token)
         val engine = jsonTokenizedMockEngine(
             NETWORK_MOCK_MODEL_RESULT,
             "no access",
@@ -77,14 +77,11 @@ class TokenizedNetworkClientTest {
         val networkClient = TokenizedNetworkClient(engine = engine, localDataSource)
         networkClient
             .fetch<NetworkMockModel>(request)
-            .catch { error ->
-                when(error) {
+            .test {
+                when(val error = awaitError()) {
                     is JsonApiException -> error.errors.map { it.code } shouldContain "unauthorized"
                     else -> fail("Should not return incorrect error type")
                 }
-            }
-            .collect {
-                fail("Should not return object")
             }
     }
 }

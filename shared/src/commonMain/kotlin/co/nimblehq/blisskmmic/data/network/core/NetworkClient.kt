@@ -3,8 +3,6 @@ package co.nimblehq.blisskmmic.data.network.core
 import co.nimblehq.jsonapi.json.JsonApi
 import io.ktor.client.*
 import io.ktor.client.engine.*
-import io.ktor.client.plugins.auth.*
-import io.ktor.client.plugins.auth.providers.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.plugins.logging.*
 import io.ktor.client.request.*
@@ -25,10 +23,10 @@ open class NetworkClient {
     }
 
     constructor(engine: HttpClientEngine? = null) {
-        if (engine == null) {
-            client = HttpClient(clientConfig())
+        client = if (engine == null) {
+            HttpClient(clientConfig())
         } else {
-            client = HttpClient(engine, clientConfig())
+            HttpClient(engine, clientConfig())
         }
     }
 
@@ -51,19 +49,12 @@ open class NetworkClient {
         }
     }
 
-    private fun clientConfig(): HttpClientConfig<*>.() -> Unit {
+    open fun clientConfig(): HttpClientConfig<*>.() -> Unit {
         return {
             install(Logging)
             install(ContentNegotiation) {
                 json(json)
             }
-            install(Auth) {
-                bearer(bearer())
-            }
         }
-    }
-
-    open fun bearer(): BearerAuthConfig.() -> Unit {
-        return {}
     }
 }
