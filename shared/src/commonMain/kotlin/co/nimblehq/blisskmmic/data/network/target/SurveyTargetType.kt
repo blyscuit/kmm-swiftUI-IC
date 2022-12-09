@@ -5,10 +5,8 @@ import io.ktor.http.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-sealed class SurveyTargetType<T>: TargetType<T>
-
 class SurveySelectionTargetType(page: Int = 1, size: Int = 3):
-    SurveyTargetType<SurveySelectionTargetType.SurveySelectionInput>() {
+    TargetType<SurveySelectionTargetType.SurveySelectionInput> {
 
     @Serializable
     data class SurveySelectionInput(

@@ -70,7 +70,7 @@ class TokenizedNetworkClientTest {
     fun `when calling fetchWithMeta, it returns correct object`() = runTest {
         mocker.every {
             localDataSource.getToken()
-        } returns flow { emit(token) }
+        } returns flowOf(token)
         val engine = jsonTokenizedMockEngine(
             NETWORK_META_MOCK_MODEL_RESULT,
             token.accessToken,
@@ -79,9 +79,11 @@ class TokenizedNetworkClientTest {
         val networkClient = TokenizedNetworkClient(engine = engine, localDataSource)
         networkClient
             .fetchWithMeta<NetworkMockModel, NetworkMetaMockModel>(request)
-            .collect {
-                it.first.title shouldBe "Hello"
-                it.second.page shouldBe 1
+            .test {
+                val response = awaitItem()
+                response.first.title shouldBe "Hello"
+                response.second.page shouldBe 1
+                awaitComplete()
             }
     }
 

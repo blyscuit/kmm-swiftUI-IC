@@ -7,14 +7,14 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
 import kotlinx.serialization.json.jsonObject
 
-interface TargetType<T> {
+interface TargetType<BodyType> {
 
     val path: String
     val method: HttpMethod
-    val body: T?
+    val body: BodyType?
 }
 
-internal inline fun <reified T> TargetType<T>.requestBuilder(): HttpRequestBuilder {
+internal inline fun <reified BodyType> TargetType<BodyType>.requestBuilder(): HttpRequestBuilder {
     val builder = HttpRequestBuilder()
     builder.url("${BuildKonfig.BASE_URL}$API_VERSION$path")
     builder.method = method
@@ -27,7 +27,7 @@ internal inline fun <reified T> TargetType<T>.requestBuilder(): HttpRequestBuild
     return builder
 }
 
-private inline fun <reified T> HttpRequestBuilder.setQueryParameters(parameters: T?) {
+private inline fun <reified BodyType> HttpRequestBuilder.setQueryParameters(parameters: BodyType?) {
     parameters?.run {
         val queryParameters = Json.encodeToJsonElement(this).jsonObject
         for ((key, value) in queryParameters) {

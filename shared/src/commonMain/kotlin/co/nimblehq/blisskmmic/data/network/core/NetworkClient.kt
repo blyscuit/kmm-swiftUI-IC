@@ -3,6 +3,7 @@ package co.nimblehq.blisskmmic.data.network.core
 import co.nimblehq.jsonapi.json.JsonApi
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
+import io.github.aakira.napier.LogLevel.DEBUG
 import io.ktor.client.*
 import io.ktor.client.engine.*
 import io.ktor.client.plugins.contentnegotiation.*
@@ -10,6 +11,7 @@ import io.ktor.client.plugins.logging.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.serialization.kotlinx.json.*
+import io.ktor.client.plugins.logging.LogLevel.ALL
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.serialization.json.Json
@@ -56,15 +58,21 @@ open class NetworkClient {
     open fun clientConfig(): HttpClientConfig<*>.() -> Unit {
         return {
             install(Logging) {
-                level = LogLevel.ALL
-                logger = object : Logger {
-                    override fun log(message: String) {
-                        Napier.log(io.github.aakira.napier.LogLevel.DEBUG, message = message)
-                    }
-                }
+                loggingConfig()
             }
             install(ContentNegotiation) {
                 json(json)
+            }
+        }
+    }
+
+    fun loggingConfig(): Logging.Config.() -> Unit {
+        return {
+            level = ALL
+            logger = object : Logger {
+                override fun log(message: String) {
+                    Napier.log(DEBUG, message = message)
+                }
             }
         }
     }

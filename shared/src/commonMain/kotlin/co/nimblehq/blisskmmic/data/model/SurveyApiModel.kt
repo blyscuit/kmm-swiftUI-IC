@@ -18,11 +18,9 @@ data class SurveyApiModel(
     val surveyType: String
 )
 
-fun SurveyApiModel.toSurvey(): Survey {
-    return Survey(
-        id,
-        coverImageUrl,
-        title,
-        description
-    )
-}
+fun SurveyApiModel.toSurvey() = Survey(
+    id,
+    coverImageUrl,
+    title,
+    description
+)

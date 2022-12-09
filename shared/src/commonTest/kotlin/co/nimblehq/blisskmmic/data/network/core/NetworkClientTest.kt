@@ -47,9 +47,11 @@ class NetworkClientTest {
         val networkClient = NetworkClient(engine = engine)
         networkClient
             .fetchWithMeta<NetworkMockModel, NetworkMetaMockModel>(request)
-            .collect {
-                it.first.title shouldBe "Hello"
-                it.second.page shouldBe 1
+            .test {
+                val response = awaitItem()
+                response.first.title shouldBe "Hello"
+                response.second.page shouldBe 1
+                awaitComplete()
             }
     }
 

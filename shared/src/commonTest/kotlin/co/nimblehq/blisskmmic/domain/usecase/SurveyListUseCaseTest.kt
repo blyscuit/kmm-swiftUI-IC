@@ -1,5 +1,6 @@
 package co.nimblehq.blisskmmic.domain.usecase
 
+import app.cash.turbine.test
 import co.nimblehq.blisskmmic.domain.model.PaginationMeta
 import co.nimblehq.blisskmmic.domain.model.Survey
 import co.nimblehq.blisskmmic.domain.model.fakePaginationMeta
@@ -10,6 +11,7 @@ import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.kodein.mock.Mocker
 import org.kodein.mock.UsesFakes
@@ -38,11 +40,12 @@ class SurveyListUseCaseTest {
     fun `When calling surveyList with a success response, it returns correct object`() = runTest {
         mocker.every {
             surveyRepository.survey(1)
-        } returns flow { emit(Pair(listOf(survey), paginationMeta)) }
+        } returns flowOf(Pair(listOf(survey), paginationMeta))
 
         surveyListUseCase(1)
-            .collect{
-                it.first().title shouldBe survey.title
+            .test {
+                awaitItem().first().title shouldBe survey.title
+                awaitComplete()
             }
     }
 
@@ -53,11 +56,8 @@ class SurveyListUseCaseTest {
         } returns flow { error("Fail") }
 
         surveyListUseCase(1)
-            .catch {
-                it.message shouldBe "Fail"
-            }
-            .collect{
-                fail("Should not receive object")
+            .test {
+                awaitError().message shouldBe "Fail"
             }
     }
 }

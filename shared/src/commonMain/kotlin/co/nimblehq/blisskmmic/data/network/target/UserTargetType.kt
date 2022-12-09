@@ -6,10 +6,8 @@ import io.ktor.http.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-sealed class UserTargetType<T>: TargetType<T>
-
 class LoginTargetType(email: String, password: String):
-    UserTargetType<LoginTargetType.LoginInput>() {
+    TargetType<LoginTargetType.LoginInput> {
 
     @Serializable
     data class LoginInput(
@@ -35,7 +33,8 @@ class LoginTargetType(email: String, password: String):
 }
 
 
-class ResetPasswordTargetType(email: String): UserTargetType<ResetPasswordTargetType.ResetPasswordInput>() {
+class ResetPasswordTargetType(email: String):
+    TargetType<ResetPasswordTargetType.ResetPasswordInput> {
 
     @Serializable
     data class User(

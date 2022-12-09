@@ -1,5 +1,6 @@
 package co.nimblehq.blisskmmic.data.datasource
 
+import app.cash.turbine.test
 import co.nimblehq.blisskmmic.data.network.core.NetworkClient
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSourceImpl
 import co.nimblehq.blisskmmic.data.network.target.LoginTargetType
@@ -14,7 +15,6 @@ import co.nimblehq.jsonapi.model.JsonApiException
 import io.kotest.matchers.collections.shouldContain
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.fail
@@ -31,8 +31,9 @@ class NetworkDataSourceTest {
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource
             .logIn(LoginTargetType("", ""))
-            .collect {
-                it.refreshToken shouldBe "refresh_token"
+            .test {
+                awaitItem().refreshToken shouldBe "refresh_token"
+                awaitComplete()
             }
     }
 
@@ -43,14 +44,11 @@ class NetworkDataSourceTest {
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource
             .logIn(LoginTargetType("", ""))
-            .catch { error ->
-                when(error) {
+            .test {
+                when(val error = awaitError()) {
                     is JsonApiException -> error.errors.map { it.code } shouldContain "invalid_token"
                     else -> fail("Should not return incorrect error type")
                 }
-            }
-            .collect {
-                fail("Should not return object")
             }
     }
 
@@ -63,10 +61,11 @@ class NetworkDataSourceTest {
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource
             .resetPassword(ResetPasswordTargetType(""))
-            .collect {
-                it.message shouldBe """
+            .test {
+                awaitItem().message shouldBe """
                     If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
                 """.trimIndent()
+                awaitComplete()
             }
     }
 
@@ -79,10 +78,12 @@ class NetworkDataSourceTest {
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource
             .survey(SurveySelectionTargetType())
-            .collect {
-                it.first.size shouldBe 2
-                it.first.first().title shouldBe "Scarlett Bangkok"
-                it.second.page shouldBe 1
+            .test {
+                val response = awaitItem()
+                response .first.size shouldBe 2
+                response .first.first().title shouldBe "Scarlett Bangkok"
+                response .second.page shouldBe 1
+                awaitComplete()
             }
     }
 
@@ -93,14 +94,11 @@ class NetworkDataSourceTest {
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource
             .survey(SurveySelectionTargetType())
-            .catch { error ->
-                when(error) {
+            .test {
+                when (val error = awaitError()) {
                     is JsonApiException -> error.errors.map { it.code } shouldContain "invalid_token"
                     else -> fail("Should not return incorrect error type")
                 }
-            }
-            .collect {
-                fail("Should not return object")
             }
     }
 }
