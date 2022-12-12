@@ -1,5 +1,6 @@
 package co.nimblehq.blisskmmic.data.repository
 
+import app.cash.turbine.test
 import co.nimblehq.blisskmmic.data.database.datasource.LocalDataSource
 import co.nimblehq.blisskmmic.data.database.model.TokenDatabaseModel
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSource
@@ -8,6 +9,7 @@ import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.kodein.mock.Fake
 import org.kodein.mock.Mock
@@ -112,6 +114,34 @@ class AuthenticationRepositoryTest: TestsWithMocks() {
             .getCachedToken()
             .collect {
                 it shouldBe token.toToken()
+            }
+    }
+
+    @Test
+    fun `When calling hasCachedToken, it returns true when there is a token`() = runTest {
+        mocker.every {
+            localDataSource.getToken()
+        } returns flowOf(tokenDB)
+
+        authenticationRepository
+            .hasCachedToken()
+            .test {
+                awaitItem() shouldBe true
+                awaitComplete()
+            }
+    }
+
+    @Test
+    fun `When calling hasCachedToken, it returns false when there is an error`() = runTest {
+        mocker.every {
+            localDataSource.getToken()
+        } returns flow { error("No token") }
+
+        authenticationRepository
+            .hasCachedToken()
+            .test {
+                awaitItem() shouldBe false
+                awaitComplete()
             }
     }
 }
