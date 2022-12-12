@@ -11,7 +11,7 @@ import SwiftUI
 
 struct SplashView: View {
 
-    @StateObject var dataSource: DataSource
+    @StateObject private var dataSource: DataSource
 
     var body: some View {
         GeometryReader { geometry in
@@ -26,5 +26,9 @@ struct SplashView: View {
         .onAppear {
             dataSource.checkLogin()
         }
+    }
+
+    init(coordinator: SplashCoordinator) {
+        _dataSource = StateObject(wrappedValue: DataSource(coordinator: coordinator))
     }
 }

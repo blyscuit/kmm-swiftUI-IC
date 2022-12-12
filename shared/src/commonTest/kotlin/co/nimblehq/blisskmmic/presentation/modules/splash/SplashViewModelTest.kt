@@ -2,7 +2,7 @@ package co.nimblehq.blisskmmic.presentation.modules.splash
 
 import app.cash.turbine.test
 import co.nimblehq.blisskmmic.domain.usecase.CheckLoginUseCase
-import co.nimblehq.blisskmmic.helpers.constant.FlowDelay
+import co.nimblehq.blisskmmic.helpers.constant.FLOW_DELAY
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -67,7 +67,7 @@ class SplashViewModelTest : TestsWithMocks() {
         mocker.every {
             checkLoginUseCase()
         } returns flow{
-            delay(FlowDelay)
+            delay(FLOW_DELAY)
             emit(false)
         }
 
@@ -89,7 +89,7 @@ class SplashViewModelTest : TestsWithMocks() {
         mocker.every {
             checkLoginUseCase()
         } returns flow {
-            delay(FlowDelay)
+            delay(FLOW_DELAY)
             error("Error")
         }
 

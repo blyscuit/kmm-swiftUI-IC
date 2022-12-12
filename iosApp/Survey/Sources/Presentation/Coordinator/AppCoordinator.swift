@@ -21,7 +21,7 @@ struct AppCoordinator: View {
             case .resetPassword:
                 ResetPasswordView()
             case .splash:
-                SplashView(dataSource: .init(coordinator: coordinator))
+                SplashView(coordinator: coordinator)
             case .surveySelection:
                 SurveySelectionView()
             case .surveyLoading:

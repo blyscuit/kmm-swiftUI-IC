@@ -14,7 +14,6 @@ import Shared
 
 final class SplashViewDataSourceSpec: QuickSpec {
 
-    // swiftlint:disable function_body_length
     override func spec() {
 
         var checkLoginUseCase: CheckLoginUseCaseKMMMock!
@@ -55,21 +54,21 @@ final class SplashViewDataSourceSpec: QuickSpec {
 
                     beforeEach {
                         checkLoginUseCase.invokeReturnValue = WrappedFlow.shared.bool(bool: true)
-                        dataSource.checkLogin()
+                        delayCheckLogin()
                     }
 
-                    it("sets loading true") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(2)).last
+                    it("sets loading state") {
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(1)).last
                         expect(viewState?.isLoading) == true
                     }
 
                     it("sets loading false") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
                         expect(viewState?.isLoading) == false
                     }
 
                     it("sets login true") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
                         expect(viewState?.isLogin) == true
                     }
                 }
@@ -78,50 +77,45 @@ final class SplashViewDataSourceSpec: QuickSpec {
 
                     beforeEach {
                         checkLoginUseCase.invokeReturnValue = WrappedFlow.shared.bool(bool: false)
-                        dataSource.checkLogin()
-                    }
-
-                    it("sets loading true") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(2)).last
-                        expect(viewState?.isLoading) == true
+                        delayCheckLogin()
                     }
 
                     it("sets loading false") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
                         expect(viewState?.isLoading) == false
                     }
 
                     it("sets login false") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
                         expect(viewState?.isLogin) == false
                     }
                 }
 
                 context("when it return failure") {
 
-                    let error = "iOS_Error"
                     beforeEach {
                         checkLoginUseCase.invokeReturnValue = WrappedFlow.shared.bool(
-                            errorMessage: error
+                            errorMessage: "error"
                         )
                         dataSource.checkLogin()
                     }
 
-                    it("sets loading true") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(2)).last
-                        expect(viewState?.isLoading) == true
-                    }
-
                     it("sets loading false") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
                         expect(viewState?.isLoading) == false
                     }
 
                     it("sets login false") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
                         expect(viewState?.isLogin) == false
                     }
                 }
+            }
+        }
+
+        func delayCheckLogin() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                dataSource.checkLogin()
             }
         }
     }

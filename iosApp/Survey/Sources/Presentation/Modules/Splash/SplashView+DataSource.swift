@@ -37,11 +37,11 @@ extension SplashView {
             self.coordinator = coordinator
             createPublisher(for: viewModel.viewStateNative)
                 .dropFirst()
-                .receive(on: DispatchQueue.main)
                 .catch { _ -> Just<SplashViewState> in
                     let splashViewState = SplashViewState()
                     return Just(splashViewState)
                 }
+                .receive(on: DispatchQueue.main)
                 .sink { [weak self] value in
                     guard let self = self else { return }
                     self.updateStates(value)
