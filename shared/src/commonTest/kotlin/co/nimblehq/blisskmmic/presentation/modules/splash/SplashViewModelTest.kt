@@ -1,16 +1,12 @@
 package co.nimblehq.blisskmmic.presentation.modules.splash
 
 import app.cash.turbine.test
-import app.cash.turbine.testIn
-import co.nimblehq.blisskmmic.MR
 import co.nimblehq.blisskmmic.domain.usecase.CheckLoginUseCase
-import co.nimblehq.blisskmmic.domain.usecase.ResetPasswordUseCase
-import co.nimblehq.blisskmmic.presentation.modules.resetpassword.ResetPasswordViewModel
+import co.nimblehq.blisskmmic.helpers.constant.FlowDelay
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.newSingleThreadContext
@@ -30,7 +26,6 @@ class SplashViewModelTest : TestsWithMocks() {
     lateinit var checkLoginUseCase: CheckLoginUseCase
 
     private val mainThreadSurrogate = newSingleThreadContext("UI thread")
-    private val delay: Long = 50
 
     private val splashViewModel by withMocks { SplashViewModel(checkLoginUseCase) }
 
@@ -72,7 +67,7 @@ class SplashViewModelTest : TestsWithMocks() {
         mocker.every {
             checkLoginUseCase()
         } returns flow{
-            delay(delay)
+            delay(FlowDelay)
             emit(false)
         }
 
@@ -94,7 +89,7 @@ class SplashViewModelTest : TestsWithMocks() {
         mocker.every {
             checkLoginUseCase()
         } returns flow {
-            delay(delay)
+            delay(FlowDelay)
             error("Error")
         }
 

@@ -19,4 +19,10 @@ extension Published.Publisher {
             .first()
             .eraseToAnyPublisher()
     }
+
+    func coldCollectNext(_ count: Int) -> AnyPublisher<[Output], Never> {
+        collect(count)
+            .first()
+            .eraseToAnyPublisher()
+    }
 }

@@ -39,13 +39,13 @@ final class SplashViewDataSourceSpec: QuickSpec {
             describe("its init") {
 
                 it("loading state is false") {
-                    let viewState = dataSource.viewState
-                    expect(viewState.isLoading) == false
+                    let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(1)).last
+                    expect(viewState?.isLoading) == false
                 }
 
                 it("login state is false") {
-                    let viewState = dataSource.viewState
-                    expect(viewState.isLogin) == false
+                    let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(1)).last
+                    expect(viewState?.isLogin) == false
                 }
             }
 
@@ -59,17 +59,17 @@ final class SplashViewDataSourceSpec: QuickSpec {
                     }
 
                     it("sets loading true") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(1)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(2)).last
                         expect(viewState?.isLoading) == true
                     }
 
                     it("sets loading false") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
                         expect(viewState?.isLoading) == false
                     }
 
                     it("sets login true") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
                         expect(viewState?.isLogin) == true
                     }
                 }
@@ -82,17 +82,17 @@ final class SplashViewDataSourceSpec: QuickSpec {
                     }
 
                     it("sets loading true") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(1)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(2)).last
                         expect(viewState?.isLoading) == true
                     }
 
                     it("sets loading false") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
                         expect(viewState?.isLoading) == false
                     }
 
                     it("sets login false") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
                         expect(viewState?.isLogin) == false
                     }
                 }
@@ -108,17 +108,17 @@ final class SplashViewDataSourceSpec: QuickSpec {
                     }
 
                     it("sets loading true") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(1)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(2)).last
                         expect(viewState?.isLoading) == true
                     }
 
                     it("sets loading false") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
                         expect(viewState?.isLoading) == false
                     }
 
                     it("sets login false") {
-                        let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
+                        let viewState = try self.awaitPublisher(dataSource.$viewState.coldCollectNext(3)).last
                         expect(viewState?.isLogin) == false
                     }
                 }
