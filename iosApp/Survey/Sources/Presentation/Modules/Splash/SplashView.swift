@@ -9,29 +9,22 @@
 import FlowStacks
 import SwiftUI
 
-protocol SplashCoordinator {
-
-    func showLogin()
-}
-
 struct SplashView: View {
 
-    let coordinator: SplashCoordinator
+    @StateObject var dataSource: DataSource
 
     var body: some View {
-        ZStack {
+        GeometryReader { geometry in
             Assets.background
                 .image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(width: geometry.size.width, height: geometry.size.height)
         }
         .accessibility(.splash(.view))
         .onAppear {
-            withAnimation(.linear(duration: .fast)) {
-                coordinator.showLogin()
-            }
+            dataSource.checkLogin()
         }
     }
 }

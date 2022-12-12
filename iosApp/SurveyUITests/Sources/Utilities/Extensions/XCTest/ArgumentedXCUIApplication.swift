@@ -12,25 +12,12 @@ final class ArgumentedXCUIApplication: XCUIApplication {
 
     override init() {
         super.init()
-        isFastAnimation = true
+        add(launchArguments: .fastAnimation)
+        add(launchArguments: .clearKeychain)
     }
 }
 
 extension ArgumentedXCUIApplication {
-
-    var isFastAnimation: Bool {
-        get {
-            LaunchArgument.contains(.fastAnimation)
-        }
-
-        set {
-            if newValue {
-                add(launchArguments: .fastAnimation)
-            } else {
-                remove(launchArguments: .fastAnimation)
-            }
-        }
-    }
 
     func add(launchArguments argument: LaunchArgumentKey) {
         launchArguments.append(argument.rawValue)
