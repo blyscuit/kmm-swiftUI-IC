@@ -30,7 +30,8 @@ class SplashViewModelTest : TestsWithMocks() {
     lateinit var checkLoginUseCase: CheckLoginUseCase
 
     private val mainThreadSurrogate = newSingleThreadContext("UI thread")
-    
+    private val delay: Long = 50
+
     private val splashViewModel by withMocks { SplashViewModel(checkLoginUseCase) }
 
     override fun setUpMocks() = injectMocks(mocker)
@@ -71,7 +72,7 @@ class SplashViewModelTest : TestsWithMocks() {
         mocker.every {
             checkLoginUseCase()
         } returns flow{
-            delay(100)
+            delay(delay)
             emit(false)
         }
 
@@ -93,7 +94,7 @@ class SplashViewModelTest : TestsWithMocks() {
         mocker.every {
             checkLoginUseCase()
         } returns flow {
-            delay(100)
+            delay(delay)
             error("Error")
         }
 
