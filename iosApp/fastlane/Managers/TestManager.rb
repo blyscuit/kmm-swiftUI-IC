@@ -15,6 +15,7 @@ class TestManager
       code_coverage: true,
       result_bundle: true,
       only_testing: targets,
+      number_of_retries: 2,
       fail_build: false
     )
   end

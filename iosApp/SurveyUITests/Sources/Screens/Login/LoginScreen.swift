@@ -19,7 +19,7 @@ final class LoginScreen: ScreenProtocol {
     }
 
     func wrongCredentialAlert() -> XCUIElement {
-        return application.staticTexts["Your email or password is incorrect. Please try again."]
+        return application.buttons["OK"]
     }
 
     func showResetPasswordButton() {
