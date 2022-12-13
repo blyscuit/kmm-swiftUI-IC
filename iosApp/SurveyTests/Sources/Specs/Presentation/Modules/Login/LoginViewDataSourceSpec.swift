@@ -93,7 +93,7 @@ final class LoginViewDataSourceSpec: QuickSpec {
                         expect(viewState?.isSuccess) == true
                     }
 
-                    it("coordinator to show home") {
+                    it("coordinator shows home") {
                         try self.awaitPublisher(dataSource.$viewState.collectNext(3))
                         expect(loginCoordinator.showHomeLoadingCallsCount) == 1
                     }
