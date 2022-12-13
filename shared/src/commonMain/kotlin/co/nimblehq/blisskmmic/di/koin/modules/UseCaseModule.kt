@@ -8,4 +8,6 @@ val useCaseModule = module {
     single<ResetPasswordUseCase> { ResetPasswordUseCaseImpl(get()) }
     single<SurveyListUseCase> { SurveyListUseCaseImpl(get()) }
     single<CheckLoginUseCase> { CheckLoginUseCaseImpl(get()) }
+    single<GetCurrentDateUseCase> { GetCurrentDateUseCaseImpl(get()) }
+    single<GetProfileUseCase> { GetProfileUseCaseImpl(get()) }
 }
