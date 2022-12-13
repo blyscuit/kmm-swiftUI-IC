@@ -24,12 +24,17 @@ extension LoginView {
         let coordinator: LoginCoordinator
         let viewModel: LoginViewModel
 
+        #if DEBUG
+            @Published var email: String = SharedBuildConfig.UITestConfig().email()
+            @Published var password: String = SharedBuildConfig.UITestConfig().password()
+        #else
+            @Published var email: String = ""
+            @Published var password: String = ""
+        #endif
+
         @Published private(set) var viewState = LoginViewState()
         @Published var showingErrorAlert = false
         @Published var showingLoading = false
-
-        @Published var email: String = ""
-        @Published var password: String = ""
 
         private var cancellables = Set<AnyCancellable>()
 
