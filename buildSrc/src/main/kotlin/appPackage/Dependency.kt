@@ -57,4 +57,7 @@ object Dependency {
 
     // Napier
     const val NAPIER = "io.github.aakira:napier:${Version.NAPIER}"
+
+    // Date-Time
+    const val DATE_TIME = "org.jetbrains.kotlinx:kotlinx-datetime:${Version.DATE_TIME}"
 }

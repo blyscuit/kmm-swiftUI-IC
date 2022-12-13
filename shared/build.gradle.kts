@@ -58,6 +58,7 @@ kotlin {
                 implementation(Dependency.MULTIPLATFORM_SETTINGS)
                 implementation(Dependency.MULTIPLATFORM_SETTINGS_SERIALIZATION)
                 implementation(Dependency.NAPIER)
+                implementation(Dependency.DATE_TIME)
             }
         }
         val commonTest by getting {
