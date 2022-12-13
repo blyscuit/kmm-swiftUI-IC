@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.singleOrNull
 
 class TokenizedNetworkClient: NetworkClient {
 
-    val localDataSource: LocalDataSource
+    private val localDataSource: LocalDataSource
 
     constructor(
         engine: HttpClientEngine? = null,
@@ -39,7 +39,7 @@ class TokenizedNetworkClient: NetworkClient {
         return {
             loadTokens {
                 localDataSource.getToken().singleOrNull()?.run {
-                    BearerTokens(this.accessToken, this.refreshToken)
+                    BearerTokens(accessToken, refreshToken)
                 }
             }
             sendWithoutRequest { request ->
