@@ -35,7 +35,7 @@ class GetProfileUseCaseTest {
     }
 
     @Test
-    fun `When calling getProfile with a success response, it returns correct object`() = runTest {
+    fun `When calling getProfile with a success response- it returns correct object`() = runTest {
         mocker.every {
             userRepository.getProfile()
         } returns flowOf(user)
@@ -50,7 +50,7 @@ class GetProfileUseCaseTest {
     }
 
     @Test
-    fun `When calling getProfile with a failure response, it returns correct error`() = runTest {
+    fun `When calling getProfile with a failure response- it returns correct error`() = runTest {
         mocker.every {
             userRepository.getProfile()
         } returns flow { error("Fail") }

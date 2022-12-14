@@ -23,7 +23,7 @@ class NetworkDataSourceTest {
     // Log in
 
     @Test
-    fun `When calling log in with success response, it returns correct object`() = runTest {
+    fun `When calling log in with success response- it returns correct object`() = runTest {
         val engine = jsonMockEngine(LOG_IN_JSON_RESULT, "oauth/token")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
@@ -36,7 +36,7 @@ class NetworkDataSourceTest {
     }
 
     @Test
-    fun `When calling log in with failure response, it returns correct error`() = runTest {
+    fun `When calling log in with failure response- it returns correct error`() = runTest {
         val engine = jsonMockEngine(ERROR_JSON_RESULT, "oauth/token")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
@@ -53,7 +53,7 @@ class NetworkDataSourceTest {
     // Reset password
 
     @Test
-    fun `When calling reset password with success response, it returns correct object`() = runTest {
+    fun `When calling reset password with success response- it returns correct object`() = runTest {
         val engine = jsonMockEngine(RESET_PASSWORD_JSON_RESULT, "passwords")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
@@ -70,7 +70,7 @@ class NetworkDataSourceTest {
     // Survey
 
     @Test
-    fun `When calling survey with success response, it returns correct object`() = runTest {
+    fun `When calling survey with success response- it returns correct object`() = runTest {
         val engine = jsonMockEngine(SURVEY_LIST_JSON_RESULT, "surveys")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
@@ -86,7 +86,7 @@ class NetworkDataSourceTest {
     }
 
     @Test
-    fun `When calling survey with failure response, it returns correct error`() = runTest {
+    fun `When calling survey with failure response- it returns correct error`() = runTest {
         val engine = jsonMockEngine(ERROR_JSON_RESULT, "surveys")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
@@ -103,7 +103,7 @@ class NetworkDataSourceTest {
     // Profile
 
     @Test
-    fun `When calling profile with success response, it returns correct object`() = runTest {
+    fun `When calling profile with success response- it returns correct object`() = runTest {
         val engine = jsonMockEngine(USER_PROFILE_JSON_RESULT, "me")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)

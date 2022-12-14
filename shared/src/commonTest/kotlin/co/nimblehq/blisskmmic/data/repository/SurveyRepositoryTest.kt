@@ -35,7 +35,7 @@ class SurveyRepositoryTest: TestsWithMocks() {
     }
 
     @Test
-    fun `When calling survey with success response, it returns correct object`() = runTest {
+    fun `When calling survey with success response- it returns correct object`() = runTest {
         mocker.every {
             networkDataSource.survey(isAny())
         } returns flowOf(Pair(listOf(survey), meta))
@@ -50,7 +50,7 @@ class SurveyRepositoryTest: TestsWithMocks() {
     }
 
     @Test
-    fun `When calling survey with failure response, it returns correct error`() = runTest {
+    fun `When calling survey with failure response- it returns correct error`() = runTest {
         mocker.every {
             networkDataSource.survey(isAny())
         } returns flow { error("Fail") }
