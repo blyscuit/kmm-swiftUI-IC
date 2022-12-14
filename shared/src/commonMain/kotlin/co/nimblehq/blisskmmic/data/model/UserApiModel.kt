@@ -13,7 +13,7 @@ data class UserApiModel(
     @SerialName("avatar_url") val avatarUrl: String
 ) {
 
-    fun toUser() = User(
+    fun toUser(): User = User(
         name,
         avatarUrl
     )
