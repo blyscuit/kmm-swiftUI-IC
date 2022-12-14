@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LoginView: View {
 
-    @StateObject var dataSource: DataSource
+    @StateObject private var dataSource: DataSource
 
     @State private var animating = false
 
@@ -113,6 +113,10 @@ struct LoginView: View {
                 .accessibility(.login(.loginButton))
         }
         .disabled(dataSource.showingLoading)
+    }
+
+    init(coordinator: LoginCoordinator) {
+        _dataSource = StateObject(wrappedValue: DataSource(coordinator: coordinator))
     }
 
     func createPasswordField() -> AnyView {
