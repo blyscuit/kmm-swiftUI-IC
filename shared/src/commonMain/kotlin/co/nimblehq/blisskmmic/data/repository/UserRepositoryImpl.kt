@@ -13,7 +13,7 @@ class UserRepositoryImpl(
 
     override fun getProfile(): Flow<User> {
         return networkDataSource
-            .getProfile(UserProfileTargetType())
+            .profile(UserProfileTargetType())
             .map { it.toUser() }
     }
 }

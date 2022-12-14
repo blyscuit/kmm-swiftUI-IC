@@ -6,10 +6,8 @@ import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSourceImpl
 import co.nimblehq.blisskmmic.data.network.target.LoginTargetType
 import co.nimblehq.blisskmmic.data.network.target.ResetPasswordTargetType
 import co.nimblehq.blisskmmic.data.network.target.SurveySelectionTargetType
-import co.nimblehq.blisskmmic.helpers.json.ERROR_JSON_RESULT
-import co.nimblehq.blisskmmic.helpers.json.LOG_IN_JSON_RESULT
-import co.nimblehq.blisskmmic.helpers.json.RESET_PASSWORD_JSON_RESULT
-import co.nimblehq.blisskmmic.helpers.json.SURVEY_LIST_JSON_RESULT
+import co.nimblehq.blisskmmic.data.network.target.UserProfileTargetType
+import co.nimblehq.blisskmmic.helpers.json.*
 import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonMockEngine
 import co.nimblehq.jsonapi.model.JsonApiException
 import io.kotest.matchers.collections.shouldContain
@@ -99,6 +97,23 @@ class NetworkDataSourceTest {
                     is JsonApiException -> error.errors.map { it.code } shouldContain "invalid_token"
                     else -> fail("Should not return incorrect error type")
                 }
+            }
+    }
+
+    // Profile
+
+    @Test
+    fun `When calling profile with success response, it returns correct object`() = runTest {
+        val engine = jsonMockEngine(USER_PROFILE_JSON_RESULT, "me")
+        val networkClient = NetworkClient(engine = engine)
+        val dataSource = NetworkDataSourceImpl(networkClient)
+        dataSource
+            .profile(UserProfileTargetType())
+            .test {
+                val response = awaitItem()
+                response.email shouldBe "mail@mail.com"
+                response.name shouldBe "Name"
+                awaitComplete()
             }
     }
 }
