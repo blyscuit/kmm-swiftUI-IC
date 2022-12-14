@@ -49,22 +49,24 @@ kotlin {
                 implementation(Dependency.KTOR_JSON)
                 implementation(Dependency.KTOR_CONTENT_NEGOTIATION)
                 implementation(Dependency.KTOR_MOCK)
-                implementation(Dependency.COROUTINES_TEST)
+                implementation(Dependency.KTOR_AUTH)
                 implementation(Dependency.KOIN)
                 implementation(Dependency.KOIN_TEST)
                 implementation(project(Module.JSONAPI_CORE))
                 implementation(Dependency.KOTLIN_TEST)
-                implementation(Dependency.KOTEST_FRAMEWORK)
-                implementation(Dependency.KOTEST_ASSERTIONS)
                 implementation(Dependency.KOTEST_PROPERTY)
                 implementation(Dependency.MULTIPLATFORM_SETTINGS)
                 implementation(Dependency.MULTIPLATFORM_SETTINGS_SERIALIZATION)
-                implementation(Dependency.MULTIPLATFORM_SETTINGS_TEST)
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+                implementation(Dependency.COROUTINES_TEST)
+                implementation(Dependency.KOTEST_FRAMEWORK)
+                implementation(Dependency.KOTEST_ASSERTIONS)
+                implementation(Dependency.TURBINE)
+                implementation(Dependency.MULTIPLATFORM_SETTINGS_TEST)
             }
         }
         val androidMain by getting {
