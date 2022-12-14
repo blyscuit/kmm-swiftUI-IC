@@ -233,7 +233,8 @@ kover {
                 "*Mock*",
                 "co.nimblehq.blisskmmic.di*",
                 "*helpers.extensions.ios*",
-                "SharedBuildConfig*"
+                "SharedBuildConfig*",
+                "*domain.platform.*"
             )
         }
     }

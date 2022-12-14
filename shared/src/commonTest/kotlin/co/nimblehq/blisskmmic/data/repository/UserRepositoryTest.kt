@@ -32,7 +32,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    fun `When calling getProfile with success response, it returns correct object`() = runTest {
+    fun `When calling getProfile with success response- it returns correct object`() = runTest {
         mocker.every {
             networkDataSource.profile(isAny())
         } returns flowOf(user)
@@ -47,7 +47,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    fun `When calling getProfile with failure response, it returns correct error`() = runTest {
+    fun `When calling getProfile with failure response- it returns correct error`() = runTest {
         mocker.every {
             networkDataSource.profile(isAny())
         } returns flow { error("Fail") }

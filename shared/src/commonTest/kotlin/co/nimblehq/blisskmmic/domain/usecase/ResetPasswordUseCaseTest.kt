@@ -31,7 +31,7 @@ class ResetPasswordUseCaseTest {
     }
 
     @Test
-    fun `When calling reset with a success response, it returns correct object`() = runTest {
+    fun `When calling reset with a success response- it returns correct object`() = runTest {
         mocker.every {
             accountRecoveryRepository.resetPasswordWith(email)
         } returns flow { emit(resetPasswordMeta) }
@@ -43,7 +43,7 @@ class ResetPasswordUseCaseTest {
     }
 
     @Test
-    fun `When calling reset with a failure response, it returns correct error`() = runTest {
+    fun `When calling reset with a failure response- it returns correct error`() = runTest {
         mocker.every {
             accountRecoveryRepository.resetPasswordWith(email)
         } returns flow { error("Fail") }

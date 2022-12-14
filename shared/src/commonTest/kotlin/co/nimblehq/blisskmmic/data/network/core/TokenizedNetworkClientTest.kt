@@ -48,7 +48,7 @@ class TokenizedNetworkClientTest {
     }
 
     @Test
-    fun `when calling fetch, it returns correct object`() = runTest {
+    fun `when calling fetch- it returns correct object`() = runTest {
         mocker.every {
             localDataSource.getToken()
         } returns flowOf(token)
@@ -67,7 +67,7 @@ class TokenizedNetworkClientTest {
     }
 
     @Test
-    fun `when calling fetchWithMeta, it returns correct object`() = runTest {
+    fun `when calling fetchWithMeta- it returns correct object`() = runTest {
         mocker.every {
             localDataSource.getToken()
         } returns flowOf(token)
@@ -88,7 +88,7 @@ class TokenizedNetworkClientTest {
     }
 
     @Test
-    fun `when calling fetch with incorrect token, it returns correct error`() = runTest {
+    fun `when calling fetch with incorrect token- it returns correct error`() = runTest {
         mocker.every {
             localDataSource.getToken()
         } returns flowOf(token)

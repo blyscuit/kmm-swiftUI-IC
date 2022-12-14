@@ -32,7 +32,7 @@ class AccountRecoveryRepositoryTest {
     }
 
     @Test
-    fun `When calling reset with success response, it returns correct object`() = runTest {
+    fun `When calling reset with success response- it returns correct object`() = runTest {
         mocker.every {
             networkDataSource.resetPassword(isAny())
         } returns flow { emit(resetPasswordMeta) }
@@ -44,7 +44,7 @@ class AccountRecoveryRepositoryTest {
     }
 
     @Test
-    fun `When calling reset with failure response, it returns correct error`() = runTest {
+    fun `When calling reset with failure response- it returns correct error`() = runTest {
         mocker.every {
             networkDataSource.resetPassword(isAny())
         } returns flow { error("Fail") }
