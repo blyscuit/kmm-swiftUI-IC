@@ -1,6 +1,5 @@
 package co.nimblehq.blisskmmic.domain.repository
 
-import co.nimblehq.blisskmmic.data.database.model.TokenDatabaseModel
 import co.nimblehq.blisskmmic.domain.model.Token
 import kotlinx.coroutines.flow.Flow
 

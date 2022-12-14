@@ -1,18 +1,20 @@
 package co.nimblehq.blisskmmic.data.datasource
 
+import app.cash.turbine.test
 import co.nimblehq.blisskmmic.data.network.core.NetworkClient
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSourceImpl
 import co.nimblehq.blisskmmic.data.network.target.LoginTargetType
 import co.nimblehq.blisskmmic.data.network.target.ResetPasswordTargetType
+import co.nimblehq.blisskmmic.data.network.target.SurveySelectionTargetType
 import co.nimblehq.blisskmmic.helpers.json.ERROR_JSON_RESULT
 import co.nimblehq.blisskmmic.helpers.json.LOG_IN_JSON_RESULT
 import co.nimblehq.blisskmmic.helpers.json.RESET_PASSWORD_JSON_RESULT
+import co.nimblehq.blisskmmic.helpers.json.SURVEY_LIST_JSON_RESULT
 import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonMockEngine
 import co.nimblehq.jsonapi.model.JsonApiException
 import io.kotest.matchers.collections.shouldContain
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.fail
@@ -29,8 +31,9 @@ class NetworkDataSourceTest {
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource
             .logIn(LoginTargetType("", ""))
-            .collect {
-                it.refreshToken shouldBe "refresh_token"
+            .test {
+                awaitItem().refreshToken shouldBe "refresh_token"
+                awaitComplete()
             }
     }
 
@@ -41,14 +44,11 @@ class NetworkDataSourceTest {
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource
             .logIn(LoginTargetType("", ""))
-            .catch { error ->
-                when(error) {
+            .test {
+                when(val error = awaitError()) {
                     is JsonApiException -> error.errors.map { it.code } shouldContain "invalid_token"
                     else -> fail("Should not return incorrect error type")
                 }
-            }
-            .collect {
-                fail("Should not return object")
             }
     }
 
@@ -61,10 +61,44 @@ class NetworkDataSourceTest {
         val dataSource = NetworkDataSourceImpl(networkClient)
         dataSource
             .resetPassword(ResetPasswordTargetType(""))
-            .collect {
-                it.message shouldBe """
+            .test {
+                awaitItem().message shouldBe """
                     If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
                 """.trimIndent()
+                awaitComplete()
+            }
+    }
+
+    // Survey
+
+    @Test
+    fun `When calling survey with success response, it returns correct object`() = runTest {
+        val engine = jsonMockEngine(SURVEY_LIST_JSON_RESULT, "surveys")
+        val networkClient = NetworkClient(engine = engine)
+        val dataSource = NetworkDataSourceImpl(networkClient)
+        dataSource
+            .survey(SurveySelectionTargetType())
+            .test {
+                val response = awaitItem()
+                response .first.size shouldBe 2
+                response .first.first().title shouldBe "Scarlett Bangkok"
+                response .second.page shouldBe 1
+                awaitComplete()
+            }
+    }
+
+    @Test
+    fun `When calling survey with failure response, it returns correct error`() = runTest {
+        val engine = jsonMockEngine(ERROR_JSON_RESULT, "surveys")
+        val networkClient = NetworkClient(engine = engine)
+        val dataSource = NetworkDataSourceImpl(networkClient)
+        dataSource
+            .survey(SurveySelectionTargetType())
+            .test {
+                when (val error = awaitError()) {
+                    is JsonApiException -> error.errors.map { it.code } shouldContain "invalid_token"
+                    else -> fail("Should not return incorrect error type")
+                }
             }
     }
 }

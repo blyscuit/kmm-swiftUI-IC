@@ -25,7 +25,9 @@ class TokenizedNetworkClient: NetworkClient {
 
     override fun clientConfig(): HttpClientConfig<*>.() -> Unit {
         return {
-            install(Logging)
+            install(Logging) {
+                loggingConfig()
+            }
             install(ContentNegotiation) {
                 json(json)
             }
