@@ -1,8 +1,20 @@
 package co.nimblehq.blisskmmic.presentation.modules.surveyselection
 
+import co.nimblehq.blisskmmic.MR
+import co.nimblehq.blisskmmic.domain.model.DateComponent
+import co.nimblehq.blisskmmic.domain.model.User
+import co.nimblehq.blisskmmic.domain.platform.datetime.DateFormat
+import co.nimblehq.blisskmmic.domain.platform.datetime.DateTimeFormatter
+import co.nimblehq.blisskmmic.domain.usecase.GetCurrentDateUseCase
+import co.nimblehq.blisskmmic.domain.usecase.GetProfileUseCase
+import co.nimblehq.blisskmmic.presentation.model.SurveyHeaderUiModel
+import co.nimblehq.blisskmmic.presentation.modules.BaseViewModel
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
+
 data class SurveySelectionViewState(
-    val isLoading: Boolean = false,
-    val surveyHeaderUiModel = SurveyHeaderUiModel? = null
+    val isLoading: Boolean = true,
+    val surveyHeaderUiModel: SurveyHeaderUiModel? = null
 ) {
     constructor() : this(true)
 }
@@ -21,10 +33,25 @@ class SurveySelectionViewModel(
     fun fetch() {
         setStateLoading()
         viewModelScope.launch {
+            getProfile()
+                .combine(getDate()) { user, dateText -> Pair(user, dateText) }
+                .collect { updateHeaderState(it.first, it.second) }
+        }
+    }
+
+    private fun getProfile(): Flow<User?> {
+        return flow {
+            getProfileUseCase()
+                .catch { emit(null) }
+                .collect { emit(it) }
+        }
+    }
+
+    private fun getDate(): Flow<String> {
+        return flow {
             getCurrentDateUseCase()
-                .zip(getProfileUseCase())
-                .catch { handleUserError(it) }
-                .collect { date, user -> handleUserSuccess(date, user) }
+                .catch { emit("") }
+                .collect { emit(handleDateSuccess(it)) }
         }
     }
 
@@ -34,18 +61,15 @@ class SurveySelectionViewModel(
         }
     }
 
-    private fun handleUserError(error: Throwable) {
-        val surveyHeader = SurveyHeaderUiModel("", "")
-        mutableViewState.update {
-            SurveySelectionViewState(false, SurveyHeaderUiModel)
-        }
+    private fun handleDateSuccess(dateComponent: DateComponent): String {
+        return dateTimeFormatter.getFormattedString(dateComponent.timeInterval, DateFormat.DayOfWeekMonthDay)
     }
 
-    private fun handleUserSuccess(dateComponent: DateComponent, user: User) {
-        dateText = dateTimeFormatter.getFormattedString(dateComponent.timeInterval, DateFormat.DayOfWeekMonthDay)
+    private fun updateHeaderState(user: User?, dateText: String) {
         val surveyHeader = SurveyHeaderUiModel(
-            user.avatarUrl,
-            dateText
+            user?.avatarUrl,
+            dateText,
+            MR.strings.common_today
         )
         mutableViewState.update { SurveySelectionViewState(false, surveyHeader) }
     }
