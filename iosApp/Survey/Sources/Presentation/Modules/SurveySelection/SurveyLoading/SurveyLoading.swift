@@ -8,29 +8,17 @@
 
 import SwiftUI
 
-protocol SurveyLoadingCoordinator {
-
-    func showHome()
-}
-
 struct SurveyLoading: View {
 
-    let coordinator: SurveyLoadingCoordinator
-
     var body: some View {
+        VStack {}
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black.ignoresSafeArea())
         VStack {
             SurveyHeaderLoading()
             SurveyItemLoading()
         }
         .padding(.horizontal, .smallPadding)
-        .onAppear {
-            // TODO: Use real loading
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                withAnimation {
-                    coordinator.showHome()
-                }
-            }
-        }
         .accessibility(.surveyLoading(.view))
     }
 }

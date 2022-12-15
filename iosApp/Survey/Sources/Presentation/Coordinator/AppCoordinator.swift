@@ -24,8 +24,6 @@ struct AppCoordinator: View {
                 SplashView(coordinator: coordinator)
             case .surveySelection:
                 SurveySelectionView()
-            case .surveyLoading:
-                SurveyLoading(coordinator: coordinator)
             }
         }
     }
