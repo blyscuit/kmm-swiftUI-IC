@@ -17,4 +17,10 @@ final class SurveyLoadingScreen: ScreenProtocol {
     init(in application: XCUIApplication) {
         self.application = application
     }
+
+    func waitForFinishLoading(assertOnFailure: Bool = true) {
+        wait(timeout: .default, assertOnFailure: assertOnFailure) {
+            !self.application.otherElements[Identifier.view.rawValue].exists
+        }
+    }
 }

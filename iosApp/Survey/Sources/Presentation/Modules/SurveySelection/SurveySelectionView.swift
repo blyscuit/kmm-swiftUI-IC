@@ -11,7 +11,8 @@ import SwiftUI
 
 struct SurveySelectionView: View {
 
-    @State private var showLoading = true
+    @StateObject private var dataSource = DataSource()
+
     @State private var currentPage = 0
     // TODO: Replace Example data
     @State private var surveys: [SurveyUiModel] = [
@@ -37,7 +38,7 @@ struct SurveySelectionView: View {
 
     var body: some View {
         ZStack {
-            if showLoading {
+            if dataSource.showingLoading {
                 SurveyLoading()
             } else {
                 survey
@@ -46,9 +47,7 @@ struct SurveySelectionView: View {
         .accessibilityElement(children: .contain)
         .accessibility(.surveySelection(.view))
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                showLoading = false
-            }
+            dataSource.fetch()
         }
     }
 
@@ -81,8 +80,10 @@ struct SurveySelectionView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             VStack {
-                SurveyHeaderView()
-                    .accessibility(.surveySelection(.header))
+                if let surveyHeader = dataSource.viewState.surveyHeaderUiModel {
+                    SurveyHeaderView(surveyHeader: surveyHeader)
+                        .accessibility(.surveySelection(.header))
+                }
                 Spacer()
                 HStack {
                     Spacer()

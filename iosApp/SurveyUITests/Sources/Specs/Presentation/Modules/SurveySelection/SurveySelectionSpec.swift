@@ -15,6 +15,7 @@ final class SurveySelectionSpec: QuickSpec {
 
         var app: XCUIApplication!
         var surveySelectionScreen: SurveySelectionScreen!
+        var surveyLoadingScreen: SurveyLoadingScreen!
 
         describe("a Survey Selection screen") {
 
@@ -26,7 +27,8 @@ final class SurveySelectionSpec: QuickSpec {
                     let loginFlow = LoginFlow(in: app)
                     loginFlow.execute()
                     surveySelectionScreen = SurveySelectionScreen(in: app)
-                    _ = surveySelectionScreen.waitForExistence(timeout: .long, with: .view)
+                    surveyLoadingScreen = SurveyLoadingScreen(in: app)
+                    surveyLoadingScreen.waitForFinishLoading()
                 }
 
                 afterEach {

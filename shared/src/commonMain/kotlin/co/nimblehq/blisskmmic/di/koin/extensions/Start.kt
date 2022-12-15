@@ -4,6 +4,7 @@ import co.nimblehq.blisskmmic.di.koin.initKoin
 import co.nimblehq.blisskmmic.presentation.modules.login.LoginViewModel
 import co.nimblehq.blisskmmic.presentation.modules.resetpassword.ResetPasswordViewModel
 import co.nimblehq.blisskmmic.presentation.modules.splash.SplashViewModel
+import co.nimblehq.blisskmmic.presentation.modules.surveyselection.SurveySelectionViewModel
 import org.koin.core.Koin
 import org.koin.core.KoinApplication
 
@@ -14,4 +15,6 @@ val Koin.logInViewModel: LoginViewModel
 val Koin.resetPasswordViewModel: ResetPasswordViewModel
     get() = get()
 val Koin.splashViewModel: SplashViewModel
+    get() = get()
+val Koin.surveySelectionViewModel: SurveySelectionViewModel
     get() = get()
