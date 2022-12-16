@@ -1,4 +1,3 @@
-//  swiftlint:disable function_body_length
 //
 //  LoginViewDataSourceSpec.swift
 //  Survey
