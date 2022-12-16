@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PrimaryTextField: ViewModifier {
 
-    let error: Bool
+    @Binding var error: Bool
 
     func body(content: Content) -> some View {
         ZStack {
@@ -31,7 +31,7 @@ struct PrimaryTextField: ViewModifier {
 
 extension View {
 
-    func primaryTextField(error: Bool = false) -> some View {
+    func primaryTextField(error: Binding<Bool> = .constant(false)) -> some View {
         modifier(PrimaryTextField(error: error))
     }
 }

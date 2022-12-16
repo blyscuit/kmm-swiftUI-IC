@@ -80,7 +80,7 @@ struct LoginView: View {
         .autocapitalization(.none)
         .disableAutocorrection(true)
         .keyboardType(.emailAddress)
-        .primaryTextField(error: dataSource.viewState.isEmailError)
+        .primaryTextField(error: $dataSource.showingEmailError)
         .accessibility(.login(.emailField))
     }
 
@@ -99,7 +99,7 @@ struct LoginView: View {
                 .accessibility(.login(.forgotButton))
             }
         }
-        .primaryTextField(error: dataSource.viewState.isPasswordError)
+        .primaryTextField(error: $dataSource.showingPasswordError)
         .frame(maxHeight: 56.0)
     }
 

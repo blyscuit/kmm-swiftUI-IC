@@ -16,6 +16,7 @@ class TestManager
       result_bundle: true,
       only_testing: targets,
       number_of_retries: 2,
+      output_remove_retry_attempts: true,
       fail_build: false
     )
   end

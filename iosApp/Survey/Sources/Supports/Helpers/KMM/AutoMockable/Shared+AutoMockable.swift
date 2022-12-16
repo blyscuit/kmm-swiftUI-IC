@@ -13,20 +13,18 @@ import Shared
 protocol ResetPasswordUseCaseKMM: ResetPasswordUseCase {
 
     func invoke(email: String) -> Kotlinx_coroutines_coreFlow
-    func invokeNative(email: String)
-        -> (
-            @escaping (String, KotlinUnit) -> KotlinUnit,
-            @escaping (Error?, KotlinUnit) -> KotlinUnit
-        ) -> () -> KotlinUnit
+    func invokeNative(email: String) -> (
+        @escaping (String, KotlinUnit) -> KotlinUnit,
+        @escaping (Error?, KotlinUnit) -> KotlinUnit
+    ) -> () -> KotlinUnit
 }
 
 // sourcery: AutoMockable
 protocol LogInUseCaseKMM: LogInUseCase {
 
     func invoke(email: String, password: String) -> Kotlinx_coroutines_coreFlow
-    func invokeNative(email: String, password: String)
-        -> (
-            @escaping (Token, KotlinUnit) -> KotlinUnit,
-            @escaping (Error?, KotlinUnit) -> KotlinUnit
-        ) -> () -> KotlinUnit
+    func invokeNative(email: String, password: String) -> (
+        @escaping (Token, KotlinUnit) -> KotlinUnit,
+        @escaping (Error?, KotlinUnit) -> KotlinUnit
+    ) -> () -> KotlinUnit
 }
