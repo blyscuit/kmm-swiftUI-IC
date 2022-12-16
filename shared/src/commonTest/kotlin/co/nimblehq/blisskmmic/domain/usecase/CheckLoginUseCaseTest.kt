@@ -27,7 +27,7 @@ class CheckLoginUseCaseTest {
     }
 
     @Test
-    fun `When calling check with response true, it returns true`() = runTest {
+    fun `When calling check with response true- it returns true`() = runTest {
         mocker.every {
             authenticationRepository.hasCachedToken()
         } returns flowOf(true)
@@ -40,7 +40,7 @@ class CheckLoginUseCaseTest {
     }
 
     @Test
-    fun `When calling check with response false, it returns false`() = runTest {
+    fun `When calling check with response false- it returns false`() = runTest {
         mocker.every {
             authenticationRepository.hasCachedToken()
         } returns flowOf(false)
@@ -53,7 +53,7 @@ class CheckLoginUseCaseTest {
     }
 
     @Test
-    fun `When calling check with a failure response, it returns correct error`() = runTest {
+    fun `When calling check with a failure response- it returns correct error`() = runTest {
         mocker.every {
             authenticationRepository.hasCachedToken()
         } returns flow { error("Fail") }

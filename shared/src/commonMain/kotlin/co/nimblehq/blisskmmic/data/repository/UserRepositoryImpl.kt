@@ -1,5 +1,6 @@
 package co.nimblehq.blisskmmic.data.repository
 
+import co.nimblehq.blisskmmic.data.model.toUser
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSource
 import co.nimblehq.blisskmmic.data.network.target.UserProfileTargetType
 import co.nimblehq.blisskmmic.domain.model.User

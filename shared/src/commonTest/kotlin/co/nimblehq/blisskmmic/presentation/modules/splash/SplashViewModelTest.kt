@@ -44,7 +44,7 @@ class SplashViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling checkLogin with true response, it changes viewState correctly`() = runTest {
+    fun `When calling checkLogin with true response- it changes viewState correctly`() = runTest {
         mocker.every {
             checkLoginUseCase()
         } returns flowOf(true)
@@ -63,7 +63,7 @@ class SplashViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling checkLogin with false response, it changes viewState correctly`() = runTest {
+    fun `When calling checkLogin with false response- it changes viewState correctly`() = runTest {
         mocker.every {
             checkLoginUseCase()
         } returns flow{
@@ -85,7 +85,7 @@ class SplashViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling checkLogin with faliure response, it changes viewState correctly`() = runTest {
+    fun `When calling checkLogin with faliure response- it changes viewState correctly`() = runTest {
         mocker.every {
             checkLoginUseCase()
         } returns flow {

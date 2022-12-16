@@ -118,7 +118,7 @@ class AuthenticationRepositoryTest: TestsWithMocks() {
     }
 
     @Test
-    fun `When calling hasCachedToken, it returns true when there is a token`() = runTest {
+    fun `When calling hasCachedToken- it returns true when there is a token`() = runTest {
         mocker.every {
             localDataSource.getToken()
         } returns flowOf(tokenDB)
@@ -132,7 +132,7 @@ class AuthenticationRepositoryTest: TestsWithMocks() {
     }
 
     @Test
-    fun `When calling hasCachedToken, it returns false when there is an error`() = runTest {
+    fun `When calling hasCachedToken- it returns false when there is an error`() = runTest {
         mocker.every {
             localDataSource.getToken()
         } returns flow { error("No token") }
