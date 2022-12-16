@@ -19,6 +19,16 @@ final class ResetPasswordSpec: QuickSpec {
 
         describe("a Reset Password screen") {
 
+            var permissionInterruptor: NSObjectProtocol!
+
+            beforeEach {
+                permissionInterruptor = self.addPermissionInterruptionMonitor()
+            }
+
+            afterEach {
+                self.removeUIInterruptionMonitor(permissionInterruptor)
+            }
+
             describe("its open") {
 
                 beforeEach {

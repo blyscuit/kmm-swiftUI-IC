@@ -69,6 +69,7 @@
 		0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EE29223DA600FC1976 /* LoginFlow.swift */; };
 		0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		0982A880292F847900FC1976 /* ResetPassword+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A87F292F847900FC1976 /* ResetPassword+DataSource.swift */; };
+		098CC7AD294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098CC7AC294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift */; };
 		09C2F3FD2930943700F44818 /* ResetPasswordViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F3FB2930943200F44818 /* ResetPasswordViewDataSourceSpec.swift */; };
 		09C2F4032934588B00F44818 /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
 		09C2F4062934680000F44818 /* ScreenProtocol+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F404293467FA00F44818 /* ScreenProtocol+Permission.swift */; };
@@ -205,6 +206,7 @@
 		0982A80029278E9000FC1976 /* SurveyItemLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemLoading.swift; sourceTree = "<group>"; };
 		0982A80129278E9000FC1976 /* SurveyHeaderLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderLoading.swift; sourceTree = "<group>"; };
 		0982A87F292F847900FC1976 /* ResetPassword+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResetPassword+DataSource.swift"; sourceTree = "<group>"; };
+		098CC7AC294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+PermissionInteruption.swift"; sourceTree = "<group>"; };
 		09C2F3FB2930943200F44818 /* ResetPasswordViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewDataSourceSpec.swift; sourceTree = "<group>"; };
 		09C2F4012934588400F44818 /* TimeInterval+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Constants.swift"; sourceTree = "<group>"; };
 		09C2F404293467FA00F44818 /* ScreenProtocol+Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenProtocol+Permission.swift"; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 			isa = PBXGroup;
 			children = (
 				09C2F40829346A8500F44818 /* XCUIElement+Label.swift */,
+				098CC7AC294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift */,
 				0964B1C8294051C300946FA1 /* ArgumentedXCUIApplication.swift */,
 			);
 			path = XCTest;
@@ -1534,6 +1537,7 @@
 				09CE772028E1BBC400EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09495F3328EC44330036BDFB /* SurveyLoadingScreen.swift in Sources */,
 				0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */,
+				098CC7AD294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift in Sources */,
 				09495F1828E4461C0036BDFB /* SurveySelectionScreen.swift in Sources */,
 				09636B3228D8272200A5CB97 /* ScreenProtocol.swift in Sources */,
 				0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */,
