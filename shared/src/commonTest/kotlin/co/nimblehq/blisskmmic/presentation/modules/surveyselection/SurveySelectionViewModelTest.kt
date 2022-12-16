@@ -7,9 +7,11 @@ import co.nimblehq.blisskmmic.domain.model.User
 import co.nimblehq.blisskmmic.domain.platform.datetime.DateTimeFormatter
 import co.nimblehq.blisskmmic.domain.usecase.GetCurrentDateUseCase
 import co.nimblehq.blisskmmic.domain.usecase.GetProfileUseCase
+import co.nimblehq.blisskmmic.helpers.constant.FLOW_DELAY
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.newSingleThreadContext
@@ -93,7 +95,10 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
     fun `When calling fetch with fail date and success user- it changes viewState with correct item`() = runTest {
         mocker.every {
             getCurrentDateUseCase()
-        } returns flow { error("") }
+        } returns flow {
+            delay(FLOW_DELAY)
+            error("")
+        }
         mocker.every {
             getProfileUseCase()
         } returns flowOf(user)
@@ -120,7 +125,10 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
         } returns flowOf(dateComponent)
         mocker.every {
             getProfileUseCase()
-        } returns flow { error("") }
+        } returns flow {
+            delay(FLOW_DELAY)
+            error("")
+        }
 
         surveySelectionViewModel.fetch()
 
@@ -144,7 +152,10 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
         } returns flow { error("") }
         mocker.every {
             getProfileUseCase()
-        } returns flow { error("") }
+        } returns flow {
+            delay(FLOW_DELAY)
+            error("")
+        }
 
         surveySelectionViewModel.fetch()
 

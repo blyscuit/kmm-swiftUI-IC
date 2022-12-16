@@ -46,7 +46,7 @@ struct SurveySelectionView: View {
         }
         .accessibilityElement(children: .contain)
         .accessibility(.surveySelection(.view))
-        .onAppear {
+        .onLoad {
             dataSource.fetch()
         }
     }

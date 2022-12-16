@@ -38,6 +38,8 @@ protocol CheckLoginUseCaseKMM: CheckLoginUseCase {
         @escaping (Error?, KotlinUnit) -> KotlinUnit
     ) -> () -> KotlinUnit
 }
+
+// sourcery: AutoMockable
 protocol GetCurrentDateUseCaseKMM: GetCurrentDateUseCase {
 
     func invoke() -> Kotlinx_coroutines_coreFlow
