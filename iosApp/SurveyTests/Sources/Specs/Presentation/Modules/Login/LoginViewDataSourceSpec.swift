@@ -40,24 +40,26 @@ final class LoginViewDataSourceSpec: QuickSpec {
                     expect(viewState?.isSuccess) == false
                 }
 
-                it("has no loading state") {
-                    let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(1)).last
-                    expect(viewState?.isLoading) == false
+                it("showingLoading is false") {
+                    let showingLoading = try self.awaitPublisher(dataSource.$showingLoading.collectNext(1)).last
+                    expect(showingLoading) == false
                 }
 
-                it("has no error state") {
-                    let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(1)).last
-                    expect(viewState?.error) == nil
+                it("showingErrorAlert is false") {
+                    let showingErrorAlert = try self.awaitPublisher(dataSource.$showingErrorAlert.collectNext(1)).last
+                    expect(showingErrorAlert) == false
                 }
 
-                it("has no email error state") {
-                    let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(1)).last
-                    expect(viewState?.isEmailError) == false
+                it("showingEmailError is false") {
+                    let showingEmailError = try self.awaitPublisher(dataSource.$showingEmailError.collectNext(1)).last
+                    expect(showingEmailError) == false
                 }
 
-                it("has no password error state") {
-                    let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(1)).last
-                    expect(viewState?.isPasswordError) == false
+                it("showingPasswordError is false") {
+                    let showingPasswordError = try self.awaitPublisher(
+                        dataSource.$showingPasswordError.collectNext(1)
+                    ).last
+                    expect(showingPasswordError) == false
                 }
             }
 
@@ -68,9 +70,9 @@ final class LoginViewDataSourceSpec: QuickSpec {
                     dataSource.login()
                 }
 
-                it("sets loading state") {
-                    let viewState = try self.awaitPublisher(dataSource.$viewState.collectNext(2)).last
-                    expect(viewState?.isLoading) == true
+                it("showingPasswordError is true") {
+                    let showingPasswordError = try self.awaitPublisher(dataSource.$showingLoading.collectNext(2)).last
+                    expect(showingPasswordError) == true
                 }
 
                 context("when it return token") {
@@ -106,9 +108,11 @@ final class LoginViewDataSourceSpec: QuickSpec {
                         dataSource.login()
                     }
 
-                    it("sets showingErrorAlert to true") {
-                        let showingError = try self.awaitPublisher(dataSource.$showingErrorAlert.collectNext(3)).last
-                        expect(showingError) == true
+                    it("showingErrorAlert is true") {
+                        let showingErrorAlert = try self.awaitPublisher(
+                            dataSource.$showingErrorAlert.collectNext(3)
+                        ).last
+                        expect(showingErrorAlert) == true
                     }
 
                     it("sets correct error state") {

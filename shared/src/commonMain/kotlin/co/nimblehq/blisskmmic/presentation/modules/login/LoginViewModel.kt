@@ -26,9 +26,7 @@ class LoginViewModel(private val logInUseCase: LogInUseCase): BaseViewModel() {
     val viewState: StateFlow<LoginViewState> = mutableViewState
 
     fun login(email: String, password: String) {
-        if (!validInput(email, password)) {
-            return
-        }
+        if (!validInput(email, password)) return
         setStateLoading()
         viewModelScope.launch {
             logInUseCase(email, password)

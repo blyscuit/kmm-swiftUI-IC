@@ -35,6 +35,8 @@ extension LoginView {
         @Published private(set) var viewState = LoginViewState()
         @Published var showingErrorAlert = false
         @Published var showingLoading = false
+        @Published var showingEmailError = false
+        @Published var showingPasswordError = false
 
         private var cancellables = Set<AnyCancellable>()
 
@@ -66,6 +68,8 @@ extension LoginView {
 
         private func updateStates(_ state: LoginViewState) {
             viewState = state
+            showingEmailError = state.isEmailError
+            showingPasswordError = state.isPasswordError
             showingLoading = state.isLoading
             showingErrorAlert = !state.error.string.isEmpty
             if state.isSuccess {

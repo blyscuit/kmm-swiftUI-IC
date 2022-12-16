@@ -18,11 +18,8 @@ final class LoginFlow {
     }
 
     func execute() {
-        let uiTestConfig = SharedBuildConfig.UITestConfig()
         let loginScreen = LoginScreen(in: app)
         loginScreen.waitForExistence()
-        loginScreen.replaceInInField(.emailField, with: uiTestConfig.email())
-        loginScreen.replaceInSecuredField(.passwordField, with: uiTestConfig.password())
         loginScreen.tapButton(.loginButton)
     }
 }
