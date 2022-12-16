@@ -14,7 +14,7 @@ import Shared
 protocol LoginCoordinator {
 
     func showResetPassword()
-    func showHomeLoading()
+    func showHome()
 }
 
 extension LoginView {
@@ -73,7 +73,7 @@ extension LoginView {
             showingLoading = state.isLoading
             showingErrorAlert = !state.error.string.isEmpty
             if state.isSuccess {
-                coordinator.showHomeLoading()
+                coordinator.showHome()
             }
         }
     }

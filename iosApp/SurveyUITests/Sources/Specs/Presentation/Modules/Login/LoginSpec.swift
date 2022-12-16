@@ -55,8 +55,8 @@ final class LoginSpec: QuickSpec {
                     }
 
                     it("shows home screen") {
-                        let surveyLoadingScreen = SurveyLoadingScreen(in: app)
-                        surveyLoadingScreen.waitForExistence(timeout: .default, with: .view)
+                        let surveySelectionScreen = SurveySelectionScreen(in: app)
+                        surveySelectionScreen.waitForExistence(timeout: .default, with: .view)
                     }
                 }
 

@@ -36,20 +36,36 @@ final class SurveySelectionSpec: QuickSpec {
                 }
 
                 it("it shows its ui components") {
-                    let mainImage = surveySelectionScreen.find(\.images, with: .mainImage)
-                    expect(mainImage.exists) == true
-
-                    let titleText = surveySelectionScreen.find(\.staticTexts, with: .titleText)
-                    expect(titleText.exists) == true
-
-                    let detailText = surveySelectionScreen.find(\.staticTexts, with: .detailText)
-                    expect(detailText.exists) == true
-
-                    let nextButton = surveySelectionScreen.find(\.buttons, with: .nextButton)
-                    expect(nextButton.exists) == true
-
-                    let headerView = surveySelectionScreen.find(\.staticTexts, with: .header)
-                    expect(headerView.exists) == true
+                    surveySelectionScreen.waitForExistence(
+                        timeout: .default,
+                        \.images,
+                        with: .mainImage
+                    )
+                    surveySelectionScreen.waitForExistence(
+                        timeout: .instant,
+                        \.staticTexts,
+                        with: .titleText
+                    )
+                    surveySelectionScreen.waitForExistence(
+                        timeout: .instant,
+                        \.staticTexts,
+                        with: .detailText
+                    )
+                    surveySelectionScreen.waitForExistence(
+                        timeout: .instant,
+                        \.buttons,
+                        with: .nextButton
+                    )
+                    surveySelectionScreen.waitForExistence(
+                        timeout: .instant,
+                        \.staticTexts,
+                        with: .header
+                    )
+                    surveySelectionScreen.waitForExistence(
+                        timeout: .instant,
+                        \.images,
+                        with: .header
+                    )
                 }
             }
         }

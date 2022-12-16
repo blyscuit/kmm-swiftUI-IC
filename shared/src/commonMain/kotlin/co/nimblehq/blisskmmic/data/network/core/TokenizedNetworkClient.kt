@@ -44,11 +44,6 @@ class TokenizedNetworkClient: NetworkClient {
                     BearerTokens(accessToken, refreshToken)
                 }
             }
-            sendWithoutRequest { request ->
-                val builder = HttpRequestBuilder()
-                builder.url("${BuildKonfig.BASE_URL}")
-                request.url.host != builder.url.host
-            }
         }
     }
 }

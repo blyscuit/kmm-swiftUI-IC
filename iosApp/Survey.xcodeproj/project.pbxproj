@@ -91,6 +91,7 @@
 		09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */; };
 		09FE26CD294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE26CC294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift */; };
 		09FE26D1294B26A0005A7F85 /* SurveySelectionViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE26CF294B264B005A7F85 /* SurveySelectionViewDataSourceSpec.swift */; };
+		09FE26D3294C1906005A7F85 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE26D2294C1905005A7F85 /* ViewDidLoadModifier.swift */; };
 		351F5715D07BB9ED3F8B15F8 /* Pods_Survey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315DBBA2E56D199C3AC672B5 /* Pods_Survey.framework */; };
 		3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE1175F99D55A95E0995E9 /* OptionalUnwrapSpec.swift */; };
 		5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CA60577ABA5F7885E1DE7 /* AutoMockable.generated.swift */; };
@@ -231,6 +232,7 @@
 		09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
 		09FE26CC294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SurveySelectionView+DataSource.swift"; sourceTree = "<group>"; };
 		09FE26CF294B264B005A7F85 /* SurveySelectionViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySelectionViewDataSourceSpec.swift; sourceTree = "<group>"; };
+		09FE26D2294C1905005A7F85 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		122A6B9F6217729620D91A43 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
 		15C39F2CB60CF0314258019E /* Pods-Survey.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.debug production.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.debug production.xcconfig"; sourceTree = "<group>"; };
 		16E10E52E1F7EAF6527F4E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				09636AFF28D4860F00A5CB97 /* PrimaryTextField.swift */,
 				09636B0128D4876100A5CB97 /* PrimaryButton.swift */,
 				09636B0C28D4917200A5CB97 /* OverlayButton.swift */,
+				09FE26D2294C1905005A7F85 /* ViewDidLoadModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -1492,6 +1495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0982A80729278E9000FC1976 /* SurveyHeaderLoading.swift in Sources */,
+				09FE26D3294C1906005A7F85 /* ViewDidLoadModifier.swift in Sources */,
 				09CE772728E2C44D00EAA9EE /* View+BackButton.swift in Sources */,
 				0982A80329278E9000FC1976 /* SurveyHeaderView.swift in Sources */,
 				09636B0D28D4917200A5CB97 /* OverlayButton.swift in Sources */,
