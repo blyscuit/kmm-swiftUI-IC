@@ -77,7 +77,7 @@ class LoginViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling login with an invalid email, it changes viewState to error`() = runTest {
+    fun `When calling login with an invalid email- it changes viewState to error`() = runTest {
         loginViewModel.login("invalid", password)
 
         val result = loginViewModel
@@ -88,7 +88,7 @@ class LoginViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling login with an empty password, it changes viewState to error`() = runTest {
+    fun `When calling login with an empty password- it changes viewState to error`() = runTest {
         loginViewModel.login(email, "")
 
         val result = loginViewModel

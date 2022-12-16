@@ -3,7 +3,7 @@ package co.nimblehq.blisskmmic.data.repository
 import co.nimblehq.blisskmmic.domain.model.DateComponent
 import co.nimblehq.blisskmmic.domain.repository.DeviceInfoRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.datetime.*
 
 class DeviceInfoRepositoryImpl(
@@ -15,8 +15,6 @@ class DeviceInfoRepositoryImpl(
         val dateHeader = DateComponent(
             now.epochSeconds
         )
-        return flow {
-            emit(dateHeader)
-        }
+        return flowOf(dateHeader)
     }
 }

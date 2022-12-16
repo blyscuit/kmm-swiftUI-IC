@@ -9,7 +9,7 @@ import kotlin.test.assertTrue
 class StringRegexTest {
 
     @Test
-    fun `When calling isValidEmail emails, it returns correct validity`() {
+    fun `When calling isValidEmail emails- it returns correct validity`() {
         "a@a.co.uk".isValidEmail() shouldBe true
         "ab.cd@abc.org".isValidEmail() shouldBe true
         "a@a.com".isValidEmail() shouldBe true
