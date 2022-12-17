@@ -9,7 +9,6 @@ swiftformat.check_format
 
 # Swiftlint
 swiftlint.binary_path = 'iosApp/Pods/SwiftLint/swiftlint'
-swiftlint.config_file = '.swiftlint.yml'
 swiftlint.max_num_violations = 20
 swiftlint.lint_all_files = true
 swiftlint.lint_files(
@@ -33,7 +32,7 @@ xcode_summary.ignored_files = 'iosApp/Pods/**'
 xcode_summary.inline_mode = true
 xcode_summary.report xcresultPath
 
-# # Xcov
+# Xcov
 xcov.report(
   scheme: Constants.TESTS_SCHEME,
   workspace: "iosApp/#{Constants.WORKSPACE_PATH}",

@@ -20,4 +20,18 @@ class TestManager
       fail_build: false
     )
   end
+
+  def build_and_test(scheme:, testplan:)
+    @fastlane.scan(
+      scheme: scheme,
+      device: @device,
+      output_directory: @output_directory,
+      code_coverage: true,
+      result_bundle: true,
+      testplan: testplan,
+      number_of_retries: 2,
+      output_remove_retry_attempts: true,
+      fail_build: false
+    )
+  end
 end

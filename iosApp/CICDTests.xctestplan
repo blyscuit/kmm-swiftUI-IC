@@ -4,7 +4,7 @@
       "id" : "907BC089-7FF9-4CC2-B76C-526FB9AF9732",
       "name" : "Configuration 1",
       "options" : {
-
+        "uiTestingScreenshotsLifetime" : "keepNever"
       }
     }
   ],
