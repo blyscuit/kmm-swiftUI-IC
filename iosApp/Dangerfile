@@ -8,11 +8,12 @@ swiftformat.exclude = %w(Pods/**  **/*generated.swift)
 swiftformat.check_format
 
 # Swiftlint
-swiftlint.binary_path = 'iosApp/Pods/SwiftLint/swiftlint'
+swiftlint.binary_path = 'Pods/SwiftLint/swiftlint'
 swiftlint.verbose = true
 swiftlint.max_num_violations = 20
 swiftlint.config_file = '.swiftlint.yml'
-swiftlint.directory = 'iosApp/Survey'
+swiftlint.directory = 'iosApp'
+swiftlint.lint_all_files = true
 swiftlint.lint_files(
   inline_mode: true,
   fail_on_error: true,
