@@ -1,0 +1,5 @@
+included:
+  - iosApp
+
+excluded:
+  - iosApp/Pods
