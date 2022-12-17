@@ -3,3 +3,4 @@ included:
 
 excluded:
   - iosApp/Pods
+  - iosApp/vendor
