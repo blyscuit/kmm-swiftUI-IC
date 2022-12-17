@@ -18,28 +18,28 @@ swiftlint.lint_files(
   additional_swiftlint_args: '--strict'
 )
 
-xcresultPath = "iosApp/#{Constants.TEST_OUTPUT_DIRECTORY_PATH}/#{Constants.TESTS_SCHEME}.xcresult"
+# xcresultPath = "iosApp/#{Constants.TEST_OUTPUT_DIRECTORY_PATH}/#{Constants.TESTS_SCHEME}.xcresult"
 
 # Xcode summary
-changed_files = (git.modified_files - git.deleted_files) + git.added_files
-xcode_summary.ignored_results { |result|
-  if result.location
-    not changed_files.include?(result.location.file_path)
-  else
-    true
-  end
-}
-xcode_summary.ignored_files = 'iosApp/Pods/**'
-xcode_summary.inline_mode = true
-xcode_summary.report xcresultPath
+# changed_files = (git.modified_files - git.deleted_files) + git.added_files
+# xcode_summary.ignored_results { |result|
+#   if result.location
+#     not changed_files.include?(result.location.file_path)
+#   else
+#     true
+#   end
+# }
+# xcode_summary.ignored_files = 'iosApp/Pods/**'
+# xcode_summary.inline_mode = true
+# xcode_summary.report xcresultPath
 
-# Xcov
-xcov.report(
-  scheme: Constants.TESTS_SCHEME,
-  workspace: "iosApp/#{Constants.WORKSPACE_PATH}",
-  output_directory: "iosApp/#{Constants.XCOV_OUTPUT_DIRECTORY_PATH}",
-  xccov_file_direct_path: xcresultPath,
-  only_project_targets: true,
-  markdown_report: true,
-  html_report: false
-)
+# # Xcov
+# xcov.report(
+#   scheme: Constants.TESTS_SCHEME,
+#   workspace: "iosApp/#{Constants.WORKSPACE_PATH}",
+#   output_directory: "iosApp/#{Constants.XCOV_OUTPUT_DIRECTORY_PATH}",
+#   xccov_file_direct_path: xcresultPath,
+#   only_project_targets: true,
+#   markdown_report: true,
+#   html_report: false
+# )
