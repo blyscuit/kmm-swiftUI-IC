@@ -10,6 +10,7 @@ swiftformat.check_format
 # Swiftlint
 swiftlint.binary_path = 'iosApp/Pods/SwiftLint/swiftlint'
 swiftlint.verbose = true
+swiftlint.config_file = '.swiftlint.yml'
 swiftlint.max_num_violations = 20
 swiftlint.lint_all_files = true
 swiftlint.lint_files(
