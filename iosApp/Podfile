@@ -32,11 +32,6 @@ target 'Survey' do
   pod 'SwiftLint'
   pod 'Wormholy', :configurations => ['Debug Staging', 'Debug Production']
 
-  # KMM
-  platform :ios, '14.0'
-  pod 'Shared', :path => '../shared'
-  pod 'KMPNativeCoroutinesCombine', '0.12.6'
-
   target 'SurveyTests' do
     inherit! :search_paths
     testing_pods
