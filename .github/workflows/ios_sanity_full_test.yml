@@ -1,8 +1,6 @@
 name: iOS Sanity Full Tests
 
 on:
-  schedule:
-    - cron: '0 0/3 * * *'
   workflow_dispatch:
 
 defaults:
