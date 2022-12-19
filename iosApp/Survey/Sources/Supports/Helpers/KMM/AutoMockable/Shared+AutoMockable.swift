@@ -33,9 +33,8 @@ protocol LogInUseCaseKMM: LogInUseCase {
 protocol CheckLoginUseCaseKMM: CheckLoginUseCase {
 
     func invoke() -> Kotlinx_coroutines_coreFlow
-    func invokeNative()
-        -> (
-            @escaping (KotlinBoolean, KotlinUnit) -> KotlinUnit,
-            @escaping (Error?, KotlinUnit) -> KotlinUnit
-        ) -> () -> KotlinUnit
+    func invokeNative() -> (
+        @escaping (KotlinBoolean, KotlinUnit) -> KotlinUnit,
+        @escaping (Error?, KotlinUnit) -> KotlinUnit
+    ) -> () -> KotlinUnit
 }

@@ -2,13 +2,10 @@ package co.nimblehq.blisskmmic.presentation.modules.splash
 
 import app.cash.turbine.test
 import co.nimblehq.blisskmmic.domain.usecase.CheckLoginUseCase
-import co.nimblehq.blisskmmic.helpers.constant.FLOW_DELAY
+import co.nimblehq.blisskmmic.helpers.flow.delayFlowOf
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
@@ -47,7 +44,7 @@ class SplashViewModelTest : TestsWithMocks() {
     fun `When calling checkLogin with true response, it changes viewState correctly`() = runTest {
         mocker.every {
             checkLoginUseCase()
-        } returns flowOf(true)
+        } returns delayFlowOf(true)
 
         splashViewModel.checkLogin()
 
@@ -66,10 +63,7 @@ class SplashViewModelTest : TestsWithMocks() {
     fun `When calling checkLogin with false response, it changes viewState correctly`() = runTest {
         mocker.every {
             checkLoginUseCase()
-        } returns flow{
-            delay(FLOW_DELAY)
-            emit(false)
-        }
+        } returns delayFlowOf(false)
 
         splashViewModel.checkLogin()
 
@@ -88,10 +82,7 @@ class SplashViewModelTest : TestsWithMocks() {
     fun `When calling checkLogin with faliure response, it changes viewState correctly`() = runTest {
         mocker.every {
             checkLoginUseCase()
-        } returns flow {
-            delay(FLOW_DELAY)
-            error("Error")
-        }
+        } returns delayFlowOf("Error")
 
         splashViewModel.checkLogin()
 
