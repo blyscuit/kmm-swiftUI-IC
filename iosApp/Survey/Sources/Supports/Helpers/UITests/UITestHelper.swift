@@ -31,7 +31,6 @@ final class UITestHelper {
                     .first { $0.isKeyWindow }?
                     .layer
                     .speed = speed
-                UIView.setAnimationsEnabled(false)
             }
         #endif
     }

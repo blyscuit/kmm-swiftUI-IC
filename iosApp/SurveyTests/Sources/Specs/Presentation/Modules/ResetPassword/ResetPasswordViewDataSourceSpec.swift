@@ -14,7 +14,6 @@ import Shared
 
 final class ResetPasswordViewDataSourceSpec: QuickSpec {
 
-    // swiftlint:disable function_body_length
     override func spec() {
 
         var resetPasswordUseCase: ResetPasswordUseCaseKMMMock!

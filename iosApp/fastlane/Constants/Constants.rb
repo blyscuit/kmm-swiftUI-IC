@@ -53,6 +53,11 @@ class Constants
     'Survey Staging'
   end
 
+  # a scheme name for testing
+  def self.FULL_TESTS_SCHEME
+    'Survey Staging Extended Tests'
+  end
+
   # a target name for tests
   def self.TESTS_TARGET
     'SurveyTests'
@@ -61,6 +66,11 @@ class Constants
   # a target name for UI tests
   def self.UI_TESTS_TARGET
     'SurveyUITests'
+  end
+
+  # a target name for Test Plan
+  def self.TEST_PLAN
+    'CICDTests'
   end
 
   # xcov output directory path

@@ -13,7 +13,6 @@ import Quick
 
 final class NotificationManagerSpec: QuickSpec {
 
-    // swiftlint:disable function_body_length
     override func spec() {
 
         describe("a NotificationManager") {
