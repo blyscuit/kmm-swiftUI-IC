@@ -52,6 +52,14 @@ platform :ios do
   lane :build_and_test do
     test_manager.build_and_test(
       scheme: Constants.TESTS_SCHEME,
+      testplan: Constants.TEST_PLAN
+    )
+  end
+
+  desc 'Build and Full Test'
+  lane :build_and_full_test do
+    test_manager.build_and_test(
+      scheme: Constants.FULL_TESTS_SCHEME,
       targets: [Constants.TESTS_TARGET, Constants.UI_TESTS_TARGET]
     )
   end

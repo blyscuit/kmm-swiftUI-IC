@@ -1,14 +1,15 @@
 included:
-  - Survey
-  - SurveyTests
-  - SurveyUITests
+  - iosApp/Survey
+  - iosApp/SurveyTests
+  - iosApp/SurveyUITests
 
 excluded:
-  - SurveyTests/Sources/Mocks/Sourcery/AutoMockable.generated.swift
-  - Survey/Sources/Supports/Helpers/Rswift/R.generated.swift
-  - Pods
-  - Derived
-  - DerivedData
+  - iosApp/SurveyTests/Sources/Mocks/Sourcery/AutoMockable.generated.swift
+  - iosApp/Survey/Sources/Supports/Helpers/Rswift/R.generated.swift
+  - iosApp/Pods
+  - iosApp/Derived
+  - iosApp/DerivedData
+  - iosApp/vendor
 
 opt_in_rules:
   - anyobject_protocol
