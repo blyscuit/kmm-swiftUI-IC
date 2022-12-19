@@ -65,16 +65,6 @@ final class LoginViewDataSourceSpec: QuickSpec {
 
             describe("its login") {
 
-                beforeEach {
-                    loginUseCase.invokeEmailPasswordReturnValue = AnyFlow<Token>(errorMessage: "")
-                    dataSource.login()
-                }
-
-                it("showingPasswordError is true") {
-                    let showingPasswordError = try self.awaitPublisher(dataSource.$showingLoading.collectNext(2)).last
-                    expect(showingPasswordError) == true
-                }
-
                 context("when it return token") {
 
                     beforeEach {
@@ -86,7 +76,14 @@ final class LoginViewDataSourceSpec: QuickSpec {
                             createdAt: 0
                         )
                         loginUseCase.invokeEmailPasswordReturnValue = AnyFlow(result: token)
-                        dataSource.login()
+                        delayLogin()
+                    }
+
+                    it("showingPasswordError is true") {
+                        let showingPasswordError = try self.awaitPublisher(
+                            dataSource.$showingLoading.collectNext(2)
+                        ).last
+                        expect(showingPasswordError) == true
                     }
 
                     it("sets success state") {
@@ -105,7 +102,7 @@ final class LoginViewDataSourceSpec: QuickSpec {
                     let error = "iOS_Error"
                     beforeEach {
                         loginUseCase.invokeEmailPasswordReturnValue = AnyFlow<Token>(errorMessage: error)
-                        dataSource.login()
+                        delayLogin()
                     }
 
                     it("showingErrorAlert is true") {
@@ -136,6 +133,12 @@ final class LoginViewDataSourceSpec: QuickSpec {
                 it("coordinator shows reset password") {
                     expect(loginCoordinator.showResetPasswordCallsCount) == 1
                 }
+            }
+        }
+
+        func delayLogin() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                dataSource.login()
             }
         }
     }

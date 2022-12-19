@@ -1394,7 +1394,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -z \"$CI\" ]; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nfi";
+			shellScript = "if [ -z \"$CI\" ]; then\n    cd ..\n    iosApp/Pods/SwiftLint/swiftlint\nfi\n";
 		};
 		A3C000438E4A91EA9068C937 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
