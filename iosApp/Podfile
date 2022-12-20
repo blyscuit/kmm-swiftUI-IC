@@ -45,6 +45,12 @@ target 'Survey' do
   target 'SurveyUITests' do
     testing_pods
   end
+
+  target 'SurveyKIFUITests' do
+    testing_pods
+    pod 'KIF', :configurations => ['Debug Staging', 'Debug Production']
+    pod 'KIF/IdentifierTests', :configurations => ['Debug Staging', 'Debug Production']
+  end
 end
 
 post_install do |installer|
