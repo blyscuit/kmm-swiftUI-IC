@@ -17,6 +17,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     ) -> Bool {
         UNUserNotificationCenter.current().delegate = self
         UITestHelper.shared.speedUpUITestAnimation()
+        UITestHelper.shared.clearKeychainUITest()
         return true
     }
 }

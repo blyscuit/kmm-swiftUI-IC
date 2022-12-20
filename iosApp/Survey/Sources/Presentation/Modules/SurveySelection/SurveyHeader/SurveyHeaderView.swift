@@ -6,20 +6,23 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Kingfisher
+import Shared
 import SwiftUI
 
 struct SurveyHeaderView: View {
 
+    let surveyHeader: SurveyHeaderUiModel
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4.0) {
-            // TODO: Use real data from ViewModel
-            Text("MONDAY, JUNE 15")
+            Text(surveyHeader.dateText)
                 .font(.boldSmall)
             HStack {
-                Text("Today")
+                Text(surveyHeader.todayText())
                     .font(.boldLarge)
                 Spacer()
-                Assets.background.image
+                KFImage(surveyHeader.imageUrl.string.asURL)
                     .resizable()
                     .frame(width: 36.0, height: 36.0)
                     .cornerRadius(18.0)

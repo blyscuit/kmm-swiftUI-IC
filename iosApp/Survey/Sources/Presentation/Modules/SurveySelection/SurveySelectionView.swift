@@ -11,6 +11,8 @@ import SwiftUI
 
 struct SurveySelectionView: View {
 
+    @StateObject private var dataSource = DataSource()
+
     @State private var currentPage = 0
     // TODO: Replace Example data
     @State private var surveys: [SurveyUiModel] = [
@@ -35,6 +37,21 @@ struct SurveySelectionView: View {
     ]
 
     var body: some View {
+        ZStack {
+            if dataSource.showingLoading {
+                SurveyLoading()
+            } else {
+                survey
+            }
+        }
+        .accessibilityElement(children: .contain)
+        .accessibility(.surveySelection(.view))
+        .onLoad {
+            dataSource.fetch()
+        }
+    }
+
+    var survey: some View {
         ZStack {
             FadePaginationView(
                 currentPage: $currentPage,
@@ -63,8 +80,10 @@ struct SurveySelectionView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             VStack {
-                SurveyHeaderView()
-                    .accessibility(.surveySelection(.header))
+                if let surveyHeader = dataSource.viewState.surveyHeaderUiModel {
+                    SurveyHeaderView(surveyHeader: surveyHeader)
+                        .accessibility(.surveySelection(.header))
+                }
                 Spacer()
                 HStack {
                     Spacer()
@@ -82,7 +101,5 @@ struct SurveySelectionView: View {
                 }
             }
         }
-        .accessibilityElement(children: .contain)
-        .accessibility(.surveySelection(.view))
     }
 }

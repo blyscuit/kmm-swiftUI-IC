@@ -7,6 +7,7 @@ import co.nimblehq.blisskmmic.data.network.target.LoginTargetType
 import co.nimblehq.blisskmmic.domain.model.Token
 import co.nimblehq.blisskmmic.domain.repository.AuthenticationRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 
 class AuthenticationRepositoryImpl(
@@ -27,6 +28,12 @@ class AuthenticationRepositoryImpl(
     override fun getCachedToken(): Flow<Token> {
         return localDataSource.getToken()
             .map { it.toToken() }
+    }
+
+    override fun hasCachedToken(): Flow<Boolean> {
+        return localDataSource.getToken()
+            .map { true }
+            .catch { emit(false) }
     }
 
     fun save(token: Token) {

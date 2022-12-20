@@ -58,6 +58,7 @@ kotlin {
                 implementation(Dependency.MULTIPLATFORM_SETTINGS)
                 implementation(Dependency.MULTIPLATFORM_SETTINGS_SERIALIZATION)
                 implementation(Dependency.NAPIER)
+                implementation(Dependency.DATE_TIME)
             }
         }
         val commonTest by getting {
@@ -232,7 +233,8 @@ kover {
                 "*Mock*",
                 "co.nimblehq.blisskmmic.di*",
                 "*helpers.extensions.ios*",
-                "SharedBuildConfig*"
+                "SharedBuildConfig*",
+                "*domain.platform.*"
             )
         }
     }

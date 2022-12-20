@@ -3,13 +3,8 @@ package co.nimblehq.blisskmmic.data.datasource
 import app.cash.turbine.test
 import co.nimblehq.blisskmmic.data.network.core.NetworkClient
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSourceImpl
-import co.nimblehq.blisskmmic.data.network.target.LoginTargetType
-import co.nimblehq.blisskmmic.data.network.target.ResetPasswordTargetType
-import co.nimblehq.blisskmmic.data.network.target.SurveySelectionTargetType
-import co.nimblehq.blisskmmic.helpers.json.ERROR_JSON_RESULT
-import co.nimblehq.blisskmmic.helpers.json.LOG_IN_JSON_RESULT
-import co.nimblehq.blisskmmic.helpers.json.RESET_PASSWORD_JSON_RESULT
-import co.nimblehq.blisskmmic.helpers.json.SURVEY_LIST_JSON_RESULT
+import co.nimblehq.blisskmmic.data.network.target.*
+import co.nimblehq.blisskmmic.helpers.json.*
 import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonMockEngine
 import co.nimblehq.jsonapi.model.JsonApiException
 import io.kotest.matchers.collections.shouldContain
@@ -25,7 +20,7 @@ class NetworkDataSourceTest {
     // Log in
 
     @Test
-    fun `When calling log in with success response, it returns correct object`() = runTest {
+    fun `When calling log in with success response- it returns correct object`() = runTest {
         val engine = jsonMockEngine(LOG_IN_JSON_RESULT, "oauth/token")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
@@ -38,7 +33,7 @@ class NetworkDataSourceTest {
     }
 
     @Test
-    fun `When calling log in with failure response, it returns correct error`() = runTest {
+    fun `When calling log in with failure response- it returns correct error`() = runTest {
         val engine = jsonMockEngine(ERROR_JSON_RESULT, "oauth/token")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
@@ -55,7 +50,7 @@ class NetworkDataSourceTest {
     // Reset password
 
     @Test
-    fun `When calling reset password with success response, it returns correct object`() = runTest {
+    fun `When calling reset password with success response- it returns correct object`() = runTest {
         val engine = jsonMockEngine(RESET_PASSWORD_JSON_RESULT, "passwords")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
@@ -72,7 +67,7 @@ class NetworkDataSourceTest {
     // Survey
 
     @Test
-    fun `When calling survey with success response, it returns correct object`() = runTest {
+    fun `When calling survey with success response- it returns correct object`() = runTest {
         val engine = jsonMockEngine(SURVEY_LIST_JSON_RESULT, "surveys")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
@@ -88,7 +83,7 @@ class NetworkDataSourceTest {
     }
 
     @Test
-    fun `When calling survey with failure response, it returns correct error`() = runTest {
+    fun `When calling survey with failure response- it returns correct error`() = runTest {
         val engine = jsonMockEngine(ERROR_JSON_RESULT, "surveys")
         val networkClient = NetworkClient(engine = engine)
         val dataSource = NetworkDataSourceImpl(networkClient)
@@ -99,6 +94,41 @@ class NetworkDataSourceTest {
                     is JsonApiException -> error.errors.map { it.code } shouldContain "invalid_token"
                     else -> fail("Should not return incorrect error type")
                 }
+            }
+    }
+
+    // Profile
+
+    @Test
+    fun `When calling profile with success response- it returns correct object`() = runTest {
+        val engine = jsonMockEngine(USER_PROFILE_JSON_RESULT, "me")
+        val networkClient = NetworkClient(engine = engine)
+        val dataSource = NetworkDataSourceImpl(networkClient)
+        dataSource
+            .profile(UserProfileTargetType())
+            .test {
+                val response = awaitItem()
+                response.email shouldBe "mail@mail.com"
+                response.name shouldBe "Name"
+                awaitComplete()
+            }
+    }
+
+    // Survey Detail
+
+    @Test
+    fun `When calling survey detail with success response- it returns correct object`() = runTest {
+        val id = "ABC"
+        val engine = jsonMockEngine(SURVEY_DETAIL_JSON_RESULT, "surveys/${id}")
+        val networkClient = NetworkClient(engine = engine)
+        val dataSource = NetworkDataSourceImpl(networkClient)
+        dataSource
+            .surveyDetail(SurveyDetailTargetType(id))
+            .test {
+                val response = awaitItem()
+                response.title shouldBe "Scarlett Bangkok"
+                response.questions.size shouldBe 12
+                awaitComplete()
             }
     }
 }

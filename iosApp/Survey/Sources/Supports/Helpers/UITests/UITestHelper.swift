@@ -6,6 +6,7 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Shared
 import UIKit
 
 final class UITestHelper {
@@ -14,13 +15,17 @@ final class UITestHelper {
 
     var speed: Float = 1.0
 
-    var isRunningUITests: Bool {
+    var isFastAnimationUITests: Bool {
         LaunchArgument.contains(.fastAnimation)
+    }
+
+    var clearingKeychainUITests: Bool {
+        LaunchArgument.contains(.clearKeychain)
     }
 
     func speedUpUITestAnimation() {
         #if DEBUG
-            if isRunningUITests {
+            if isFastAnimationUITests {
                 // swiftformat:disable:next numberFormatting
                 speed = 1_000.0
                 UIApplication
@@ -31,6 +36,16 @@ final class UITestHelper {
                     .first { $0.isKeyWindow }?
                     .layer
                     .speed = speed
+            }
+        #endif
+    }
+
+    func clearKeychainUITest() {
+        #if DEBUG
+            if clearingKeychainUITests {
+                DispatchQueue.main.async {
+                    UITestLogout.shared.logOut()
+                }
             }
         #endif
     }
