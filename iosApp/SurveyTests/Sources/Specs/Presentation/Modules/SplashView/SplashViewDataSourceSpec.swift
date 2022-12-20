@@ -97,7 +97,7 @@ final class SplashViewDataSourceSpec: QuickSpec {
                         checkLoginUseCase.invokeReturnValue = WrappedFlow.shared.bool(
                             errorMessage: "error"
                         )
-                        dataSource.checkLogin()
+                        delayCheckLogin()
                     }
 
                     it("sets loading false") {
