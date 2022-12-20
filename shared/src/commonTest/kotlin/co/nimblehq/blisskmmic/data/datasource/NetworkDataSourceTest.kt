@@ -15,6 +15,8 @@ import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.fail
 
+private const val CORRECT_SURVEY_PAGE_SIZE = 12
+
 @ExperimentalCoroutinesApi
 class NetworkDataSourceTest {
 
@@ -126,6 +128,24 @@ class NetworkDataSourceTest {
             .refreshToken(RefreshTokenType(""))
             .test {
                 awaitItem().refreshToken shouldBe "refresh_token"
+                awaitComplete()
+            }
+    }
+
+    // Survey Detail
+
+    @Test
+    fun `When calling survey detail with success response- it returns correct object`() = runTest {
+        val id = "ABC"
+        val engine = jsonMockEngine(SURVEY_DETAIL_JSON_RESULT, "surveys/${id}")
+        val networkClient = NetworkClient(engine = engine)
+        val dataSource = NetworkDataSourceImpl(networkClient)
+        dataSource
+            .surveyDetail(SurveyDetailTargetType(id))
+            .test {
+                val response = awaitItem()
+                response.title shouldBe "Scarlett Bangkok"
+                response.questions.size shouldBe CORRECT_SURVEY_PAGE_SIZE
                 awaitComplete()
             }
     }
