@@ -47,7 +47,10 @@ class SplashViewModelTest : TestsWithMocks() {
     fun `When calling checkLogin with true response- it changes viewState correctly`() = runTest {
         mocker.every {
             checkLoginUseCase()
-        } returns flowOf(true)
+        } returns flow {
+            delay(FLOW_DELAY)
+            emit(true)
+        }
 
         splashViewModel.checkLogin()
 

@@ -1,5 +1,7 @@
 package co.nimblehq.blisskmmic.data.model
 
+import co.nimblehq.blisskmmic.domain.model.SurveyDetail
+import co.nimblehq.blisskmmic.domain.model.Token
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -15,5 +17,13 @@ data class SurveyDetailApiModel(
     @Serializable
     data class SurveyIncluded(
         val text: String
+    )
+
+    fun toSurveyDetail() = SurveyDetail(
+        title,
+        description,
+        isActive,
+        coverImageUrl,
+        questions.map { SurveyDetail.SurveyIncluded(it.text) }
     )
 }
