@@ -37,6 +37,13 @@
         "identifier" : "E7449C1BBC882ADE61DB38AC",
         "name" : "SurveyUITests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Survey.xcodeproj",
+        "identifier" : "09E6ABE32951CF3E007F1EE3",
+        "name" : "SurveyKIFUITests"
+      }
     }
   ],
   "version" : 1

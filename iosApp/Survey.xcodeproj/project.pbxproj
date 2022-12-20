@@ -21,8 +21,6 @@
 		09495F82290109760036BDFB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F81290109730036BDFB /* NotificationManager.swift */; };
 		09495F84290110640036BDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F83290110630036BDFB /* AppDelegate.swift */; };
 		09495F88290114230036BDFB /* NotificationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F86290113DC0036BDFB /* NotificationManagerSpec.swift */; };
-		09495F9729094BFD0036BDFB /* SurveySelectionContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9629094BFC0036BDFB /* SurveySelectionContainerView.swift */; };
-		09495F9A29094C570036BDFB /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9929094C570036BDFB /* AccountView.swift */; };
 		09495F9C290A35BC0036BDFB /* ViewId+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9B290A35BA0036BDFB /* ViewId+Account.swift */; };
 		09495F9D290A35C60036BDFB /* ViewId+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9B290A35BA0036BDFB /* ViewId+Account.swift */; };
 		09495FAE290A8A5C0036BDFB /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FAD290A8A5C0036BDFB /* AccountScreen.swift */; };
@@ -107,6 +105,8 @@
 		09E6AC042951D333007F1EE3 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		09E6AC072951D3A3007F1EE3 /* AccountFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6AC052951D395007F1EE3 /* AccountFlow.swift */; };
 		09E6AC0D2951D61E007F1EE3 /* AccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */; };
+		09E6AC102951D8B5007F1EE3 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6AC0F2951D8B5007F1EE3 /* AccountView.swift */; };
+		09E6AC122951D950007F1EE3 /* SurveySelectionContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6AC112951D950007F1EE3 /* SurveySelectionContainerView.swift */; };
 		09FE26CD294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE26CC294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift */; };
 		09FE26D1294B26A0005A7F85 /* SurveySelectionViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE26CF294B264B005A7F85 /* SurveySelectionViewDataSourceSpec.swift */; };
 		09FE26D3294C1906005A7F85 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE26D2294C1905005A7F85 /* ViewDidLoadModifier.swift */; };
@@ -196,8 +196,6 @@
 		09495F81290109730036BDFB /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		09495F83290110630036BDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09495F86290113DC0036BDFB /* NotificationManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerSpec.swift; sourceTree = "<group>"; };
-		09495F9629094BFC0036BDFB /* SurveySelectionContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySelectionContainerView.swift; sourceTree = "<group>"; };
-		09495F9929094C570036BDFB /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		09495F9B290A35BA0036BDFB /* ViewId+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+Account.swift"; sourceTree = "<group>"; };
 		09495FAD290A8A5C0036BDFB /* AccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
 		09495FB0290A93650036BDFB /* XCUIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+.swift"; sourceTree = "<group>"; };
@@ -266,6 +264,8 @@
 		09E6ABFA2951D2C0007F1EE3 /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		09E6AC052951D395007F1EE3 /* AccountFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFlow.swift; sourceTree = "<group>"; };
 		09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSpec.swift; sourceTree = "<group>"; };
+		09E6AC0F2951D8B5007F1EE3 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountView.swift; path = Survey/Sources/Presentation/Modules/SurveySelection/Account/AccountView.swift; sourceTree = SOURCE_ROOT; };
+		09E6AC112951D950007F1EE3 /* SurveySelectionContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionContainerView.swift; sourceTree = "<group>"; };
 		09FE26CC294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SurveySelectionView+DataSource.swift"; sourceTree = "<group>"; };
 		09FE26CF294B264B005A7F85 /* SurveySelectionViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySelectionViewDataSourceSpec.swift; sourceTree = "<group>"; };
 		09FE26D2294C1905005A7F85 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
@@ -385,8 +385,6 @@
 			children = (
 				09495F6E28FFDE8C0036BDFB /* LoginView.swift */,
 				0964B1CF2942F3A200946FA1 /* LoginView+DataSource.swift */,
-				09495F9829094C490036BDFB /* Account */,
-				09495F9629094BFC0036BDFB /* SurveySelectionContainerView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -405,14 +403,6 @@
 				09495F86290113DC0036BDFB /* NotificationManagerSpec.swift */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		09495F9829094C490036BDFB /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				09495F9929094C570036BDFB /* AccountView.swift */,
-			);
-			path = Account;
 			sourceTree = "<group>";
 		};
 		09495FAC290A8A520036BDFB /* Account */ = {
@@ -658,7 +648,9 @@
 		0982A7F929278E9000FC1976 /* SurveySelection */ = {
 			isa = PBXGroup;
 			children = (
+				09E6AC0E2951D89B007F1EE3 /* AccountView */,
 				0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */,
+				09E6AC112951D950007F1EE3 /* SurveySelectionContainerView.swift */,
 				09FE26CC294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift */,
 				0982A7FB29278E9000FC1976 /* SurveyHeader */,
 				0982A7FD29278E9000FC1976 /* SurveyItemView.swift */,
@@ -855,6 +847,14 @@
 				09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		09E6AC0E2951D89B007F1EE3 /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				09E6AC0F2951D8B5007F1EE3 /* AccountView.swift */,
+			);
+			path = AccountView;
 			sourceTree = "<group>";
 		};
 		09FE26CE294B2639005A7F85 /* SurveySelection */ = {
@@ -1743,6 +1743,7 @@
 				0982A80329278E9000FC1976 /* SurveyHeaderView.swift in Sources */,
 				09636B0D28D4917200A5CB97 /* OverlayButton.swift in Sources */,
 				09495FC9291106A00036BDFB /* Constants+SystemImage.swift in Sources */,
+				09E6AC102951D8B5007F1EE3 /* AccountView.swift in Sources */,
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
 				09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */,
 				09FE26CD294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift in Sources */,
@@ -1777,7 +1778,6 @@
 				0982A80529278E9000FC1976 /* SurveyLoading.swift in Sources */,
 				0982A7E029222EB900FC1976 /* ViewId+Splash.swift in Sources */,
 				0964B1D02942F3A300946FA1 /* LoginView+DataSource.swift in Sources */,
-				09495F9729094BFD0036BDFB /* SurveySelectionContainerView.swift in Sources */,
 				09495F9C290A35BC0036BDFB /* ViewId+Account.swift in Sources */,
 				09CE770F28E1922000EAA9EE /* Screen.swift in Sources */,
 				09CE772528E2C1C600EAA9EE /* View+HideBackButtonTitle.swift in Sources */,
@@ -1786,7 +1786,7 @@
 				0982A7F6292371F000FC1976 /* StringResource+Localized.swift in Sources */,
 				0964B1CE294054B300946FA1 /* Double+AnimationDuration.swift in Sources */,
 				09636B0028D4860F00A5CB97 /* PrimaryTextField.swift in Sources */,
-				09495F9A29094C570036BDFB /* AccountView.swift in Sources */,
+				09E6AC122951D950007F1EE3 /* SurveySelectionContainerView.swift in Sources */,
 				09495F6628FF97080036BDFB /* SplashView.swift in Sources */,
 				09495F82290109760036BDFB /* NotificationManager.swift in Sources */,
 				870924447B8C177450E77414 /* Optional+Unwrap.swift in Sources */,

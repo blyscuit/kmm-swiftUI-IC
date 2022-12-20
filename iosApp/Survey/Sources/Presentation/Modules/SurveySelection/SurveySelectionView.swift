@@ -88,7 +88,6 @@ struct SurveySelectionView: View {
                             showingAccountView.toggle()
                         }
                     }
-                    .accessibility(.surveySelection(.header))
                 }
                 Spacer()
                 HStack {

@@ -12,7 +12,7 @@ extension KIFUITestActor {
 
     func loginIfNeeded() {
         if tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
-            tester().tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
+            tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
         }
     }
 }

@@ -59,12 +59,17 @@ final class SurveySelectionSpec: QuickSpec {
                     surveySelectionScreen.waitForExistence(
                         timeout: .instant,
                         \.staticTexts,
-                        with: .header
+                        with: .headerTitleText
                     )
                     surveySelectionScreen.waitForExistence(
                         timeout: .instant,
-                        \.images,
-                        with: .header
+                        \.staticTexts,
+                        with: .headerDateText
+                    )
+                    surveySelectionScreen.waitForExistence(
+                        timeout: .instant,
+                        \.buttons,
+                        with: .headerProfileImage
                     )
                 }
             }
