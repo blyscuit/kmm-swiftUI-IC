@@ -10,11 +10,16 @@ import SwiftUI
 
 struct SurveySelectionContainerView: View {
 
+    @StateObject private var dataSource = SurveySelectionView.DataSource()
+
     @State var isShowingAccountView = false
 
     var body: some View {
         ZStack {
-            SurveySelectionView($isShowingAccountView)
+            SurveySelectionView(
+                isShowingAccountView: $isShowingAccountView,
+                dataSource: dataSource
+            )
 
             if isShowingAccountView {
                 Button {
@@ -29,8 +34,8 @@ struct SurveySelectionContainerView: View {
 
             HStack {
                 Spacer()
-                if isShowingAccountView {
-                    AccountView()
+                if isShowingAccountView, let account = dataSource.viewState.accountUiModel {
+                    AccountView(account: account)
                         .gesture(
                             DragGesture(minimumDistance: 50)
                                 .onEnded { gesture in

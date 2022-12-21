@@ -11,7 +11,7 @@ import SwiftUI
 
 struct SurveySelectionView: View {
 
-    @StateObject private var dataSource = DataSource()
+    @ObservedObject private var dataSource: DataSource
 
     @Binding var isShowingAccountView: Bool
 
@@ -84,6 +84,7 @@ struct SurveySelectionView: View {
             VStack {
                 if let surveyHeader = dataSource.viewState.surveyHeaderUiModel {
                     SurveyHeaderView(surveyHeader: surveyHeader) {
+                        guard dataSource.viewState.accountUiModel != nil else { return }
                         withAnimation {
                             isShowingAccountView.toggle()
                         }
@@ -108,7 +109,8 @@ struct SurveySelectionView: View {
         }
     }
 
-    init(_ isShowingAccountView: Binding<Bool>) {
+    init(isShowingAccountView: Binding<Bool>, dataSource: DataSource) {
         _isShowingAccountView = isShowingAccountView
+        self.dataSource = dataSource
     }
 }
