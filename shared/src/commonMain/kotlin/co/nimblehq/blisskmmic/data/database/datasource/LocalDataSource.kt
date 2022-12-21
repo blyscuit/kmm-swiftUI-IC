@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.Flow
 interface LocalDataSource {
     fun save(token: TokenDatabaseModel)
     fun getToken(): Flow<TokenDatabaseModel>
+    fun removeToken()
 }
 
 class LocalDataSourceImpl(private val dataStore: DataStore): LocalDataSource {
@@ -21,5 +22,9 @@ class LocalDataSourceImpl(private val dataStore: DataStore): LocalDataSource {
     override fun getToken(): Flow<TokenDatabaseModel> {
         return dataStore
             .get(TokenDatabaseModel.serializer(), DB_USER_SESSION_KEY)
+    }
+
+    override fun removeToken() {
+        dataStore.remove(DB_USER_SESSION_KEY)
     }
 }
