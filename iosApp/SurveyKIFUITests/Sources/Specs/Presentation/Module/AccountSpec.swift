@@ -15,17 +15,27 @@ final class AccountSpec: QuickSpec {
 
         typealias ViewIdentifier = ViewId.Account
 
+        var loginScreen: LoginScreen!
+        var surveyScreen: SurveyScreen!
+        var accountScreen: AccountScreen!
+
         describe("an Account screen") {
+
+            beforeEach {
+                loginScreen = LoginScreen(self)
+                surveyScreen = SurveyScreen(self)
+                accountScreen = AccountScreen(self)
+            }
 
             describe("its open") {
 
                 beforeEach {
-                    self.tester().loginIfNeeded()
-                    self.tester().navigateToHome()
+                    loginScreen.loginIfNeeded()
+                    surveyScreen.navigateToAccount()
                 }
 
                 afterEach {
-                    self.tester().navigateToHome()
+                    accountScreen.navigateToHome()
                 }
 
                 it("it shows its ui components") {

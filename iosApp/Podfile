@@ -47,6 +47,7 @@ target 'Survey' do
   end
 
   target 'SurveyKIFUITests' do
+    inherit! :search_paths
     testing_pods
     pod 'KIF', :configurations => ['Debug Staging', 'Debug Production']
     pod 'KIF/IdentifierTests', :configurations => ['Debug Staging', 'Debug Production']
