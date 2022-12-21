@@ -6,9 +6,13 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Kingfisher
+import Shared
 import SwiftUI
 
 struct AccountView: View {
+
+    let account: AccountUiModel
 
     var body: some View {
         ZStack {
@@ -17,14 +21,13 @@ struct AccountView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea()
             VStack(alignment: .leading) {
-                // TODO: Use real data from ViewModel
                 HStack(alignment: .firstTextBaseline) {
-                    Text("Mai")
+                    Text(account.name)
                         .font(.boldLarge)
                         .lineLimit(1)
                         .accessibility(.account(.profileText))
                     Spacer()
-                    Assets.background.image
+                    KFImage(account.imageUrl.string.asURL)
                         .resizable()
                         .frame(width: 36.0, height: 36.0)
                         .cornerRadius(18.0)
@@ -43,16 +46,14 @@ struct AccountView: View {
                 Button {
                     // TODO: Add logout action
                 } label: {
-                    // TODO: Use localize from KMM
-                    Text("Logout")
+                    Text(String.localizeId.account_logout_button())
                         .font(.regularLarge)
                         .foregroundColor(.white)
                         .opacity(0.5)
                 }
                 .accessibility(.account(.logoutButton))
                 Spacer()
-                // TODO: Use real data from ViewModel
-                Text("1.0.0")
+                Text(account.appVersion)
                     .font(.regularTiny)
                     .foregroundColor(.white)
                     .opacity(0.5)
