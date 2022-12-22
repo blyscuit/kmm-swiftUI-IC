@@ -68,6 +68,20 @@ final class AccountSpec: QuickSpec {
                         }
                     }
                 }
+
+                describe("its logout button") {
+
+                    context("when tapped") {
+
+                        beforeEach {
+                            accountScreen.logOut()
+                        }
+
+                        it("shows login screen") {
+                            self.tester().waitForView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
+                        }
+                    }
+                }
             }
         }
     }

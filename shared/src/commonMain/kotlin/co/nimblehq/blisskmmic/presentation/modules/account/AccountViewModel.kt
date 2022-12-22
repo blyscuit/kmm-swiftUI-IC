@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
+import org.koin.dsl.koinApplication
 
 data class AccountViewState(
     val isLogout: Boolean = false,
@@ -18,7 +19,7 @@ data class AccountViewState(
 
 class AccountViewModel: BaseViewModel, KoinComponent {
 
-    private val logOutUseCase: LogOutUseCase by inject()
+    private val logOutUseCase: LogOutUseCase
 
     private val accountUiModel: AccountUiModel?
 
@@ -28,10 +29,15 @@ class AccountViewModel: BaseViewModel, KoinComponent {
     val viewState: StateFlow<AccountViewState> = mutableViewState
 
     constructor(accountUiModel: AccountUiModel?) {
+        this.logOutUseCase = koinApplication().koin.get()
         this.accountUiModel = accountUiModel
-        mutableViewState.update {
-            AccountViewState(accountUiModel = accountUiModel)
-        }
+        setInitialState()
+    }
+
+    constructor(accountUiModel: AccountUiModel?, logOutUseCase: LogOutUseCase) {
+        this.logOutUseCase = logOutUseCase
+        this.accountUiModel = accountUiModel
+        setInitialState()
     }
 
     fun logOut() {
@@ -40,6 +46,12 @@ class AccountViewModel: BaseViewModel, KoinComponent {
             logOutUseCase()
                 .catch { _ -> setStateLoading(false) }
                 .collect { setStateLogout() }
+        }
+    }
+
+    private fun setInitialState() {
+        mutableViewState.update {
+            AccountViewState(accountUiModel = accountUiModel)
         }
     }
 

@@ -11,6 +11,12 @@ import Foundation
 final class AccountScreen: GenericScreen {
 
     func navigateToHome() {
-        tester.tapScreen(at: .init(x: 10.0, y: 100.0))
+        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.account(.logoutButton)()) {
+            tester.tapScreen(at: .init(x: 10.0, y: 100.0))
+        }
+    }
+
+    func logOut() {
+        tester.tapView(withAccessibilityIdentifier: ViewId.account(.logoutButton)())
     }
 }
