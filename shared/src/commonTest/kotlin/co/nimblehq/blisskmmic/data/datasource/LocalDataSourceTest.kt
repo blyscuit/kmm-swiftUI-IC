@@ -67,4 +67,19 @@ class LocalDataSourceTest: TestsWithMocks() {
                 it shouldBe tokenDB
             }
     }
+
+    @Test
+    fun `When removing token- it remove the key from the dataStore`() = runTest {
+        mocker.every {
+            dataStore.remove(LocalDataSourceImpl.DB_USER_SESSION_KEY)
+        } returns Unit
+
+        dataSource
+            .removeToken()
+
+        mocker.verify {
+            dataStore
+                .remove(LocalDataSourceImpl.DB_USER_SESSION_KEY)
+        }
+    }
 }

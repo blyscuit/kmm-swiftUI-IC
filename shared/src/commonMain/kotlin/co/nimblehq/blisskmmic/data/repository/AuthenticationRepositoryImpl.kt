@@ -4,11 +4,11 @@ import co.nimblehq.blisskmmic.data.database.datasource.LocalDataSource
 import co.nimblehq.blisskmmic.data.database.model.TokenDatabaseModel
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSource
 import co.nimblehq.blisskmmic.data.network.target.LoginTargetType
-import co.nimblehq.blisskmmic.data.network.target.LogoutTargetType
 import co.nimblehq.blisskmmic.domain.model.Token
 import co.nimblehq.blisskmmic.domain.repository.AuthenticationRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 
 class AuthenticationRepositoryImpl(
@@ -38,9 +38,9 @@ class AuthenticationRepositoryImpl(
     }
 
     override fun logOut(): Flow<Unit> {
-        return localDataSource.getToken()
-            .map { networkDataSource.logout(LogoutTargetType(it.accessToken)) }
-            .map { removeToken() }
+        return flow {
+            emit(removeToken())
+        }
     }
 
     fun save(token: Token) {

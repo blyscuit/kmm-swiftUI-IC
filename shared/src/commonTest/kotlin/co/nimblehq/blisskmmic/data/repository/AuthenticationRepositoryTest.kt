@@ -6,6 +6,7 @@ import co.nimblehq.blisskmmic.data.database.model.TokenDatabaseModel
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSource
 import co.nimblehq.blisskmmic.domain.model.TokenApiModel
 import io.kotest.matchers.shouldBe
+import io.kotest.matchers.shouldNotBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
@@ -143,5 +144,22 @@ class AuthenticationRepositoryTest: TestsWithMocks() {
                 awaitItem() shouldBe false
                 awaitComplete()
             }
+    }
+
+    @Test
+    fun `When calling log out with success response- it returns correct object`() = runTest {
+        mocker.every {
+            localDataSource.removeToken()
+        } returns Unit
+        authenticationRepository
+            .logOut()
+            .test {
+                awaitItem() shouldNotBe null
+                awaitComplete()
+            }
+
+        mocker.verify {
+            localDataSource.removeToken()
+        }
     }
 }

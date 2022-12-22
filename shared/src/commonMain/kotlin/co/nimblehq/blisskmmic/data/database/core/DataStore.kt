@@ -41,6 +41,9 @@ class DataStoreImpl(private val settings: Settings): DataStore {
     }
 
     override fun remove(key: String) {
-        settings.remove(key)
+        settings
+            .keys
+            .filter { it.startsWith(key) }
+            .map { settings.remove(it) }
     }
 }
