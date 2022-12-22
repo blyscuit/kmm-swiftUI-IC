@@ -23,7 +23,7 @@ struct AppCoordinator: View {
             case .splash:
                 SplashView(coordinator: coordinator)
             case .surveySelection:
-                SurveySelectionContainerView()
+                SurveySelectionContainerView(coordinator: coordinator)
             }
         }
     }

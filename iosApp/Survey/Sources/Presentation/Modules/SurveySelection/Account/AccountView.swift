@@ -9,9 +9,14 @@
 import Shared
 import SwiftUI
 
+protocol AccountCoordinator {
+
+    func showLogin()
+}
+
 struct AccountView: View {
 
-    let account: AccountUiModel
+    @StateObject var dataSource: DataSource
 
     var body: some View {
         ZStack {
@@ -38,11 +43,19 @@ struct AccountView: View {
         .frame(width: 200.0)
         .accessibilityElement(children: .contain)
         .accessibility(.account(.view))
+        .loadingDialog(loading: $dataSource.showingLoading)
+    }
+
+    init(account: AccountUiModel, coordinator: AccountCoordinator) {
+        _dataSource = StateObject(
+            wrappedValue: DataSource(account: account, coordinator: coordinator)
+        )
     }
 
     var profileSection: some View {
+        let account = dataSource.viewState.accountUiModel
         HStack(alignment: .firstTextBaseline) {
-            Text(account.name)
+            Text((account?.name).string)
                 .font(.boldLarge)
                 .lineLimit(1)
                 .accessibility(.account(.profileText))
@@ -59,7 +72,7 @@ struct AccountView: View {
 
     var logoutSection: some View {
         Button {
-            // TODO: Add logout action
+            dataSource.logOut()
         } label: {
             Text(String.localizeId.account_logout_button())
                 .font(.regularLarge)
@@ -70,7 +83,8 @@ struct AccountView: View {
     }
 
     var versionSection: some View {
-        Text(account.appVersion)
+        let account = dataSource.viewState.accountUiModel
+        Text((account?.appVersion).string)
             .font(.regularTiny)
             .foregroundColor(.white)
             .opacity(0.5)

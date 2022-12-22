@@ -47,3 +47,5 @@ extension RouteCoordinator: LoginCoordinator {
         routes = [.root(.surveySelection)]
     }
 }
+
+extension RouteCoordinator: AccountCoordinator {}

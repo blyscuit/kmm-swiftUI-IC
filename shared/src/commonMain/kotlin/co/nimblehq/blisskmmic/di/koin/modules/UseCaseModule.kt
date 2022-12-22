@@ -11,4 +11,5 @@ val useCaseModule = module {
     single<GetCurrentDateUseCase> { GetCurrentDateUseCaseImpl(get()) }
     single<GetProfileUseCase> { GetProfileUseCaseImpl(get()) }
     single<GetAppVersionUseCase> { GetAppVersionUseCaseImpl(get()) }
+    single<LogOutUseCase> { LogOutUseCaseImpl(get()) }
 }
