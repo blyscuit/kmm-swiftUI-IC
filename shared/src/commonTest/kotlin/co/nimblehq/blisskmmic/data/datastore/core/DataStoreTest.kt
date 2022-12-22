@@ -76,9 +76,15 @@ class DataStoreTest : TestsWithMocks() {
 
     @Test
     fun `When removing - it sets settings with null`() = runTest {
+        val secondKey = "secondKey"
         dataStore.save(
             TokenDatabaseModel.serializer(),
             testKey,
+            token
+        )
+        dataStore.save(
+            TokenDatabaseModel.serializer(),
+            secondKey,
             token
         )
         dataStore.remove(testKey)
@@ -87,6 +93,11 @@ class DataStoreTest : TestsWithMocks() {
                 TokenDatabaseModel.serializer(),
                 testKey
             ) shouldBe null
+        settings
+            .decodeValueOrNull(
+                TokenDatabaseModel.serializer(),
+                secondKey
+            ) shouldBe token
     }
 
     @Test
