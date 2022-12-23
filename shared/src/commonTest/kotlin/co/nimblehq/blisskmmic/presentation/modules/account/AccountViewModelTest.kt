@@ -47,7 +47,7 @@ class AccountViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When init- it has correct viewState`() = runTest {
+    fun `When init - it has correct viewState`() = runTest {
         accountViewModel
             .viewState
             .test {
@@ -57,7 +57,7 @@ class AccountViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling log out with success response- it changes viewState to logout`() = runTest {
+    fun `When calling log out with success response - it changes viewState to logout`() = runTest {
         mocker.every {
             logOutUseCase()
         } returns delayFlowOf(Unit)
@@ -76,7 +76,7 @@ class AccountViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling log out with error response- it changes viewState to no logout`() = runTest {
+    fun `When calling log out with error response - it changes viewState to no logout`() = runTest {
         mocker.every {
             logOutUseCase()
         } returns delayFlowOf("Fail")

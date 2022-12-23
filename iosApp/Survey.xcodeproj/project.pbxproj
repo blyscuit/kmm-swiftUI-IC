@@ -81,6 +81,7 @@
 		09A9F8DF2952B585009DE583 /* AccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9F8DD2952B582009DE583 /* AccountScreen.swift */; };
 		09A9F8F329544F5E009DE583 /* AccountView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9F8F229544F5E009DE583 /* AccountView+DataSource.swift */; };
 		09A9F8F8295479CA009DE583 /* AccountViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9F8F5295479C3009DE583 /* AccountViewDataSourceSpec.swift */; };
+		09A9F8FB29555505009DE583 /* KMPNative+Guaranteed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9F8FA29555505009DE583 /* KMPNative+Guaranteed.swift */; };
 		09C2F3FD2930943700F44818 /* ResetPasswordViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F3FB2930943200F44818 /* ResetPasswordViewDataSourceSpec.swift */; };
 		09C2F4032934588B00F44818 /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
 		09C2F4062934680000F44818 /* ScreenProtocol+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F404293467FA00F44818 /* ScreenProtocol+Permission.swift */; };
@@ -253,6 +254,7 @@
 		09A9F8DD2952B582009DE583 /* AccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScreen.swift; sourceTree = "<group>"; };
 		09A9F8F229544F5E009DE583 /* AccountView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountView+DataSource.swift"; sourceTree = "<group>"; };
 		09A9F8F5295479C3009DE583 /* AccountViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewDataSourceSpec.swift; sourceTree = "<group>"; };
+		09A9F8FA29555505009DE583 /* KMPNative+Guaranteed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KMPNative+Guaranteed.swift"; sourceTree = "<group>"; };
 		09C2F3FB2930943200F44818 /* ResetPasswordViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewDataSourceSpec.swift; sourceTree = "<group>"; };
 		09C2F4012934588400F44818 /* TimeInterval+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Constants.swift"; sourceTree = "<group>"; };
 		09C2F404293467FA00F44818 /* ScreenProtocol+Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenProtocol+Permission.swift"; sourceTree = "<group>"; };
@@ -711,6 +713,14 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
+		09A9F8F9295554EF009DE583 /* KMPNative */ = {
+			isa = PBXGroup;
+			children = (
+				09A9F8FA29555505009DE583 /* KMPNative+Guaranteed.swift */,
+			);
+			path = KMPNative;
+			sourceTree = "<group>";
+		};
 		09C2F3FA293093F600F44818 /* ResetPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -928,6 +938,7 @@
 		0F3BE49893E55BC4638B90F0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				09A9F8F9295554EF009DE583 /* KMPNative */,
 				0982A7F4292371F000FC1976 /* MokoResources */,
 				09636AF728D47A3800A5CB97 /* SwiftUI */,
 				0F4C0078B1B4D7C1871DDE54 /* Foundation */,
@@ -1791,6 +1802,7 @@
 				09636B3028D8267D00A5CB97 /* ViewId+General.swift in Sources */,
 				09636B0228D4876100A5CB97 /* PrimaryButton.swift in Sources */,
 				09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */,
+				09A9F8FB29555505009DE583 /* KMPNative+Guaranteed.swift in Sources */,
 				09495FCF29110E820036BDFB /* String+URL.swift in Sources */,
 				09495F0728E40E130036BDFB /* FadePaginationView.swift in Sources */,
 				0982A80229278E9000FC1976 /* SurveySelectionView.swift in Sources */,

@@ -28,16 +28,16 @@ extension AccountView {
         ) {
             self.viewModel = viewModel
             self.coordinator = coordinator
-            createPublisher(for: viewModel.viewStateNative)
-                .catch { _ -> Just<AccountViewState> in
-                    Just(AccountViewState())
-                }
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] value in
-                    guard let self = self else { return }
-                    self.updateStates(value)
-                }
-                .store(in: &cancellables)
+            createGuaranteedPublisher(
+                for: viewModel.viewStateNative,
+                fallback: AccountViewState()
+            )
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                guard let self = self else { return }
+                self.updateStates(value)
+            }
+            .store(in: &cancellables)
         }
 
         func logOut() {
