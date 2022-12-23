@@ -22,7 +22,8 @@ extension KoinApplication {
 
     private static let keyPaths: [PartialKeyPath<Koin>] = [
         \.logInViewModel,
-        \.resetPasswordViewModel
+        \.resetPasswordViewModel,
+        \.splashViewModel
     ]
 
     static func inject<T>() -> T {
