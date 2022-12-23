@@ -3,8 +3,8 @@ package co.nimblehq.blisskmmic.domain.platform.datetime
 import io.kotest.matchers.shouldBe
 import kotlin.test.Test
 
-private const val PAST_TIME_SINCE: Long = 1_000_000
-private const val TIME_SINCE: Long = 1_000_000_000
+private const val PAST_TIME_SINCE = 1_000_000L
+private const val TIME_SINCE = 1_000_000_000L
 
 class DateTimeFormatterTest {
 
