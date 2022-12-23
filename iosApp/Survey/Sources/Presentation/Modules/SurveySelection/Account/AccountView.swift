@@ -9,6 +9,7 @@
 import Shared
 import SwiftUI
 
+// sourcery: AutoMockable
 protocol AccountCoordinator {
 
     func showLogin()
@@ -48,7 +49,10 @@ struct AccountView: View {
 
     init(account: AccountUiModel, coordinator: AccountCoordinator) {
         _dataSource = StateObject(
-            wrappedValue: DataSource(account: account, coordinator: coordinator)
+            wrappedValue: DataSource(
+                coordinator: coordinator,
+                viewModel: AccountViewModel(accountUiModel: account)
+            )
         )
     }
 

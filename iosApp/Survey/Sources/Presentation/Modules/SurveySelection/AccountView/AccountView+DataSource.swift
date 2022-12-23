@@ -23,10 +23,10 @@ extension AccountView {
         private var cancellables = Set<AnyCancellable>()
 
         init(
-            account: AccountUiModel,
-            coordinator: AccountCoordinator
+            coordinator: AccountCoordinator,
+            viewModel: AccountViewModel
         ) {
-            viewModel = AccountViewModel(accountUiModel: account)
+            self.viewModel = viewModel
             self.coordinator = coordinator
             createPublisher(for: viewModel.viewStateNative)
                 .catch { _ -> Just<AccountViewState> in

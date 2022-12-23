@@ -6,8 +6,6 @@ import co.nimblehq.blisskmmic.presentation.modules.BaseViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
-import org.koin.dsl.koinApplication
 
 data class AccountViewState(
     val isLogout: Boolean = false,
@@ -29,7 +27,7 @@ class AccountViewModel: BaseViewModel, KoinComponent {
     val viewState: StateFlow<AccountViewState> = mutableViewState
 
     constructor(accountUiModel: AccountUiModel?) {
-        this.logOutUseCase = koinApplication().koin.get()
+        this.logOutUseCase = getKoin().get()
         this.accountUiModel = accountUiModel
         setInitialState()
     }
