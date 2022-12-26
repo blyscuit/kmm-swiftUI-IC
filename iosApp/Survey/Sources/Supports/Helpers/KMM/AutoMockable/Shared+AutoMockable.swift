@@ -44,7 +44,7 @@ protocol GetCurrentDateUseCaseKMM: GetCurrentDateUseCase {
 
     func invoke() -> Kotlinx_coroutines_coreFlow
     func invokeNative() -> (
-        @escaping (DateComponent, KotlinUnit) -> KotlinUnit,
+        @escaping (KotlinLong, KotlinUnit) -> KotlinUnit,
         @escaping (Error?, KotlinUnit) -> KotlinUnit
     ) -> () -> KotlinUnit
 }

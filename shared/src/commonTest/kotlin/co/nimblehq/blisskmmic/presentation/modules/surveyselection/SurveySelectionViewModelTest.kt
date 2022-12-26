@@ -2,7 +2,6 @@ package co.nimblehq.blisskmmic.presentation.modules.surveyselection
 
 import app.cash.turbine.test
 import co.nimblehq.blisskmmic.MR
-import co.nimblehq.blisskmmic.domain.model.DateComponent
 import co.nimblehq.blisskmmic.domain.model.User
 import co.nimblehq.blisskmmic.domain.platform.datetime.DateTimeFormatter
 import co.nimblehq.blisskmmic.domain.usecase.GetCurrentDateUseCase
@@ -25,6 +24,8 @@ import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 
+private const val TIME = 1L
+
 @ExperimentalCoroutinesApi
 class SurveySelectionViewModelTest : TestsWithMocks() {
 
@@ -36,8 +37,6 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
     lateinit var dateTimeFormatter: DateTimeFormatter
     @Fake
     lateinit var user: User
-    @Fake
-    lateinit var dateComponent: DateComponent
 
     private val dateResult = "dateResult"
     private val mainThreadSurrogate = newSingleThreadContext("UI thread")
@@ -71,7 +70,7 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
     fun `When calling fetch with success date and success user- it changes viewState with correct item`() = runTest {
         mocker.every {
             getCurrentDateUseCase()
-        } returns delayFlowOf(dateComponent)
+        } returns delayFlowOf(TIME)
         mocker.every {
             getProfileUseCase()
         } returns flowOf(user)
@@ -119,7 +118,8 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
     fun `When calling fetch with success date and fail user- it changes viewState with correct item`() = runTest {
         mocker.every {
             getCurrentDateUseCase()
-        } returns flowOf(dateComponent)
+
+        } returns flowOf(TIME)
         mocker.every {
             getProfileUseCase()
         } returns delayFlowOf("")

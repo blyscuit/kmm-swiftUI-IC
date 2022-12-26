@@ -51,11 +51,10 @@ final class SurveySelectionViewDataSourceSpec: QuickSpec {
 
             describe("its fetch") {
 
-                let dateComponent = DateComponent(timeInterval: 1)
                 let user = User(name: "name", avatarUrl: "avatarUrl")
 
                 beforeEach {
-                    getCurrentDateUseCase.invokeReturnValue = AnyFlow(result: dateComponent)
+                    getCurrentDateUseCase.invokeReturnValue = AnyFlow(result: KotlinLong(1))
                     getProfileUseCase.invokeReturnValue = AnyFlow(result: user)
                     delayFetch()
                 }

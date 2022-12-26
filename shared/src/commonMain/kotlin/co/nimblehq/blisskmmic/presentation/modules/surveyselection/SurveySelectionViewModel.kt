@@ -1,7 +1,6 @@
 package co.nimblehq.blisskmmic.presentation.modules.surveyselection
 
 import co.nimblehq.blisskmmic.MR
-import co.nimblehq.blisskmmic.domain.model.DateComponent
 import co.nimblehq.blisskmmic.domain.model.User
 import co.nimblehq.blisskmmic.domain.platform.datetime.DateFormat
 import co.nimblehq.blisskmmic.domain.platform.datetime.DateTimeFormatter
@@ -61,8 +60,8 @@ class SurveySelectionViewModel(
         }
     }
 
-    private fun handleDateSuccess(dateComponent: DateComponent): String {
-        return dateTimeFormatter.getFormattedString(dateComponent.timeInterval, DateFormat.DayOfWeekMonthDay)
+    private fun handleDateSuccess(timeInterval: Long): String {
+        return dateTimeFormatter.getFormattedString(timeInterval, DateFormat.DayOfWeekMonthDay)
     }
 
     private fun updateHeaderState(user: User?, dateText: String) {
