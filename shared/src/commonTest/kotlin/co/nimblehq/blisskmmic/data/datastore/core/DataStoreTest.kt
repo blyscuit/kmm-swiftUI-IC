@@ -38,7 +38,7 @@ class DataStoreTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When saving a token- it sets settings with the correct key and value`() = runTest {
+    fun `When saving a token - it sets settings with the correct key and value`() = runTest {
         val dataStore = DataStoreImpl(settings)
         dataStore.save(
             TokenDatabaseModel.serializer(),
@@ -53,7 +53,7 @@ class DataStoreTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When retrieving the token- it gets the correct key and value from settings`() = runTest {
+    fun `When retrieving the token - it gets the correct key and value from settings`() = runTest {
         settings.encodeValue(TokenDatabaseModel.serializer(), testKey, token)
 
         val dataStore = DataStoreImpl(settings)
@@ -65,7 +65,7 @@ class DataStoreTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When getting a key with no saved value- it returns the correct error`() = runTest {
+    fun `When getting a key with no saved value - it returns the correct error`() = runTest {
         val dataStore = DataStoreImpl(settings)
 
         dataStore.get(TokenDatabaseModel.serializer(), testKey)

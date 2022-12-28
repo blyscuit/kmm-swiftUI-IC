@@ -30,7 +30,7 @@ class NetworkClientTest {
     }
 
     @Test
-    fun `when calling fetch- it returns correct object`() = runTest {
+    fun `when calling fetch - it returns correct object`() = runTest {
         val engine = jsonMockEngine(NETWORK_MOCK_MODEL_RESULT, path)
         val networkClient = NetworkClient(engine = engine)
         networkClient
@@ -42,7 +42,7 @@ class NetworkClientTest {
     }
 
     @Test
-    fun `when calling fetchWithMeta- it returns correct object`() = runTest {
+    fun `when calling fetchWithMeta - it returns correct object`() = runTest {
         val engine = jsonMockEngine(NETWORK_META_MOCK_MODEL_RESULT, path)
         val networkClient = NetworkClient(engine = engine)
         networkClient
@@ -56,7 +56,7 @@ class NetworkClientTest {
     }
 
     @Test
-    fun `when calling fetch with invalid path- it returns correct object`() = runTest {
+    fun `when calling fetch with invalid path - it returns correct object`() = runTest {
         val engine = jsonMockEngine(NETWORK_MOCK_MODEL_RESULT, "")
         val networkClient = NetworkClient(engine = engine)
         networkClient

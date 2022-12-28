@@ -37,7 +37,7 @@ class SurveyListUseCaseTest {
     }
 
     @Test
-    fun `When calling surveyList with a success response- it returns correct object`() = runTest {
+    fun `When calling surveyList with a success response - it returns correct object`() = runTest {
         mocker.every {
             surveyRepository.survey(1)
         } returns flowOf(Pair(listOf(survey), paginationMeta))
@@ -50,7 +50,7 @@ class SurveyListUseCaseTest {
     }
 
     @Test
-    fun `When calling surveyList with a failure response- it returns correct error`() = runTest {
+    fun `When calling surveyList with a failure response - it returns correct error`() = runTest {
         mocker.every {
             surveyRepository.survey(1)
         } returns flow { error("Fail") }

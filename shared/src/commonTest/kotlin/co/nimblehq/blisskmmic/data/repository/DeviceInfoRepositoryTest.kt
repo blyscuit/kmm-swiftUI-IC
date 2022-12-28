@@ -27,7 +27,7 @@ class DeviceInfoRepositoryTest {
     }
 
     @Test
-    fun `When calling profile with success response- it returns correct object`() = runTest {
+    fun `When calling profile with success response - it returns correct object`() = runTest {
         mocker.every {
             clock.now()
         } returns instant

@@ -34,7 +34,7 @@ class LogInUseCaseTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling log in with a success response- it returns correct object`() = runTest {
+    fun `When calling log in with a success response - it returns correct object`() = runTest {
         mocker.every {
             authenticationRepository.logIn(email, password)
         } returns flow { emit(token) }
@@ -46,7 +46,7 @@ class LogInUseCaseTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling log in with a failure response- it returns correct error`() = runTest {
+    fun `When calling log in with a failure response - it returns correct error`() = runTest {
         mocker.every {
             authenticationRepository.logIn(email, password)
         } returns flow { error("Fail") }

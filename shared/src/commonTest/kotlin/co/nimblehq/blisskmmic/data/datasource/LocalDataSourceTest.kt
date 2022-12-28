@@ -31,7 +31,7 @@ class LocalDataSourceTest: TestsWithMocks() {
     }
 
     @Test
-    fun `When saving token- it saves the correct key and value to dataStore`() = runTest {
+    fun `When saving token - it saves the correct key and value to dataStore`() = runTest {
         mocker.every {
             dataStore.save(
                 TokenDatabaseModel.serializer(),
@@ -53,7 +53,7 @@ class LocalDataSourceTest: TestsWithMocks() {
     }
 
     @Test
-    fun `When calling getToken- dataStore returns correct value`() = runTest {
+    fun `When calling getToken - dataStore returns correct value`() = runTest {
         mocker.every {
             dataStore.get(
                 TokenDatabaseModel.serializer(),

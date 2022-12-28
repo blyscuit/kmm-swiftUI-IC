@@ -29,7 +29,7 @@ class GetCurrentDateUseCaseTest {
     }
 
     @Test
-    fun `When calling getCurrent with a success response- it returns correct object`() = runTest {
+    fun `When calling getCurrent with a success response - it returns correct object`() = runTest {
         mocker.every {
             deviceInfoRepository.getCurrentDate()
         } returns flowOf(TIME)
@@ -42,7 +42,7 @@ class GetCurrentDateUseCaseTest {
     }
 
     @Test
-    fun `When calling getCurrent with a failure response- it returns correct error`() = runTest {
+    fun `When calling getCurrent with a failure response - it returns correct error`() = runTest {
         mocker.every {
             deviceInfoRepository.getCurrentDate()
         } returns flow { error("Fail") }
