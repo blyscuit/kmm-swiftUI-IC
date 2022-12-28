@@ -88,7 +88,7 @@ final class SurveySelectionViewDataSourceSpec: QuickSpec {
                 describe("its checkFetchMore") {
 
                     beforeEach {
-                        try? self.awaitPublisher(dataSource.$surveys.collectNext(2))
+                        _ = try? self.awaitPublisher(dataSource.$surveys.collectNext(2))
                         delayCheckFetchMore()
                     }
 

@@ -27,7 +27,7 @@ final class SurveySelectionSpec: QuickSpec {
 
                 beforeEach {
                     loginScreen.loginIfNeeded()
-                    surveyScreen.navigateToAccount()
+                    surveyScreen.waitForAppearance()
                 }
 
                 describe("its image area") {

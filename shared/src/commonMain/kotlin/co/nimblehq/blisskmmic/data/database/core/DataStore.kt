@@ -44,6 +44,6 @@ class DataStoreImpl(private val settings: Settings): DataStore {
         settings
             .keys
             .filter { it.startsWith(key) }
-            .map { settings.removeObject(it) }
+            .map { settings.remove(it) }
     }
 }

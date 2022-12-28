@@ -22,7 +22,6 @@ struct AccountView: View {
     var account: AccountUiModel? { dataSource.viewState.accountUiModel }
 
     var body: some View {
-        let account = dataSource.viewState.accountUiModel
         ZStack {
             Rectangle()
                 .foregroundColor(.black.opacity(0.9))
