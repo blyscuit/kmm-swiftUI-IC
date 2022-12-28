@@ -8,7 +8,12 @@
 
 final class SurveyScreen: GenericScreen {
 
+    func waitForAppearance() {
+        tester.waitForView(withAccessibilityIdentifier: ViewId.surveySelection(.view)())
+    }
+
     func navigateToAccount() {
+        waitForAppearance()
         tester.tapView(withAccessibilityIdentifier: ViewId.surveySelection(.headerProfileImage)())
     }
 

@@ -9,7 +9,12 @@
 final class LoginScreen: GenericScreen {
 
     func loginIfNeeded() {
-        tester.waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.splash(.view)())
+        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.surveySelection(.view)()) {
+            return
+        }
+        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.splash(.view)()) {
+            tester.waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.splash(.view)())
+        }
         if tester.tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
             tester.waitForTappableView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
             tester.tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())

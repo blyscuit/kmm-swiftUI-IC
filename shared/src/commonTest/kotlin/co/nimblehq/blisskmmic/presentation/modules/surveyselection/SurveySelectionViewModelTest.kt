@@ -1,3 +1,4 @@
+@file:Suppress("MagicNumber")
 package co.nimblehq.blisskmmic.presentation.modules.surveyselection
 
 import app.cash.turbine.test
@@ -210,7 +211,7 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
     fun `When calling checkFetchMore fetch correct index - it changes viewState with correct item`() = runTest {
         mocker.every {
             getCurrentDateUseCase()
-        } returns delayFlowOf(dateComponent)
+        } returns delayFlowOf(TIME)
         mocker.every {
             getProfileUseCase()
         } returns flowOf(user)
@@ -240,7 +241,7 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
     fun `When calling checkFetchMore fetch incompleted index - it does not fetch more`() = runTest {
         mocker.every {
             getCurrentDateUseCase()
-        } returns delayFlowOf(dateComponent)
+        } returns delayFlowOf(TIME)
         mocker.every {
             getProfileUseCase()
         } returns flowOf(user)
