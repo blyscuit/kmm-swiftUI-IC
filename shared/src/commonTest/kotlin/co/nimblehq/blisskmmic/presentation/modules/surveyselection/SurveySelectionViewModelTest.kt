@@ -67,7 +67,7 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling fetch with success date and success user- it changes viewState with correct item`() = runTest {
+    fun `When calling fetch with success date and success user - it changes viewState with correct item`() = runTest {
         mocker.every {
             getCurrentDateUseCase()
         } returns delayFlowOf(TIME)
@@ -91,7 +91,7 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling fetch with fail date and success user- it changes viewState with correct item`() = runTest {
+    fun `When calling fetch with fail date and success user - it changes viewState with correct item`() = runTest {
         mocker.every {
             getCurrentDateUseCase()
         } returns delayFlowOf("")
@@ -115,7 +115,7 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling fetch with success date and fail user- it changes viewState with correct item`() = runTest {
+    fun `When calling fetch with success date and fail user - it changes viewState with correct item`() = runTest {
         mocker.every {
             getCurrentDateUseCase()
 
@@ -140,7 +140,7 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling fetch with fail date and fail user- it changes viewState to success with correct item`() = runTest {
+    fun `When calling fetch with fail date and fail user - it changes viewState to success with correct item`() = runTest {
         mocker.every {
             getCurrentDateUseCase()
         } returns flow { error("") }
