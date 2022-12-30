@@ -23,4 +23,5 @@ object Version {
     const val MOKO_RESOURCES = "0.20.1"
     const val TURBINE = "0.12.1"
     const val NAPIER = "2.6.1"
+    const val DATE_TIME = "0.4.0"
 }

@@ -45,7 +45,7 @@ class ResetPasswordViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling reset with success response, it changes viewState to success with correct item`() = runTest {
+    fun `When calling reset with success response - it changes viewState to success with correct item`() = runTest {
         mocker.every {
             resetPasswordUseCase(email)
         } returns flow { emit(resultMessage) }
@@ -61,7 +61,7 @@ class ResetPasswordViewModelTest : TestsWithMocks() {
     }
 
     @Test
-    fun `When calling reset with faliure response, it changes viewState to error`() = runTest {
+    fun `When calling reset with faliure response - it changes viewState to error`() = runTest {
         val errorMessage = "Test Error"
         mocker.every {
             resetPasswordUseCase(email)
