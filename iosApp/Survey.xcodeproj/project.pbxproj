@@ -1785,7 +1785,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -2045,7 +2045,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -2071,7 +2071,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -2122,7 +2122,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
