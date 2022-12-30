@@ -15,7 +15,7 @@ import SwiftUI
 protocol SplashCoordinator {
 
     func showLogin()
-    func showHomeLoading()
+    func showHome()
 }
 
 extension SplashView {
@@ -58,7 +58,7 @@ extension SplashView {
             guard !viewState.isLoading else { return }
             withAnimation(.linear(duration: .fast)) {
                 if viewState.isLogin {
-                    coordinator.showHomeLoading()
+                    coordinator.showHome()
                 } else {
                     coordinator.showLogin()
                 }
