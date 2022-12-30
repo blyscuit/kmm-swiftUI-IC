@@ -22,8 +22,8 @@ final class LoginSpec: QuickSpec {
 
                 beforeEach {
                     app = ArgumentedXCUIApplication()
-                    loginScreen = LoginScreen(in: app)
                     app.launch()
+                    loginScreen = LoginScreen(in: app)
                 }
 
                 afterEach {
@@ -31,6 +31,8 @@ final class LoginSpec: QuickSpec {
                 }
 
                 it("it shows its ui components") {
+                    loginScreen.waitForExistence()
+
                     let emailField = loginScreen.find(\.textFields, with: .emailField)
                     expect(emailField.exists) == true
 
@@ -40,6 +42,7 @@ final class LoginSpec: QuickSpec {
                     let loginButton = loginScreen.find(\.buttons, with: .loginButton)
                     expect(loginButton.exists) == true
 
+                    loginScreen.showResetPasswordButton()
                     let forgotButton = loginScreen.find(\.buttons, with: .forgotButton)
                     expect(forgotButton.exists) == true
                 }
@@ -47,28 +50,28 @@ final class LoginSpec: QuickSpec {
                 context("when fill in valid credentials") {
 
                     beforeEach {
-                        loginScreen.fillInField(.emailField, with: "dev@nimblehq.co")
-                        loginScreen.fillInSecuredField(.passwordField, with: "123456")
-                        loginScreen.tapButton(.loginButton)
+                        let loginFlow = LoginFlow(in: app)
+                        loginFlow.execute()
                     }
 
                     it("shows home screen") {
-                        // TODO: - Implement later
-                        expect(true) == true
+                        let surveySelectionScreen = SurveySelectionScreen(in: app)
+                        surveySelectionScreen.waitForExistence(timeout: .default, with: .view)
                     }
                 }
 
                 context("when fill in invalid credentials") {
 
                     beforeEach {
-                        loginScreen.fillInField(.emailField, with: "test@nimblehq.co")
-                        loginScreen.fillInSecuredField(.passwordField, with: "123456")
+                        loginScreen.waitForExistence()
+                        loginScreen.replaceInInField(.emailField, with: "test@nimblehq.co")
+                        loginScreen.replaceInSecuredField(.passwordField, with: "123456")
                         loginScreen.tapButton(.loginButton)
                     }
 
                     it("shows an alert after the request fails") {
-                        // TODO: - Implement later
-                        expect(true) == true
+                        expect(loginScreen.wrongCredentialAlert().exists)
+                            .toEventually(beTrue(), timeout: .default)
                     }
                 }
             }

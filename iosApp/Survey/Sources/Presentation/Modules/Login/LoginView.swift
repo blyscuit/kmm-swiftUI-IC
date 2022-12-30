@@ -8,21 +8,13 @@
 
 import SwiftUI
 
-protocol LoginCoordinator {
-
-    func showResetPassword()
-    func showHomeLoading()
-}
-
 struct LoginView: View {
 
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @StateObject private var dataSource: DataSource
+
     @State private var animating = false
 
-    private let animationDuration: Double = .appearing
-
-    let coordinator: LoginCoordinator
+    private let animationDuration: Double = 0.7
 
     var body: some View {
         ZStack {
@@ -70,49 +62,61 @@ struct LoginView: View {
         .accessibilityElement(children: .contain)
         .hideBackButtonTitle()
         .onAppear {
-            DispatchQueue.main.async {
-                withAnimation(.easeIn(duration: animationDuration)) {
-                    animating = true
-                }
+            withAnimation(.easeIn(duration: animationDuration)) {
+                animating = true
             }
         }
+        .alert(isPresented: $dataSource.showingErrorAlert) {
+            Alert(title: Text(dataSource.viewState.error.string))
+        }
+        .loadingDialog(loading: $dataSource.showingLoading)
     }
 
     var loginField: some View {
-        TextField(String.localizeId.login_fields_email(), text: $email)
-            .keyboardType(.emailAddress)
-            .primaryTextField()
-            .accessibility(.login(.emailField))
+        TextField(
+            String.localizeId.login_fields_email(),
+            text: $dataSource.email
+        )
+        .autocapitalization(.none)
+        .disableAutocorrection(true)
+        .keyboardType(.emailAddress)
+        .primaryTextField(error: $dataSource.showingEmailError)
+        .accessibility(.login(.emailField))
     }
 
     var passwordField: some View {
         HStack {
-            SecureField(String.localizeId.login_fields_password(), text: $password)
-                .accessibility(.login(.passwordField))
-            if password.isEmpty {
+            SecureField(
+                String.localizeId.login_fields_password(),
+                text: $dataSource.password
+            )
+            .accessibility(.login(.passwordField))
+            if dataSource.password.isEmpty {
                 Button(String.localizeId.login_button_forgot()) {
-                    coordinator.showResetPassword()
+                    dataSource.showResetPassword()
                 }
                 .overlayButton()
                 .accessibility(.login(.forgotButton))
             }
         }
-        .primaryTextField()
+        .primaryTextField(error: $dataSource.showingPasswordError)
         .frame(maxHeight: 56.0)
     }
 
     var loginButton: some View {
         Button {
-            // TODO: Add action when press `login`
-            withAnimation {
-                coordinator.showHomeLoading()
-            }
+            dataSource.login()
         } label: {
             Text(String.localizeId.login_button_login())
                 .frame(maxWidth: .infinity)
                 .primaryButton()
                 .accessibility(.login(.loginButton))
         }
+        .disabled(dataSource.showingLoading)
+    }
+
+    init(coordinator: LoginCoordinator) {
+        _dataSource = StateObject(wrappedValue: DataSource(coordinator: coordinator))
     }
 
     func createPasswordField() -> AnyView {
@@ -120,7 +124,7 @@ struct LoginView: View {
             return AnyView(
                 passwordField
                     .onSubmit {
-                        // TODO: Add action when press `return`
+                        dataSource.login()
                     }
             )
         } else {

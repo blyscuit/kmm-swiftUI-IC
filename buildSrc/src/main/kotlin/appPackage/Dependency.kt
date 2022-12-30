@@ -24,6 +24,7 @@ object Dependency {
     const val KTOR_ANDROID = "io.ktor:ktor-client-android:${Version.KTOR}"
     const val KTOR_IOS = "io.ktor:ktor-client-ios:${Version.KTOR}"
     const val KTOR_MOCK = "io.ktor:ktor-client-mock:${Version.KTOR}"
+    const val KTOR_AUTH = "io.ktor:ktor-client-auth:${Version.KTOR}"
 
     // BuildKonfig
     const val BUILD_KONFIG = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin:${Version.BUILD_KONFIG}"
@@ -50,4 +51,13 @@ object Dependency {
     // Resources
     const val MOKO_RESOURCES_GENERATOR = "dev.icerock.moko:resources-generator:${Version.MOKO_RESOURCES}"
     const val MOKO_RESOURCES = "dev.icerock.moko:resources:${Version.MOKO_RESOURCES}"
+
+    // Turbine
+    const val TURBINE = "app.cash.turbine:turbine:${Version.TURBINE}"
+
+    // Napier
+    const val NAPIER = "io.github.aakira:napier:${Version.NAPIER}"
+
+    // Date-Time
+    const val DATE_TIME = "org.jetbrains.kotlinx:kotlinx-datetime:${Version.DATE_TIME}"
 }

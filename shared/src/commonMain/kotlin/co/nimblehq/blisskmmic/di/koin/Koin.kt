@@ -7,7 +7,7 @@ import org.koin.core.module.Module
 
 fun initKoin() : KoinApplication {
     val dataModules = listOf(networkModule, repositoryModule, databaseModule)
-    val domainModules = listOf(useCaseModule)
+    val domainModules = listOf(useCaseModule, domainHelperModule)
     val viewModelModules = listOf(viewModelModule)
     return startKoin {
         modules(

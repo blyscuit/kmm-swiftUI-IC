@@ -19,13 +19,24 @@ final class ResetPasswordSpec: QuickSpec {
 
         describe("a Reset Password screen") {
 
+            var permissionInterruptor: NSObjectProtocol!
+
+            beforeEach {
+                permissionInterruptor = self.addPermissionInterruptionMonitor()
+            }
+
+            afterEach {
+                self.removeUIInterruptionMonitor(permissionInterruptor)
+            }
+
             describe("its open") {
 
                 beforeEach {
                     app = ArgumentedXCUIApplication()
-                    loginScreen = LoginScreen(in: app)
                     app.launch()
-                    loginScreen.waitForExistence(timeout: .default, \.images, with: .view)
+                    loginScreen = LoginScreen(in: app)
+                    loginScreen.waitForExistence()
+                    loginScreen.showResetPasswordButton()
                     loginScreen.tapButton(.forgotButton)
                     resetPasswordScreen = ResetPasswordScreen(in: app)
                     resetPasswordScreen.waitForExistence(timeout: .default, \.images, with: .view)

@@ -22,6 +22,7 @@ extension ScreenProtocol {
         KeyboardScreen(in: application)
     }
 
+    var deleteString: String { XCUIKeyboardKey.delete.rawValue }
     var loadingSpinner: XCUIElement {
         application.activityIndicators[ViewId.general(.loadingSpinner)()]
             .firstMatch
@@ -88,9 +89,30 @@ extension ScreenProtocol {
         field.typeText(value)
     }
 
+    func replaceInInField(_ viewId: Identifier, with value: String) {
+        let field = application.textFields[viewId.rawValue]
+        clearAndReplace(field, with: value)
+    }
+
+    func replaceInSecuredField(_ viewId: Identifier, with value: String) {
+        let field = application.secureTextFields[viewId.rawValue]
+        clearAndReplace(field, with: value)
+    }
+
     func tapButton(_ viewId: Identifier) {
         let button = application.buttons[viewId.rawValue]
         button.tap()
+    }
+
+    private func clearAndReplace(_ field: XCUIElement, with value: String) {
+        guard let existingText = field.value as? String, existingText != value else {
+            return
+        }
+        let rightCorner = field.coordinate(withNormalizedOffset: CGVector(dx: 0.9, dy: 0.5))
+        rightCorner.tap()
+        let delete = String(repeating: deleteString, count: existingText.count)
+        field.typeText(delete)
+        field.typeText(value)
     }
 }
 

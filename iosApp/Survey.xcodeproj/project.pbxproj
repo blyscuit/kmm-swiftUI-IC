@@ -21,6 +21,7 @@
 		09495F82290109760036BDFB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F81290109730036BDFB /* NotificationManager.swift */; };
 		09495F84290110640036BDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F83290110630036BDFB /* AppDelegate.swift */; };
 		09495F88290114230036BDFB /* NotificationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F86290113DC0036BDFB /* NotificationManagerSpec.swift */; };
+		09495FBF290B9D5C0036BDFB /* LoginViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FBD290B9CDA0036BDFB /* LoginViewDataSourceSpec.swift */; };
 		09495FC9291106A00036BDFB /* Constants+SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FC8291106A00036BDFB /* Constants+SystemImage.swift */; };
 		09495FCB291107760036BDFB /* Image+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCA291107760036BDFB /* Image+Constants.swift */; };
 		09495FCD291109450036BDFB /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495FCC291109450036BDFB /* CGFloat+Extensions.swift */; };
@@ -49,6 +50,9 @@
 		0964B1CA294051CE00946FA1 /* ArgumentedXCUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1C8294051C300946FA1 /* ArgumentedXCUIApplication.swift */; };
 		0964B1CC2940530200946FA1 /* UITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1CB2940530200946FA1 /* UITestHelper.swift */; };
 		0964B1CE294054B300946FA1 /* Double+AnimationDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1CD294054B300946FA1 /* Double+AnimationDuration.swift */; };
+		0964B1D02942F3A300946FA1 /* LoginView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1CF2942F3A200946FA1 /* LoginView+DataSource.swift */; };
+		0964B1D92946FA8100946FA1 /* SplashView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1D82946FA8100946FA1 /* SplashView+DataSource.swift */; };
+		0964B1DD2947021400946FA1 /* SplashViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1DB2947008E00946FA1 /* SplashViewDataSourceSpec.swift */; };
 		0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */; };
 		0982A7A62921DFE800FC1976 /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */; };
 		0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7DE29222EA800FC1976 /* LoginSpec.swift */; };
@@ -56,7 +60,6 @@
 		0982A7E329222EFF00FC1976 /* RouteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7E229222EFF00FC1976 /* RouteCoordinator.swift */; };
 		0982A7E429222F2000FC1976 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6E28FFDE8C0036BDFB /* LoginView.swift */; };
 		0982A7E72922357C00FC1976 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636AF828D47A4D00A5CB97 /* Font+Extensions.swift */; };
-		0982A7EB29223C3A00FC1976 /* SurveyLoadingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EA29223C3A00FC1976 /* SurveyLoadingSpec.swift */; };
 		0982A7F6292371F000FC1976 /* StringResource+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7F5292371F000FC1976 /* StringResource+Localized.swift */; };
 		0982A80229278E9000FC1976 /* SurveySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */; };
 		0982A80329278E9000FC1976 /* SurveyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7FC29278E9000FC1976 /* SurveyHeaderView.swift */; };
@@ -67,6 +70,7 @@
 		0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EE29223DA600FC1976 /* LoginFlow.swift */; };
 		0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		0982A880292F847900FC1976 /* ResetPassword+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A87F292F847900FC1976 /* ResetPassword+DataSource.swift */; };
+		098CC7AD294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098CC7AC294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift */; };
 		09C2F3FD2930943700F44818 /* ResetPasswordViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F3FB2930943200F44818 /* ResetPasswordViewDataSourceSpec.swift */; };
 		09C2F4032934588B00F44818 /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
 		09C2F4062934680000F44818 /* ScreenProtocol+Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F404293467FA00F44818 /* ScreenProtocol+Permission.swift */; };
@@ -85,6 +89,9 @@
 		09CE772728E2C44D00EAA9EE /* View+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772628E2C44D00EAA9EE /* View+BackButton.swift */; };
 		09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773028E2ED2300EAA9EE /* KoinApplication.swift */; };
 		09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */; };
+		09FE26CD294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE26CC294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift */; };
+		09FE26D1294B26A0005A7F85 /* SurveySelectionViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE26CF294B264B005A7F85 /* SurveySelectionViewDataSourceSpec.swift */; };
+		09FE26D3294C1906005A7F85 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE26D2294C1905005A7F85 /* ViewDidLoadModifier.swift */; };
 		351F5715D07BB9ED3F8B15F8 /* Pods_Survey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315DBBA2E56D199C3AC672B5 /* Pods_Survey.framework */; };
 		3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE1175F99D55A95E0995E9 /* OptionalUnwrapSpec.swift */; };
 		5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88CA60577ABA5F7885E1DE7 /* AutoMockable.generated.swift */; };
@@ -163,6 +170,7 @@
 		09495F81290109730036BDFB /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		09495F83290110630036BDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09495F86290113DC0036BDFB /* NotificationManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerSpec.swift; sourceTree = "<group>"; };
+		09495FBD290B9CDA0036BDFB /* LoginViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDataSourceSpec.swift; sourceTree = "<group>"; };
 		09495FC8291106A00036BDFB /* Constants+SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+SystemImage.swift"; sourceTree = "<group>"; };
 		09495FCA291107760036BDFB /* Image+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Constants.swift"; sourceTree = "<group>"; };
 		09495FCC291109450036BDFB /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
@@ -187,11 +195,13 @@
 		0964B1C8294051C300946FA1 /* ArgumentedXCUIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentedXCUIApplication.swift; sourceTree = "<group>"; };
 		0964B1CB2940530200946FA1 /* UITestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestHelper.swift; sourceTree = "<group>"; };
 		0964B1CD294054B300946FA1 /* Double+AnimationDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+AnimationDuration.swift"; sourceTree = "<group>"; };
+		0964B1CF2942F3A200946FA1 /* LoginView+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginView+DataSource.swift"; sourceTree = "<group>"; };
+		0964B1D82946FA8100946FA1 /* SplashView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashView+DataSource.swift"; sourceTree = "<group>"; };
+		0964B1DB2947008E00946FA1 /* SplashViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewDataSourceSpec.swift; sourceTree = "<group>"; };
 		0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionSpec.swift; sourceTree = "<group>"; };
 		0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordSpec.swift; sourceTree = "<group>"; };
 		0982A7DE29222EA800FC1976 /* LoginSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSpec.swift; sourceTree = "<group>"; };
 		0982A7E229222EFF00FC1976 /* RouteCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCoordinator.swift; sourceTree = "<group>"; };
-		0982A7EA29223C3A00FC1976 /* SurveyLoadingSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyLoadingSpec.swift; sourceTree = "<group>"; };
 		0982A7EE29223DA600FC1976 /* LoginFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		0982A7F5292371F000FC1976 /* StringResource+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringResource+Localized.swift"; sourceTree = "<group>"; };
 		0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionView.swift; sourceTree = "<group>"; };
@@ -201,6 +211,7 @@
 		0982A80029278E9000FC1976 /* SurveyItemLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemLoading.swift; sourceTree = "<group>"; };
 		0982A80129278E9000FC1976 /* SurveyHeaderLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderLoading.swift; sourceTree = "<group>"; };
 		0982A87F292F847900FC1976 /* ResetPassword+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResetPassword+DataSource.swift"; sourceTree = "<group>"; };
+		098CC7AC294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+PermissionInteruption.swift"; sourceTree = "<group>"; };
 		09C2F3FB2930943200F44818 /* ResetPasswordViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewDataSourceSpec.swift; sourceTree = "<group>"; };
 		09C2F4012934588400F44818 /* TimeInterval+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Constants.swift"; sourceTree = "<group>"; };
 		09C2F404293467FA00F44818 /* ScreenProtocol+Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenProtocol+Permission.swift"; sourceTree = "<group>"; };
@@ -219,6 +230,9 @@
 		09CE772F28E2ED2300EAA9EE /* LazyKoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyKoin.swift; sourceTree = "<group>"; };
 		09CE773028E2ED2300EAA9EE /* KoinApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoinApplication.swift; sourceTree = "<group>"; };
 		09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
+		09FE26CC294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SurveySelectionView+DataSource.swift"; sourceTree = "<group>"; };
+		09FE26CF294B264B005A7F85 /* SurveySelectionViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySelectionViewDataSourceSpec.swift; sourceTree = "<group>"; };
+		09FE26D2294C1905005A7F85 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		122A6B9F6217729620D91A43 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
 		15C39F2CB60CF0314258019E /* Pods-Survey.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.debug production.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.debug production.xcconfig"; sourceTree = "<group>"; };
 		16E10E52E1F7EAF6527F4E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -312,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				09495F6528FF97070036BDFB /* SplashView.swift */,
+				0964B1D82946FA8100946FA1 /* SplashView+DataSource.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -320,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				09495F6E28FFDE8C0036BDFB /* LoginView.swift */,
+				0964B1CF2942F3A200946FA1 /* LoginView+DataSource.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -359,6 +375,8 @@
 		09495FBB290B9CB60036BDFB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0964B1DA2947007D00946FA1 /* SplashView */,
+				09FE26CE294B2639005A7F85 /* SurveySelection */,
 				09495FBC290B9CBD0036BDFB /* Login */,
 				09C2F3FA293093F600F44818 /* ResetPassword */,
 			);
@@ -368,6 +386,7 @@
 		09495FBC290B9CBD0036BDFB /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				09495FBD290B9CDA0036BDFB /* LoginViewDataSourceSpec.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -427,6 +446,7 @@
 				09636AFF28D4860F00A5CB97 /* PrimaryTextField.swift */,
 				09636B0128D4876100A5CB97 /* PrimaryButton.swift */,
 				09636B0C28D4917200A5CB97 /* OverlayButton.swift */,
+				09FE26D2294C1905005A7F85 /* ViewDidLoadModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -500,10 +520,17 @@
 			path = UITests;
 			sourceTree = "<group>";
 		};
+		0964B1DA2947007D00946FA1 /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				0964B1DB2947008E00946FA1 /* SplashViewDataSourceSpec.swift */,
+			);
+			path = SplashView;
+			sourceTree = "<group>";
+		};
 		0982A7972921DE6700FC1976 /* SurveySelection */ = {
 			isa = PBXGroup;
 			children = (
-				0982A7E929223C3A00FC1976 /* SurveyLoading */,
 				0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */,
 			);
 			path = SurveySelection;
@@ -535,14 +562,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		0982A7E929223C3A00FC1976 /* SurveyLoading */ = {
-			isa = PBXGroup;
-			children = (
-				0982A7EA29223C3A00FC1976 /* SurveyLoadingSpec.swift */,
-			);
-			path = SurveyLoading;
-			sourceTree = "<group>";
-		};
 		0982A7ED29223DA600FC1976 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +582,7 @@
 			isa = PBXGroup;
 			children = (
 				0982A7FA29278E9000FC1976 /* SurveySelectionView.swift */,
+				09FE26CC294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift */,
 				0982A7FB29278E9000FC1976 /* SurveyHeader */,
 				0982A7FD29278E9000FC1976 /* SurveyItemView.swift */,
 				0982A7FE29278E9000FC1976 /* SurveyLoading */,
@@ -625,6 +645,7 @@
 			isa = PBXGroup;
 			children = (
 				09C2F40829346A8500F44818 /* XCUIElement+Label.swift */,
+				098CC7AC294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift */,
 				0964B1C8294051C300946FA1 /* ArgumentedXCUIApplication.swift */,
 			);
 			path = XCTest;
@@ -690,6 +711,14 @@
 				09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */,
 			);
 			path = Koin;
+			sourceTree = "<group>";
+		};
+		09FE26CE294B2639005A7F85 /* SurveySelection */ = {
+			isa = PBXGroup;
+			children = (
+				09FE26CF294B264B005A7F85 /* SurveySelectionViewDataSourceSpec.swift */,
+			);
+			path = SurveySelection;
 			sourceTree = "<group>";
 		};
 		0A2BA072E9C5F7AC2C58F613 /* Views */ = {
@@ -1385,7 +1414,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -z \"$CI\" ]; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nfi";
+			shellScript = "if [ -z \"$CI\" ]; then\n    cd ..\n    iosApp/Pods/SwiftLint/swiftlint\nfi\n";
 		};
 		A3C000438E4A91EA9068C937 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1466,12 +1495,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0982A80729278E9000FC1976 /* SurveyHeaderLoading.swift in Sources */,
+				09FE26D3294C1906005A7F85 /* ViewDidLoadModifier.swift in Sources */,
 				09CE772728E2C44D00EAA9EE /* View+BackButton.swift in Sources */,
 				0982A80329278E9000FC1976 /* SurveyHeaderView.swift in Sources */,
 				09636B0D28D4917200A5CB97 /* OverlayButton.swift in Sources */,
 				09495FC9291106A00036BDFB /* Constants+SystemImage.swift in Sources */,
 				686B2C185816765B3E124776 /* IOSApp.swift in Sources */,
 				09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */,
+				09FE26CD294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift in Sources */,
 				09636B3028D8267D00A5CB97 /* ViewId+General.swift in Sources */,
 				09636B0228D4876100A5CB97 /* PrimaryButton.swift in Sources */,
 				09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */,
@@ -1497,10 +1528,12 @@
 				09495F2A28EC43760036BDFB /* ViewId+SurveyLoading.swift in Sources */,
 				09495F2828EC38AD0036BDFB /* SkeletonTextView.swift in Sources */,
 				0982A880292F847900FC1976 /* ResetPassword+DataSource.swift in Sources */,
+				0964B1D92946FA8100946FA1 /* SplashView+DataSource.swift in Sources */,
 				0982A80429278E9000FC1976 /* SurveyItemView.swift in Sources */,
 				09636B1528D8148C00A5CB97 /* ViewId.swift in Sources */,
 				0982A80529278E9000FC1976 /* SurveyLoading.swift in Sources */,
 				0982A7E029222EB900FC1976 /* ViewId+Splash.swift in Sources */,
+				0964B1D02942F3A300946FA1 /* LoginView+DataSource.swift in Sources */,
 				09CE770F28E1922000EAA9EE /* Screen.swift in Sources */,
 				09CE772528E2C1C600EAA9EE /* View+HideBackButtonTitle.swift in Sources */,
 				09CE771528E1AB0B00EAA9EE /* ViewId+ResetPassword.swift in Sources */,
@@ -1527,10 +1560,10 @@
 				09CE772028E1BBC400EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09495F3328EC44330036BDFB /* SurveyLoadingScreen.swift in Sources */,
 				0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */,
+				098CC7AD294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift in Sources */,
 				09495F1828E4461C0036BDFB /* SurveySelectionScreen.swift in Sources */,
 				09636B3228D8272200A5CB97 /* ScreenProtocol.swift in Sources */,
 				0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */,
-				0982A7EB29223C3A00FC1976 /* SurveyLoadingSpec.swift in Sources */,
 				09C2F4032934588B00F44818 /* TimeInterval+Constants.swift in Sources */,
 				0964B1CA294051CE00946FA1 /* ArgumentedXCUIApplication.swift in Sources */,
 				09C2F40A29346A8800F44818 /* XCUIElement+Label.swift in Sources */,
@@ -1553,10 +1586,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				09C2F413293777ED00F44818 /* Combine+Collect.swift in Sources */,
+				0964B1DD2947021400946FA1 /* SplashViewDataSourceSpec.swift in Sources */,
 				5BBBFAF49689F25A8C1D57AB /* AutoMockable.generated.swift in Sources */,
 				09495F88290114230036BDFB /* NotificationManagerSpec.swift in Sources */,
 				0964B18D293F28DC00946FA1 /* TimeInterval+Constants.swift in Sources */,
 				09C2F3FD2930943700F44818 /* ResetPasswordViewDataSourceSpec.swift in Sources */,
+				09495FBF290B9D5C0036BDFB /* LoginViewDataSourceSpec.swift in Sources */,
+				09FE26D1294B26A0005A7F85 /* SurveySelectionViewDataSourceSpec.swift in Sources */,
 				3D0ADA9FBBF8D55D5F00610F /* OptionalUnwrapSpec.swift in Sources */,
 				09C2F416293778BE00F44818 /* Shared+AutoMockable.swift in Sources */,
 				09C2F415293777F800F44818 /* XCTestCase+Publisher.swift in Sources */,
@@ -1749,7 +1785,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -2009,7 +2045,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -2035,7 +2071,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -2086,7 +2122,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;

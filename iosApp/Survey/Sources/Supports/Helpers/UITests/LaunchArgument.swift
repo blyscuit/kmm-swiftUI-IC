@@ -11,6 +11,7 @@ import Foundation
 enum LaunchArgumentKey: String {
 
     case fastAnimation
+    case clearKeychain
 }
 
 enum LaunchEnvironment {
