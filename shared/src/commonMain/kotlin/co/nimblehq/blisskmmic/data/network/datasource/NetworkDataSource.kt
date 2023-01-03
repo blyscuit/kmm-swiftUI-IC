@@ -16,6 +16,7 @@ interface NetworkDataSource {
     fun resetPassword(target: ResetPasswordTargetType): Flow<ResetPasswordMeta>
     fun survey(target: SurveySelectionTargetType): Flow<Pair<List<SurveyApiModel>, PaginationMetaApiModel>>
     fun profile(target: UserProfileTargetType): Flow<UserApiModel>
+    fun refreshToken(target: RefreshTokenType): Flow<TokenApiModel>
 }
 
 class NetworkDataSourceImpl(private val networkClient: NetworkClient): NetworkDataSource {
@@ -34,6 +35,10 @@ class NetworkDataSourceImpl(private val networkClient: NetworkClient): NetworkDa
     }
 
     override fun profile(target: UserProfileTargetType): Flow<UserApiModel> {
+        return networkClient.fetch(target.requestBuilder())
+    }
+
+    override fun refreshToken(target: RefreshTokenType): Flow<TokenApiModel> {
         return networkClient.fetch(target.requestBuilder())
     }
 }
