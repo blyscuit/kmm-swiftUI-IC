@@ -10,16 +10,16 @@ import SwiftUI
 
 struct SurveySelectionContainerView: View {
 
-    @State var showingAccountView = false
+    @State var isShowingAccountView = false
 
     var body: some View {
         ZStack {
-            SurveySelectionView($showingAccountView)
+            SurveySelectionView($isShowingAccountView)
 
-            if showingAccountView {
+            if isShowingAccountView {
                 Button {
                     withAnimation {
-                        showingAccountView = false
+                        isShowingAccountView = false
                     }
                 } label: {
                     ZStack {}
@@ -29,14 +29,14 @@ struct SurveySelectionContainerView: View {
 
             HStack {
                 Spacer()
-                if showingAccountView {
+                if isShowingAccountView {
                     AccountView()
                         .gesture(
                             DragGesture(minimumDistance: 50)
                                 .onEnded { gesture in
                                     if gesture.predictedEndTranslation.width > 0 {
                                         withAnimation {
-                                            showingAccountView = false
+                                            isShowingAccountView = false
                                         }
                                     }
                                 }

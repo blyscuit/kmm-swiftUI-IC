@@ -6,7 +6,6 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
-import Kingfisher
 import Shared
 import SwiftUI
 
@@ -29,7 +28,7 @@ struct SurveyHeaderView: View {
                 Button {
                     imageAction?()
                 } label: {
-                    KFImage(surveyHeader.imageUrl.string.asURL)
+                    Image.url(surveyHeader.imageUrl.string)
                         .resizable()
                         .frame(width: 36.0, height: 36.0)
                         .cornerRadius(18.0)

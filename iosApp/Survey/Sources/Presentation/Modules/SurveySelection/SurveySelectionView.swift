@@ -13,7 +13,7 @@ struct SurveySelectionView: View {
 
     @StateObject private var dataSource = DataSource()
 
-    @Binding var showingAccountView: Bool
+    @Binding var isShowingAccountView: Bool
 
     @State private var currentPage = 0
     // TODO: Replace Example data
@@ -85,7 +85,7 @@ struct SurveySelectionView: View {
                 if let surveyHeader = dataSource.viewState.surveyHeaderUiModel {
                     SurveyHeaderView(surveyHeader: surveyHeader) {
                         withAnimation {
-                            showingAccountView.toggle()
+                            isShowingAccountView.toggle()
                         }
                     }
                 }
@@ -108,7 +108,7 @@ struct SurveySelectionView: View {
         }
     }
 
-    init(_ showingAccountView: Binding<Bool>) {
-        _showingAccountView = showingAccountView
+    init(_ isShowingAccountView: Binding<Bool>) {
+        _isShowingAccountView = isShowingAccountView
     }
 }
