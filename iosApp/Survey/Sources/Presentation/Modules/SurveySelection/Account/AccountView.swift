@@ -18,20 +18,7 @@ struct AccountView: View {
                 .ignoresSafeArea()
             VStack(alignment: .leading) {
                 // TODO: Use real data from ViewModel
-                HStack(alignment: .firstTextBaseline) {
-                    Text("Mai")
-                        .font(.boldLarge)
-                        .lineLimit(1)
-                        .accessibility(.account(.profileText))
-                    Spacer()
-                    Assets.background.image
-                        .resizable()
-                        .frame(width: 36.0, height: 36.0)
-                        .cornerRadius(18.0)
-                        .offset(y: 5.0)
-                        .accessibility(.account(.profileImage))
-                }
-                .padding(.top, 8.0)
+                profileSection
                 Spacer()
                     .frame(height: 26.0)
                 Rectangle()
@@ -40,28 +27,53 @@ struct AccountView: View {
                     .opacity(0.2)
                 Spacer()
                     .frame(height: 35.0)
-                Button {
-                    // TODO: Add logout action
-                } label: {
-                    // TODO: Use localize from KMM
-                    Text("Logout")
-                        .font(.regularLarge)
-                        .foregroundColor(.white)
-                        .opacity(0.5)
-                }
-                .accessibility(.account(.logoutButton))
+                logoutSection
                 Spacer()
-                // TODO: Use real data from ViewModel
-                Text("1.0.0")
-                    .font(.regularTiny)
-                    .foregroundColor(.white)
-                    .opacity(0.5)
-                    .accessibility(.account(.versionText))
+                versionSection
             }
-            .padding(20.0)
+            .padding(.smallPadding)
         }
         .frame(width: 200.0)
         .accessibilityElement(children: .contain)
         .accessibility(.account(.view))
+    }
+
+    var profileSection: some View {
+        HStack(alignment: .firstTextBaseline) {
+            Text("Mai")
+                .font(.boldLarge)
+                .lineLimit(1)
+                .accessibility(.account(.profileText))
+            Spacer()
+            Assets.background.image
+                .resizable()
+                .frame(width: 36.0, height: 36.0)
+                .cornerRadius(18.0)
+                .offset(y: 5.0)
+                .accessibility(.account(.profileImage))
+        }
+        .padding(.top, 8.0)
+    }
+
+    var logoutSection: some View {
+        Button {
+            // TODO: Add logout action
+        } label: {
+            // TODO: Use localize from KMM
+            Text("Logout")
+                .font(.regularLarge)
+                .foregroundColor(.white)
+                .opacity(0.5)
+        }
+        .accessibility(.account(.logoutButton))
+    }
+
+    var versionSection: some View {
+        // TODO: Use real data from ViewModel
+        Text("1.0.0")
+            .font(.regularTiny)
+            .foregroundColor(.white)
+            .opacity(0.5)
+            .accessibility(.account(.versionText))
     }
 }

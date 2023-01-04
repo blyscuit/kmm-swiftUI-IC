@@ -13,7 +13,7 @@ struct SurveyHeaderView: View {
 
     let surveyHeader: SurveyHeaderUiModel
 
-    var imageAction: (() -> Void)?
+    var onClickProfileImage: (() -> Void)?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4.0) {
@@ -26,7 +26,7 @@ struct SurveyHeaderView: View {
                     .accessibility(.surveySelection(.headerTitleText))
                 Spacer()
                 Button {
-                    imageAction?()
+                    onClickProfileImage?()
                 } label: {
                     Image.url(surveyHeader.imageUrl.string)
                         .resizable()
