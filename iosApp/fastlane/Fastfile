@@ -52,7 +52,12 @@ platform :ios do
   lane :build_and_test do
     test_manager.build_and_test(
       scheme: Constants.TESTS_SCHEME,
-      testplan: Constants.TEST_PLAN
+      testplan: Constants.TEST_PLAN,
+      targets: [
+        Constants.TESTS_TARGET,
+        Constants.UI_TESTS_TARGET,
+        Constants.KIF_UI_TESTS_TARGET
+      ]
     )
   end
 
@@ -60,7 +65,12 @@ platform :ios do
   lane :build_and_full_test do
     test_manager.build_and_test(
       scheme: Constants.FULL_TESTS_SCHEME,
-      targets: [Constants.TESTS_TARGET, Constants.UI_TESTS_TARGET]
+      testplan: nil,
+      targets: [
+        Constants.TESTS_TARGET,
+        Constants.UI_TESTS_TARGET,
+        Constants.KIF_UI_TESTS_TARGET
+      ]
     )
   end
 

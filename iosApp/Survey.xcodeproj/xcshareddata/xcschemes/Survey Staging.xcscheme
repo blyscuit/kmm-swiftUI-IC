@@ -75,6 +75,17 @@
                </Test>
             </SkippedTests>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "09E6ABE32951CF3E007F1EE3"
+               BuildableName = "SurveyKIFUITests.xctest"
+               BlueprintName = "SurveyKIFUITests"
+               ReferencedContainer = "container:Survey.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -6,7 +6,6 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
-import Kingfisher
 import Shared
 import SwiftUI
 
@@ -14,18 +13,27 @@ struct SurveyHeaderView: View {
 
     let surveyHeader: SurveyHeaderUiModel
 
+    var onClickProfileImage: (() -> Void)?
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4.0) {
             Text(surveyHeader.dateText)
                 .font(.boldSmall)
+                .accessibility(.surveySelection(.headerDateText))
             HStack {
                 Text(surveyHeader.todayText())
                     .font(.boldLarge)
+                    .accessibility(.surveySelection(.headerTitleText))
                 Spacer()
-                KFImage(surveyHeader.imageUrl.string.asURL)
-                    .resizable()
-                    .frame(width: 36.0, height: 36.0)
-                    .cornerRadius(18.0)
+                Button {
+                    onClickProfileImage?()
+                } label: {
+                    Image.url(surveyHeader.imageUrl.string)
+                        .resizable()
+                        .frame(width: 36.0, height: 36.0)
+                        .cornerRadius(18.0)
+                }
+                .accessibility(.surveySelection(.headerProfileImage))
             }
         }
         .padding([.top, .horizontal], 20.0)
