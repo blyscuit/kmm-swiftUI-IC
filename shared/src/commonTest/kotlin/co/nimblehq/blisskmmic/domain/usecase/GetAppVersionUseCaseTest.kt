@@ -29,7 +29,7 @@ class GetAppVersionUseCaseTest {
     }
 
     @Test
-    fun `When invoke with a success response- it returns correct object`() = runTest {
+    fun `When invoke with a success response - it returns correct object`() = runTest {
         mocker.every {
             appInfoRepository.getAppVersion()
         } returns flowOf(appVersion)
@@ -47,7 +47,7 @@ class GetAppVersionUseCaseTest {
     }
 
     @Test
-    fun `When invoke with repository getAppVersion returns with a failure response- it returns correct error`() = runTest {
+    fun `When invoke with repository getAppVersion returns with a failure response - it returns correct error`() = runTest {
         mocker.every {
             appInfoRepository.getAppVersion()
         } returns flow { error("Fail") }
@@ -62,7 +62,7 @@ class GetAppVersionUseCaseTest {
     }
 
     @Test
-    fun `When invoke with repository getAppBuildNumber returns with a failure response- it returns correct error`() = runTest {
+    fun `When invoke with repository getAppBuildNumber returns with a failure response - it returns correct error`() = runTest {
         mocker.every {
             appInfoRepository.getAppVersion()
         } returns flowOf(appVersion)

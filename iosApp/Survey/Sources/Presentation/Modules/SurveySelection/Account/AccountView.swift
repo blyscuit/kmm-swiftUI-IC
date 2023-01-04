@@ -20,7 +20,6 @@ struct AccountView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea()
             VStack(alignment: .leading) {
-                // TODO: Use real data from ViewModel
                 profileSection
                 Spacer()
                     .frame(height: 26.0)

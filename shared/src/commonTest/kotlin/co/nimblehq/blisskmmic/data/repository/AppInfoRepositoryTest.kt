@@ -27,7 +27,7 @@ class AppInfoRepositoryTest {
     }
 
     @Test
-    fun `When calling getAppVersion with success response- it returns correct object`() = runTest {
+    fun `When calling getAppVersion with success response - it returns correct object`() = runTest {
         mocker.every {
             versionCode.versionCode
         } returns appVersion
@@ -40,7 +40,7 @@ class AppInfoRepositoryTest {
     }
 
     @Test
-    fun `When calling getAppBuildNumber with success response- it returns correct object`() = runTest {
+    fun `When calling getAppBuildNumber with success response - it returns correct object`() = runTest {
         mocker.every {
             versionCode.buildNumber
         } returns buildNumber
