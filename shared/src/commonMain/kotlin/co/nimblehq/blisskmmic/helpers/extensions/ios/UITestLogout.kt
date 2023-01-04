@@ -6,8 +6,9 @@ import org.koin.core.component.inject
 
 object UITestLogout: KoinComponent {
 
+    private val localDataSource: LocalDataSource by inject()
+
     fun logOut() {
-        val localDataSource: LocalDataSource by inject()
         localDataSource.removeToken()
     }
 }

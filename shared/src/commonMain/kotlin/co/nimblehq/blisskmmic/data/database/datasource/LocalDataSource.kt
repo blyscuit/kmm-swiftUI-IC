@@ -25,6 +25,6 @@ class LocalDataSourceImpl(private val dataStore: DataStore): LocalDataSource {
     }
 
     override fun removeToken() {
-        dataStore.remove(DB_USER_SESSION_KEY)
+        dataStore.removeObject(DB_USER_SESSION_KEY)
     }
 }

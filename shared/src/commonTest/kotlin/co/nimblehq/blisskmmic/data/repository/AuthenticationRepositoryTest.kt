@@ -147,7 +147,7 @@ class AuthenticationRepositoryTest: TestsWithMocks() {
     }
 
     @Test
-    fun `When calling log out with success response- it returns correct object`() = runTest {
+    fun `When calling log out with success response - it returns correct object`() = runTest {
         mocker.every {
             localDataSource.removeToken()
         } returns Unit

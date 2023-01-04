@@ -87,7 +87,7 @@ class DataStoreTest : TestsWithMocks() {
             secondKey,
             token
         )
-        dataStore.remove(testKey)
+        dataStore.removeObject(testKey)
         settings
             .decodeValueOrNull(
                 TokenDatabaseModel.serializer(),
@@ -107,7 +107,7 @@ class DataStoreTest : TestsWithMocks() {
             testKey,
             token
         )
-        dataStore.remove(testKey)
+        dataStore.removeObject(testKey)
         dataStore.save(
             TokenDatabaseModel.serializer(),
             testKey,

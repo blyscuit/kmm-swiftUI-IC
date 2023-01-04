@@ -69,9 +69,9 @@ class LocalDataSourceTest: TestsWithMocks() {
     }
 
     @Test
-    fun `When removing token- it remove the key from the dataStore`() = runTest {
+    fun `When removing token - it remove the key from the dataStore`() = runTest {
         mocker.every {
-            dataStore.remove(LocalDataSourceImpl.DB_USER_SESSION_KEY)
+            dataStore.removeObject(LocalDataSourceImpl.DB_USER_SESSION_KEY)
         } returns Unit
 
         dataSource
@@ -79,7 +79,7 @@ class LocalDataSourceTest: TestsWithMocks() {
 
         mocker.verify {
             dataStore
-                .remove(LocalDataSourceImpl.DB_USER_SESSION_KEY)
+                .removeObject(LocalDataSourceImpl.DB_USER_SESSION_KEY)
         }
     }
 }

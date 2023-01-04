@@ -35,7 +35,7 @@ class LogOutUseCaseTest {
     }
 
     @Test
-    fun `When calling surveyList with a success response- it returns correct object`() = runTest {
+    fun `When calling surveyList with a success response - it returns correct object`() = runTest {
         mocker.every {
             authenticationRepository.logOut()
         } returns flowOf(Unit)
@@ -48,7 +48,7 @@ class LogOutUseCaseTest {
     }
 
     @Test
-    fun `When calling surveyList with a failure response- it returns correct error`() = runTest {
+    fun `When calling surveyList with a failure response - it returns correct error`() = runTest {
         mocker.every {
             authenticationRepository.logOut()
         } returns flow {
