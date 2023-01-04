@@ -12,7 +12,6 @@ import co.nimblehq.blisskmmic.helpers.flow.delayFlowOf
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.newSingleThreadContext
@@ -153,7 +152,7 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
                 result.surveyHeaderUiModel?.dateText shouldBe dateResult
                 result.surveyHeaderUiModel?.todayText shouldBe MR.strings.common_today
                 result.surveyHeaderUiModel?.imageUrl shouldBe null
-                result.accountUiModel?.imageUrl shouldBe null
+                result.accountUiModel?.avatarUrl shouldBe null
                 result.accountUiModel?.name shouldBe ""
                 cancel()
             }

@@ -47,7 +47,7 @@ struct AccountView: View {
                 .lineLimit(1)
                 .accessibility(.account(.profileText))
             Spacer()
-            Image.url(account.imageUrl.string)
+            Image.url(account.avatarUrl.string)
                 .resizable()
                 .frame(width: 36.0, height: 36.0)
                 .cornerRadius(18.0)
