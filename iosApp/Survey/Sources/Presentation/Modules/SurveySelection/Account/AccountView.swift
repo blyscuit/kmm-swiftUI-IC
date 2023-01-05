@@ -19,6 +19,8 @@ struct AccountView: View {
 
     @StateObject var dataSource: DataSource
 
+    var account: AccountUiModel? { dataSource.viewState.accountUiModel }
+
     var body: some View {
         ZStack {
             Rectangle()
@@ -44,10 +46,8 @@ struct AccountView: View {
         .frame(width: 200.0)
         .accessibilityElement(children: .contain)
         .accessibility(.account(.view))
-        .loadingDialog(loading: $dataSource.showingLoading)
+        .loadingDialog(loading: $dataSource.isShowingLoading)
     }
-
-    var account: AccountUiModel? { dataSource.viewState.accountUiModel }
 
     var profileSection: some View {
         HStack(alignment: .firstTextBaseline) {

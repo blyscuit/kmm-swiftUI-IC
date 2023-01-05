@@ -5,13 +5,12 @@ import co.nimblehq.blisskmmic.presentation.modules.resetpassword.ResetPasswordVi
 import co.nimblehq.blisskmmic.presentation.modules.splash.SplashViewModel
 import co.nimblehq.blisskmmic.presentation.modules.surveyselection.SurveySelectionViewModel
 import org.koin.core.module.dsl.factoryOf
-import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
 val viewModelModule = module {
 
     factoryOf(::LoginViewModel)
-    singleOf(::ResetPasswordViewModel)
-    singleOf(::SplashViewModel)
-    singleOf(::SurveySelectionViewModel)
+    factoryOf(::ResetPasswordViewModel)
+    factoryOf(::SplashViewModel)
+    factoryOf(::SurveySelectionViewModel)
 }

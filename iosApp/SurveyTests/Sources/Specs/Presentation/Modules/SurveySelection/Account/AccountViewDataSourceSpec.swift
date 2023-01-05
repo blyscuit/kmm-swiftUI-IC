@@ -41,7 +41,7 @@ final class AccountViewDataSourceSpec: QuickSpec {
             describe("its init") {
 
                 it("loading state is false") {
-                    let isLoading = try self.awaitPublisher(dataSource.$showingLoading.collectNext(1)).last
+                    let isLoading = try self.awaitPublisher(dataSource.$isShowingLoading.collectNext(1)).last
                     expect(isLoading) == false
                 }
 

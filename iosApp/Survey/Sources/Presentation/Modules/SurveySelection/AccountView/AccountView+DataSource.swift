@@ -18,7 +18,7 @@ extension AccountView {
         private let coordinator: AccountCoordinator
 
         @Published private(set) var viewState = AccountViewState()
-        @Published var showingLoading = false
+        @Published var isShowingLoading = false
 
         private var cancellables = Set<AnyCancellable>()
 
@@ -46,7 +46,7 @@ extension AccountView {
 
         private func updateStates(_ state: AccountViewState) {
             viewState = state
-            showingLoading = state.isLoading
+            isShowingLoading = state.isLoading
             if state.isLogout {
                 coordinator.showLogin()
             }
