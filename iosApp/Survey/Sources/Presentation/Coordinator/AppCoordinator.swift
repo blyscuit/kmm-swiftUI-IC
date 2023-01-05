@@ -11,7 +11,7 @@ import SwiftUI
 
 struct AppCoordinator: View {
 
-    @ObservedObject var coordinator = RouteCoordinator()
+    @StateObject var coordinator = RouteCoordinator()
 
     var body: some View {
         Router($coordinator.routes) { screen, _ in

@@ -22,7 +22,7 @@ final class AccountViewDataSourceSpec: QuickSpec {
         var dataSource: AccountView.DataSource!
         var accountUiModel: AccountUiModel!
 
-        describe("a Account View View Data Source") {
+        describe("a Account View Data Source") {
 
             beforeEach {
                 accountUiModel = AccountUiModel(avatarUrl: "", name: "", appVersion: "")
@@ -68,7 +68,7 @@ final class AccountViewDataSourceSpec: QuickSpec {
                     expect(viewState?.isLogout) == true
                 }
 
-                it("call coordinator to show login") {
+                it("calls coordinator to show login") {
                     _ = try self.awaitPublisher(dataSource.$viewState.collectNext(3)).last
                     expect(coordinator.showLoginCallsCount) == 1
                 }
