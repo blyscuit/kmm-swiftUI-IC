@@ -47,17 +47,9 @@ struct AccountView: View {
         .loadingDialog(loading: $dataSource.showingLoading)
     }
 
-    init(account: AccountUiModel, coordinator: AccountCoordinator) {
-        _dataSource = StateObject(
-            wrappedValue: DataSource(
-                coordinator: coordinator,
-                viewModel: AccountViewModel(accountUiModel: account)
-            )
-        )
-    }
+    var account: AccountUiModel? { dataSource.viewState.accountUiModel }
 
     var profileSection: some View {
-        let account = dataSource.viewState.accountUiModel
         HStack(alignment: .firstTextBaseline) {
             Text((account?.name).string)
                 .font(.boldLarge)
@@ -87,11 +79,19 @@ struct AccountView: View {
     }
 
     var versionSection: some View {
-        let account = dataSource.viewState.accountUiModel
         Text((account?.appVersion).string)
             .font(.regularTiny)
             .foregroundColor(.white)
             .opacity(0.5)
             .accessibility(.account(.versionText))
+    }
+
+    init(account: AccountUiModel, coordinator: AccountCoordinator) {
+        _dataSource = StateObject(
+            wrappedValue: DataSource(
+                coordinator: coordinator,
+                viewModel: AccountViewModel(accountUiModel: account)
+            )
+        )
     }
 }

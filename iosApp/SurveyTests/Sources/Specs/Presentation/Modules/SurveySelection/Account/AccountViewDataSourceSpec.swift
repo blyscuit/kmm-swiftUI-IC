@@ -25,7 +25,7 @@ final class AccountViewDataSourceSpec: QuickSpec {
         describe("a Account View View Data Source") {
 
             beforeEach {
-                accountUiModel = AccountUiModel(imageUrl: "", name: "", appVersion: "")
+                accountUiModel = AccountUiModel(avatarUrl: "", name: "", appVersion: "")
                 logOutUseCase = LogOutUseCaseKMMMock()
                 coordinator = AccountCoordinatorMock()
                 accountViewModel = AccountViewModel(
