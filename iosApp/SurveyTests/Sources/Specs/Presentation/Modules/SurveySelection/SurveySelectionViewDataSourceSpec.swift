@@ -18,6 +18,7 @@ final class SurveySelectionViewDataSourceSpec: QuickSpec {
 
         var getCurrentDateUseCase: GetCurrentDateUseCaseKMMMock!
         var getProfileUseCase: GetProfileUseCaseKMMMock!
+        var getAppVersionUseCase: GetAppVersionUseCaseKMMMock!
         var surveySelectionViewModel: SurveySelectionViewModel!
         var dataSource: SurveySelectionView.DataSource!
 
@@ -26,9 +27,11 @@ final class SurveySelectionViewDataSourceSpec: QuickSpec {
             beforeEach {
                 getCurrentDateUseCase = GetCurrentDateUseCaseKMMMock()
                 getProfileUseCase = GetProfileUseCaseKMMMock()
+                getAppVersionUseCase = GetAppVersionUseCaseKMMMock()
                 surveySelectionViewModel = SurveySelectionViewModel(
                     getCurrentDateUseCase: getCurrentDateUseCase,
                     getProfileUseCase: getProfileUseCase,
+                    getAppVersionUseCase: getAppVersionUseCase,
                     dateTimeFormatter: DateTimeFormatterImpl()
                 )
                 dataSource = .init(
@@ -52,10 +55,12 @@ final class SurveySelectionViewDataSourceSpec: QuickSpec {
             describe("its fetch") {
 
                 let user = User(name: "name", avatarUrl: "avatarUrl")
+                let appVersion = AppVersion(appVersion: "", buildNumber: "")
 
                 beforeEach {
                     getCurrentDateUseCase.invokeReturnValue = AnyFlow(result: KotlinLong(1))
                     getProfileUseCase.invokeReturnValue = AnyFlow(result: user)
+                    getAppVersionUseCase.invokeReturnValue = AnyFlow(result: appVersion)
                     delayFetch()
                 }
 

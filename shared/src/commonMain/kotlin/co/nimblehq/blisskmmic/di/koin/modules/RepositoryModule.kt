@@ -3,6 +3,8 @@ package co.nimblehq.blisskmmic.di.koin.modules
 import co.nimblehq.blisskmmic.data.repository.*
 import co.nimblehq.blisskmmic.di.koin.constants.NETWORK_CLIENT_KOIN
 import co.nimblehq.blisskmmic.di.koin.constants.TOKENIZED_NETWORK_CLIENT_KOIN
+import co.nimblehq.blisskmmic.domain.platform.VersionCode
+import co.nimblehq.blisskmmic.domain.platform.VersionCodeImpl
 import co.nimblehq.blisskmmic.domain.repository.*
 import kotlinx.datetime.Clock
 import org.koin.core.qualifier.named
@@ -14,4 +16,5 @@ val repositoryModule = module {
     single<SurveyRepository> { SurveyRepositoryImpl(get(named(TOKENIZED_NETWORK_CLIENT_KOIN))) }
     single<DeviceInfoRepository> { DeviceInfoRepositoryImpl(Clock.System) }
     single<UserRepository> { UserRepositoryImpl(get(named(TOKENIZED_NETWORK_CLIENT_KOIN))) }
+    single<AppInfoRepository> { AppInfoRepositoryImpl(get()) }
 }
