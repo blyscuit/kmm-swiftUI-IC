@@ -6,13 +6,14 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Shared
 import SwiftUI
 
 struct SurveySelectionContainerView: View {
 
-    let coordinator: AccountCoordinator
+    let coordinator: AccountCoordinator & SurveySelectionCoordinator
 
-    @StateObject private var dataSource = SurveySelectionView.DataSource()
+    @StateObject private var dataSource: SurveySelectionView.DataSource
 
     @State var isShowingAccountView = false
 
@@ -52,5 +53,12 @@ struct SurveySelectionContainerView: View {
                 }
             }
         }
+    }
+
+    init(coordinator: AccountCoordinator & SurveySelectionCoordinator) {
+        self.coordinator = coordinator
+        _dataSource = .init(
+            wrappedValue: SurveySelectionView.DataSource(coordinator: coordinator)
+        )
     }
 }

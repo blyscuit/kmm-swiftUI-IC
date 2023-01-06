@@ -10,10 +10,10 @@ import SwiftUI
 
 extension View {
 
-    func defaultBackButton(_ presentationMode: Binding<PresentationMode>) -> some View {
+    func backButton(action: @escaping () -> Void) -> some View {
         var backButton: some View {
             Button {
-                presentationMode.wrappedValue.dismiss()
+                action()
             } label: {
                 HStack(spacing: 0) {
                     Image(systemName: .backArrow)
@@ -23,9 +23,16 @@ extension View {
                         .offset(x: -8.0)
                 }
             }
+            .accessibility(ViewId.general(.backButton))
         }
 
         return navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: backButton)
+    }
+
+    func defaultBackButton(_ presentationMode: Binding<PresentationMode>) -> some View {
+        return backButton {
+            presentationMode.wrappedValue.dismiss()
+        }
     }
 }
