@@ -41,12 +41,12 @@ class SurveySelectionViewModel(
 
     private var currentPage = 1
     private var fetchingSurvey = true
-    private var selectingItem = 0
+    private var selectingIndex = 0
 
     val viewState: StateFlow<SurveySelectionViewState> = mutableViewState
 
     val currentSurvey
-        get() = viewState.value.surveys.getOrNull(selectingItem)
+        get() = viewState.value.surveys.getOrNull(selectingIndex)
 
     fun fetch() {
         setStateLoading()
@@ -67,7 +67,7 @@ class SurveySelectionViewModel(
     }
 
     fun checkFetchMore(itemIndex: Int) {
-        selectingItem = item
+        selectingIndex = itemIndex
         if(itemIndex >= viewState.value.surveys.size - FETCH_MORE_TRIGGER) {
             fetchMoreSurvey()
         }

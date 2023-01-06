@@ -9,6 +9,6 @@
 final class SurveyDetailScreen: GenericScreen {
 
     func waitForAppearance() {
-        tester.waitForView(withAccessibilityIdentifier: ViewId.surveyDetail(.view)())
+        tester().waitForView(withAccessibilityIdentifier: ViewId.surveyDetail(.view)())
     }
 }
