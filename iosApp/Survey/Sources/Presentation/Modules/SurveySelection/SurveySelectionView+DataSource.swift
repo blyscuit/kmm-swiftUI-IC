@@ -61,6 +61,11 @@ extension SurveySelectionView {
             coordinator.showSurveyDetail(.init(survey: survey))
         }
 
+        func showSurveyDetail() {
+            guard let survey = viewModel.currentSurvey else { return }
+            coordinator.showSurveyDetail(.init(survey: survey))
+        }
+
         private func updateStates(_ state: SurveySelectionViewState) {
             viewState = state
             showingLoading = state.isLoading
