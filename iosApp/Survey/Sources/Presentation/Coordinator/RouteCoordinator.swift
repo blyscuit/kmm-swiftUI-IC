@@ -49,3 +49,21 @@ extension RouteCoordinator: LoginCoordinator {
 }
 
 extension RouteCoordinator: AccountCoordinator {}
+
+extension RouteCoordinator: SurveySelectionCoordinator {
+
+    func showSurveyDetail(_ parameters: ScreenParameters.SurveyDetail) {
+        withoutAnimation {
+            self.routes.presentCover(.surveyDetail(parameters), embedInNavigationView: true)
+        }
+    }
+}
+
+extension RouteCoordinator: SurveyDetailCoordinator {
+
+    func backToHome() {
+        withoutAnimation {
+            self.routes.dismiss()
+        }
+    }
+}

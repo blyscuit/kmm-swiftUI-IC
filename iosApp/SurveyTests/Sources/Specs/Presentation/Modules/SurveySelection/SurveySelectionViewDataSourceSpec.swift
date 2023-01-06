@@ -20,6 +20,7 @@ final class SurveySelectionViewDataSourceSpec: QuickSpec {
         var getProfileUseCase: GetProfileUseCaseKMMMock!
         var getAppVersionUseCase: GetAppVersionUseCaseKMMMock!
         var surveyListUseCase: SurveyListUseCaseKMMMock!
+        var coordinator: SurveySelectionCoordinatorMock!
         var surveySelectionViewModel: SurveySelectionViewModel!
         var dataSource: SurveySelectionView.DataSource!
 
@@ -30,6 +31,7 @@ final class SurveySelectionViewDataSourceSpec: QuickSpec {
                 getProfileUseCase = GetProfileUseCaseKMMMock()
                 getAppVersionUseCase = GetAppVersionUseCaseKMMMock()
                 surveyListUseCase = SurveyListUseCaseKMMMock()
+                coordinator = SurveySelectionCoordinatorMock()
                 surveySelectionViewModel = SurveySelectionViewModel(
                     getCurrentDateUseCase: getCurrentDateUseCase,
                     getProfileUseCase: getProfileUseCase,
@@ -38,7 +40,8 @@ final class SurveySelectionViewDataSourceSpec: QuickSpec {
                     dateTimeFormatter: DateTimeFormatterImpl()
                 )
                 dataSource = .init(
-                    viewModel: surveySelectionViewModel
+                    viewModel: surveySelectionViewModel,
+                    coordinator: coordinator
                 )
             }
 
@@ -95,6 +98,18 @@ final class SurveySelectionViewDataSourceSpec: QuickSpec {
                     it("sets survey with correct item") {
                         let surveys = try self.awaitPublisher(dataSource.$surveys.collectNext(1)).last
                         expect(surveys?.count) == 6
+                    }
+                }
+
+                describe("its showSurveyDetail") {
+
+                    beforeEach {
+                        _ = try? self.awaitPublisher(dataSource.$surveys.collectNext(2)).last
+                        dataSource.showSurveyDetail()
+                    }
+
+                    it("calls coordinator to show survey detail") {
+                        expect(coordinator.showSurveyDetailCallsCount) == 1
                     }
                 }
             }

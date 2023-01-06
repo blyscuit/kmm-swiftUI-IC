@@ -6,7 +6,6 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
-import Kingfisher
 import Shared
 import SwiftUI
 
@@ -17,7 +16,7 @@ struct SurveyItemView: View {
     var body: some View {
         ZStack {
             GeometryReader { geo in
-                KFImage(survey.largeImageUrl.asURL)
+                Image.url(survey.largeImageUrl)
                     .resizable()
                     .scaledToFill()
                     .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
@@ -26,12 +25,7 @@ struct SurveyItemView: View {
             }
             .ignoresSafeArea()
 
-            Rectangle()
-                .foregroundColor(.clear)
-                .background(
-                    LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
-                )
-                .opacity(0.6)
+            SurveyItemOverlayView()
                 .ignoresSafeArea()
 
             GeometryReader { geo in
