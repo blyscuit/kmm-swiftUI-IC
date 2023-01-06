@@ -43,4 +43,8 @@ final class SurveyScreen: GenericScreen {
         }
         tester().waitForAnimationsToFinish()
     }
+
+    func tapNextButton() {
+        tester.tapView(withAccessibilityIdentifier: ViewId.surveySelection(.nextButton)())
+    }
 }

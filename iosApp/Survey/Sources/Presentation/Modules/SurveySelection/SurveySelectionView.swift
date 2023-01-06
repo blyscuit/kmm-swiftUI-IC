@@ -75,7 +75,7 @@ struct SurveySelectionView: View {
                 HStack {
                     Spacer()
                     Button {
-                        // TODO: Add action when press next
+                        dataSource.showSurveyDetail()
                     } label: {
                         Assets.nextButton
                             .image
