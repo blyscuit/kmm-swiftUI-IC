@@ -70,7 +70,7 @@ final class AccountViewDataSourceSpec: QuickSpec {
 
                 it("calls coordinator to show login") {
                     _ = try self.awaitPublisher(dataSource.$viewState.collectNext(3)).last
-                    expect(coordinator.showLoginCallsCount) == 1
+                    expect(coordinator.showLoginFromAccountCallsCount) == 1
                 }
             }
         }

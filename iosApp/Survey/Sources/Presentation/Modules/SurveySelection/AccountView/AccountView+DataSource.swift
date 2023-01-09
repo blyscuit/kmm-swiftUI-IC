@@ -48,7 +48,7 @@ extension AccountView {
             viewState = state
             isShowingLoading = state.isLoading
             if state.isLogout {
-                coordinator.showLogin()
+                coordinator.showLoginFromAccount()
             }
         }
     }

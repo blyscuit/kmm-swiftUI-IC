@@ -12,7 +12,7 @@ import SwiftUI
 // sourcery: AutoMockable
 protocol AccountCoordinator {
 
-    func showLogin()
+    func showLoginFromAccount()
 }
 
 struct AccountView: View {

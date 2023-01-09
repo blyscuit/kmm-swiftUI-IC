@@ -14,7 +14,7 @@ import SwiftUI
 // sourcery: AutoMockable
 protocol SplashCoordinator {
 
-    func showLogin()
+    func showLoginFromSplash()
     func showHome()
 }
 
@@ -60,7 +60,7 @@ extension SplashView {
                 if viewState.isLogin {
                     coordinator.showHome()
                 } else {
-                    coordinator.showLogin()
+                    coordinator.showLoginFromSplash()
                 }
             }
         }
