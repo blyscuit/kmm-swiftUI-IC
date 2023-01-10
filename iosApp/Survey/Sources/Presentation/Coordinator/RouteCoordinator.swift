@@ -17,6 +17,10 @@ protocol BaseCoordinator {
 class RouteCoordinator: ObservableObject {
 
     @Published var routes: Routes<Screen> = [.root(.splash, embedInNavigationView: true)]
+
+    func showLogin() {
+        routes = [.root(.login, embedInNavigationView: true)]
+    }
 }
 
 extension RouteCoordinator: BaseCoordinator {
@@ -32,8 +36,8 @@ extension RouteCoordinator: BaseCoordinator {
 
 extension RouteCoordinator: SplashCoordinator {
 
-    func showLogin() {
-        routes = [.root(.login, embedInNavigationView: true)]
+    func showLoginFromSplash() {
+        showLogin()
     }
 }
 
@@ -45,5 +49,12 @@ extension RouteCoordinator: LoginCoordinator {
 
     func showHome() {
         routes = [.root(.surveySelection)]
+    }
+}
+
+extension RouteCoordinator: AccountCoordinator {
+
+    func showLoginFromAccount() {
+        showLogin()
     }
 }

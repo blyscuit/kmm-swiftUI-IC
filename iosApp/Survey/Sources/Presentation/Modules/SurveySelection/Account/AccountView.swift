@@ -9,9 +9,17 @@
 import Shared
 import SwiftUI
 
+// sourcery: AutoMockable
+protocol AccountCoordinator {
+
+    func showLoginFromAccount()
+}
+
 struct AccountView: View {
 
-    let account: AccountUiModel
+    @StateObject var dataSource: DataSource
+
+    var account: AccountUiModel? { dataSource.viewState.accountUiModel }
 
     var body: some View {
         ZStack {
@@ -38,16 +46,17 @@ struct AccountView: View {
         .frame(width: 200.0)
         .accessibilityElement(children: .contain)
         .accessibility(.account(.view))
+        .loadingDialog(loading: $dataSource.isShowingLoading)
     }
 
     var profileSection: some View {
         HStack(alignment: .firstTextBaseline) {
-            Text(account.name)
+            Text((account?.name).string)
                 .font(.boldLarge)
                 .lineLimit(1)
                 .accessibility(.account(.profileText))
             Spacer()
-            Image.url(account.avatarUrl.string)
+            Image.url((account?.avatarUrl).string)
                 .resizable()
                 .frame(width: 36.0, height: 36.0)
                 .cornerRadius(18.0)
@@ -59,7 +68,7 @@ struct AccountView: View {
 
     var logoutSection: some View {
         Button {
-            // TODO: Add logout action
+            dataSource.logOut()
         } label: {
             Text(String.localizeId.account_logout_button())
                 .font(.regularLarge)
@@ -70,10 +79,19 @@ struct AccountView: View {
     }
 
     var versionSection: some View {
-        Text(account.appVersion)
+        Text((account?.appVersion).string)
             .font(.regularTiny)
             .foregroundColor(.white)
             .opacity(0.5)
             .accessibility(.account(.versionText))
+    }
+
+    init(account: AccountUiModel, coordinator: AccountCoordinator) {
+        _dataSource = StateObject(
+            wrappedValue: DataSource(
+                coordinator: coordinator,
+                viewModel: AccountViewModel(accountUiModel: account)
+            )
+        )
     }
 }

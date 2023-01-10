@@ -68,3 +68,13 @@ protocol GetAppVersionUseCaseKMM: GetAppVersionUseCase {
         @escaping (Error?, KotlinUnit) -> KotlinUnit
     ) -> () -> KotlinUnit
 }
+
+// sourcery: AutoMockable
+protocol LogOutUseCaseKMM: LogOutUseCase {
+
+    func invoke() -> Kotlinx_coroutines_coreFlow
+    func invokeNative() -> (
+        @escaping (KotlinUnit, KotlinUnit) -> KotlinUnit,
+        @escaping (Error?, KotlinUnit) -> KotlinUnit
+    ) -> () -> KotlinUnit
+}

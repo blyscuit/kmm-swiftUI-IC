@@ -40,7 +40,7 @@ extension ResetPasswordView {
                 }
                 .receive(on: DispatchQueue.main)
                 .sink { [weak self] value in
-                    guard let self = self else { return }
+                    guard let self else { return }
                     self.updateStates(value)
                     guard let notification = value.successNotification else { return }
                     self.scheduleNotification(notification)

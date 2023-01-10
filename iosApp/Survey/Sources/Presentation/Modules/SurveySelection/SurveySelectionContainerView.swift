@@ -10,6 +10,8 @@ import SwiftUI
 
 struct SurveySelectionContainerView: View {
 
+    let coordinator: AccountCoordinator
+
     @StateObject private var dataSource = SurveySelectionView.DataSource()
 
     @State var isShowingAccountView = false
@@ -35,7 +37,7 @@ struct SurveySelectionContainerView: View {
             HStack {
                 Spacer()
                 if isShowingAccountView, let account = dataSource.viewState.accountUiModel {
-                    AccountView(account: account)
+                    AccountView(account: account, coordinator: coordinator)
                         .gesture(
                             DragGesture(minimumDistance: 50)
                                 .onEnded { gesture in
