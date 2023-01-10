@@ -44,7 +44,7 @@ extension SurveySelectionView {
         }
 
         func checkFetchMore(index: Int) {
-            viewModel.checkFetchMore(item: Int32(index))
+            viewModel.checkFetchMore(itemIndex: Int32(index))
         }
 
         private func updateStates(_ state: SurveySelectionViewState) {

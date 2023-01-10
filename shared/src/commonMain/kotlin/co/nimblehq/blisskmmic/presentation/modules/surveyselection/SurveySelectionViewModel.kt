@@ -62,8 +62,8 @@ class SurveySelectionViewModel(
         }
     }
 
-    fun checkFetchMore(item: Int) {
-        if(item >= viewState.value.surveys.size - FETCH_MORE_TRIGGER) {
+    fun checkFetchMore(itemIndex: Int) {
+        if(itemIndex >= viewState.value.surveys.size - FETCH_MORE_TRIGGER) {
             fetchMoreSurvey()
         }
     }
