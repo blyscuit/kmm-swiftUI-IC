@@ -52,7 +52,7 @@ struct AccountView: View {
     var profileSection: some View {
         HStack(alignment: .firstTextBaseline) {
             Text((account?.name).string)
-                .font(.boldLarge)
+                .font(.boldLargeTitle)
                 .lineLimit(1)
                 .accessibility(.account(.profileText))
             Spacer()
