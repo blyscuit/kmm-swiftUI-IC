@@ -16,27 +16,6 @@ struct SurveySelectionView: View {
     @Binding var isShowingAccountView: Bool
 
     @State private var currentPage = 0
-    // TODO: Replace Example data
-    @State private var surveys: [SurveyUiModel] = [
-        SurveyUiModel(
-            id: "1",
-            imageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/1ea51560991bcb7d00d0_",
-            title: "Scarlett Bangkok",
-            description: "We'd love ot hear from you!"
-        ),
-        SurveyUiModel(
-            id: "2",
-            imageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/287db81c5e4242412cc0_",
-            title: "ibis Bangkok Riverside",
-            description: "We'd love ot hear from you!"
-        ),
-        SurveyUiModel(
-            id: "3",
-            imageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/1ea51560991bcb7d00d0_",
-            title: "Scarlett Bangkok",
-            description: "We'd love ot hear from you!"
-        )
-    ]
 
     var body: some View {
         ZStack {
@@ -63,17 +42,19 @@ struct SurveySelectionView: View {
                 nextView: { item in
                     AnyView(SurveyItemView(survey: item))
                 },
-                items: surveys
+                items: dataSource.surveys
             )
-            .onChange(of: currentPage) { newValue in
-                // TODO: Update viewModel to new index
-                print(newValue)
+            .onChange(of: currentPage) { index in
+                dataSource.checkFetchMore(index: index)
             }
             VStack(alignment: .leading) {
                 Spacer()
                 HStack(alignment: .bottom) {
-                    PageControlView(currentPage: $currentPage, numberOfPages: surveys.count)
-                        .frame(width: .zero, alignment: .leading)
+                    PageControlView(
+                        currentPage: $currentPage,
+                        numberOfPages: dataSource.surveys.count
+                    )
+                    .frame(width: .zero, alignment: .leading)
                     Spacer()
                 }
                 Spacer()

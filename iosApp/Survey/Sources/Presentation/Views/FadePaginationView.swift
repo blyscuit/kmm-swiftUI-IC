@@ -28,47 +28,51 @@ struct FadePaginationView<T>: View {
 
     var body: some View {
         ZStack {
-            nextView(items[nextPage])
-            currentView(items[currentPage])
-                .opacity(currentVisibility)
-                .gesture(
-                    DragGesture(minimumDistance: minimumTurnDistance, coordinateSpace: .local)
-                        .onChanged { value in
-                            switch value.translation.width {
-                            case ...0: nextPage = min(items.count - 1, currentPage + 1)
-                            case 0...: nextPage = max(0, currentPage - 1)
-                            default: return
-                            }
-                            let turningVisibilityPercentage =
-                                turningLength * turningVisibilityMultiplier / abs(value.translation.width)
-                            currentVisibility = 1.0 * max(0.0, turningVisibilityPercentage)
-                        }
-                        .onEnded { value in
-                            withAnimation(.easeInOut(duration: .default)) {
-                                let velocity = self.velocity
-                                if velocity.dx < -turningSpeed {
-                                    // Swipe back fast
-                                    previousPage()
-                                } else if velocity.dx > turningSpeed {
-                                    // Swipe forward fast
-                                    forwardPage()
-                                } else {
-                                    // Slow swipe
-                                    switch value.translation.width {
-                                    case ...(-turningLength):
-                                        // Swipe back reaching threshold
-                                        previousPage()
-                                    case turningLength...:
-                                        // Swipe forward reaching threshold
-                                        forwardPage()
-                                    default: break
-                                    }
+            if items.count > nextPage {
+                nextView(items[nextPage])
+            }
+            if items.count > currentPage {
+                currentView(items[currentPage])
+                    .opacity(currentVisibility)
+                    .gesture(
+                        DragGesture(minimumDistance: minimumTurnDistance, coordinateSpace: .local)
+                            .onChanged { value in
+                                switch value.translation.width {
+                                case ...0: nextPage = min(items.count - 1, currentPage + 1)
+                                case 0...: nextPage = max(0, currentPage - 1)
+                                default: return
                                 }
-                                currentVisibility = 1.0
+                                let turningVisibilityPercentage =
+                                    turningLength * turningVisibilityMultiplier / abs(value.translation.width)
+                                currentVisibility = 1.0 * max(0.0, turningVisibilityPercentage)
                             }
-                        }
-                        .updatingVelocity($velocity)
-                )
+                            .onEnded { value in
+                                withAnimation(.easeInOut(duration: .default)) {
+                                    let velocity = self.velocity
+                                    if velocity.dx < -turningSpeed {
+                                        // Swipe back fast
+                                        previousPage()
+                                    } else if velocity.dx > turningSpeed {
+                                        // Swipe forward fast
+                                        forwardPage()
+                                    } else {
+                                        // Slow swipe
+                                        switch value.translation.width {
+                                        case ...(-turningLength):
+                                            // Swipe back reaching threshold
+                                            previousPage()
+                                        case turningLength...:
+                                            // Swipe forward reaching threshold
+                                            forwardPage()
+                                        default: break
+                                        }
+                                    }
+                                    currentVisibility = 1.0
+                                }
+                            }
+                            .updatingVelocity($velocity)
+                    )
+            } else { VStack {} }
         }
     }
 
