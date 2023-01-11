@@ -20,10 +20,15 @@ struct SurveyQuestionView: View {
                 .padding(.top, .largePadding)
                 .accessibility(.surveyQuestion(.detailText))
             Text("Howd?")
-                .font(.boldLarge)
+                .font(.boldLargeTitle)
                 .foregroundColor(.white)
                 .padding(.top, .tinyPadding)
                 .accessibility(.surveyQuestion(.titleText))
+            Spacer()
+            QuestionPickerView(ids: [
+                "A","B","C"
+            ])
+            Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

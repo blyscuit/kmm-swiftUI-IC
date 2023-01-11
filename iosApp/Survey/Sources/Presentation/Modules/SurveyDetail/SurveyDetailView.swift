@@ -79,7 +79,7 @@ struct SurveyDetailView: View {
                 .lineLimit(3)
                 .padding(.top, .mediumPadding)
                 .foregroundColor(.white)
-                .font(.boldLarge)
+                .font(.boldLargeTitle)
                 .accessibility(.surveyDetail(.titleText))
             Text(survey.description_)
                 .lineLimit(.max)

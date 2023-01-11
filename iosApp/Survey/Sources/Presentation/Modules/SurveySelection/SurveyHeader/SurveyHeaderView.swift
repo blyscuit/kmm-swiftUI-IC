@@ -22,7 +22,7 @@ struct SurveyHeaderView: View {
                 .accessibility(.surveySelection(.headerDateText))
             HStack {
                 Text(surveyHeader.todayText())
-                    .font(.boldLarge)
+                    .font(.boldLargeTitle)
                     .accessibility(.surveySelection(.headerTitleText))
                 Spacer()
                 Button {
