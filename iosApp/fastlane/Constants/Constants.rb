@@ -45,7 +45,7 @@ class Constants
 
   # a device name
   def self.DEVICE
-    ENV.fetch('DEVICE', 'iPhone 14 Pro')
+    ENV.fetch('DEVICE', 'iPhone 12 Pro Max')
   end
 
   # a scheme name for testing

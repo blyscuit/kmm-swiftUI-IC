@@ -29,10 +29,7 @@ final class LoginScreen: GenericScreen {
     }
 
     func navigateToResetPassword() {
-        tester.clearText(
-            fromAndThenEnterText: "",
-            intoViewWithAccessibilityIdentifier: ViewId.login(.passwordField)()
-        )
+        tester.clearTextFromView(withAccessibilityIdentifier: ViewId.login(.passwordField)())
         tester.tapView(withAccessibilityIdentifier: ViewId.login(.forgotButton)())
     }
 
