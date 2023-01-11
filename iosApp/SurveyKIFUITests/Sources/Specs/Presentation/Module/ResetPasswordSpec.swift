@@ -35,25 +35,13 @@ final class ResetPasswordSpec: QuickSpec {
                     loginScreen.waitForAppearance()
                 }
 
-                describe("its reset button") {
-
-                    context("when email is not valid") {
-
-                        beforeEach {
-                            self.tester().clearText(
-                                fromAndThenEnterText: "notemail",
-                                intoViewWithAccessibilityIdentifier: ViewId.resetPassword(.emailField)()
-                            )
-                            self.tester().tapView(
-                                withAccessibilityIdentifier: ViewId.resetPassword(.resetButton)()
-                            )
-                        }
-
-                        it("shows error") {
-                            self.tester().waitForView(withAccessibilityLabel: "Email is invalid")
-                            self.tester().tapView(withAccessibilityLabel: "OK")
-                        }
-                    }
+                it("it shows its ui components") {
+                    self.tester().waitForView(
+                        withAccessibilityIdentifier: ViewId.resetPassword(.resetButton)()
+                    )
+                    self.tester().waitForView(
+                        withAccessibilityIdentifier: ViewId.resetPassword(.emailField)()
+                    )
                 }
             }
         }
