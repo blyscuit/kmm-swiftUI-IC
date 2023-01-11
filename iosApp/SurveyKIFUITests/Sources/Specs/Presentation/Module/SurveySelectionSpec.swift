@@ -16,7 +16,7 @@ final class SurveySelectionSpec: QuickSpec {
         var loginScreen: LoginScreen!
         var surveyScreen: SurveyScreen!
 
-        describe("an Account screen") {
+        describe("a Survey screen") {
 
             beforeEach {
                 loginScreen = LoginScreen(self)
