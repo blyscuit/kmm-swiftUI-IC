@@ -35,5 +35,6 @@ final class SurveyScreen: GenericScreen {
             navigateToAccount()
             tester.tapView(withAccessibilityIdentifier: ViewId.account(.logoutButton)())
         }
+        tester.waitForAnimationsToFinish()
     }
 }
