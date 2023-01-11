@@ -18,10 +18,13 @@ final class LoginScreen: GenericScreen {
             tester.waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.splash(.view)())
         }
         tester.waitForAnimationsToFinish()
-        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
+        if tester
+            .usingTimeout(.default)
+            .tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
             tester.waitForTappableView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
             fillCredentialIfNeeded()
             tester.tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
+            tester.waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.login(.view)())
         }
     }
 
