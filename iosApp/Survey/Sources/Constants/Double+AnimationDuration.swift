@@ -12,6 +12,8 @@ extension Double {
 
     /// 0.7
     static var appearing: Self { 0.7.speedModified }
+    /// 0.01
+    static var instant: Self { 0.01.speedModified }
     /// 0.2
     static var fast: Self { 0.2.speedModified }
     /// 0.3
