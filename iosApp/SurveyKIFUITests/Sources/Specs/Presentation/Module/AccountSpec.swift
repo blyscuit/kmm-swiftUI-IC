@@ -37,6 +37,8 @@ final class AccountSpec: QuickSpec {
                 afterEach {
                     accountScreen.navigateToHome()
                 }
+                
+                it("it loads") { expect(true) }
 
                 it("it shows its ui components") {
                     accountScreen.tester().waitForView(
