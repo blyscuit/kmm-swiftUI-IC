@@ -59,7 +59,6 @@ struct LoginView: View {
         .onTapGesture {
             hideKeyboard()
         }
-        .accessibilityElement(children: .contain)
         .hideBackButtonTitle()
         .onAppear {
             withAnimation(.easeIn(duration: animationDuration)) {
