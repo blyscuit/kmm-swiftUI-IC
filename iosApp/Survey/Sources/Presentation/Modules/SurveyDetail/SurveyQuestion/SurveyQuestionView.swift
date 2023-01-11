@@ -11,27 +11,20 @@ import SwiftUI
 struct SurveyQuestionView: View {
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            // TODO: Use real data
             Text("1/5")
                 .font(.boldMedium)
                 .foregroundColor(.white)
                 .opacity(0.5)
-            Text("")
+                .padding(.top, .largePadding)
+                .accessibility(.surveyQuestion(.detailText))
+            Text("Howd?")
+                .font(.boldLarge)
+                .foregroundColor(.white)
                 .padding(.top, .tinyPadding)
-            Spacer()
-            HStack {
-                Spacer()
-                Button {
-                    // TODO: Add action when press next
-                } label: {
-                    Assets.nextButton
-                        .image
-                        .resizable()
-                        .frame(width: 56.0, height: 56.0)
-                }
-                .padding(.bottom, .mediumPadding)
-                .accessibility(.surveyDetail(.startButton))
-            }
+                .accessibility(.surveyQuestion(.titleText))
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

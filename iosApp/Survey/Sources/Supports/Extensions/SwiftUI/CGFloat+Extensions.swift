@@ -21,4 +21,6 @@ extension CGFloat {
     static var defaultPadding: CGFloat = 24.0
     /// 26.0
     static var mediumPadding: CGFloat = 26.0
+    /// 32.0
+    static var largePadding: CGFloat = 32.0
 }
