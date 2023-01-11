@@ -23,4 +23,17 @@ final class SurveyScreen: GenericScreen {
             in: .left
         )
     }
+
+    func logoutIfNeeded() {
+        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
+            return
+        }
+        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.splash(.view)()) {
+            tester.waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.splash(.view)())
+        }
+        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.surveySelection(.view)()) {
+            navigateToAccount()
+            tester.tapView(withAccessibilityIdentifier: ViewId.account(.logoutButton)())
+        }
+    }
 }

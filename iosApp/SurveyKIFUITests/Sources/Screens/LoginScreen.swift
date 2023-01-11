@@ -20,4 +20,13 @@ final class LoginScreen: GenericScreen {
             tester.tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
         }
     }
+
+    func waitForAppearance() {
+        tester.waitForView(withAccessibilityIdentifier: ViewId.login(.view)())
+    }
+
+    func navigateToResetPassword() {
+        tester.clearTextFromView(withAccessibilityIdentifier: ViewId.login(.passwordField)())
+        tester.tapView(withAccessibilityIdentifier: ViewId.login(.forgotButton)())
+    }
 }

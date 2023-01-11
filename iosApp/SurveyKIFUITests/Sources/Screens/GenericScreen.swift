@@ -20,4 +20,8 @@ class GenericScreen {
     init(_ testCase: XCTestCase!) {
         self.testCase = testCase
     }
+
+    func pressBack() {
+        tester.tapView(withAccessibilityLabel: ViewId.general(.keyboard)())
+    }
 }
