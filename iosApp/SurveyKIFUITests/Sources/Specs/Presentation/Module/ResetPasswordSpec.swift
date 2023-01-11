@@ -51,6 +51,7 @@ final class ResetPasswordSpec: QuickSpec {
 
                         it("shows error") {
                             self.tester().waitForView(withAccessibilityLabel: "Email is invalid")
+                            self.tester().tapView(withAccessibilityLabel: "OK")
                         }
                     }
                 }

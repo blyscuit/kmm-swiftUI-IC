@@ -6,6 +6,8 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Shared
+
 final class LoginScreen: GenericScreen {
 
     func loginIfNeeded() {
@@ -17,6 +19,7 @@ final class LoginScreen: GenericScreen {
         }
         if tester.tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
             tester.waitForTappableView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
+            fillCredentialIfNeeded()
             tester.tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
         }
     }
@@ -28,5 +31,13 @@ final class LoginScreen: GenericScreen {
     func navigateToResetPassword() {
         tester.clearTextFromView(withAccessibilityIdentifier: ViewId.login(.passwordField)())
         tester.tapView(withAccessibilityIdentifier: ViewId.login(.forgotButton)())
+    }
+
+    private func fillCredentialIfNeeded() {
+        let uiTestConfig = SharedBuildConfig.UITestConfig()
+        tester.clearText(
+            fromAndThenEnterText: uiTestConfig.password(),
+            intoViewWithAccessibilityIdentifier: ViewId.login(.passwordField)()
+        )
     }
 }

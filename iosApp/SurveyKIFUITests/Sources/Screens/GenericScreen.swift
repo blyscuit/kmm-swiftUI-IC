@@ -22,6 +22,7 @@ class GenericScreen {
     }
 
     func pressBack() {
-        tester.tapView(withAccessibilityLabel: ViewId.general(.keyboard)())
+        tester.waitForAnimationsToFinish()
+        tester.tapView(withAccessibilityLabel: ViewId.general(.back)())
     }
 }
