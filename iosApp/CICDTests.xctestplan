@@ -9,6 +9,12 @@
     }
   ],
   "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "KIF_SCREENSHOTS",
+        "value" : "$(PROJECT_DIR)\/Failed_Screenshots"
+      }
+    ],
     "targetForVariableExpansion" : {
       "containerPath" : "container:Survey.xcodeproj",
       "identifier" : "3AC192947DB2FAD63AFCCAEB",
