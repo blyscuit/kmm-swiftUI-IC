@@ -9,32 +9,32 @@
 final class SurveyScreen: GenericScreen {
 
     func waitForAppearance() {
-        tester.usingTimeout(.long).waitForView(withAccessibilityIdentifier: ViewId.surveySelection(.mainImage)())
+        tester().usingTimeout(.long).waitForView(withAccessibilityIdentifier: ViewId.surveySelection(.mainImage)())
     }
 
     func navigateToAccount() {
         waitForAppearance()
-        tester.tapView(withAccessibilityIdentifier: ViewId.surveySelection(.headerProfileImage)())
+        tester().tapView(withAccessibilityIdentifier: ViewId.surveySelection(.headerProfileImage)())
     }
 
     func swipeRight() {
-        tester.swipeView(
+        tester().swipeView(
             withAccessibilityIdentifier: ViewId.surveySelection(.detailText)(),
             in: .left
         )
     }
 
     func logoutIfNeeded() {
-        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
+        if tester().tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
             return
         }
-        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.splash(.view)()) {
-            tester.waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.splash(.view)())
+        if tester().tryFindingView(withAccessibilityIdentifier: ViewId.splash(.view)()) {
+            tester().waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.splash(.view)())
         }
-        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.surveySelection(.view)()) {
+        if tester().tryFindingView(withAccessibilityIdentifier: ViewId.surveySelection(.view)()) {
             navigateToAccount()
-            tester.tapView(withAccessibilityIdentifier: ViewId.account(.logoutButton)())
+            tester().tapView(withAccessibilityIdentifier: ViewId.account(.logoutButton)())
         }
-        tester.waitForAnimationsToFinish()
+        tester().waitForAnimationsToFinish()
     }
 }

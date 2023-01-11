@@ -104,7 +104,6 @@
 		09D09DB92963EC39009F88AF /* Image+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DB82963EC39009F88AF /* Image+Url.swift */; };
 		09D09DFA296E4B85009F88AF /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */; };
 		09D09E0C296EBA20009F88AF /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
-		09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */; };
 		09E6ABFD2951D32F007F1EE3 /* ViewId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B1428D8148C00A5CB97 /* ViewId.swift */; };
 		09E6ABFE2951D333007F1EE3 /* ViewId+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2F28D8267D00A5CB97 /* ViewId+General.swift */; };
 		09E6ABFF2951D333007F1EE3 /* ViewId+SurveySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F7728FFF2D50036BDFB /* ViewId+SurveySelection.swift */; };
@@ -280,7 +279,6 @@
 		09D09DB82963EC39009F88AF /* Image+Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Url.swift"; sourceTree = "<group>"; };
 		09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSpec.swift; sourceTree = "<group>"; };
 		09E6ABE42951CF3E007F1EE3 /* SurveyKIFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyKIFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Swift.swift"; sourceTree = "<group>"; };
 		09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSpec.swift; sourceTree = "<group>"; };
 		09E6AC0F2951D8B5007F1EE3 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountView.swift; path = Survey/Sources/Presentation/Modules/SurveySelection/Account/AccountView.swift; sourceTree = SOURCE_ROOT; };
 		09E6AC112951D950007F1EE3 /* SurveySelectionContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionContainerView.swift; sourceTree = "<group>"; };
@@ -850,7 +848,6 @@
 		09E6ABF02951D0F0007F1EE3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1785,7 +1782,6 @@
 				09D09E0C296EBA20009F88AF /* TimeInterval+Constants.swift in Sources */,
 				09D09DB2295C56A1009F88AF /* SurveySelectionSpec.swift in Sources */,
 				09E6AC042951D333007F1EE3 /* ViewId+Splash.swift in Sources */,
-				09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */,
 				09E6ABFD2951D32F007F1EE3 /* ViewId.swift in Sources */,
 				09A9F8DC2952B574009DE583 /* SurveyScreen.swift in Sources */,
 				09E6AC002951D333007F1EE3 /* ViewId+SurveyLoading.swift in Sources */,

@@ -39,16 +39,16 @@ final class AccountSpec: QuickSpec {
                 }
 
                 it("it shows its ui components") {
-                    self.tester().waitForView(
+                    accountScreen.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.account(.profileText)()
                     )
-                    self.tester().waitForView(
+                    accountScreen.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.account(.profileImage)()
                     )
-                    self.tester().waitForView(
+                    accountScreen.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.account(.logoutButton)()
                     )
-                    self.tester().waitForView(
+                    accountScreen.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.account(.versionText)()
                     )
                 }
@@ -58,11 +58,11 @@ final class AccountSpec: QuickSpec {
                     context("when tapped") {
 
                         beforeEach {
-                            self.tester().tapScreen(at: .init(x: 10.0, y: 100.0))
+                            accountScreen.tester().tapScreen(at: .init(x: 10.0, y: 100.0))
                         }
 
                         it("dismisses account screen") {
-                            self.tester().waitForAbsenceOfView(
+                            accountScreen.tester().waitForAbsenceOfView(
                                 withAccessibilityIdentifier: ViewId.account(.profileImage)()
                             )
                         }
@@ -78,7 +78,9 @@ final class AccountSpec: QuickSpec {
                         }
 
                         it("shows login screen") {
-                            self.tester().waitForView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
+                            accountScreen.tester().waitForView(
+                                withAccessibilityIdentifier: ViewId.login(.loginButton)()
+                            )
                         }
                     }
                 }

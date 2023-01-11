@@ -36,10 +36,10 @@ final class ResetPasswordSpec: QuickSpec {
                 }
 
                 it("it shows its ui components") {
-                    self.tester().waitForView(
+                    surveyScreen.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.resetPassword(.resetButton)()
                     )
-                    self.tester().waitForView(
+                    surveyScreen.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.resetPassword(.emailField)()
                     )
                 }

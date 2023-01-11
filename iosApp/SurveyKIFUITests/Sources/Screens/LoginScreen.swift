@@ -11,35 +11,34 @@ import Shared
 final class LoginScreen: GenericScreen {
 
     func loginIfNeeded() {
-        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.surveySelection(.view)()) {
+        if tester().tryFindingView(withAccessibilityIdentifier: ViewId.surveySelection(.view)()) {
             return
         }
-        if tester.tryFindingView(withAccessibilityIdentifier: ViewId.splash(.view)()) {
-            tester.waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.splash(.view)())
+        if tester().tryFindingView(withAccessibilityIdentifier: ViewId.splash(.view)()) {
+            tester().waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.splash(.view)())
         }
-        tester.waitForAnimationsToFinish()
-        if tester
+        if tester()
             .usingTimeout(.default)
             .tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
-            tester.waitForTappableView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
+            tester().waitForTappableView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
             fillCredentialIfNeeded()
-            tester.tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
-            tester.waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.login(.view)())
+            tester().tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
+            tester().waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.login(.view)())
         }
     }
 
     func waitForAppearance() {
-        tester.waitForView(withAccessibilityIdentifier: ViewId.login(.view)())
+        tester().waitForView(withAccessibilityIdentifier: ViewId.login(.view)())
     }
 
     func navigateToResetPassword() {
-        tester.clearTextFromView(withAccessibilityIdentifier: ViewId.login(.passwordField)())
-        tester.tapView(withAccessibilityIdentifier: ViewId.login(.forgotButton)())
+        tester().clearTextFromView(withAccessibilityIdentifier: ViewId.login(.passwordField)())
+        tester().tapView(withAccessibilityIdentifier: ViewId.login(.forgotButton)())
     }
 
     private func fillCredentialIfNeeded() {
         let uiTestConfig = SharedBuildConfig.UITestConfig()
-        tester.clearText(
+        tester().clearText(
             fromAndThenEnterText: uiTestConfig.password(),
             intoViewWithAccessibilityIdentifier: ViewId.login(.passwordField)()
         )
