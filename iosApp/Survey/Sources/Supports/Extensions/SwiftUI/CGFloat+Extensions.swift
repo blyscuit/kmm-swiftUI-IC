@@ -13,6 +13,8 @@ extension CGFloat {
     static var lineSpacing: CGFloat = 16.0
     /// 20.0
     static var itemSpacing: CGFloat = 20.0
+    /// 8.0
+    static var tinyPadding: CGFloat = 8.0
     /// 20.0
     static var smallPadding: CGFloat = 20.0
     /// 24.0
