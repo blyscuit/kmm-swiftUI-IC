@@ -103,6 +103,7 @@
 		09D09DB2295C56A1009F88AF /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DB1295C56A1009F88AF /* SurveySelectionSpec.swift */; };
 		09D09DB92963EC39009F88AF /* Image+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DB82963EC39009F88AF /* Image+Url.swift */; };
 		09D09DFA296E4B85009F88AF /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */; };
+		09D09E0C296EBA20009F88AF /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
 		09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */; };
 		09E6ABFD2951D32F007F1EE3 /* ViewId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B1428D8148C00A5CB97 /* ViewId.swift */; };
 		09E6ABFE2951D333007F1EE3 /* ViewId+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2F28D8267D00A5CB97 /* ViewId+General.swift */; };
@@ -1781,6 +1782,7 @@
 				09E6ABFE2951D333007F1EE3 /* ViewId+General.swift in Sources */,
 				09E6AC012951D333007F1EE3 /* ViewId+Login.swift in Sources */,
 				09E6ABFF2951D333007F1EE3 /* ViewId+SurveySelection.swift in Sources */,
+				09D09E0C296EBA20009F88AF /* TimeInterval+Constants.swift in Sources */,
 				09D09DB2295C56A1009F88AF /* SurveySelectionSpec.swift in Sources */,
 				09E6AC042951D333007F1EE3 /* ViewId+Splash.swift in Sources */,
 				09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */,
