@@ -37,20 +37,18 @@ final class AccountSpec: QuickSpec {
                 afterEach {
                     accountScreen.navigateToHome()
                 }
-                
-                it("it loads") { expect(true) }
 
                 it("it shows its ui components") {
-                    accountScreen.tester().waitForView(
+                    self.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.account(.profileText)()
                     )
-                    accountScreen.tester().waitForView(
+                    self.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.account(.profileImage)()
                     )
-                    accountScreen.tester().waitForView(
+                    self.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.account(.logoutButton)()
                     )
-                    accountScreen.tester().waitForView(
+                    self.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.account(.versionText)()
                     )
                 }
@@ -60,11 +58,11 @@ final class AccountSpec: QuickSpec {
                     context("when tapped") {
 
                         beforeEach {
-                            accountScreen.tester().tapScreen(at: .init(x: 10.0, y: 100.0))
+                            self.tester().tapScreen(at: .init(x: 10.0, y: 100.0))
                         }
 
                         it("dismisses account screen") {
-                            accountScreen.tester().waitForAbsenceOfView(
+                            self.tester().waitForAbsenceOfView(
                                 withAccessibilityIdentifier: ViewId.account(.profileImage)()
                             )
                         }
@@ -80,9 +78,7 @@ final class AccountSpec: QuickSpec {
                         }
 
                         it("shows login screen") {
-                            accountScreen.tester().waitForView(
-                                withAccessibilityIdentifier: ViewId.login(.loginButton)()
-                            )
+                            self.tester().waitForView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
                         }
                     }
                 }

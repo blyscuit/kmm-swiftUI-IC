@@ -41,7 +41,7 @@ final class SurveySelectionSpec: QuickSpec {
                         }
 
                         it("show new surveys") {
-                            surveyScreen.tester().waitForView(
+                            self.tester().waitForView(
                                 withAccessibilityIdentifier: ViewId.surveySelection(.mainImage)()
                             )
                         }

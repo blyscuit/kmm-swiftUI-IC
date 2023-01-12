@@ -33,13 +33,14 @@ final class ResetPasswordSpec: QuickSpec {
                 afterEach {
                     loginScreen.pressBack()
                     loginScreen.waitForAppearance()
+                    loginScreen.fillCredentialIfNeeded()
                 }
 
                 it("it shows its ui components") {
-                    surveyScreen.tester().waitForView(
+                    self.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.resetPassword(.resetButton)()
                     )
-                    surveyScreen.tester().waitForView(
+                    self.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.resetPassword(.emailField)()
                     )
                 }

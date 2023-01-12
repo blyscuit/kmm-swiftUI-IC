@@ -21,7 +21,6 @@ final class LoginScreen: GenericScreen {
             .usingTimeout(.default)
             .tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
             tester().waitForTappableView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
-            fillCredentialIfNeeded()
             tester().tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
             tester().waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.login(.view)())
         }
@@ -36,7 +35,7 @@ final class LoginScreen: GenericScreen {
         tester().tapView(withAccessibilityIdentifier: ViewId.login(.forgotButton)())
     }
 
-    private func fillCredentialIfNeeded() {
+    func fillCredentialIfNeeded() {
         let uiTestConfig = SharedBuildConfig.UITestConfig()
         tester().clearText(
             fromAndThenEnterText: uiTestConfig.password(),
