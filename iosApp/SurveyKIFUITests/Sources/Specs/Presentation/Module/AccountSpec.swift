@@ -41,7 +41,7 @@ final class AccountSpec: QuickSpec {
             it("loads3") {
                 loginScreen.loginIfNeeded()
                 self.system().wait(forTimeInterval: .instant)
-                self.tester().waitForView(withAccessibilityIdentifier: ViewId.surveyLoading(.view)())
+                self.tester().waitForView(withAccessibilityIdentifier: ViewId.surveySelection(.mainImage)())
             }
 
             describe("its open") {
