@@ -78,6 +78,7 @@ final class AccountSpec: QuickSpec {
                     context("when tapped") {
 
                         beforeEach {
+                            surveyScreen.navigateToAccount()
                             accountScreen.logOut()
                         }
 

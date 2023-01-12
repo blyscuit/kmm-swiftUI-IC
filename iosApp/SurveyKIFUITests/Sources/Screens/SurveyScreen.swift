@@ -14,7 +14,11 @@ final class SurveyScreen: GenericScreen {
 
     func navigateToAccount() {
         waitForAppearance()
-        tester().tapView(withAccessibilityIdentifier: ViewId.surveySelection(.headerProfileImage)())
+        if !tester().tryFindingView(
+            withAccessibilityIdentifier: ViewId.account(.profileImage)()
+        ) {
+            tester().tapView(withAccessibilityIdentifier: ViewId.surveySelection(.headerProfileImage)())
+        }
     }
 
     func swipeRight() {
