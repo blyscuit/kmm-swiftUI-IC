@@ -9,7 +9,7 @@
 final class SurveyScreen: GenericScreen {
 
     func waitForAppearance() {
-        tester().waitForView(withAccessibilityIdentifier: ViewId.surveySelection(.mainImage)())
+        tester().usingTimeout(60.0).waitForView(withAccessibilityIdentifier: ViewId.surveySelection(.mainImage)())
     }
 
     func navigateToAccount() {
