@@ -43,6 +43,21 @@ final class AccountSpec: QuickSpec {
                     accountScreen.navigateToHome()
                 }
 
+                it("it shows its ui components") {
+                    self.tester().waitForView(
+                        withAccessibilityIdentifier: ViewId.account(.profileText)()
+                    )
+                    self.tester().waitForView(
+                        withAccessibilityIdentifier: ViewId.account(.profileImage)()
+                    )
+                    self.tester().waitForView(
+                        withAccessibilityIdentifier: ViewId.account(.logoutButton)()
+                    )
+                    self.tester().waitForView(
+                        withAccessibilityIdentifier: ViewId.account(.versionText)()
+                    )
+                }
+
                 describe("its dismiss area") {
 
                     context("when tapped") {

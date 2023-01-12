@@ -14,7 +14,7 @@ final class SurveyScreen: GenericScreen {
 
     func navigateToAccount() {
         waitForAppearance()
-        if !tester().tryFindingView(
+        if !tester().usingTimeout(120.0).tryFindingView(
             withAccessibilityIdentifier: ViewId.account(.profileImage)()
         ) {
             tester().tapView(withAccessibilityIdentifier: ViewId.surveySelection(.headerProfileImage)())
