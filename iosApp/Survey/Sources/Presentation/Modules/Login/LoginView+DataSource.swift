@@ -73,7 +73,9 @@ extension LoginView {
             showingLoading = state.isLoading
             showingErrorAlert = !state.error.string.isEmpty
             if state.isSuccess {
-                coordinator.showHome()
+                DispatchQueue.main.async {
+                    self.coordinator.showHome()
+                }
             }
         }
     }
