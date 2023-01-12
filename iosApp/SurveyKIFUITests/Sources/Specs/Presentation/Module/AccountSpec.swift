@@ -38,6 +38,12 @@ final class AccountSpec: QuickSpec {
                 self.tester().waitForView(withAccessibilityIdentifier: ViewId.surveySelection(.view)())
             }
 
+            it("loads3") {
+                loginScreen.loginIfNeeded()
+                self.system().wait(forTimeInterval: .instant)
+                self.tester().waitForView(withAccessibilityIdentifier: ViewId.surveyLoading(.view)())
+            }
+
             describe("its open") {
 
                 beforeEach {
