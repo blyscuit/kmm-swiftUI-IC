@@ -9,12 +9,12 @@
 final class SurveyScreen: GenericScreen {
 
     func waitForAppearance() {
-        tester().usingTimeout(.long).waitForView(withAccessibilityIdentifier: ViewId.surveySelection(.mainImage)())
+        tester().usingTimeout(120.0).waitForView(withAccessibilityIdentifier: ViewId.surveySelection(.mainImage)())
     }
 
     func navigateToAccount() {
         waitForAppearance()
-        if !tester().usingTimeout(120.0).tryFindingView(
+        if !tester().tryFindingView(
             withAccessibilityIdentifier: ViewId.account(.profileImage)()
         ) {
             tester().tapView(withAccessibilityIdentifier: ViewId.surveySelection(.headerProfileImage)())
