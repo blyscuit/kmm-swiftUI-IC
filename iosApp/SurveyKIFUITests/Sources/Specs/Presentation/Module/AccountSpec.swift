@@ -27,6 +27,11 @@ final class AccountSpec: QuickSpec {
                 accountScreen = AccountScreen(self)
             }
 
+            it("loads") {
+                loginScreen.loginIfNeeded()
+                self.system().wait(forTimeInterval: .instant)
+            }
+
             describe("its open") {
 
                 beforeEach {
@@ -36,10 +41,6 @@ final class AccountSpec: QuickSpec {
 
                 afterEach {
                     accountScreen.navigateToHome()
-                }
-
-                it("loads") {
-                    self.system().wait(forTimeInterval: .instant)
                 }
 
                 it("it shows its ui components") {
