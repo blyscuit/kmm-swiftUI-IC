@@ -32,6 +32,12 @@ final class AccountSpec: QuickSpec {
                 self.system().wait(forTimeInterval: .instant)
             }
 
+            it("loads2") {
+                loginScreen.loginIfNeeded()
+                self.system().wait(forTimeInterval: .instant)
+                self.tester().waitForView(withAccessibilityIdentifier: "asdfsadfsadf")
+            }
+
             describe("its open") {
 
                 beforeEach {
