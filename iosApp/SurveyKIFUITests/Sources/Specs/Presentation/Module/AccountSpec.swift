@@ -38,6 +38,10 @@ final class AccountSpec: QuickSpec {
                     accountScreen.navigateToHome()
                 }
 
+                it("loads") {
+                    self.system().wait(forTimeInterval: .instant)
+                }
+
                 it("it shows its ui components") {
                     self.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.account(.profileText)()
