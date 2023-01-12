@@ -30,14 +30,8 @@
       }
     },
     {
-      "enabled" : false,
-      "skippedTests" : [
-        "LoginSpec\/a_Login_screen__its_open__it_shows_its_ui_components()",
-        "LoginSpec\/a_Login_screen__its_open__when_fill_in_invalid_credentials__shows_an_alert_after_the_request_fails()",
-        "LoginSpec\/a_Login_screen__its_open__when_fill_in_valid_credentials__shows_home_screen()",
-        "ResetPasswordSpec\/a_Reset_Password_screen__its_open__its_reset_button__when_email_is_valid__shows_notification_and_hides_loading_indicator()",
-        "ResetPasswordSpec\/a_Reset_Password_screen__its_open__shows_its_ui_components()",
-        "SurveyLoadingSpec"
+      "selectedTests" : [
+
       ],
       "target" : {
         "containerPath" : "container:Survey.xcodeproj",

@@ -17,9 +17,7 @@ final class LoginScreen: GenericScreen {
         if tester().tryFindingView(withAccessibilityIdentifier: ViewId.splash(.view)()) {
             tester().waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.splash(.view)())
         }
-        if tester()
-            .usingTimeout(.default)
-            .tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
+        if tester().tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
             tester().waitForTappableView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
             tester().tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
             tester().waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.login(.view)())
