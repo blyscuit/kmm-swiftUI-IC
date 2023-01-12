@@ -19,11 +19,7 @@ struct SurveySelectionView: View {
 
     var body: some View {
         ZStack {
-            if dataSource.showingLoading {
-                SurveyLoading()
-            } else {
-                survey
-            }
+            survey
         }
         .accessibilityElement(children: .contain)
         .accessibility(.surveySelection(.view))
