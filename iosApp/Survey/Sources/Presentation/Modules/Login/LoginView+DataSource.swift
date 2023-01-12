@@ -51,7 +51,7 @@ extension LoginView {
                     let loginViewState = LoginViewState(error: error.localizedDescription)
                     return Just(loginViewState)
                 }
-                .receive(on: DispatchQueue.main)
+                .receive(on: RunLoop.main)
                 .sink { [weak self] value in
                     self?.updateStates(value)
                 }
