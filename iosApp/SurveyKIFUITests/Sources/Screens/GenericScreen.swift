@@ -13,11 +13,20 @@ class GenericScreen {
 
     weak var testCase: XCTestCase!
 
-    var tester: KIFUITestActor {
-        testCase.tester()
-    }
-
     init(_ testCase: XCTestCase!) {
         self.testCase = testCase
+    }
+
+    func tester(file: String = #file, _ line: Int = #line) -> KIFUITestActor {
+        return testCase.tester(file: file, line)
+    }
+
+    func system(file: String = #file, _ line: Int = #line) -> KIFSystemTestActor {
+        return testCase.system(file: file, line)
+    }
+
+    func pressBack() {
+        tester().waitForAnimationsToFinish()
+        tester().tapView(withAccessibilityLabel: ViewId.general(.back)())
     }
 }

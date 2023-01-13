@@ -100,8 +100,10 @@
 		09CE772728E2C44D00EAA9EE /* View+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE772628E2C44D00EAA9EE /* View+BackButton.swift */; };
 		09CE773328E2ED2300EAA9EE /* KoinApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773028E2ED2300EAA9EE /* KoinApplication.swift */; };
 		09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */; };
-		09D09DB92963EC39009F88AF /* Image+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DB82963EC39009F88AF /* Image+Url.swift */; };
 		09D09DB2295C56A1009F88AF /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DB1295C56A1009F88AF /* SurveySelectionSpec.swift */; };
+		09D09DB92963EC39009F88AF /* Image+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DB82963EC39009F88AF /* Image+Url.swift */; };
+		09D09DFA296E4B85009F88AF /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */; };
+		09D09E0C296EBA20009F88AF /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
 		09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */; };
 		09E6ABFD2951D32F007F1EE3 /* ViewId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B1428D8148C00A5CB97 /* ViewId.swift */; };
 		09E6ABFE2951D333007F1EE3 /* ViewId+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2F28D8267D00A5CB97 /* ViewId+General.swift */; };
@@ -111,7 +113,7 @@
 		09E6AC022951D333007F1EE3 /* ViewId+ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE771428E1AB0B00EAA9EE /* ViewId+ResetPassword.swift */; };
 		09E6AC032951D333007F1EE3 /* ViewId+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F9B290A35BA0036BDFB /* ViewId+Account.swift */; };
 		09E6AC042951D333007F1EE3 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
-		09E6AC0D2951D61E007F1EE3 /* AccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */; };
+		09E6AC0D2951D61E007F1EE3 /* ZZ_AccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6AC0B2951D5DD007F1EE3 /* ZZ_AccountSpec.swift */; };
 		09E6AC102951D8B5007F1EE3 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6AC0F2951D8B5007F1EE3 /* AccountView.swift */; };
 		09E6AC122951D950007F1EE3 /* SurveySelectionContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6AC112951D950007F1EE3 /* SurveySelectionContainerView.swift */; };
 		09FE26CD294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FE26CC294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift */; };
@@ -274,11 +276,12 @@
 		09CE772F28E2ED2300EAA9EE /* LazyKoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyKoin.swift; sourceTree = "<group>"; };
 		09CE773028E2ED2300EAA9EE /* KoinApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoinApplication.swift; sourceTree = "<group>"; };
 		09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
-		09D09DB82963EC39009F88AF /* Image+Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Url.swift"; sourceTree = "<group>"; };
 		09D09DB1295C56A1009F88AF /* SurveySelectionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySelectionSpec.swift; sourceTree = "<group>"; };
+		09D09DB82963EC39009F88AF /* Image+Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Url.swift"; sourceTree = "<group>"; };
+		09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSpec.swift; sourceTree = "<group>"; };
 		09E6ABE42951CF3E007F1EE3 /* SurveyKIFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyKIFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Swift.swift"; sourceTree = "<group>"; };
-		09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSpec.swift; sourceTree = "<group>"; };
+		09E6AC0B2951D5DD007F1EE3 /* ZZ_AccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZ_AccountSpec.swift; sourceTree = "<group>"; };
 		09E6AC0F2951D8B5007F1EE3 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountView.swift; path = Survey/Sources/Presentation/Modules/SurveySelection/Account/AccountView.swift; sourceTree = SOURCE_ROOT; };
 		09E6AC112951D950007F1EE3 /* SurveySelectionContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionContainerView.swift; sourceTree = "<group>"; };
 		09FE26CC294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SurveySelectionView+DataSource.swift"; sourceTree = "<group>"; };
@@ -889,8 +892,9 @@
 		09E6AC0A2951D5D1007F1EE3 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */,
+				09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */,
 				09D09DB1295C56A1009F88AF /* SurveySelectionSpec.swift */,
+				09E6AC0B2951D5DD007F1EE3 /* ZZ_AccountSpec.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1772,11 +1776,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				09A9F8D62952B3FC009DE583 /* LoginScreen.swift in Sources */,
-				09E6AC0D2951D61E007F1EE3 /* AccountSpec.swift in Sources */,
+				09E6AC0D2951D61E007F1EE3 /* ZZ_AccountSpec.swift in Sources */,
 				09E6AC032951D333007F1EE3 /* ViewId+Account.swift in Sources */,
+				09D09DFA296E4B85009F88AF /* ResetPasswordSpec.swift in Sources */,
 				09E6ABFE2951D333007F1EE3 /* ViewId+General.swift in Sources */,
 				09E6AC012951D333007F1EE3 /* ViewId+Login.swift in Sources */,
 				09E6ABFF2951D333007F1EE3 /* ViewId+SurveySelection.swift in Sources */,
+				09D09E0C296EBA20009F88AF /* TimeInterval+Constants.swift in Sources */,
 				09D09DB2295C56A1009F88AF /* SurveySelectionSpec.swift in Sources */,
 				09E6AC042951D333007F1EE3 /* ViewId+Splash.swift in Sources */,
 				09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */,

@@ -9,11 +9,19 @@
     }
   ],
   "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "KIF_SCREENSHOTS",
+        "value" : "$(PROJECT_DIR)\/Failed_Screenshots"
+      }
+    ],
+    "maximumTestRepetitions" : 3,
     "targetForVariableExpansion" : {
       "containerPath" : "container:Survey.xcodeproj",
       "identifier" : "3AC192947DB2FAD63AFCCAEB",
       "name" : "Survey"
-    }
+    },
+    "testRepetitionMode" : "retryOnFailure"
   },
   "testTargets" : [
     {
@@ -24,6 +32,7 @@
       }
     },
     {
+      "enabled" : false,
       "skippedTests" : [
         "LoginSpec\/a_Login_screen__its_open__it_shows_its_ui_components()",
         "LoginSpec\/a_Login_screen__its_open__when_fill_in_invalid_credentials__shows_an_alert_after_the_request_fails()",

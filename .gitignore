@@ -77,6 +77,10 @@ iosApp/fastlane/screenshots/**/*.png
 iosApp/fastlane/test_output
 iosApp/fastlane/xcov_output
 
+# Testing
+
+iosApp/Failed_Screenshots
+
 # Sourcery
 *.generated.swift
 
