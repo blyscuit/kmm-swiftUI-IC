@@ -39,10 +39,6 @@ final class AccountSpec: QuickSpec {
                 }
 
                 it("it shows its ui components") {
-
-                    let randomNumber = Int.random(in: 0 ... 5)
-                    expect(randomNumber) == 0
-
                     self.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.account(.profileText)()
                     )

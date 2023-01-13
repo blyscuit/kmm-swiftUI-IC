@@ -74,6 +74,7 @@
 		0982A80829278EC200FC1976 /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7EE29223DA600FC1976 /* LoginFlow.swift */; };
 		0982A809292B6BCA00FC1976 /* ViewId+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F6728FF97490036BDFB /* ViewId+Splash.swift */; };
 		0982A880292F847900FC1976 /* ResetPassword+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A87F292F847900FC1976 /* ResetPassword+DataSource.swift */; };
+		098832B029713BAD0015BAC2 /* AA_AppLoadSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098832AF29713BAD0015BAC2 /* AA_AppLoadSpec.swift */; };
 		098CC7AD294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098CC7AC294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift */; };
 		09A9F8D62952B3FC009DE583 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9F8D42952B3F8009DE583 /* LoginScreen.swift */; };
 		09A9F8D92952B431009DE583 /* GenericScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9F8D72952B42D009DE583 /* GenericScreen.swift */; };
@@ -102,7 +103,7 @@
 		09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */; };
 		09D09DB2295C56A1009F88AF /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DB1295C56A1009F88AF /* SurveySelectionSpec.swift */; };
 		09D09DB92963EC39009F88AF /* Image+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DB82963EC39009F88AF /* Image+Url.swift */; };
-		09D09DFA296E4B85009F88AF /* AA_ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DF9296E4B85009F88AF /* AA_ResetPasswordSpec.swift */; };
+		09D09DFA296E4B85009F88AF /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */; };
 		09D09E0C296EBA20009F88AF /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
 		09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */; };
 		09E6ABFD2951D32F007F1EE3 /* ViewId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B1428D8148C00A5CB97 /* ViewId.swift */; };
@@ -250,6 +251,7 @@
 		0982A80029278E9000FC1976 /* SurveyItemLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemLoading.swift; sourceTree = "<group>"; };
 		0982A80129278E9000FC1976 /* SurveyHeaderLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderLoading.swift; sourceTree = "<group>"; };
 		0982A87F292F847900FC1976 /* ResetPassword+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResetPassword+DataSource.swift"; sourceTree = "<group>"; };
+		098832AF29713BAD0015BAC2 /* AA_AppLoadSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AA_AppLoadSpec.swift; sourceTree = "<group>"; };
 		098CC7AC294C266000C3A6A5 /* XCTestCase+PermissionInteruption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+PermissionInteruption.swift"; sourceTree = "<group>"; };
 		09A9F8D42952B3F8009DE583 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		09A9F8D72952B42D009DE583 /* GenericScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericScreen.swift; sourceTree = "<group>"; };
@@ -278,7 +280,7 @@
 		09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
 		09D09DB1295C56A1009F88AF /* SurveySelectionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySelectionSpec.swift; sourceTree = "<group>"; };
 		09D09DB82963EC39009F88AF /* Image+Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Url.swift"; sourceTree = "<group>"; };
-		09D09DF9296E4B85009F88AF /* AA_ResetPasswordSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AA_ResetPasswordSpec.swift; sourceTree = "<group>"; };
+		09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSpec.swift; sourceTree = "<group>"; };
 		09E6ABE42951CF3E007F1EE3 /* SurveyKIFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyKIFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Swift.swift"; sourceTree = "<group>"; };
 		09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSpec.swift; sourceTree = "<group>"; };
@@ -892,8 +894,9 @@
 		09E6AC0A2951D5D1007F1EE3 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				09D09DF9296E4B85009F88AF /* AA_ResetPasswordSpec.swift */,
+				098832AF29713BAD0015BAC2 /* AA_AppLoadSpec.swift */,
 				09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */,
+				09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */,
 				09D09DB1295C56A1009F88AF /* SurveySelectionSpec.swift */,
 			);
 			path = Module;
@@ -1778,7 +1781,7 @@
 				09A9F8D62952B3FC009DE583 /* LoginScreen.swift in Sources */,
 				09E6AC0D2951D61E007F1EE3 /* AccountSpec.swift in Sources */,
 				09E6AC032951D333007F1EE3 /* ViewId+Account.swift in Sources */,
-				09D09DFA296E4B85009F88AF /* AA_ResetPasswordSpec.swift in Sources */,
+				09D09DFA296E4B85009F88AF /* ResetPasswordSpec.swift in Sources */,
 				09E6ABFE2951D333007F1EE3 /* ViewId+General.swift in Sources */,
 				09E6AC012951D333007F1EE3 /* ViewId+Login.swift in Sources */,
 				09E6ABFF2951D333007F1EE3 /* ViewId+SurveySelection.swift in Sources */,
@@ -1787,6 +1790,7 @@
 				09E6AC042951D333007F1EE3 /* ViewId+Splash.swift in Sources */,
 				09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */,
 				09E6ABFD2951D32F007F1EE3 /* ViewId.swift in Sources */,
+				098832B029713BAD0015BAC2 /* AA_AppLoadSpec.swift in Sources */,
 				09A9F8DC2952B574009DE583 /* SurveyScreen.swift in Sources */,
 				09E6AC002951D333007F1EE3 /* ViewId+SurveyLoading.swift in Sources */,
 				09A9F8DF2952B585009DE583 /* AccountScreen.swift in Sources */,
