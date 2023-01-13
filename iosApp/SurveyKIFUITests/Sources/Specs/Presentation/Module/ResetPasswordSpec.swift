@@ -9,7 +9,6 @@
 import Nimble
 import Quick
 
-// Named to be the first test
 final class ResetPasswordSpec: QuickSpec {
 
     override func spec() {

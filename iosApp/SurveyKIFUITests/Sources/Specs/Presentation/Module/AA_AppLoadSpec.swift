@@ -17,7 +17,7 @@ final class AA_AppLoadSpec: QuickSpec {
         var loginScreen: LoginScreen!
         var surveyScreen: SurveyScreen!
 
-        describe("The app") {
+        describe("the app") {
 
             beforeEach {
                 loginScreen = LoginScreen(self)

@@ -15,13 +15,11 @@
         "value" : "$(PROJECT_DIR)\/Failed_Screenshots"
       }
     ],
-    "maximumTestRepetitions" : 3,
     "targetForVariableExpansion" : {
       "containerPath" : "container:Survey.xcodeproj",
       "identifier" : "3AC192947DB2FAD63AFCCAEB",
       "name" : "Survey"
-    },
-    "testRepetitionMode" : "retryOnFailure"
+    }
   },
   "testTargets" : [
     {
