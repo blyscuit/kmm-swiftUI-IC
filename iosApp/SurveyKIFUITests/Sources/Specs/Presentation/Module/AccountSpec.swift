@@ -1,5 +1,5 @@
 //
-//  ZZ_AccountSpec.swift
+//  AccountSpec.swift
 //  Survey
 //
 //  Created by Bliss on 20/12/22.
@@ -9,8 +9,7 @@
 import Nimble
 import Quick
 
-// Named to be the last test
-final class ZZ_AccountSpec: QuickSpec {
+final class AccountSpec: QuickSpec {
 
     override func spec() {
 
