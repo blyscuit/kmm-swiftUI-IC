@@ -1,5 +1,5 @@
 //
-//  ResetPasswordSpec.swift
+//  AA_ResetPasswordSpec.swift
 //  SurveyKIFUITests
 //
 //  Created by Bliss on 11/1/23.
@@ -9,7 +9,8 @@
 import Nimble
 import Quick
 
-final class ResetPasswordSpec: QuickSpec {
+// Named to be the first test
+final class AA_ResetPasswordSpec: QuickSpec {
 
     override func spec() {
 
