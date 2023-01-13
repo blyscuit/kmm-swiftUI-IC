@@ -78,3 +78,13 @@ protocol LogOutUseCaseKMM: LogOutUseCase {
         @escaping (Error?, KotlinUnit) -> KotlinUnit
     ) -> () -> KotlinUnit
 }
+
+// sourcery: AutoMockable
+protocol SurveyListUseCaseKMM: SurveyListUseCase {
+
+    func invoke(page: Int32) -> Kotlinx_coroutines_coreFlow
+    func invokeNative(page: Int32) -> (
+        @escaping ([Survey], KotlinUnit) -> KotlinUnit,
+        @escaping (Error?, KotlinUnit) -> KotlinUnit
+    ) -> () -> KotlinUnit
+}
