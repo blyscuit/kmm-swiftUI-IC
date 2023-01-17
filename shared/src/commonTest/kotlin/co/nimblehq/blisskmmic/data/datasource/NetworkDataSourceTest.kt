@@ -114,4 +114,19 @@ class NetworkDataSourceTest {
                 awaitComplete()
             }
     }
+
+    // Refresh Token
+
+    @Test
+    fun `When calling refresh token with success response - it returns correct object`() = runTest {
+        val engine = jsonMockEngine(LOG_IN_JSON_RESULT, "oauth/token")
+        val networkClient = NetworkClient(engine = engine)
+        val dataSource = NetworkDataSourceImpl(networkClient)
+        dataSource
+            .refreshToken(RefreshTokenType(""))
+            .test {
+                awaitItem().refreshToken shouldBe "refresh_token"
+                awaitComplete()
+            }
+    }
 }
