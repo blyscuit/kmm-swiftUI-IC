@@ -8,4 +8,5 @@ interface AuthenticationRepository {
     fun logIn(email: String,  password: String): Flow<Token>
     fun getCachedToken(): Flow<Token>
     fun hasCachedToken(): Flow<Boolean>
+    fun logOut(): Flow<Unit>
 }

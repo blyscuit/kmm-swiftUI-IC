@@ -13,6 +13,6 @@ val networkModule = module {
     single { NetworkClient() }
     single<NetworkDataSource>(named(NETWORK_CLIENT_KOIN)) { NetworkDataSourceImpl(get()) }
     single<NetworkDataSource>(named(TOKENIZED_NETWORK_CLIENT_KOIN)) {
-        NetworkDataSourceImpl(TokenizedNetworkClient(null, get()))
+        NetworkDataSourceImpl(TokenizedNetworkClient(null, get(), get(named(NETWORK_CLIENT_KOIN))))
     }
 }

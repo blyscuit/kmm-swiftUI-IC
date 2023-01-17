@@ -68,6 +68,11 @@ class Constants
     'SurveyUITests'
   end
 
+  # a target name for KIF UI tests
+  def self.KIF_UI_TESTS_TARGET
+    'SurveyKIFUITests'
+  end
+
   # a target name for Test Plan
   def self.TEST_PLAN
     'CICDTests'

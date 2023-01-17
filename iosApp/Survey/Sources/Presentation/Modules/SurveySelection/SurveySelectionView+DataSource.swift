@@ -18,6 +18,7 @@ extension SurveySelectionView {
 
         @Published private(set) var viewState = SurveySelectionViewState()
         @Published var showingLoading = false
+        @Published private(set) var surveys = [SurveyUiModel]()
 
         private var cancellables = Set<AnyCancellable>()
 
@@ -32,7 +33,7 @@ extension SurveySelectionView {
                 }
                 .receive(on: DispatchQueue.main)
                 .sink { [weak self] value in
-                    guard let self = self else { return }
+                    guard let self else { return }
                     self.updateStates(value)
                 }
                 .store(in: &cancellables)
@@ -42,9 +43,14 @@ extension SurveySelectionView {
             viewModel.fetch()
         }
 
+        func checkFetchMore(index: Int) {
+            viewModel.checkFetchMore(itemIndex: Int32(index))
+        }
+
         private func updateStates(_ state: SurveySelectionViewState) {
             viewState = state
             showingLoading = state.isLoading
+            surveys = state.surveys
         }
     }
 }

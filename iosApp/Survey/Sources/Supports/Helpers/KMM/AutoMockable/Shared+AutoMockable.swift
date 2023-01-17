@@ -58,3 +58,33 @@ protocol GetProfileUseCaseKMM: GetProfileUseCase {
         @escaping (Error?, KotlinUnit) -> KotlinUnit
     ) -> () -> KotlinUnit
 }
+
+// sourcery: AutoMockable
+protocol GetAppVersionUseCaseKMM: GetAppVersionUseCase {
+
+    func invoke() -> Kotlinx_coroutines_coreFlow
+    func invokeNative() -> (
+        @escaping (AppVersion, KotlinUnit) -> KotlinUnit,
+        @escaping (Error?, KotlinUnit) -> KotlinUnit
+    ) -> () -> KotlinUnit
+}
+
+// sourcery: AutoMockable
+protocol LogOutUseCaseKMM: LogOutUseCase {
+
+    func invoke() -> Kotlinx_coroutines_coreFlow
+    func invokeNative() -> (
+        @escaping (KotlinUnit, KotlinUnit) -> KotlinUnit,
+        @escaping (Error?, KotlinUnit) -> KotlinUnit
+    ) -> () -> KotlinUnit
+}
+
+// sourcery: AutoMockable
+protocol SurveyListUseCaseKMM: SurveyListUseCase {
+
+    func invoke(page: Int32) -> Kotlinx_coroutines_coreFlow
+    func invokeNative(page: Int32) -> (
+        @escaping ([Survey], KotlinUnit) -> KotlinUnit,
+        @escaping (Error?, KotlinUnit) -> KotlinUnit
+    ) -> () -> KotlinUnit
+}

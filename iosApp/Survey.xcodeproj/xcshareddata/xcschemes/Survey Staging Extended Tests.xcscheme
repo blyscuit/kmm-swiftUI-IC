@@ -43,6 +43,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "09E6ABE32951CF3E007F1EE3"
+               BuildableName = "SurveyKIFUITests.xctest"
+               BlueprintName = "SurveyKIFUITests"
+               ReferencedContainer = "container:Survey.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "E7449C1BBC882ADE61DB38AC"
                BuildableName = "SurveyUITests.xctest"
                BlueprintName = "SurveyUITests"

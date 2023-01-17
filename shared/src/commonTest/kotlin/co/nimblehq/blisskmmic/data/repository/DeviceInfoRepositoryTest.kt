@@ -15,7 +15,6 @@ private const val TIME: Long = 100_000
 @UsesMocks(Clock::class)
 @ExperimentalCoroutinesApi
 class DeviceInfoRepositoryTest {
-
     private val mocker = Mocker()
     private val clock = MockClock(mocker)
     private val instant = Instant.fromEpochSeconds(TIME)

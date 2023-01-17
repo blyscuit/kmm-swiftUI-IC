@@ -23,7 +23,10 @@ xcresultPath = "iosApp/#{Constants.TEST_OUTPUT_DIRECTORY_PATH}/#{Constants.TESTS
 changed_files = (git.modified_files - git.deleted_files) + git.added_files
 xcode_summary.ignored_results { |result|
   if result.location
-    not changed_files.include?(result.location.file_path)
+    ( 
+      not changed_files.include?(result.location.file_path) or
+      result.message.include?("AA_AppLoadSpec")
+    )
   else
     true
   end

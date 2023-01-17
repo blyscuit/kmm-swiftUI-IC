@@ -7,21 +7,7 @@ class TestManager
     @output_directory = output_directory
   end
 
-  def build_and_test(scheme:, targets:)
-    @fastlane.scan(
-      scheme: scheme,
-      device: @device,
-      output_directory: @output_directory,
-      code_coverage: true,
-      result_bundle: true,
-      only_testing: targets,
-      number_of_retries: 2,
-      output_remove_retry_attempts: true,
-      fail_build: false
-    )
-  end
-
-  def build_and_test(scheme:, testplan:)
+  def build_and_test(scheme:, testplan:, targets:)
     @fastlane.scan(
       scheme: scheme,
       device: @device,
@@ -31,7 +17,8 @@ class TestManager
       testplan: testplan,
       number_of_retries: 2,
       output_remove_retry_attempts: true,
-      fail_build: false
+      fail_build: false,
+      only_testing: targets
     )
   end
 end

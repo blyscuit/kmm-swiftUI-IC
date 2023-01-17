@@ -8,6 +8,7 @@ import co.nimblehq.blisskmmic.domain.model.Token
 import co.nimblehq.blisskmmic.domain.repository.AuthenticationRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 
 class AuthenticationRepositoryImpl(
@@ -36,7 +37,17 @@ class AuthenticationRepositoryImpl(
             .catch { emit(false) }
     }
 
+    override fun logOut(): Flow<Unit> {
+        return flow {
+            emit(removeToken())
+        }
+    }
+
     fun save(token: Token) {
         localDataSource.save(TokenDatabaseModel(token))
+    }
+
+    private fun removeToken() {
+        localDataSource.removeToken()
     }
 }

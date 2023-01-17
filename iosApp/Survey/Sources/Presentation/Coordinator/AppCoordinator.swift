@@ -11,7 +11,7 @@ import SwiftUI
 
 struct AppCoordinator: View {
 
-    @ObservedObject var coordinator = RouteCoordinator()
+    @StateObject var coordinator = RouteCoordinator()
 
     var body: some View {
         Router($coordinator.routes) { screen, _ in
@@ -23,7 +23,7 @@ struct AppCoordinator: View {
             case .splash:
                 SplashView(coordinator: coordinator)
             case .surveySelection:
-                SurveySelectionView()
+                SurveySelectionContainerView(coordinator: coordinator)
             }
         }
     }

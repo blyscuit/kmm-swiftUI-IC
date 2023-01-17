@@ -21,6 +21,7 @@ interface DataStore {
         key: String,
         value: T
     )
+    fun removeObject(key: String)
 }
 
 @OptIn(ExperimentalSettingsApi::class, ExperimentalSerializationApi:: class)
@@ -37,5 +38,12 @@ class DataStoreImpl(private val settings: Settings): DataStore {
 
     override fun <T> save(serializer: KSerializer<T>, key: String, value: T) {
         settings.encodeValue(serializer, key, value)
+    }
+
+    override fun removeObject(key: String) {
+        settings
+            .keys
+            .filter { it.startsWith(key) }
+            .map { settings.remove(it) }
     }
 }

@@ -42,6 +42,11 @@ PODS:
     - GoogleUtilities/Logger
   - IQKeyboardManagerSwift (6.5.10)
   - KeychainAccess (4.2.2)
+  - KIF (3.8.7):
+    - KIF/Core (= 3.8.7)
+  - KIF/Core (3.8.7)
+  - KIF/IdentifierTests (3.8.7):
+    - KIF/Core
   - Kingfisher (7.3.2)
   - KMPNativeCoroutinesCombine (0.12.6):
     - KMPNativeCoroutinesCore (= 0.12.6)
@@ -74,6 +79,8 @@ DEPENDENCIES:
   - FlowStacks
   - IQKeyboardManagerSwift
   - KeychainAccess
+  - KIF
+  - KIF/IdentifierTests
   - Kingfisher
   - KMPNativeCoroutinesCombine (= 0.12.6)
   - Nimble
@@ -102,6 +109,7 @@ SPEC REPOS:
     - GoogleUtilities
     - IQKeyboardManagerSwift
     - KeychainAccess
+    - KIF
     - Kingfisher
     - KMPNativeCoroutinesCombine
     - KMPNativeCoroutinesCore
@@ -143,6 +151,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  KIF: 779cdbca106633b94ecee7b036537490ebdbd9de
   Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   KMPNativeCoroutinesCombine: 9c82dee7ba35c6acff4b35a9757bfecae8b335fd
   KMPNativeCoroutinesCore: 35da0312355f0e911cbb16923aea3389894affca
@@ -162,6 +171,6 @@ SPEC CHECKSUMS:
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: 32a0ee8c609fe271e992af202bcfb555d3f95a90
+PODFILE CHECKSUM: 2873c5a20dd4993b442c59125176e7b756c7d323
 
 COCOAPODS: 1.11.3

@@ -101,6 +101,13 @@ jobs:
       - name: Build and Test
         run: bundle exec fastlane build_and_test
 
+      - name: Upload Failed Screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: kif-failed-screenshots
+          path: iosApp/Failed_Screenshots
+          if-no-files-found: ignore
+
       - name: Run iOS Danger
         uses: MeilCli/danger-action@v5
         with:
