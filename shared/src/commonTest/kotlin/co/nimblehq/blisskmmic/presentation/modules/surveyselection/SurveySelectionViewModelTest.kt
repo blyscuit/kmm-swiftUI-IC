@@ -12,7 +12,6 @@ import co.nimblehq.blisskmmic.domain.usecase.GetCurrentDateUseCase
 import co.nimblehq.blisskmmic.domain.usecase.GetProfileUseCase
 import co.nimblehq.blisskmmic.domain.usecase.SurveyListUseCase
 import co.nimblehq.blisskmmic.helpers.flow.delayFlowOf
-import co.nimblehq.blisskmmic.presentation.model.SurveyUiModel
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -263,7 +262,6 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
                 expectMostRecentItem().surveys.size shouldBe 1
             }
     }
-
 
     @Test
     fun `When calling checkFetchMore - currentSurvey returns correct item`() = runTest {
