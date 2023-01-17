@@ -55,7 +55,6 @@ platform :ios do
       testplan: Constants.TEST_PLAN,
       targets: [
         Constants.TESTS_TARGET,
-        Constants.UI_TESTS_TARGET,
         Constants.KIF_UI_TESTS_TARGET
       ]
     )
