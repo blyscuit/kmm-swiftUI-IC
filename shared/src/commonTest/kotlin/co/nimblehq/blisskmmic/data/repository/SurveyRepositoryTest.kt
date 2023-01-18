@@ -43,7 +43,7 @@ class SurveyRepositoryTest: TestsWithMocks() {
             networkDataSource.survey(isAny())
         } returns flowOf(Pair(listOf(survey), meta))
         surveyRepository
-            .survey(1)
+            .getSurvey(1)
             .test {
                 val response = awaitItem()
                 response.first.first().title shouldBe survey.title
@@ -58,7 +58,7 @@ class SurveyRepositoryTest: TestsWithMocks() {
             networkDataSource.survey(isAny())
         } returns flow { error("Fail") }
         surveyRepository
-            .survey(1)
+            .getSurvey(1)
             .test {
                 awaitError().message shouldBe "Fail"
             }
@@ -70,7 +70,7 @@ class SurveyRepositoryTest: TestsWithMocks() {
             networkDataSource.surveyDetail(isAny())
         } returns flowOf(surveyDetail)
         surveyRepository
-            .surveyDetail("")
+            .getSurveyDetail("")
             .test {
                 val response = awaitItem()
                 response.title shouldBe surveyDetail.title

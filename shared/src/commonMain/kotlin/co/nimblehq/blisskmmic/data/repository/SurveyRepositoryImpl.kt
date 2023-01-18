@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.map
 
 class SurveyRepositoryImpl(private val networkDataSource: NetworkDataSource): SurveyRepository {
 
-    override fun survey(page: Int): Flow<Pair<List<Survey>, PaginationMeta>> {
+    override fun getSurvey(page: Int): Flow<Pair<List<Survey>, PaginationMeta>> {
         return networkDataSource.survey(SurveySelectionTargetType(page))
             .map {
                 Pair(
@@ -23,7 +23,7 @@ class SurveyRepositoryImpl(private val networkDataSource: NetworkDataSource): Su
             }
     }
 
-    override fun surveyDetail(id: String): Flow<SurveyDetail> {
+    override fun getSurveyDetail(id: String): Flow<SurveyDetail> {
         return networkDataSource.surveyDetail(SurveyDetailTargetType(id))
             .map { it.toSurveyDetail() }
     }
