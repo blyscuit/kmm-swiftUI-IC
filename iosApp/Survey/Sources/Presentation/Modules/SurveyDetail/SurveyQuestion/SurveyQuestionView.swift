@@ -19,7 +19,7 @@ struct SurveyQuestionView: View {
                 .opacity(0.5)
                 .padding(.top, .largePadding)
                 .accessibility(.surveyQuestion(.detailText))
-            Text("Howd?")
+            Text("How are you?")
                 .font(.boldLarge)
                 .foregroundColor(.white)
                 .padding(.top, .tinyPadding)
