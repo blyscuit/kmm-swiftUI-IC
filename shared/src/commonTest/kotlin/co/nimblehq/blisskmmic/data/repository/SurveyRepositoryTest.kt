@@ -65,7 +65,7 @@ class SurveyRepositoryTest: TestsWithMocks() {
     }
 
     @Test
-    fun `When calling surveyDetail with success response- it returns correct object`() = runTest {
+    fun `When calling surveyDetail with success response - it returns correct object`() = runTest {
         mocker.every {
             networkDataSource.surveyDetail(isAny())
         } returns flowOf(surveyDetail)

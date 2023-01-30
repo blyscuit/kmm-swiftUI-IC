@@ -13,7 +13,7 @@ data class SurveyDetailApiModel(
     @SerialName("cover_image_url") val coverImageUrl: String,
     @SerialName("survey_type") val surveyType: String,
     val questions: List<SurveyIncluded>
-    ) {
+) {
 
     @Serializable
     data class SurveyIncluded(

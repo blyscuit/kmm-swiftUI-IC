@@ -135,7 +135,7 @@ class NetworkDataSourceTest {
     // Survey Detail
 
     @Test
-    fun `When calling survey detail with success response- it returns correct object`() = runTest {
+    fun `When calling survey detail with success response - it returns correct object`() = runTest {
         val id = "ABC"
         val engine = jsonMockEngine(SURVEY_DETAIL_JSON_RESULT, "surveys/${id}")
         val networkClient = NetworkClient(engine = engine)
