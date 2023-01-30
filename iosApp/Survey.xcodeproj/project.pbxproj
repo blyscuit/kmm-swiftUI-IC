@@ -57,6 +57,7 @@
 		0964B1D02942F3A300946FA1 /* LoginView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1CF2942F3A200946FA1 /* LoginView+DataSource.swift */; };
 		0964B1D92946FA8100946FA1 /* SplashView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1D82946FA8100946FA1 /* SplashView+DataSource.swift */; };
 		0964B1DD2947021400946FA1 /* SplashViewDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0964B1DB2947008E00946FA1 /* SplashViewDataSourceSpec.swift */; };
+		097C4AE62987BA8900AE265A /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C4AE52987BA8900AE265A /* BackButton.swift */; };
 		0982A79E2921DF7E00FC1976 /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */; };
 		0982A7A62921DFE800FC1976 /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */; };
 		0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982A7DE29222EA800FC1976 /* LoginSpec.swift */; };
@@ -103,8 +104,6 @@
 		09CE773428E2ED2300EAA9EE /* Typealias+Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */; };
 		09D09DB2295C56A1009F88AF /* SurveySelectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DB1295C56A1009F88AF /* SurveySelectionSpec.swift */; };
 		09D09DB92963EC39009F88AF /* Image+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DB82963EC39009F88AF /* Image+Url.swift */; };
-		09D09DFA296E4B85009F88AF /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */; };
-		09D09E0C296EBA20009F88AF /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
 		09D09DBC2967E843009F88AF /* SurveyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DBB2967E843009F88AF /* SurveyDetailView.swift */; };
 		09D09DBE2967EA5F009F88AF /* ViewId+SurveyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DBD2967EA5F009F88AF /* ViewId+SurveyDetail.swift */; };
 		09D09DC02968039F009F88AF /* ScreenParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DBF2968039F009F88AF /* ScreenParameters.swift */; };
@@ -117,6 +116,8 @@
 		09D09DD329682CAE009F88AF /* SurveyDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DD129682C98009F88AF /* SurveyDetailScreen.swift */; };
 		09D09DD429682CBC009F88AF /* ViewId+SurveyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DBD2967EA5F009F88AF /* ViewId+SurveyDetail.swift */; };
 		09D09DD529682CBF009F88AF /* ViewId+SurveyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DBD2967EA5F009F88AF /* ViewId+SurveyDetail.swift */; };
+		09D09DFA296E4B85009F88AF /* ResetPasswordSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */; };
+		09D09E0C296EBA20009F88AF /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
 		09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */; };
 		09E6ABFD2951D32F007F1EE3 /* ViewId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B1428D8148C00A5CB97 /* ViewId.swift */; };
 		09E6ABFE2951D333007F1EE3 /* ViewId+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2F28D8267D00A5CB97 /* ViewId+General.swift */; };
@@ -250,6 +251,7 @@
 		0964B1CF2942F3A200946FA1 /* LoginView+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginView+DataSource.swift"; sourceTree = "<group>"; };
 		0964B1D82946FA8100946FA1 /* SplashView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashView+DataSource.swift"; sourceTree = "<group>"; };
 		0964B1DB2947008E00946FA1 /* SplashViewDataSourceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewDataSourceSpec.swift; sourceTree = "<group>"; };
+		097C4AE52987BA8900AE265A /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		0982A7982921DE6700FC1976 /* SurveySelectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveySelectionSpec.swift; sourceTree = "<group>"; };
 		0982A7A32921DFE700FC1976 /* ResetPasswordSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordSpec.swift; sourceTree = "<group>"; };
 		0982A7DE29222EA800FC1976 /* LoginSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSpec.swift; sourceTree = "<group>"; };
@@ -292,7 +294,6 @@
 		09CE773128E2ED2300EAA9EE /* Typealias+Koin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+Koin.swift"; sourceTree = "<group>"; };
 		09D09DB1295C56A1009F88AF /* SurveySelectionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySelectionSpec.swift; sourceTree = "<group>"; };
 		09D09DB82963EC39009F88AF /* Image+Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Url.swift"; sourceTree = "<group>"; };
-		09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSpec.swift; sourceTree = "<group>"; };
 		09D09DBB2967E843009F88AF /* SurveyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailView.swift; sourceTree = "<group>"; };
 		09D09DBD2967EA5F009F88AF /* ViewId+SurveyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+SurveyDetail.swift"; sourceTree = "<group>"; };
 		09D09DBF2968039F009F88AF /* ScreenParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenParameters.swift; sourceTree = "<group>"; };
@@ -303,6 +304,7 @@
 		09D09DCB29682965009F88AF /* SurveyDetailSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailSpec.swift; sourceTree = "<group>"; };
 		09D09DCD29682B78009F88AF /* SurveyItemOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyItemOverlayView.swift; sourceTree = "<group>"; };
 		09D09DD129682C98009F88AF /* SurveyDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailScreen.swift; sourceTree = "<group>"; };
+		09D09DF9296E4B85009F88AF /* ResetPasswordSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSpec.swift; sourceTree = "<group>"; };
 		09E6ABE42951CF3E007F1EE3 /* SurveyKIFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyKIFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Swift.swift"; sourceTree = "<group>"; };
 		09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSpec.swift; sourceTree = "<group>"; };
@@ -969,6 +971,7 @@
 		0A2BA072E9C5F7AC2C58F613 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				097C4AE52987BA8900AE265A /* BackButton.swift */,
 				09495F0628E40E130036BDFB /* FadePaginationView.swift */,
 				09495F2728EC38AD0036BDFB /* SkeletonTextView.swift */,
 				09495F0828E410A00036BDFB /* PageControlView.swift */,
@@ -1895,6 +1898,7 @@
 				0964B1CC2940530200946FA1 /* UITestHelper.swift in Sources */,
 				09495F2A28EC43760036BDFB /* ViewId+SurveyLoading.swift in Sources */,
 				09495F2828EC38AD0036BDFB /* SkeletonTextView.swift in Sources */,
+				097C4AE62987BA8900AE265A /* BackButton.swift in Sources */,
 				0982A880292F847900FC1976 /* ResetPassword+DataSource.swift in Sources */,
 				0964B1D92946FA8100946FA1 /* SplashView+DataSource.swift in Sources */,
 				0982A80429278E9000FC1976 /* SurveyItemView.swift in Sources */,

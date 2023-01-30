@@ -19,7 +19,6 @@ struct SurveyDetailView: View {
     let survey: SurveyUiModel
     let coordinator: SurveyDetailCoordinator
 
-    @State var isAnimatingBack = false
     @State var isAnimating = true
 
     var body: some View {
@@ -77,8 +76,6 @@ struct SurveyDetailView: View {
     }
 
     func didPressBack() {
-        guard !isAnimatingBack else { return }
-        isAnimatingBack = true
         withAnimation(.easeInViewTransition) {
             isAnimating = true
         }
