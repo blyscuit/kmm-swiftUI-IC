@@ -19,9 +19,9 @@ struct SurveyDetailView: View {
     let survey: SurveyUiModel
     let coordinator: SurveyDetailCoordinator
 
+    @StateObject var dataSource: DataSource
+
     @State var isAnimating = true
-    @State var isShowingTitle = true
-    @State var isShowingTitleNavigationBar = true
 
     var body: some View {
         ZStack {
@@ -29,12 +29,12 @@ struct SurveyDetailView: View {
         }
         .accessibilityElement(children: .contain)
         .accessibility(.surveyDetail(.view))
-        .if(isShowingTitleNavigationBar) { view in
+        .if(dataSource.isShowingTitleNavigationBar) { view in
             view.backButton {
                 didPressBack()
             }
         }
-        .if(!isShowingTitleNavigationBar) { view in
+        .if(!dataSource.isShowingTitleNavigationBar) { view in
             view.navigationBarItems(trailing: closeButton)
         }
         .onLoad {
@@ -44,6 +44,11 @@ struct SurveyDetailView: View {
                 }
             }
         }
+        .loadingDialog(loading: $dataSource.isLoading)
+        .alert(isPresented: $dataSource.isShowingErrorAlert, content: {
+            Alert(title: Text(dataSource.viewState.error))
+        })
+
     }
 
     var surveyView: some View {
@@ -62,7 +67,7 @@ struct SurveyDetailView: View {
 
     var surveyQuestionView: some View {
         VStack {
-            if isShowingTitle {
+            if dataSource.isShowingTitle {
                 surveyTitleView
                     .transition(.move(edge: .leading).combined(with: .opacity))
             } else {
@@ -93,15 +98,9 @@ struct SurveyDetailView: View {
     var nextButton: some View {
         HStack {
             Spacer()
-            if isShowingTitle {
+            if dataSource.isShowingTitle {
                 Button {
-                    // TODO: Add action when press next. Move following line to real logic.
-                    isShowingTitleNavigationBar = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .instant) {
-                        withAnimation(.easeIn(duration: .viewTransition)) {
-                            self.isShowingTitle = false
-                        }
-                    }
+                    dataSource.didPressNext()
                 } label: {
                     Text(String.localizeId.survey_detail_start_button())
                         .primaryButton()
@@ -134,6 +133,13 @@ struct SurveyDetailView: View {
                 .frame(width: 28.0, height: 28.0)
                 .accessibility(.surveyQuestion(.closeButton))
         }
+    }
+
+    init(survey: SurveyUiModel, coordinator: SurveyDetailCoordinator) {
+        self.survey = survey
+        self.coordinator = coordinator
+        let dataSource = DataSource(id: survey.id)
+        _dataSource = StateObject(wrappedValue: dataSource)
     }
 
     func didPressBack() {

@@ -14,15 +14,16 @@ import kotlinx.coroutines.launch
 data class SurveyDetailViewState(
     val surveyDetail: SurveyDetailUiModel? = null,
     val isLoading: Boolean = false,
+    val isShowingQuestion: Boolean = false,
     val error: String? = null,
 ) {
     constructor() : this(isLoading = false)
-    constructor(error: String?) : this(null, false, error)
+    constructor(error: String?) : this(null, false, false, error)
 }
 
 class SurveyDetailViewModel(
     private val getSurveyDetailUseCase: GetSurveyDetailUseCase,
-    private val surveyId: String
+    private var surveyId: String? = null
 ): BaseViewModel() {
 
     private val mutableViewState: MutableStateFlow<SurveyDetailViewState> =
@@ -30,28 +31,58 @@ class SurveyDetailViewModel(
 
     val viewState: StateFlow<SurveyDetailViewState> = mutableViewState
 
+    fun setSurveyId(id: String) {
+        surveyId = id
+    }
+
     fun getDetail() {
+        surveyId ?: return
+        val id = surveyId ?: ""
         setStateLoading()
         viewModelScope.launch {
-            getSurveyDetailUseCase(surveyId)
-                .catch { error -> handleLoginError(error) }
+            getSurveyDetailUseCase(id)
+                .catch { error -> handleError(error) }
                 .collect { handleSurveyDetail(it) }
         }
     }
 
-    private fun setStateLoading() {
+    fun showQuestion() {
+        val currentState = viewState.value
         mutableViewState.update {
-            SurveyDetailViewState(isLoading = true)
+            SurveyDetailViewState(
+                currentState.surveyDetail,
+                currentState.isLoading,
+                true,
+                currentState.error
+            )
+        }
+        if(!currentState.isLoading && currentState.surveyDetail == null) {
+            getDetail()
         }
     }
 
-    private fun handleLoginError(error: Throwable) {
+    private fun setStateLoading() {
+        val currentState = viewState.value
+        mutableViewState.update {
+            SurveyDetailViewState(
+                isLoading = true,
+                isShowingQuestion = currentState.isShowingQuestion
+            )
+        }
+    }
+
+    private fun handleError(error: Throwable) {
         mutableViewState.update { SurveyDetailViewState(isLoading = false, error = error.toErrorMessage()) }
     }
 
     private fun handleSurveyDetail(detail: SurveyDetail) {
+        val currentState = viewState.value
         mutableViewState.update {
-            SurveyDetailViewState(surveyDetail = SurveyDetailUiModel(detail), isLoading = false)
+            SurveyDetailViewState(
+                surveyDetail = SurveyDetailUiModel(detail),
+                isLoading = false,
+                isShowingQuestion = currentState.isShowingQuestion
+            )
         }
     }
 }
