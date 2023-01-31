@@ -19,8 +19,8 @@ data class SurveyDetail(
 
     data class SurveyAnswer(
         val id: String,
-        val text: String,
+        val text: String?,
         val displayOrder: Int,
-        val inputMaskPlaceholder: String
+        val inputMaskPlaceholder: String?
     )
 }

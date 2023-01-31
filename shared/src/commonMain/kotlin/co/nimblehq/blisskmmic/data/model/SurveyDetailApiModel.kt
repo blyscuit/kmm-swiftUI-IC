@@ -35,9 +35,9 @@ data class SurveyDetailApiModel(
     @Serializable
     data class SurveyAnswer(
         val id: String,
-        val text: String,
+        val text: String?,
         @SerialName("display_order") val displayOrder: Int,
-        @SerialName("input_mask_placeholder") val inputMaskPlaceholder: String
+        @SerialName("input_mask_placeholder") val inputMaskPlaceholder: String?
     ) {
         fun toSurveyDetail(): SurveyDetail.SurveyAnswer = SurveyDetail.SurveyAnswer(
             id,

@@ -29,9 +29,9 @@ data class SurveyDetailUiModel (
 
     data class SurveyAnswer(
         val id: String,
-        val text: String,
+        val text: String?,
         val displayOrder: Int,
-        val inputMaskPlaceholder: String
+        val inputMaskPlaceholder: String?
     ) {
 
         constructor(answer: SurveyDetail.SurveyAnswer):
