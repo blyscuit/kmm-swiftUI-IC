@@ -13,5 +13,6 @@ extension ViewId {
         case keyboard = "general.keyboard"
         case loadingSpinner = "general.loading.spinner"
         case back = "Back"
+        case backButton = "back.button"
     }
 }

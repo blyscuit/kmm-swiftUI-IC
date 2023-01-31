@@ -262,4 +262,35 @@ class SurveySelectionViewModelTest : TestsWithMocks() {
                 expectMostRecentItem().surveys.size shouldBe 1
             }
     }
+
+    @Test
+    fun `When calling checkFetchMore - currentSurvey returns correct item`() = runTest {
+        val secondSurvey = Survey("second", "", "", "")
+        mocker.every {
+            getCurrentDateUseCase()
+        } returns delayFlowOf(TIME)
+        mocker.every {
+            getProfileUseCase()
+        } returns flowOf(user)
+        mocker.every {
+            getAppVersionUseCase()
+        } returns flowOf(appVersion)
+        mocker.every {
+            surveyListUseCase(isAny())
+        } returns flowOf(listOf(survey, secondSurvey))
+
+        surveySelectionViewModel.fetch()
+
+        surveySelectionViewModel
+            .viewState
+            .test {
+                skipItems(2)
+                surveySelectionViewModel.currentSurvey?.id shouldBe survey.id
+                surveySelectionViewModel.checkFetchMore(1)
+                surveySelectionViewModel.currentSurvey?.id shouldBe secondSurvey.id
+                surveySelectionViewModel.checkFetchMore(0)
+                surveySelectionViewModel.currentSurvey?.id shouldBe survey.id
+                cancelAndIgnoreRemainingEvents()
+            }
+    }
 }

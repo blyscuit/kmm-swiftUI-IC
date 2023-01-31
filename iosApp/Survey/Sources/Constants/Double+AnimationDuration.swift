@@ -16,4 +16,6 @@ extension Double {
     static var fast: Self { 0.2.speedModified }
     /// 0.3
     static var `default`: Self { 0.3.speedModified }
+    /// 0.5
+    static var viewTransition: Self { 0.5.speedModified }
 }
