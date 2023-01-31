@@ -22,6 +22,7 @@ struct SurveyDetailView: View {
     @StateObject var dataSource: DataSource
 
     @State var isAnimating = true
+    @State var questionIndex = 0
 
     var body: some View {
         ZStack {
@@ -48,7 +49,6 @@ struct SurveyDetailView: View {
         .alert(isPresented: $dataSource.isShowingErrorAlert, content: {
             Alert(title: Text(dataSource.viewState.error))
         })
-
     }
 
     var surveyView: some View {
@@ -70,9 +70,11 @@ struct SurveyDetailView: View {
             if dataSource.isShowingTitle {
                 surveyTitleView
                     .transition(.move(edge: .leading).combined(with: .opacity))
-            } else {
-                SurveyQuestionView()
+            } else if let surveyDetail = dataSource.viewState.surveyDetail {
+                SurveyQuestionView(detail: surveyDetail, questionIndex: $questionIndex)
                     .transition(.move(edge: .trailing).combined(with: .opacity))
+            } else {
+                Spacer()
             }
         }
     }
@@ -109,7 +111,7 @@ struct SurveyDetailView: View {
                 .accessibility(.surveyDetail(.startButton))
             } else {
                 Button {
-                    // TODO: Add action when press next
+                    questionIndex += 1
                 } label: {
                     Assets.nextButton
                         .image

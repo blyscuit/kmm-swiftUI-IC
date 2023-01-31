@@ -17,14 +17,41 @@ data class SurveyDetailApiModel(
 
     @Serializable
     data class SurveyIncluded(
-        val text: String
-    )
+        val id: String,
+        val text: String,
+        @SerialName("display_type") val displayType: String,
+        @SerialName("display_order") val displayOrder: Int,
+        val answers: List<SurveyAnswer>
+    ) {
+        fun toSurveyDetail(): SurveyDetail.SurveyIncluded = SurveyDetail.SurveyIncluded(
+            id,
+            text,
+            displayType,
+            displayOrder,
+            answers.map { it.toSurveyDetail() }
+        )
+    }
+
+    @Serializable
+    data class SurveyAnswer(
+        val id: String,
+        val text: String,
+        @SerialName("display_order") val displayOrder: Int,
+        @SerialName("input_mask_placeholder") val inputMaskPlaceholder: String
+    ) {
+        fun toSurveyDetail(): SurveyDetail.SurveyAnswer = SurveyDetail.SurveyAnswer(
+            id,
+            text,
+            displayOrder,
+            inputMaskPlaceholder
+        )
+    }
 
     fun toSurveyDetail(): SurveyDetail = SurveyDetail(
         title,
         description,
         isActive,
         coverImageUrl,
-        questions.map { SurveyDetail.SurveyIncluded(it.text) }
+        questions.map { it.toSurveyDetail() }
     )
 }
