@@ -71,8 +71,11 @@ struct SurveyDetailView: View {
                 surveyTitleView
                     .transition(.move(edge: .leading).combined(with: .opacity))
             } else if let surveyDetail = dataSource.viewState.surveyDetail {
-                SurveyQuestionView(detail: surveyDetail, questionIndex: $questionIndex)
-                    .transition(.move(edge: .trailing).combined(with: .opacity))
+                if questionIndex.isMultiple(of: 2) {
+                    animatedSurveyQuestionView(surveyDetail: surveyDetail)
+                } else {
+                    animatedSurveyQuestionView(surveyDetail: surveyDetail)
+                }
             } else {
                 Spacer()
             }
@@ -111,7 +114,13 @@ struct SurveyDetailView: View {
                 .accessibility(.surveyDetail(.startButton))
             } else {
                 Button {
-                    questionIndex += 1
+                    // TODO: Submit button logics
+                    let totalItem = (dataSource.viewState.surveyDetail?.questions.count ?? 0) - 1
+                    guard questionIndex < totalItem
+                    else { return }
+                    withAnimation(.easeIn(duration: .viewTransition)) {
+                        questionIndex += 1
+                    }
                 } label: {
                     Assets.nextButton
                         .image
@@ -142,6 +151,16 @@ struct SurveyDetailView: View {
         self.coordinator = coordinator
         let dataSource = DataSource(id: survey.id)
         _dataSource = StateObject(wrappedValue: dataSource)
+    }
+
+    private func animatedSurveyQuestionView(surveyDetail: SurveyDetailUiModel) -> some View {
+        return SurveyQuestionView(detail: surveyDetail, questionIndex: $questionIndex)
+            .transition(
+                .asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                )
+            )
     }
 
     func didPressBack() {

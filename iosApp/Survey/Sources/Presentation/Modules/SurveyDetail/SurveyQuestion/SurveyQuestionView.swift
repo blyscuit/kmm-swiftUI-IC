@@ -29,14 +29,18 @@ struct SurveyQuestionView: View {
                 .padding(.top, .tinyPadding)
                 .accessibility(.surveyQuestion(.titleText))
             Spacer()
-            // TODO: Show real questions
-            switch detail.questions[questionIndex].displayType {
-            case SurveyDetailUiModel.companion.Choice:
-                QuestionPickerView(ids: ["A", "B", "C"])
-            default: QuestionPickerView(ids: ["A", "B", "C"])
-            }
+            questionView(with: detail.questions[questionIndex])
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    func questionView(with question: SurveyDetailUiModel.SurveyIncluded) -> some View {
+        // TODO: Show real questions
+        switch question.displayType {
+        case SurveyDetailUiModel.companion.Choice:
+            return QuestionPickerView(ids: ["A", "B", "C"])
+        default: return QuestionPickerView(ids: ["A", "B", "C"])
+        }
     }
 }
