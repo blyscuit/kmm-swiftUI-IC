@@ -16,6 +16,7 @@ struct SurveyQuestionView: View {
     let detail: SurveyDetailUiModel
 
     @Binding var questionIndex: Int
+    @Binding var answers: [String]
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -53,24 +54,25 @@ struct SurveyQuestionView: View {
         // TODO: Show real questions
         switch question.displayType {
         case .dropdown:
-            QuestionPickerView(options: question.answers)
+            QuestionPickerView(answers: $answers, options: question.answers)
         case .star:
-            QuestionEmojiView(type: .star, options: question.answers)
+            QuestionEmojiView(answers: $answers, type: .star, options: question.answers)
         case .smiley:
-            QuestionEmojiView(type: .smile, options: question.answers)
+            QuestionEmojiView(answers: $answers, type: .smile, options: question.answers)
         case .heart:
-            QuestionEmojiView(type: .heart, options: question.answers)
+            QuestionEmojiView(answers: $answers, type: .heart, options: question.answers)
         case .nps:
             QuestionRangePickerView(
+                answers: $answers,
                 options: question.answers,
                 helpText: question.helpText.string
             )
         case .choice:
-            QuestionMultiChoiceView(options: question.answers)
+            QuestionMultiChoiceView(options: question.answers, answers: $answers)
         case .textfield:
-            QuestionMultiFormView(answers: question.answers)
+            QuestionMultiFormView(answers: question.answers, currentAnswers: $answers)
         case .textarea:
-            QuestionTextAreaView(placeholder: question.answers.first?.text)
+            QuestionTextAreaView(placeholder: question.answers.first?.text, answers: $answers)
         default: VStack {}
         }
     }

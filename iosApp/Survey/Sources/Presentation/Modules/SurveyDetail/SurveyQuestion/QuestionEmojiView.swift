@@ -34,6 +34,7 @@ struct QuestionEmojiView: View {
     }
 
     @State var rating: Int = 0
+    @Binding var answers: [String]
 
     let type: EmojiType
     let options: [Answer]
@@ -55,7 +56,7 @@ struct QuestionEmojiView: View {
             Spacer()
         }
         .onChange(of: rating) {
-            print($0)
+            answers = [options[$0].id]
         }
     }
 

@@ -13,6 +13,7 @@ struct QuestionTextAreaView: View {
     let placeholder: String?
 
     @State var text = ""
+    @Binding var answers: [String]
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -31,6 +32,9 @@ struct QuestionTextAreaView: View {
                 TextEditor(text: $text)
                     .primaryTextField()
             }
+        }
+        .onChange(of: text) {
+            answers = [$0]
         }
         .onAppear {
             UITextView.appearance().backgroundColor = .clear
