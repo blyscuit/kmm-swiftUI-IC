@@ -31,10 +31,19 @@ struct SurveyQuestionView: View {
                     .foregroundColor(.white)
                     .padding(.top, .tinyPadding)
                     .accessibility(.surveyQuestion(.titleText))
+                    .onTapGesture {
+                        hideKeyboard()
+                    }
                 Spacer()
+                    .onTapGesture {
+                        hideKeyboard()
+                    }
                 questionView(with: question)
             }
             Spacer()
+                .onTapGesture {
+                    hideKeyboard()
+                }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -60,8 +69,9 @@ struct SurveyQuestionView: View {
             QuestionMultiChoiceView(options: question.answers)
         case .textfield:
             QuestionMultiFormView(answers: question.answers)
-        default:
-            QuestionPickerView(options: [])
+        case .textarea:
+            QuestionTextAreaView(placeholder: question.answers.first?.text)
+        default: VStack {}
         }
     }
 }
