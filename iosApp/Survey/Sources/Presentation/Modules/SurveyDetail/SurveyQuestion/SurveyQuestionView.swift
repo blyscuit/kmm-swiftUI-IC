@@ -58,6 +58,8 @@ struct SurveyQuestionView: View {
             )
         case .choice:
             QuestionMultiChoiceView(options: question.answers)
+        case .textfield:
+            QuestionMultiFormView(answers: question.answers)
         default:
             QuestionPickerView(options: [])
         }
