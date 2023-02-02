@@ -22,8 +22,8 @@ struct QuestionPickerView: View {
                     .font(font)
                     .foregroundColor(Color.white)
                 if id != ids.last {
-                    Rectangle()
-                        .fill(Color.white)
+                    Divider()
+                        .overlay(Color.white)
                         .frame(width: 215.0, height: 1.0)
                 }
             }
