@@ -41,8 +41,16 @@ struct SurveyQuestionView: View {
     func questionView(with question: SurveyDetailUiModel.SurveyIncluded) -> some View {
         // TODO: Show real questions
         switch question.displayType {
-        case .choice: QuestionPickerView(ids: ["A", "B", "C"])
-        default: VStack {}
+        case SurveyDetailUiModel.companion.Choice:
+            return QuestionPickerView(ids: ["A", "B", "C"])
+        default: return QuestionPickerView(ids: ["A", "B", "C"])
+        case SurveyDetailUiModel.companion.Star:
+            QuestionEmojiView(type: .star)
+        case SurveyDetailUiModel.companion.Smiley:
+            QuestionEmojiView(type: .smile)
+        case SurveyDetailUiModel.companion.Heart:
+            QuestionEmojiView(type: .heart)
+        default: QuestionPickerView(ids: ["A", "B", "C"])
         }
     }
 }
