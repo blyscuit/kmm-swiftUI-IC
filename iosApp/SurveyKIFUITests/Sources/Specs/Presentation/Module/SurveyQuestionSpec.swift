@@ -39,6 +39,7 @@ final class SurveyQuestionSpec: QuickSpec {
 
                 afterEach {
                     surveyQuestionScreen.tapCloseButton()
+                    surveyQuestionScreen.tapConfirmCloseDialog()
                     surveyScreen.waitForAppearance()
                 }
 
@@ -57,6 +58,21 @@ final class SurveyQuestionSpec: QuickSpec {
                     self.tester().waitForView(
                         withAccessibilityIdentifier: ViewId.surveyQuestion(.nextButton)()
                     )
+                }
+
+                describe("its close button") {
+
+                    context("when tapped and tap cancel") {
+
+                        beforeEach {
+                            surveyQuestionScreen.tapCloseButton()
+                            surveyQuestionScreen.tapCancelCloseDialog()
+                        }
+
+                        it("shows surveyQuestion screen") {
+                            surveyQuestionScreen.waitForAppearance()
+                        }
+                    }
                 }
             }
         }
