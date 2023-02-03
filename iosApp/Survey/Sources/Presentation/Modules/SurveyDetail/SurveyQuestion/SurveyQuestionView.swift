@@ -35,12 +35,12 @@ struct SurveyQuestionView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
+    @ViewBuilder
     func questionView(with question: SurveyDetailUiModel.SurveyIncluded) -> some View {
         // TODO: Show real questions
         switch question.displayType {
-        case SurveyDetailUiModel.companion.Choice:
-            return QuestionPickerView(ids: ["A", "B", "C"])
-        default: return QuestionPickerView(ids: ["A", "B", "C"])
+        case .choice: QuestionPickerView(ids: ["A", "B", "C"])
+        default: VStack {}
         }
     }
 }

@@ -1,7 +1,5 @@
 package co.nimblehq.blisskmmic.domain.model
 
-import kotlinx.serialization.SerialName
-
 data class SurveyDetail(
     val title: String,
     val description: String,

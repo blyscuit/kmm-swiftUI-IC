@@ -4,6 +4,7 @@ import co.nimblehq.blisskmmic.data.network.helpers.toErrorMessage
 import co.nimblehq.blisskmmic.domain.model.SurveyDetail
 import co.nimblehq.blisskmmic.domain.usecase.GetSurveyDetailUseCase
 import co.nimblehq.blisskmmic.presentation.model.SurveyDetailUiModel
+import co.nimblehq.blisskmmic.presentation.model.toSurveyDetailUiModel
 import co.nimblehq.blisskmmic.presentation.modules.BaseViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -36,13 +37,13 @@ class SurveyDetailViewModel(
     }
 
     fun getDetail() {
-        surveyId ?: return
-        val id = surveyId ?: ""
-        setStateLoading()
-        viewModelScope.launch {
-            getSurveyDetailUseCase(id)
-                .catch { error -> handleError(error) }
-                .collect { handleSurveyDetail(it) }
+        surveyId?.let {
+            setStateLoading()
+            viewModelScope.launch {
+                getSurveyDetailUseCase(it)
+                    .catch { error -> handleError(error) }
+                    .collect { handleSurveyDetail(it) }
+            }
         }
     }
 
@@ -79,7 +80,7 @@ class SurveyDetailViewModel(
         val currentState = viewState.value
         mutableViewState.update {
             SurveyDetailViewState(
-                surveyDetail = SurveyDetailUiModel(detail),
+                surveyDetail = detail.toSurveyDetailUiModel(),
                 isLoading = false,
                 isShowingQuestion = currentState.isShowingQuestion
             )
