@@ -25,6 +25,7 @@ struct SurveyDetailView: View {
     @State var questionIndex = 0
     // TODO: Replace with real answer object
     @State var currentAnswers = [String]()
+    @State var isShowingQuitPrompt = false
 
     var body: some View {
         ZStack {
@@ -48,9 +49,12 @@ struct SurveyDetailView: View {
             }
         }
         .loadingDialog(loading: $dataSource.isLoading)
-        .alert(isPresented: $dataSource.isShowingErrorAlert, content: {
+        .alert(isPresented: $dataSource.isShowingErrorAlert) {
             Alert(title: Text(dataSource.viewState.error))
-        })
+        }
+        .alert(isPresented: $isShowingQuitPrompt) {
+            quitAlert
+        }
     }
 
     var surveyView: some View {
@@ -134,8 +138,7 @@ struct SurveyDetailView: View {
 
     var closeButton: some View {
         Button {
-            // TODO: Implement close button
-            didPressBack()
+            isShowingQuitPrompt = true
         } label: {
             Assets.closeButton
                 .image
@@ -143,6 +146,25 @@ struct SurveyDetailView: View {
                 .frame(width: 28.0, height: 28.0)
                 .accessibility(.surveyQuestion(.closeButton))
         }
+        .disabled(isAnimating)
+    }
+
+    var quitAlert: Alert {
+        Alert(
+            title: Text(String.localizeId.survey_quit_title()),
+            message: Text(String.localizeId.survey_quit_message()),
+            primaryButton: .default(
+                Text(String.localizeId.survey_quit_confirm())
+            ) {
+                didPressBack()
+            },
+            secondaryButton: .cancel(
+                Text(String.localizeId.survey_quit_cancel())
+                    .bold()
+            ) {
+                isShowingQuitPrompt = false
+            }
+        )
     }
 
     init(survey: SurveyUiModel, coordinator: SurveyDetailCoordinator) {
