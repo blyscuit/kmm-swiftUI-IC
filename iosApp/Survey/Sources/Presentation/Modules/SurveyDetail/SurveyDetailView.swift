@@ -64,7 +64,7 @@ struct SurveyDetailView: View {
             VStack {
                 surveyQuestionView
                 Spacer()
-                nextButton
+                nextButtonArea
             }
             .padding(.horizontal, .smallPadding)
             .opacity(isAnimating ? 0.0 : 1.0)
@@ -103,37 +103,60 @@ struct SurveyDetailView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    var nextButton: some View {
+    var nextButtonArea: some View {
         HStack {
             Spacer()
             if dataSource.isShowingTitle {
-                Button {
-                    dataSource.didPressNext()
-                } label: {
-                    Text(String.localizeId.survey_detail_start_button())
-                        .primaryButton()
-                }
-                .padding(.bottom, .mediumPadding)
-                .accessibility(.surveyDetail(.startButton))
+                startButton
+            } else if (dataSource.viewState.surveyDetail?.questions.count ?? 0) == questionIndex + 1 {
+                // TODO: Use ViewModel's State
+                submitButton
             } else {
-                Button {
-                    // TODO: Submit button logics
-                    let totalItem = (dataSource.viewState.surveyDetail?.questions.count ?? 0) - 1
-                    guard questionIndex < totalItem else { return }
-                    currentAnswers = []
-                    withAnimation(.easeIn(duration: .viewTransition)) {
-                        questionIndex += 1
-                    }
-                } label: {
-                    Assets.nextButton
-                        .image
-                        .resizable()
-                        .frame(width: 56.0, height: 56.0)
-                }
-                .padding(.bottom, .mediumPadding)
-                .accessibility(.surveyQuestion(.nextButton))
+                nextButton
             }
         }
+    }
+
+    var startButton: some View {
+        Button {
+            dataSource.didPressNext()
+        } label: {
+            Text(String.localizeId.survey_detail_start_button())
+                .primaryButton()
+        }
+        .padding(.bottom, .mediumPadding)
+        .accessibility(.surveyDetail(.startButton))
+    }
+
+    var nextButton: some View {
+        Button {
+            // TODO: Submit button logics
+            let totalItem = (dataSource.viewState.surveyDetail?.questions.count ?? 0) - 1
+            guard questionIndex < totalItem else { return }
+            currentAnswers = []
+            withAnimation(.easeIn(duration: .viewTransition)) {
+                questionIndex += 1
+            }
+        } label: {
+            Assets.nextButton
+                .image
+                .resizable()
+                .frame(width: 56.0, height: 56.0)
+        }
+        .padding(.bottom, .mediumPadding)
+        .accessibility(.surveyQuestion(.nextButton))
+    }
+
+    var submitButton: some View {
+        Button {
+            // TODO: Submit action
+            dataSource.isLoading = true
+        } label: {
+            Text(String.localizeId.survey_submit_button())
+                .primaryButton()
+        }
+        .padding(.bottom, .mediumPadding)
+        .accessibility(.surveyDetail(.submitButton))
     }
 
     var closeButton: some View {
