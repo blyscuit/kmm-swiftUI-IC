@@ -116,8 +116,7 @@ struct SurveyDetailView: View {
                 Button {
                     // TODO: Submit button logics
                     let totalItem = (dataSource.viewState.surveyDetail?.questions.count ?? 0) - 1
-                    guard questionIndex < totalItem
-                    else { return }
+                    guard questionIndex < totalItem else { return }
                     withAnimation(.easeIn(duration: .viewTransition)) {
                         questionIndex += 1
                     }

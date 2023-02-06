@@ -23,13 +23,15 @@ struct SurveyQuestionView: View {
                 .opacity(0.5)
                 .padding(.top, .largePadding)
                 .accessibility(.surveyQuestion(.detailText))
-            Text(detail.questions[questionIndex].text)
-                .font(.boldLargeTitle)
-                .foregroundColor(.white)
-                .padding(.top, .tinyPadding)
-                .accessibility(.surveyQuestion(.titleText))
-            Spacer()
-            questionView(with: detail.questions[questionIndex])
+            if let question = detail.questions[safe: questionIndex] {
+                Text(question.text)
+                    .font(.boldLargeTitle)
+                    .foregroundColor(.white)
+                    .padding(.top, .tinyPadding)
+                    .accessibility(.surveyQuestion(.titleText))
+                Spacer()
+                questionView(with: question)
+            }
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)

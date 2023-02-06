@@ -16,7 +16,7 @@ data class SurveyDetailViewState(
     val surveyDetail: SurveyDetailUiModel? = null,
     val isLoading: Boolean = false,
     val isShowingQuestion: Boolean = false,
-    val error: String? = null,
+    val error: String? = null
 ) {
     constructor() : this(isLoading = false)
     constructor(error: String?) : this(null, false, false, error)
