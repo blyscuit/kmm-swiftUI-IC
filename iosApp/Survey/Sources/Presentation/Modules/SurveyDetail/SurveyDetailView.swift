@@ -71,11 +71,8 @@ struct SurveyDetailView: View {
                 surveyTitleView
                     .transition(.move(edge: .leading).combined(with: .opacity))
             } else if let surveyDetail = dataSource.viewState.surveyDetail {
-                if questionIndex.isMultiple(of: 2) {
-                    animatedSurveyQuestionView(surveyDetail: surveyDetail)
-                } else {
-                    animatedSurveyQuestionView(surveyDetail: surveyDetail)
-                }
+                animatedSurveyQuestionView(surveyDetail: surveyDetail)
+                    .id(questionIndex)
             } else {
                 Spacer()
             }
