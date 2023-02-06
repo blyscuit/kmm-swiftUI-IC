@@ -9,6 +9,8 @@
 import Shared
 import SwiftUI
 
+typealias Answer = SurveyDetailUiModel.SurveyAnswer
+
 struct SurveyQuestionView: View {
 
     let detail: SurveyDetailUiModel
@@ -44,11 +46,11 @@ struct SurveyQuestionView: View {
         case .choice:
             QuestionPickerView(ids: ["A", "B", "C"])
         case .star:
-            QuestionEmojiView(type: .star)
+            QuestionEmojiView(type: .star, options: question.answers)
         case .smiley:
-            QuestionEmojiView(type: .smile)
+            QuestionEmojiView(type: .smile, options: question.answers)
         case .heart:
-            QuestionEmojiView(type: .heart)
+            QuestionEmojiView(type: .heart, options: question.answers)
         default:
             QuestionPickerView(ids: ["A", "B", "C"])
         }

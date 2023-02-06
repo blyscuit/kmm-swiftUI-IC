@@ -17,17 +17,17 @@ struct QuestionEmojiView: View {
         case heart
         case star
 
-        var items: [String] {
+        func items(count: Int) -> [String] {
             let items: [String]
             switch self {
             case .like:
-                items = Array(repeatElement("👍🏻", count: 5))
+                items = Array(repeatElement("👍🏻", count: count))
             case .smile:
-                items = ["😡", "😕", "😐", "🙂", "😄"]
+                items = Array(["😡", "😕", "😐", "🙂", "😄"].prefix(count))
             case .heart:
-                items = Array(repeatElement("❤️", count: 5))
+                items = Array(repeatElement("❤️", count: count))
             case .star:
-                items = Array(repeatElement("⭐️", count: 5))
+                items = Array(repeatElement("⭐️", count: count))
             }
             return items
         }
@@ -36,9 +36,10 @@ struct QuestionEmojiView: View {
     @State var rating: Int = 0
 
     let type: EmojiType
+    let options: [Answer]
 
     var body: some View {
-        let items = type.items
+        let items = type.items(count: options.count)
         HStack(spacing: .itemSpacing) {
             Spacer()
             ForEach(0 ..< items.count, id: \.self) { index in
