@@ -19,9 +19,10 @@ struct SurveyDetailView: View {
     let survey: SurveyUiModel
     let coordinator: SurveyDetailCoordinator
 
+    @StateObject var dataSource: DataSource
+
     @State var isAnimating = true
-    @State var isShowingTitle = true
-    @State var isShowingTitleNavigationBar = true
+    @State var questionIndex = 0
 
     var body: some View {
         ZStack {
@@ -29,12 +30,12 @@ struct SurveyDetailView: View {
         }
         .accessibilityElement(children: .contain)
         .accessibility(.surveyDetail(.view))
-        .if(isShowingTitleNavigationBar) { view in
+        .if(dataSource.isShowingTitleNavigationBar) { view in
             view.backButton {
                 didPressBack()
             }
         }
-        .if(!isShowingTitleNavigationBar) { view in
+        .if(!dataSource.isShowingTitleNavigationBar) { view in
             view.navigationBarItems(trailing: closeButton)
         }
         .onLoad {
@@ -44,6 +45,10 @@ struct SurveyDetailView: View {
                 }
             }
         }
+        .loadingDialog(loading: $dataSource.isLoading)
+        .alert(isPresented: $dataSource.isShowingErrorAlert, content: {
+            Alert(title: Text(dataSource.viewState.error))
+        })
     }
 
     var surveyView: some View {
@@ -62,12 +67,14 @@ struct SurveyDetailView: View {
 
     var surveyQuestionView: some View {
         VStack {
-            if isShowingTitle {
+            if dataSource.isShowingTitle {
                 surveyTitleView
                     .transition(.move(edge: .leading).combined(with: .opacity))
+            } else if let surveyDetail = dataSource.viewState.surveyDetail {
+                animatedSurveyQuestionView(surveyDetail: surveyDetail)
+                    .id(questionIndex)
             } else {
-                SurveyQuestionView()
-                    .transition(.move(edge: .trailing).combined(with: .opacity))
+                Spacer()
             }
         }
     }
@@ -93,15 +100,9 @@ struct SurveyDetailView: View {
     var nextButton: some View {
         HStack {
             Spacer()
-            if isShowingTitle {
+            if dataSource.isShowingTitle {
                 Button {
-                    // TODO: Add action when press next. Move following line to real logic.
-                    isShowingTitleNavigationBar = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .instant) {
-                        withAnimation(.easeIn(duration: .viewTransition)) {
-                            self.isShowingTitle = false
-                        }
-                    }
+                    dataSource.didPressNext()
                 } label: {
                     Text(String.localizeId.survey_detail_start_button())
                         .primaryButton()
@@ -110,7 +111,12 @@ struct SurveyDetailView: View {
                 .accessibility(.surveyDetail(.startButton))
             } else {
                 Button {
-                    // TODO: Add action when press next
+                    // TODO: Submit button logics
+                    let totalItem = (dataSource.viewState.surveyDetail?.questions.count ?? 0) - 1
+                    guard questionIndex < totalItem else { return }
+                    withAnimation(.easeIn(duration: .viewTransition)) {
+                        questionIndex += 1
+                    }
                 } label: {
                     Assets.nextButton
                         .image
@@ -134,6 +140,23 @@ struct SurveyDetailView: View {
                 .frame(width: 28.0, height: 28.0)
                 .accessibility(.surveyQuestion(.closeButton))
         }
+    }
+
+    init(survey: SurveyUiModel, coordinator: SurveyDetailCoordinator) {
+        self.survey = survey
+        self.coordinator = coordinator
+        let dataSource = DataSource(id: survey.id)
+        _dataSource = StateObject(wrappedValue: dataSource)
+    }
+
+    private func animatedSurveyQuestionView(surveyDetail: SurveyDetailUiModel) -> some View {
+        return SurveyQuestionView(detail: surveyDetail, questionIndex: $questionIndex)
+            .transition(
+                .asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                )
+            )
     }
 
     func didPressBack() {

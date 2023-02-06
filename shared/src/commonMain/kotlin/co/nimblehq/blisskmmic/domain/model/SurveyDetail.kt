@@ -8,6 +8,17 @@ data class SurveyDetail(
     val questions: List<SurveyIncluded>
 ) {
     data class SurveyIncluded(
-        val text: String
+        val id: String,
+        val text: String,
+        val displayType: String,
+        val displayOrder: Int,
+        val answers: List<SurveyAnswer>
+    )
+
+    data class SurveyAnswer(
+        val id: String,
+        val text: String?,
+        val displayOrder: Int,
+        val inputMaskPlaceholder: String?
     )
 }
