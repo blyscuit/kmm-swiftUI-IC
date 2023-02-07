@@ -3,6 +3,7 @@ package co.nimblehq.blisskmmic.data.repository
 import app.cash.turbine.test
 import co.nimblehq.blisskmmic.data.model.PaginationMetaApiModel
 import co.nimblehq.blisskmmic.data.model.SurveyApiModel
+import co.nimblehq.blisskmmic.data.model.SurveyDetailApiModel
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSource
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -24,6 +25,8 @@ class SurveyRepositoryTest: TestsWithMocks() {
     lateinit var survey: SurveyApiModel
     @Fake
     lateinit var meta: PaginationMetaApiModel
+    @Fake
+    lateinit var surveyDetail: SurveyDetailApiModel
 
     private val surveyRepository by withMocks { SurveyRepositoryImpl(networkDataSource) }
 
@@ -40,7 +43,7 @@ class SurveyRepositoryTest: TestsWithMocks() {
             networkDataSource.survey(isAny())
         } returns flowOf(Pair(listOf(survey), meta))
         surveyRepository
-            .survey(1)
+            .getSurvey(1)
             .test {
                 val response = awaitItem()
                 response.first.first().title shouldBe survey.title
@@ -55,9 +58,24 @@ class SurveyRepositoryTest: TestsWithMocks() {
             networkDataSource.survey(isAny())
         } returns flow { error("Fail") }
         surveyRepository
-            .survey(1)
+            .getSurvey(1)
             .test {
                 awaitError().message shouldBe "Fail"
+            }
+    }
+
+    @Test
+    fun `When calling surveyDetail with success response - it returns correct object`() = runTest {
+        mocker.every {
+            networkDataSource.surveyDetail(isAny())
+        } returns flowOf(surveyDetail)
+        surveyRepository
+            .getSurveyDetail("")
+            .test {
+                val response = awaitItem()
+                response.title shouldBe surveyDetail.title
+                response.questions.size shouldBe surveyDetail.questions.size
+                awaitComplete()
             }
     }
 }

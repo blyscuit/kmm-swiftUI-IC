@@ -24,7 +24,8 @@ extension KoinApplication {
         \.logInViewModel,
         \.resetPasswordViewModel,
         \.splashViewModel,
-        \.surveySelectionViewModel
+        \.surveySelectionViewModel,
+        \.surveyDetailViewModel
     ]
 
     static func inject<T>() -> T {

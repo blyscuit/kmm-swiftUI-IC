@@ -29,4 +29,8 @@ class GenericScreen {
         tester().waitForAnimationsToFinish()
         tester().tapView(withAccessibilityLabel: ViewId.general(.back)())
     }
+
+    func pressModelBackButton() {
+        tester().tapView(withAccessibilityIdentifier: ViewId.general(.backButton)())
+    }
 }

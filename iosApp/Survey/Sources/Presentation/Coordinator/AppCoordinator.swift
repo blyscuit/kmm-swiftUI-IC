@@ -24,6 +24,11 @@ struct AppCoordinator: View {
                 SplashView(coordinator: coordinator)
             case .surveySelection:
                 SurveySelectionContainerView(coordinator: coordinator)
+            case let .surveyDetail(parameters):
+                SurveyDetailView(
+                    survey: parameters.survey,
+                    coordinator: coordinator
+                )
             }
         }
     }

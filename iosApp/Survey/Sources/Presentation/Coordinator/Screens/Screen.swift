@@ -12,4 +12,5 @@ enum Screen {
     case splash
     case resetPassword
     case surveySelection
+    case surveyDetail(_ parameters: ScreenParameters.SurveyDetail)
 }

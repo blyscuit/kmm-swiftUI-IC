@@ -12,4 +12,5 @@
     <string name="reset_password_success_notification_title">Check your email.</string>
     <string name="reset_password_success_notification_message">We’ve email you instructions to reset your password.</string>
     <string name="account_logout_button">Logout</string>
+    <string name="survey_detail_start_button">Start Survey</string>
 </resources>
