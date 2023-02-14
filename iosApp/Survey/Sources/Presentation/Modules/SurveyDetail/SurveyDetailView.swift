@@ -23,6 +23,8 @@ struct SurveyDetailView: View {
 
     @State var isAnimating = true
     @State var questionIndex = 0
+    // TODO: Replace with real answer object
+    @State var currentAnswers = [String]()
 
     var body: some View {
         ZStack {
@@ -114,6 +116,7 @@ struct SurveyDetailView: View {
                     // TODO: Submit button logics
                     let totalItem = (dataSource.viewState.surveyDetail?.questions.count ?? 0) - 1
                     guard questionIndex < totalItem else { return }
+                    currentAnswers = []
                     withAnimation(.easeIn(duration: .viewTransition)) {
                         questionIndex += 1
                     }
@@ -150,13 +153,17 @@ struct SurveyDetailView: View {
     }
 
     private func animatedSurveyQuestionView(surveyDetail: SurveyDetailUiModel) -> some View {
-        return SurveyQuestionView(detail: surveyDetail, questionIndex: $questionIndex)
-            .transition(
-                .asymmetric(
-                    insertion: .move(edge: .trailing).combined(with: .opacity),
-                    removal: .move(edge: .leading).combined(with: .opacity)
-                )
+        return SurveyQuestionView(
+            detail: surveyDetail,
+            questionIndex: $questionIndex,
+            answers: $currentAnswers
+        )
+        .transition(
+            .asymmetric(
+                insertion: .move(edge: .trailing).combined(with: .opacity),
+                removal: .move(edge: .leading).combined(with: .opacity)
             )
+        )
     }
 
     func didPressBack() {

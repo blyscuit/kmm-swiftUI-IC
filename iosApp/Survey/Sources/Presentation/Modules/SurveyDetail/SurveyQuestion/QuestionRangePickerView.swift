@@ -11,6 +11,7 @@ import SwiftUI
 struct QuestionRangePickerView: View {
 
     @State var selectedId: String = ""
+    @Binding var answers: [String]
 
     let options: [Answer]
     let helpText: String
@@ -56,6 +57,9 @@ struct QuestionRangePickerView: View {
                     .foregroundColor(Color.white)
                     .font(.boldBody)
             }
+        }
+        .onChange(of: selectedId) {
+            answers = [$0]
         }
     }
 
