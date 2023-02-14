@@ -10,18 +10,18 @@ import SwiftUI
 
 struct QuestionPickerView: View {
 
-    @State private var selectedInput = ""
+    @State private var selectedId = ""
 
-    let ids: [String]
+    let options: [Answer]
 
     var body: some View {
-        Picker(String(describing: Self.self), selection: $selectedInput) {
-            ForEach(ids, id: \.self) { id in
-                let font = selectedInput == id ? Font.boldLarge : Font.regularLarge
-                Text(id)
+        Picker(String(describing: Self.self), selection: $selectedId) {
+            ForEach(Array(options.enumerated()), id: \.element.id) { index, option in
+                let font: Font = selectedId == option.id ? .boldLarge : .regularLarge
+                Text(option.text)
                     .font(font)
                     .foregroundColor(Color.white)
-                if id != ids.last {
+                if index != options.count - 1 {
                     Divider()
                         .overlay(Color.white)
                         .frame(width: 215.0, height: 1.0)
@@ -29,8 +29,7 @@ struct QuestionPickerView: View {
             }
         }
         .pickerStyle(.wheel)
-        .padding(20.0)
-        .onChange(of: selectedInput) {
+        .onChange(of: selectedId) {
             print($0)
         }
     }

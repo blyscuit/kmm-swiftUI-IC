@@ -19,6 +19,7 @@ data class SurveyDetailApiModel(
     data class SurveyIncluded(
         val id: String,
         val text: String,
+        @SerialName("help_text") val helpText: String?,
         @SerialName("display_type") val displayType: String,
         @SerialName("display_order") val displayOrder: Int,
         val answers: List<SurveyAnswer>
@@ -26,6 +27,7 @@ data class SurveyDetailApiModel(
         fun toSurveyDetail(): SurveyDetail.SurveyIncluded = SurveyDetail.SurveyIncluded(
             id,
             text,
+            helpText,
             displayType,
             displayOrder,
             answers.map { it.toSurveyDetail() }
