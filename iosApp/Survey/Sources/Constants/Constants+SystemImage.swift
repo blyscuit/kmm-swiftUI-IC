@@ -9,6 +9,9 @@
 extension Constants {
 
     enum SystemImage: String {
+
         case backArrow = "chevron.left"
+        case checkmarkCircleFill = "checkmark.circle.fill"
+        case circle
     }
 }

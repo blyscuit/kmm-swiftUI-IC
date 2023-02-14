@@ -56,6 +56,8 @@ struct SurveyQuestionView: View {
                 options: question.answers,
                 helpText: question.helpText.string
             )
+        case .choice:
+            QuestionMultiChoiceView(options: question.answers)
         default:
             QuestionPickerView(options: [])
         }
