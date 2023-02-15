@@ -3,6 +3,7 @@ package co.nimblehq.blisskmmic.data.network.target
 import co.nimblehq.blisskmmic.data.network.helpers.TargetType
 import co.nimblehq.blisskmmic.domain.model.SurveySubmission
 import io.ktor.http.*
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 class SubmitSurveyTargetType(submission: SurveySubmission):
@@ -10,8 +11,9 @@ class SubmitSurveyTargetType(submission: SurveySubmission):
 
     @Serializable
     data class SubmitSurveyInput(
+        @SerialName("survey_id")
         val id: String,
-        val answers: List<Question>
+        val questions: List<Question>
     ) {
 
         @Serializable
