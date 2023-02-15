@@ -29,6 +29,8 @@ struct AppCoordinator: View {
                     survey: parameters.survey,
                     coordinator: coordinator
                 )
+            case .submissionSuccess:
+                SubmissionSuccessView(coordinator: coordinator)
             }
         }
     }

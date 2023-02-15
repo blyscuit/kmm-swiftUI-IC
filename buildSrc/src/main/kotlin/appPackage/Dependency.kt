@@ -51,6 +51,7 @@ object Dependency {
     // Resources
     const val MOKO_RESOURCES_GENERATOR = "dev.icerock.moko:resources-generator:${Version.MOKO_RESOURCES}"
     const val MOKO_RESOURCES = "dev.icerock.moko:resources:${Version.MOKO_RESOURCES}"
+    const val MOKO_GRAPHICS = "dev.icerock.moko:graphics:${Version.MOKO_GRAPHICS}"
 
     // Turbine
     const val TURBINE = "app.cash.turbine:turbine:${Version.TURBINE}"

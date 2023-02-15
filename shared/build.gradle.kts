@@ -32,6 +32,7 @@ kotlin {
         framework {
             baseName = "Shared"
             export(Dependency.MOKO_RESOURCES)
+            export(Dependency.MOKO_GRAPHICS)
         }
         xcodeConfigurationToNativeBuildType["Debug Staging"] = NativeBuildType.DEBUG
         xcodeConfigurationToNativeBuildType["Debug Production"] = NativeBuildType.DEBUG

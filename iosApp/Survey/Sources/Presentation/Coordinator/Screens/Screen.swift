@@ -13,4 +13,5 @@ enum Screen {
     case resetPassword
     case surveySelection
     case surveyDetail(_ parameters: ScreenParameters.SurveyDetail)
+    case submissionSuccess
 }

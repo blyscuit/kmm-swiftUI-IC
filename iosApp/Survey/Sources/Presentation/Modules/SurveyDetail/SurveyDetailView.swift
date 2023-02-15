@@ -12,6 +12,7 @@ import SwiftUI
 protocol SurveyDetailCoordinator {
 
     func backToHome()
+    func showSubmissionSuccess()
 }
 
 struct SurveyDetailView: View {
