@@ -55,6 +55,13 @@ open class NetworkClient {
         }
     }
 
+    inline fun fetchEmpty(builder: HttpRequestBuilder) : Flow<Unit> {
+        return flow {
+            client.request(builder).bodyAsText()
+            emit(Unit)
+        }
+    }
+
     open fun clientConfig(): HttpClientConfig<*>.() -> Unit {
         return {
             install(Logging) {
