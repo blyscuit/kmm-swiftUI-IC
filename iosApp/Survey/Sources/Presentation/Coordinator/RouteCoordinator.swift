@@ -76,16 +76,7 @@ extension RouteCoordinator: SurveyDetailCoordinator {
         }
     }
 
-    func showSubmissionSuccess() {
-        routes.presentCover(.submissionSuccess)
-    }
-}
-
-extension RouteCoordinator: SubmissionSuccessCoordinator {
-
-    func closeAndShowHome() {
-        RouteSteps.withDelaysIfUnsupported(self, \.routes) {
-            $0.goBackToRoot()
-        }
+    func closeSubmissionAndShowHome() {
+        self.routes.goBackToRoot()
     }
 }

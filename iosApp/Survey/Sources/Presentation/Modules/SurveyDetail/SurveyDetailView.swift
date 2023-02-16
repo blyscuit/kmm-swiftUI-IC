@@ -12,7 +12,7 @@ import SwiftUI
 protocol SurveyDetailCoordinator {
 
     func backToHome()
-    func showSubmissionSuccess()
+    func closeSubmissionAndShowHome()
 }
 
 struct SurveyDetailView: View {
@@ -27,10 +27,21 @@ struct SurveyDetailView: View {
     // TODO: Replace with real answer object
     @State var currentAnswers = [String]()
     @State var isShowingQuitPrompt = false
+    @State var isShowingSuccess = false
 
     var body: some View {
         ZStack {
             surveyView
+                .if(!dataSource.isShowingTitleNavigationBar) { view in
+                    view.navigationBarItems(trailing: closeButton)
+                }
+            if isShowingSuccess {
+                SubmissionSuccessView(
+                    coordinator: coordinator,
+                    isShowing: $isShowingSuccess
+                )
+                .ignoresSafeArea()
+            }
         }
         .accessibilityElement(children: .contain)
         .accessibility(.surveyDetail(.view))
@@ -38,9 +49,6 @@ struct SurveyDetailView: View {
             view.backButton {
                 didPressBack()
             }
-        }
-        .if(!dataSource.isShowingTitleNavigationBar) { view in
-            view.navigationBarItems(trailing: closeButton)
         }
         .onLoad {
             DispatchQueue.main.async {
@@ -133,7 +141,12 @@ struct SurveyDetailView: View {
         Button {
             // TODO: Submit button logics
             let totalItem = (dataSource.viewState.surveyDetail?.questions.count ?? 0) - 1
-            guard questionIndex < totalItem else { return }
+            guard questionIndex < totalItem else { 
+                withAnimation(.easeInViewTransition) {
+                    isShowingSuccess = true
+                }
+                return
+             }
             currentAnswers = []
             withAnimation(.easeIn(duration: .viewTransition)) {
                 questionIndex += 1
@@ -169,6 +182,7 @@ struct SurveyDetailView: View {
                 .resizable()
                 .frame(width: 28.0, height: 28.0)
                 .accessibility(.surveyQuestion(.closeButton))
+                .opacity(isShowingSuccess ? 0.0 : 1.0)
         }
         .disabled(isAnimating)
     }

@@ -8,15 +8,12 @@
 
 import SwiftUI
 
-protocol SubmissionSuccessCoordinator {
-
-    func closeAndShowHome()
-}
-
 struct SubmissionSuccessView: View {
 
+    @Binding var isShowing: Bool
+
     private let successLottieName = "confetti"
-    private let coordinator: SubmissionSuccessCoordinator
+    private let coordinator: SurveyDetailCoordinator
 
     var body: some View {
         ZStack {
@@ -24,9 +21,12 @@ struct SubmissionSuccessView: View {
                 .foregroundColor(.moko.backgroundColor())
             VStack(alignment: .center) {
                 LottieView(fileName: successLottieName) {
-                    self.coordinator.closeAndShowHome()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .appearing) {
+                        self.coordinator.closeSubmissionAndShowHome()
+                    }
                 }
                 .frame(width: 200.0, height: 200.0)
+                .accessibility(.submissionSuccess(.animation))
                 Text(String.localizeId.submission_success_title())
                     .font(.boldTitle)
                     .foregroundColor(.moko.white())
@@ -34,10 +34,11 @@ struct SubmissionSuccessView: View {
                     .padding()
             }
         }
-        .navigationBarBackButtonHidden(true)
+        .transition(.opacity)
     }
 
-    init(coordinator: SubmissionSuccessCoordinator) {
+    init(coordinator: SurveyDetailCoordinator, isShowing: Binding<Bool>) {
         self.coordinator = coordinator
+        _isShowing = isShowing
     }
 }
