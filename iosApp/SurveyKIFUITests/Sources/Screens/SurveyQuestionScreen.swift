@@ -15,4 +15,12 @@ final class SurveyQuestionScreen: GenericScreen {
     func tapCloseButton() {
         tester().tapView(withAccessibilityIdentifier: ViewId.surveyQuestion(.closeButton)())
     }
+
+    func tapConfirmCloseDialog() {
+        tester().tapView(withAccessibilityLabel: "Yes")
+    }
+
+    func tapCancelCloseDialog() {
+        tester().tapView(withAccessibilityLabel: "Cancel")
+    }
 }
