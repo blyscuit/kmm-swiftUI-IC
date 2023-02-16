@@ -141,12 +141,7 @@ struct SurveyDetailView: View {
         Button {
             // TODO: Submit button logics
             let totalItem = (dataSource.viewState.surveyDetail?.questions.count ?? 0) - 1
-            guard questionIndex < totalItem else { 
-                withAnimation(.easeInViewTransition) {
-                    isShowingSuccess = true
-                }
-                return
-             }
+            guard questionIndex < totalItem else { return }
             currentAnswers = []
             withAnimation(.easeIn(duration: .viewTransition)) {
                 questionIndex += 1
@@ -165,6 +160,12 @@ struct SurveyDetailView: View {
         Button {
             // TODO: Submit action
             dataSource.isLoading = true
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                withAnimation(.easeInViewTransition) {
+                    dataSource.isLoading = false
+                    isShowingSuccess = true
+                }
+            }
         } label: {
             Text(String.localizeId.survey_submit_button())
                 .primaryButton()

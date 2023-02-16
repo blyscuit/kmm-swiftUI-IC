@@ -23,4 +23,13 @@ final class SurveyQuestionScreen: GenericScreen {
     func tapCancelCloseDialog() {
         tester().tapView(withAccessibilityLabel: "Cancel")
     }
+
+    func tapNextAndSubmit() {
+        while !tester().tryFindingView(
+            withAccessibilityIdentifier: ViewId.surveyDetail(.submitButton)()
+        ) {
+            tester().tapView(withAccessibilityIdentifier: ViewId.surveyQuestion(.nextButton)())
+        }
+        tester().tapView(withAccessibilityIdentifier: ViewId.surveyDetail(.submitButton)())
+    }
 }

@@ -6,11 +6,10 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
-
 import Nimble
 import Quick
 
-final class SurveyQuestionSpec: QuickSpec {
+final class SubmissionSuccessSpec: QuickSpec {
 
     override func spec() {
 
@@ -18,14 +17,16 @@ final class SurveyQuestionSpec: QuickSpec {
         var surveyScreen: SurveyScreen!
         var surveyDetailScreen: SurveyDetailScreen!
         var surveyQuestionScreen: SurveyQuestionScreen!
+        var submissionSuccessScreen: SubmissionSuccessScreen!
 
-        describe("a Survey Question screen") {
+        describe("a Submission Success screen") {
 
             beforeEach {
                 loginScreen = LoginScreen(self)
                 surveyScreen = SurveyScreen(self)
                 surveyDetailScreen = SurveyDetailScreen(self)
                 surveyQuestionScreen = SurveyQuestionScreen(self)
+                submissionSuccessScreen = SubmissionSuccessScreen(self)
             }
 
             describe("its open") {
@@ -36,47 +37,19 @@ final class SurveyQuestionSpec: QuickSpec {
                     surveyScreen.tapNextButton()
                     surveyDetailScreen.waitForAppearance()
                     surveyDetailScreen.tapNextButton()
+                    surveyQuestionScreen.waitForAppearance()
+                    surveyQuestionScreen.tapNextAndSubmit()
                 }
 
                 afterEach {
-                    surveyQuestionScreen.tapCloseButton()
-                    surveyQuestionScreen.tapConfirmCloseDialog()
                     surveyScreen.waitForAppearance()
                 }
 
-                it("shows its ui components") {
-                    surveyQuestionScreen.waitForAppearance()
-
-                    self.tester().waitForView(
-                        withAccessibilityIdentifier: ViewId.surveyQuestion(.titleText)()
-                    )
-                    self.tester().waitForView(
-                        withAccessibilityIdentifier: ViewId.surveyQuestion(.detailText)()
-                    )
-                    self.tester().waitForView(
-                        withAccessibilityIdentifier: ViewId.surveyQuestion(.closeButton)()
-                    )
-                    self.tester().waitForView(
-                        withAccessibilityIdentifier: ViewId.surveyQuestion(.nextButton)()
-                    )
-                }
-
-                describe("its close button") {
-
-                    context("when tapped and tap cancel") {
-
-                        beforeEach {
-                            surveyQuestionScreen.tapCloseButton()
-                            surveyQuestionScreen.tapCancelCloseDialog()
-                        }
-
-                        it("shows surveyQuestion screen") {
-                            surveyQuestionScreen.waitForAppearance()
-                        }
-                    }
+                it("shows then hides its ui components") {
+                    submissionSuccessScreen.waitForAppearance()
+                    submissionSuccessScreen.waitForDisappearance()
                 }
             }
         }
     }
 }
-

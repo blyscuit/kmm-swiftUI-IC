@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0901AF8C299CF0100056EC06 /* SubmissionSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901AF8B299CF0100056EC06 /* SubmissionSuccessView.swift */; };
-		0901AF8F299CF3200056EC06 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 0901AF8E299CF3200056EC06 /* confetti.json */; };
 		0901AF91299CF3640056EC06 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901AF90299CF3640056EC06 /* LottieView.swift */; };
 		0901AF93299CF7D80056EC06 /* ColorResource+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901AF92299CF7D80056EC06 /* ColorResource+Color.swift */; };
 		0901AF95299DDB500056EC06 /* SubmissionSuccessSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901AF94299DDB500056EC06 /* SubmissionSuccessSpec.swift */; };
 		0901AF98299DDB770056EC06 /* ViewId+SubmissionSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901AF96299DDB720056EC06 /* ViewId+SubmissionSuccess.swift */; };
+		0901AF9A299DE17D0056EC06 /* SubmissionSuccessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901AF99299DE17D0056EC06 /* SubmissionSuccessScreen.swift */; };
+		0901AF9B299DE1D80056EC06 /* ViewId+SubmissionSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901AF96299DDB720056EC06 /* ViewId+SubmissionSuccess.swift */; };
+		0901AF9C299DE1D80056EC06 /* ViewId+SubmissionSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901AF96299DDB720056EC06 /* ViewId+SubmissionSuccess.swift */; };
+		0901AFC6299E44F10056EC06 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 0901AFC5299E44F10056EC06 /* confetti.json */; };
 		09495F0728E40E130036BDFB /* FadePaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F0628E40E130036BDFB /* FadePaginationView.swift */; };
 		09495F0928E410A00036BDFB /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F0828E410A00036BDFB /* PageControlView.swift */; };
 		09495F1828E4461C0036BDFB /* SurveySelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09495F1628E446150036BDFB /* SurveySelectionScreen.swift */; };
@@ -228,11 +231,12 @@
 		004C81484718DF439986CCA3 /* Pods-SurveyKIFUITests.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyKIFUITests.release production.xcconfig"; path = "Target Support Files/Pods-SurveyKIFUITests/Pods-SurveyKIFUITests.release production.xcconfig"; sourceTree = "<group>"; };
 		03163DC877AC6E8DE71DB277 /* Pods_Survey_SurveyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_SurveyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0901AF8B299CF0100056EC06 /* SubmissionSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionSuccessView.swift; sourceTree = "<group>"; };
-		0901AF8E299CF3200056EC06 /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = confetti.json; path = ../../../../../../Downloads/confetti.json; sourceTree = "<group>"; };
 		0901AF90299CF3640056EC06 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		0901AF92299CF7D80056EC06 /* ColorResource+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorResource+Color.swift"; sourceTree = "<group>"; };
 		0901AF94299DDB500056EC06 /* SubmissionSuccessSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionSuccessSpec.swift; sourceTree = "<group>"; };
 		0901AF96299DDB720056EC06 /* ViewId+SubmissionSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewId+SubmissionSuccess.swift"; sourceTree = "<group>"; };
+		0901AF99299DE17D0056EC06 /* SubmissionSuccessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionSuccessScreen.swift; sourceTree = "<group>"; };
+		0901AFC5299E44F10056EC06 /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		09495F0628E40E130036BDFB /* FadePaginationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePaginationView.swift; sourceTree = "<group>"; };
 		09495F0828E410A00036BDFB /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
 		09495F1628E446150036BDFB /* SurveySelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveySelectionScreen.swift; sourceTree = "<group>"; };
@@ -453,7 +457,7 @@
 		0901AF8D299CF30F0056EC06 /* Lotties */ = {
 			isa = PBXGroup;
 			children = (
-				0901AF8E299CF3200056EC06 /* confetti.json */,
+				0901AFC5299E44F10056EC06 /* confetti.json */,
 			);
 			path = Lotties;
 			sourceTree = "<group>";
@@ -794,6 +798,7 @@
 				09A9F8DD2952B582009DE583 /* AccountScreen.swift */,
 				09D09DD129682C98009F88AF /* SurveyDetailScreen.swift */,
 				09D09E06296E7D55009F88AF /* SurveyQuestionScreen.swift */,
+				0901AF99299DE17D0056EC06 /* SubmissionSuccessScreen.swift */,
 				09A9F8D72952B42D009DE583 /* GenericScreen.swift */,
 			);
 			path = Screens;
@@ -1604,7 +1609,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0901AF8F299CF3200056EC06 /* confetti.json in Resources */,
+				0901AFC6299E44F10056EC06 /* confetti.json in Resources */,
 				09636AF228D4779400A5CB97 /* NeuzeitSLTStd-Book.otf in Resources */,
 				09636AF328D4779400A5CB97 /* NeuzeitSLTStd-BookHeavy.otf in Resources */,
 				CA1F500707F2936D39825740 /* Assets.xcassets in Resources */,
@@ -1928,10 +1933,12 @@
 				09D09E01296E7BFD009F88AF /* ViewId+SurveyQuestion.swift in Sources */,
 				09D09E09296E7D55009F88AF /* SurveyQuestionScreen.swift in Sources */,
 				09D09DD429682CBC009F88AF /* ViewId+SurveyDetail.swift in Sources */,
+				0901AF9C299DE1D80056EC06 /* ViewId+SubmissionSuccess.swift in Sources */,
 				09E6AC042951D333007F1EE3 /* ViewId+Splash.swift in Sources */,
 				09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */,
 				09E6ABFD2951D32F007F1EE3 /* ViewId.swift in Sources */,
 				098832B029713BAD0015BAC2 /* AA_AppLoadSpec.swift in Sources */,
+				0901AF9A299DE17D0056EC06 /* SubmissionSuccessScreen.swift in Sources */,
 				09A9F8DC2952B574009DE583 /* SurveyScreen.swift in Sources */,
 				09E6AC002951D333007F1EE3 /* ViewId+SurveyLoading.swift in Sources */,
 				09A9F8DF2952B585009DE583 /* AccountScreen.swift in Sources */,
@@ -2053,6 +2060,7 @@
 				09495F9D290A35C60036BDFB /* ViewId+Account.swift in Sources */,
 				09636B2128D821EA00A5CB97 /* ViewId.swift in Sources */,
 				0982A7DF29222EA800FC1976 /* LoginSpec.swift in Sources */,
+				0901AF9B299DE1D80056EC06 /* ViewId+SubmissionSuccess.swift in Sources */,
 				09C2F4062934680000F44818 /* ScreenProtocol+Permission.swift in Sources */,
 				09CE771F28E1BB4700EAA9EE /* ResetPasswordScreen.swift in Sources */,
 				09495F7F2900017E0036BDFB /* ViewId+SurveySelection.swift in Sources */,

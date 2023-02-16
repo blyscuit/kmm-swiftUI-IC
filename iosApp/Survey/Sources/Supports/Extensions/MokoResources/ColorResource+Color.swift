@@ -1,3 +1,4 @@
+//  swiftlint:disable:this file_name
 //
 //  ColorResource+Color.swift
 //  Survey

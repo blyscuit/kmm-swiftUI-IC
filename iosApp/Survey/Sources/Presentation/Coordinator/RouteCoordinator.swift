@@ -77,6 +77,6 @@ extension RouteCoordinator: SurveyDetailCoordinator {
     }
 
     func closeSubmissionAndShowHome() {
-        self.routes.goBackToRoot()
+        routes.goBackToRoot()
     }
 }
