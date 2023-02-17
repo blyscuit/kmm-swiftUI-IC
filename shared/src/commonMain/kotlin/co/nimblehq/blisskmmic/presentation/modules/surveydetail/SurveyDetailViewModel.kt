@@ -91,15 +91,15 @@ class SurveyDetailViewModel(
     fun submitAnswer() {
         val currentState = questionViewState.value
         if(!currentState.isLoading) {
+            val newState = SurveyQuestionViewState(
+                currentState.isShowingSubmit,
+                true,
+                currentState.currentQuestionIndex
+            )
+            questionMutableViewState.update {
+                newState
+            }
             performSubmitAnswer()
-        }
-        val newState = SurveyQuestionViewState(
-            currentState.isShowingSubmit,
-            true,
-            currentState.currentQuestionIndex
-        )
-        questionMutableViewState.update {
-            newState
         }
     }
 
