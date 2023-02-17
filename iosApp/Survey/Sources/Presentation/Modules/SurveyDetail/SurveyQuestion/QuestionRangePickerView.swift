@@ -11,7 +11,7 @@ import SwiftUI
 struct QuestionRangePickerView: View {
 
     @State var selectedId: String = ""
-    @Binding var answers: [String]
+    @Binding var answers: [SurveyAnswer]
 
     let options: [Answer]
     let helpText: String
@@ -59,7 +59,7 @@ struct QuestionRangePickerView: View {
             }
         }
         .onChange(of: selectedId) {
-            answers = [$0]
+            answers = [.init(id: $0, answer: nil)]
         }
     }
 
