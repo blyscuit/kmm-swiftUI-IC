@@ -80,8 +80,11 @@ class SurveyDetailViewModel(
         }
     }
 
-    fun addAnswer(value: SurveySubmissionUiModel?) {
-        value?.let { answers.add(it) }
+    fun addAnswer(values: List<SurveySubmissionUiModel.Answer>) {
+        viewState.value.surveyDetail?.questions?.get(questionViewState.value.currentQuestionIndex)?.let {
+            val submission = SurveySubmissionUiModel(it.id, values)
+            answers.add(submission)
+        }
         setNextQuestionState()
     }
 
