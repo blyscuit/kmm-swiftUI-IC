@@ -13,7 +13,7 @@ struct QuestionMultiChoiceView: View {
     let options: [Answer]
 
     @State var inputs = Set<String>()
-    @Binding var answers: [String]
+    @Binding var answers: [SurveyAnswer]
 
     var body: some View {
         VStack {
@@ -56,6 +56,6 @@ struct QuestionMultiChoiceView: View {
         } else {
             inputs.insert(id)
         }
-        answers = Array(inputs)
+        answers = inputs.map { .init(id: $0, answer: nil) }
     }
 }

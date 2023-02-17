@@ -10,10 +10,11 @@ import SwiftUI
 
 struct QuestionTextAreaView: View {
 
+    let id: String
     let placeholder: String?
 
     @State var text = ""
-    @Binding var answers: [String]
+    @Binding var answers: [SurveyAnswer]
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -34,7 +35,7 @@ struct QuestionTextAreaView: View {
             }
         }
         .onChange(of: text) {
-            answers = [$0]
+            answers = [.init(id: id, answer: $0)]
         }
         .onAppear {
             UITextView.appearance().backgroundColor = .clear
