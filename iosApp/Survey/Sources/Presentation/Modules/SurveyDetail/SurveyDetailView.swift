@@ -24,7 +24,6 @@ struct SurveyDetailView: View {
 
     @State var isAnimating = true
     @State var isShowingQuitPrompt = false
-    @State var isShowingSuccessConfirmation = false
     @State var currentAnswers = [SurveyAnswer]()
 
     var body: some View {
@@ -33,10 +32,10 @@ struct SurveyDetailView: View {
                 .if(!dataSource.isShowingTitleNavigationBar) { view in
                     view.navigationBarItems(trailing: closeButton)
                 }
-            if isShowingSuccessConfirmation {
+            if dataSource.isShowingSuccessConfirmation {
                 SubmissionSuccessView(
                     coordinator: coordinator,
-                    isShowing: $isShowingSuccessConfirmation
+                    isShowing: $dataSource.isShowingSuccessConfirmation
                 )
                 .ignoresSafeArea()
             }
@@ -136,7 +135,8 @@ struct SurveyDetailView: View {
 
     var nextButton: some View {
         Button {
-            dataSource.didPressNext()
+            dataSource.didPressNext(answers: currentAnswers)
+            currentAnswers = []
         } label: {
             Assets.nextButton
                 .image
@@ -167,7 +167,7 @@ struct SurveyDetailView: View {
                 .resizable()
                 .frame(width: 28.0, height: 28.0)
                 .accessibility(.surveyQuestion(.closeButton))
-                .opacity(isShowingSuccessConfirmation ? 0.0 : 1.0)
+                .opacity(dataSource.isShowingSuccessConfirmation ? 0.0 : 1.0)
         }
         .disabled(isAnimating)
     }

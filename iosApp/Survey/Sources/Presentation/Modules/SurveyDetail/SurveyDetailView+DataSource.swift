@@ -23,7 +23,7 @@ extension SurveyDetailView {
         @Published var isShowingTitle = true
         @Published var isShowingTitleNavigationBar = true
         @Published var questionIndex = 0
-        @Published var isShowingSuccess = false
+        @Published var isShowingSuccessConfirmation = false
         @Published var isShowingSubmit = false
 
         private var cancellables = Set<AnyCancellable>()
@@ -58,8 +58,8 @@ extension SurveyDetailView {
             viewModel.showQuestion()
         }
 
-        func didPressNext() {
-            viewModel.addAnswer(value: SurveySubmissionUiModel(id: "", answers: []))
+        func didPressNext(answers: [SurveyAnswer]) {
+            viewModel.addAnswer(values: answers)
         }
 
         func didPressSubmit() {
@@ -73,7 +73,7 @@ extension SurveyDetailView {
             viewState = state
             isShowingErrorAlert = !state.error.string.isEmpty
             isLoading = (state.isLoading || questionState.isLoading) && (state.isShowingQuestion)
-            isShowingSuccess = questionState.isShowingSuccess
+            isShowingSuccessConfirmation = questionState.isShowingSuccess
             withAnimation(.easeIn(duration: .viewTransition)) {
                 isShowingSubmit = questionState.isShowingSubmit
                 questionIndex = Int(questionState.currentQuestionIndex)
