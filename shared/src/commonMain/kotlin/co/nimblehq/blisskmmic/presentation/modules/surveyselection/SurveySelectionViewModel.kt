@@ -28,6 +28,7 @@ data class SurveySelectionViewState(
     constructor() : this(true)
 }
 
+@Suppress("TooManyFunctions", "LongParameterList")
 class SurveySelectionViewModel(
     private val getCurrentDateUseCase: GetCurrentDateUseCase,
     private val getProfileUseCase: GetProfileUseCase,

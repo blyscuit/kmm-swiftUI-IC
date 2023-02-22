@@ -34,6 +34,7 @@ data class SurveyQuestionViewState(
     constructor() : this(currentQuestionIndex = 0)
 }
 
+@Suppress("TooManyFunctions")
 class SurveyDetailViewModel(
     private val getSurveyDetailUseCase: GetSurveyDetailUseCase,
     private val submitSurveyUseCase: SubmitSurveyUseCase,

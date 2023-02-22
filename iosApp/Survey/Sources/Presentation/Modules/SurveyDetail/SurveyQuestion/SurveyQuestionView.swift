@@ -52,7 +52,6 @@ struct SurveyQuestionView: View {
 
     @ViewBuilder
     func questionView(with question: SurveyDetailUiModel.SurveyIncluded) -> some View {
-        // TODO: Show real questions
         switch question.displayType {
         case .dropdown:
             QuestionPickerView(answers: $answers, options: question.answers)
