@@ -126,8 +126,13 @@
 		09D09E09296E7D55009F88AF /* SurveyQuestionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09E06296E7D55009F88AF /* SurveyQuestionScreen.swift */; };
 		09D09E0B296E837F009F88AF /* QuestionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D09E0A296E837F009F88AF /* QuestionPickerView.swift */; };
 		09D09E0C296EBA20009F88AF /* TimeInterval+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2F4012934588400F44818 /* TimeInterval+Constants.swift */; };
+		09E08C4B298CB0BD00CC765C /* QuestionEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E08C4A298CB0BD00CC765C /* QuestionEmojiView.swift */; };
 		09E08C562990E97F00CC765C /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E08C552990E97F00CC765C /* Collection+Safe.swift */; };
 		09E08C5A2990EB4B00CC765C /* CollectionSafeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E08C582990EB3800CC765C /* CollectionSafeSpec.swift */; };
+		09E08C5C2990F8B600CC765C /* QuestionRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E08C5B2990F8B600CC765C /* QuestionRangePickerView.swift */; };
+		09E08C45298B7DD500CC765C /* QuestionMultiChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E08C44298B7DD500CC765C /* QuestionMultiChoiceView.swift */; };
+		09E08C47298B89F400CC765C /* QuestionMultiFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E08C46298B89F400CC765C /* QuestionMultiFormView.swift */; };
+		09E08C49298B922700CC765C /* QuestionTextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E08C48298B922700CC765C /* QuestionTextAreaView.swift */; };
 		09E6ABF32951D105007F1EE3 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */; };
 		09E6ABFD2951D32F007F1EE3 /* ViewId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B1428D8148C00A5CB97 /* ViewId.swift */; };
 		09E6ABFE2951D333007F1EE3 /* ViewId+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09636B2F28D8267D00A5CB97 /* ViewId+General.swift */; };
@@ -321,8 +326,13 @@
 		09D09E02296E7CF9009F88AF /* SurveyQuestionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionSpec.swift; sourceTree = "<group>"; };
 		09D09E06296E7D55009F88AF /* SurveyQuestionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionScreen.swift; sourceTree = "<group>"; };
 		09D09E0A296E837F009F88AF /* QuestionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPickerView.swift; sourceTree = "<group>"; };
+		09E08C4A298CB0BD00CC765C /* QuestionEmojiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionEmojiView.swift; sourceTree = "<group>"; };
 		09E08C552990E97F00CC765C /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
 		09E08C582990EB3800CC765C /* CollectionSafeSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSafeSpec.swift; sourceTree = "<group>"; };
+		09E08C5B2990F8B600CC765C /* QuestionRangePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionRangePickerView.swift; sourceTree = "<group>"; };
+		09E08C44298B7DD500CC765C /* QuestionMultiChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionMultiChoiceView.swift; sourceTree = "<group>"; };
+		09E08C46298B89F400CC765C /* QuestionMultiFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionMultiFormView.swift; sourceTree = "<group>"; };
+		09E08C48298B922700CC765C /* QuestionTextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTextAreaView.swift; sourceTree = "<group>"; };
 		09E6ABE42951CF3E007F1EE3 /* SurveyKIFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyKIFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E6ABF12951D103007F1EE3 /* KIF+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Swift.swift"; sourceTree = "<group>"; };
 		09E6AC0B2951D5DD007F1EE3 /* AccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSpec.swift; sourceTree = "<group>"; };
@@ -907,6 +917,11 @@
 			children = (
 				09D09DFC296E6B35009F88AF /* SurveyQuestionView.swift */,
 				09D09E0A296E837F009F88AF /* QuestionPickerView.swift */,
+				09E08C4A298CB0BD00CC765C /* QuestionEmojiView.swift */,
+				09E08C5B2990F8B600CC765C /* QuestionRangePickerView.swift */,
+				09E08C44298B7DD500CC765C /* QuestionMultiChoiceView.swift */,
+				09E08C46298B89F400CC765C /* QuestionMultiFormView.swift */,
+				09E08C48298B922700CC765C /* QuestionTextAreaView.swift */,
 			);
 			path = SurveyQuestion;
 			sourceTree = "<group>";
@@ -1902,7 +1917,9 @@
 				0982A80329278E9000FC1976 /* SurveyHeaderView.swift in Sources */,
 				09636B0D28D4917200A5CB97 /* OverlayButton.swift in Sources */,
 				09495FC9291106A00036BDFB /* Constants+SystemImage.swift in Sources */,
+				09E08C4B298CB0BD00CC765C /* QuestionEmojiView.swift in Sources */,
 				09E6AC102951D8B5007F1EE3 /* AccountView.swift in Sources */,
+				09E08C45298B7DD500CC765C /* QuestionMultiChoiceView.swift in Sources */,
 				09D09DCE29682B78009F88AF /* SurveyItemOverlayView.swift in Sources */,
 				09D09DC429681214009F88AF /* RouterCoordinator+WithoutAnimation.swift in Sources */,
 				09D09DC8296817E2009F88AF /* SurveyDetailImage.swift in Sources */,
@@ -1910,6 +1927,7 @@
 				09CE771328E1A94600EAA9EE /* ResetPasswordView.swift in Sources */,
 				09FE26CD294B1EE3005A7F85 /* SurveySelectionView+DataSource.swift in Sources */,
 				09D09DCA29682810009F88AF /* Constants+Animation.swift in Sources */,
+				09E08C47298B89F400CC765C /* QuestionMultiFormView.swift in Sources */,
 				09636B3028D8267D00A5CB97 /* ViewId+General.swift in Sources */,
 				09636B0228D4876100A5CB97 /* PrimaryButton.swift in Sources */,
 				09CE770C28E191B400EAA9EE /* AppCoordinator.swift in Sources */,
@@ -1949,8 +1967,11 @@
 				0982A7E029222EB900FC1976 /* ViewId+Splash.swift in Sources */,
 				097C4AE82988B96E00AE265A /* SurveyDetailView+DataSource.swift in Sources */,
 				0964B1D02942F3A300946FA1 /* LoginView+DataSource.swift in Sources */,
+				09E08C43298B74D600CC765C /* QuestionRangePickerView.swift in Sources */,
+				09E08C49298B922700CC765C /* QuestionTextAreaView.swift in Sources */,
 				09495F9C290A35BC0036BDFB /* ViewId+Account.swift in Sources */,
 				09CE770F28E1922000EAA9EE /* Screen.swift in Sources */,
+				09E08C5C2990F8B600CC765C /* QuestionRangePickerView.swift in Sources */,
 				09CE772528E2C1C600EAA9EE /* View+HideBackButtonTitle.swift in Sources */,
 				09CE771528E1AB0B00EAA9EE /* ViewId+ResetPassword.swift in Sources */,
 				09D09DC6296812F6009F88AF /* View+ConditionalModifier.swift in Sources */,
@@ -2489,7 +2510,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -2749,7 +2770,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -2775,7 +2796,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;
@@ -2826,7 +2847,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.nimblehq.bliss.kmm-ic";
 				PRODUCT_NAME = Survey;
 				SDKROOT = iphoneos;

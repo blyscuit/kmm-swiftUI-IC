@@ -10,6 +10,7 @@ data class SurveyDetail(
     data class SurveyIncluded(
         val id: String,
         val text: String,
+        val helpText: String?,
         val displayType: String,
         val displayOrder: Int,
         val answers: List<SurveyAnswer>

@@ -13,6 +13,7 @@ data class SurveyDetailUiModel (
     data class SurveyIncluded(
         val id: String,
         val text: String,
+        val helpText: String?,
         val displayType: DisplayType,
         val displayOrder: Int,
         val answers: List<SurveyAnswer>
@@ -28,6 +29,7 @@ data class SurveyDetailUiModel (
     enum class DisplayType {
         DEFAULT,
         INTRO,
+        DROPDOWN,
         STAR,
         SMILEY,
         HEART,
@@ -60,6 +62,7 @@ private fun SurveyDetail.SurveyIncluded.toSurveyDetailUiModel() =
     SurveyDetailUiModel.SurveyIncluded(
         id,
         text,
+        helpText,
         SurveyDetailUiModel.DisplayType.from(displayType.uppercase()),
         displayOrder,
         answers.map { it.toSurveyDetailUiModel() }
