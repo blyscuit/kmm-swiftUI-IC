@@ -2,5 +2,5 @@
 <resources>
     <!-- format: #RRGGBB[AA] or 0xRRGGBB[AA] or RRGGBB[AA] where [AA] - optional -->
     <color name="backgroundColor">#15151A</color>
-    <color name="white">#FFFFFF</color>
+    <color name="primary">#FFFFFF</color>
 </resources>

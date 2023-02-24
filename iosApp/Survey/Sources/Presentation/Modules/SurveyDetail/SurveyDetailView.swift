@@ -27,7 +27,7 @@ struct SurveyDetailView: View {
     // TODO: Replace with real answer object
     @State var currentAnswers = [String]()
     @State var isShowingQuitPrompt = false
-    @State var isShowingSuccess = false
+    @State var isShowingSuccessConfirmation = false
 
     var body: some View {
         ZStack {
@@ -35,10 +35,10 @@ struct SurveyDetailView: View {
                 .if(!dataSource.isShowingTitleNavigationBar) { view in
                     view.navigationBarItems(trailing: closeButton)
                 }
-            if isShowingSuccess {
+            if isShowingSuccessConfirmation {
                 SubmissionSuccessView(
                     coordinator: coordinator,
-                    isShowing: $isShowingSuccess
+                    isShowing: $isShowingSuccessConfirmation
                 )
                 .ignoresSafeArea()
             }
@@ -163,7 +163,7 @@ struct SurveyDetailView: View {
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 withAnimation(.easeInViewTransition) {
                     dataSource.isLoading = false
-                    isShowingSuccess = true
+                    isShowingSuccessConfirmation = true
                 }
             }
         } label: {
@@ -183,7 +183,7 @@ struct SurveyDetailView: View {
                 .resizable()
                 .frame(width: 28.0, height: 28.0)
                 .accessibility(.surveyQuestion(.closeButton))
-                .opacity(isShowingSuccess ? 0.0 : 1.0)
+                .opacity(isShowingSuccessConfirmation ? 0.0 : 1.0)
         }
         .disabled(isAnimating)
     }

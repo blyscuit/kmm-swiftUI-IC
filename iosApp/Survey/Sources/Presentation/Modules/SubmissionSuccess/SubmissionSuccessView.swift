@@ -29,7 +29,7 @@ struct SubmissionSuccessView: View {
                 .accessibility(.submissionSuccess(.animation))
                 Text(String.localizeId.submission_success_title())
                     .font(.boldTitle)
-                    .foregroundColor(.moko.white())
+                    .foregroundColor(.moko.primary())
                     .multilineTextAlignment(.center)
                     .padding()
             }
