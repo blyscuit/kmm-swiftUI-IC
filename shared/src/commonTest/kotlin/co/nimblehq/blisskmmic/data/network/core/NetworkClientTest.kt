@@ -56,6 +56,19 @@ class NetworkClientTest {
     }
 
     @Test
+    fun `When calling fetchEmpty - it returns correctly`() = runTest {
+        val engine = jsonMockEngine("", path)
+        val networkClient = NetworkClient(engine = engine)
+        networkClient
+            .fetchEmpty(request)
+            .test {
+                val response = awaitItem()
+                response shouldBe Unit
+                awaitComplete()
+            }
+    }
+
+    @Test
     fun `when calling fetch with invalid path - it returns correct object`() = runTest {
         val engine = jsonMockEngine(NETWORK_MOCK_MODEL_RESULT, "")
         val networkClient = NetworkClient(engine = engine)

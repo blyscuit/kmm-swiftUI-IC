@@ -18,6 +18,7 @@ interface NetworkDataSource {
     fun surveyDetail(target: SurveyDetailTargetType): Flow<SurveyDetailApiModel>
     fun profile(target: UserProfileTargetType): Flow<UserApiModel>
     fun refreshToken(target: RefreshTokenType): Flow<TokenApiModel>
+    fun submitSurvey(target: SubmitSurveyTargetType): Flow<Unit>
 }
 
 class NetworkDataSourceImpl(private val networkClient: NetworkClient): NetworkDataSource {
@@ -45,5 +46,9 @@ class NetworkDataSourceImpl(private val networkClient: NetworkClient): NetworkDa
 
     override fun surveyDetail(target: SurveyDetailTargetType): Flow<SurveyDetailApiModel> {
         return networkClient.fetch(target.requestBuilder())
+    }
+
+    override fun submitSurvey(target: SubmitSurveyTargetType): Flow<Unit> {
+        return networkClient.fetchEmpty(target.requestBuilder())
     }
 }
