@@ -18,6 +18,7 @@ target 'Survey' do
   pod 'FlowStacks'
   pod 'SkeletonUI'
   pod 'lottie-ios'
+  pod 'SwiftUI-Pull-To-Refresh', '~> 1.1.9'
 
   # Storage
   pod 'KeychainAccess'

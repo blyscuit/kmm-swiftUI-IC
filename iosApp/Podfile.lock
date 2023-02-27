@@ -73,6 +73,7 @@ PODS:
   - Sourcery/CLI-Only (1.8.0)
   - SwiftFormat/CLI (0.49.18)
   - SwiftLint (0.49.1)
+  - SwiftUI-Pull-To-Refresh (1.1.9)
   - Wormholy (1.6.5)
 
 DEPENDENCIES:
@@ -96,6 +97,7 @@ DEPENDENCIES:
   - Sourcery (= 1.8.0)
   - SwiftFormat/CLI
   - SwiftLint
+  - SwiftUI-Pull-To-Refresh (~> 1.1.9)
   - Wormholy
 
 SPEC REPOS:
@@ -128,6 +130,7 @@ SPEC REPOS:
     - Sourcery
     - SwiftFormat
     - SwiftLint
+    - SwiftUI-Pull-To-Refresh
     - Wormholy
 
 EXTERNAL SOURCES:
@@ -173,8 +176,9 @@ SPEC CHECKSUMS:
   Sourcery: 6f5fe49b82b7e02e8c65560cbd52e1be67a1af2e
   SwiftFormat: 2402d29b26746f169cce5454d5af88314cbb2e35
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
+  SwiftUI-Pull-To-Refresh: 334b72e9c23d5bb9d309e63ec7348dcd06e6e069
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: 8e3f5db58f6e0b8ad816e0aee214d47b1e3a98e4
+PODFILE CHECKSUM: 0d4ba11af686b820e00748e2b6eeb8bf167b6f4a
 
 COCOAPODS: 1.11.3

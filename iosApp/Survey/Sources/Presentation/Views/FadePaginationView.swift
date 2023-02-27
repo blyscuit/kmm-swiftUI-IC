@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUI_Pull_To_Refresh
 
 struct FadePaginationView<T>: View {
 
@@ -25,6 +26,7 @@ struct FadePaginationView<T>: View {
     var currentView: (T) -> AnyView
     var nextView: (T) -> AnyView
     var items: [T]
+    var didPullToRefresh: OnRefresh
 
     var body: some View {
         ZStack {
@@ -32,9 +34,15 @@ struct FadePaginationView<T>: View {
                 nextView(items[nextPage])
             }
             if items.count > currentPage {
-                currentView(items[currentPage])
-                    .opacity(currentVisibility)
-                    .gesture(
+                ZStack {
+                    currentView(items[currentPage])
+                        .opacity(currentVisibility)
+                    RefreshableScrollView(
+                        loadingViewBackgroundColor: .clear,
+                        onRefresh: didPullToRefresh
+                    ) {
+                        ZStack {}
+                    }.gesture(
                         DragGesture(minimumDistance: minimumTurnDistance, coordinateSpace: .local)
                             .onChanged { value in
                                 switch value.translation.width {
@@ -72,6 +80,7 @@ struct FadePaginationView<T>: View {
                             }
                             .updatingVelocity($velocity)
                     )
+                }
             } else { VStack {} }
         }
     }
@@ -80,12 +89,14 @@ struct FadePaginationView<T>: View {
         currentPage: Binding<Int>,
         currentView: @escaping (T) -> AnyView,
         nextView: @escaping (T) -> AnyView,
-        items: [T]
+        items: [T],
+        didPullToRefresh: OnRefresh?
     ) {
         _currentPage = currentPage
         self.currentView = currentView
         self.nextView = nextView
         self.items = items
+        self.didPullToRefresh = didPullToRefresh ?? { $0() }
     }
 
     private func forwardPage() {

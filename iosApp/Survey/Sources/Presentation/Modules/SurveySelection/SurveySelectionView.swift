@@ -42,7 +42,10 @@ struct SurveySelectionView: View {
                 nextView: { item in
                     AnyView(SurveyItemView(survey: item))
                 },
-                items: dataSource.surveys
+                items: dataSource.surveys,
+                didPullToRefresh: { done in
+                    done()
+                }
             )
             .onChange(of: currentPage) { index in
                 dataSource.checkFetchMore(index: index)
