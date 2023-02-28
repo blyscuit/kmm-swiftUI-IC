@@ -12,6 +12,7 @@ import SwiftUI
 protocol SurveyDetailCoordinator {
 
     func backToHome()
+    func closeSubmissionAndShowHome()
 }
 
 struct SurveyDetailView: View {
@@ -26,10 +27,21 @@ struct SurveyDetailView: View {
     // TODO: Replace with real answer object
     @State var currentAnswers = [String]()
     @State var isShowingQuitPrompt = false
+    @State var isShowingSuccessConfirmation = false
 
     var body: some View {
         ZStack {
             surveyView
+                .if(!dataSource.isShowingTitleNavigationBar) { view in
+                    view.navigationBarItems(trailing: closeButton)
+                }
+            if isShowingSuccessConfirmation {
+                SubmissionSuccessView(
+                    coordinator: coordinator,
+                    isShowing: $isShowingSuccessConfirmation
+                )
+                .ignoresSafeArea()
+            }
         }
         .accessibilityElement(children: .contain)
         .accessibility(.surveyDetail(.view))
@@ -37,9 +49,6 @@ struct SurveyDetailView: View {
             view.backButton {
                 didPressBack()
             }
-        }
-        .if(!dataSource.isShowingTitleNavigationBar) { view in
-            view.navigationBarItems(trailing: closeButton)
         }
         .onLoad {
             DispatchQueue.main.async {
@@ -151,6 +160,12 @@ struct SurveyDetailView: View {
         Button {
             // TODO: Submit action
             dataSource.isLoading = true
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                withAnimation(.easeInViewTransition) {
+                    dataSource.isLoading = false
+                    isShowingSuccessConfirmation = true
+                }
+            }
         } label: {
             Text(String.localizeId.survey_submit_button())
                 .primaryButton()
@@ -168,6 +183,7 @@ struct SurveyDetailView: View {
                 .resizable()
                 .frame(width: 28.0, height: 28.0)
                 .accessibility(.surveyQuestion(.closeButton))
+                .opacity(isShowingSuccessConfirmation ? 0.0 : 1.0)
         }
         .disabled(isAnimating)
     }

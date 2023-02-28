@@ -71,12 +71,12 @@ extension RouteCoordinator: SurveySelectionCoordinator {
 extension RouteCoordinator: SurveyDetailCoordinator {
 
     func backToHome() {
-        guard routes.count > 1 else {
-            // Already at Home
-            return
-        }
         withoutAnimation {
-            self.routes.dismiss()
+            self.routes.goBackToRoot()
         }
+    }
+
+    func closeSubmissionAndShowHome() {
+        routes.goBackToRoot()
     }
 }

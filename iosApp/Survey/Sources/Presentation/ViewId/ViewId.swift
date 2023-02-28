@@ -19,6 +19,7 @@ enum ViewId {
     case surveyLoading(SurveyLoading)
     case surveyDetail(SurveyDetail)
     case surveyQuestion(SurveyQuestion)
+    case submissionSuccess(SubmissionSuccess)
     case account(Account)
     case general(General)
 
@@ -31,6 +32,7 @@ enum ViewId {
         case let .surveyLoading(surveyLoading): return surveyLoading.rawValue
         case let .surveyDetail(surveyDetail): return surveyDetail.rawValue
         case let .surveyQuestion(surveyQuestion): return surveyQuestion.rawValue
+        case let .submissionSuccess(submissionSuccess): return submissionSuccess.rawValue
         case let .account(account): return account.rawValue
         case let .general(general): return general.rawValue
         }

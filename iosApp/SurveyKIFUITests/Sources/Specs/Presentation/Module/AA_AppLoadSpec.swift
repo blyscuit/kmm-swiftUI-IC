@@ -29,10 +29,12 @@ final class AA_AppLoadSpec: QuickSpec {
                 context("when log in") {
 
                     beforeEach {
+                        loginScreen.system().wait(forTimeInterval: .instant)
                         loginScreen.loginIfNeeded()
                     }
 
                     it("it loads") {
+                        loginScreen.system().wait(forTimeInterval: .instant)
                         surveyScreen.waitForAppearance()
                     }
                 }

@@ -11,7 +11,7 @@ import SwiftUI
 
 extension RouteCoordinator {
 
-    func withoutAnimation(action: @escaping () -> Void) {
+    func withoutAnimation(action: () -> Void) {
         var transaction = Transaction()
         transaction.disablesAnimations = true
         withTransaction(transaction) {
