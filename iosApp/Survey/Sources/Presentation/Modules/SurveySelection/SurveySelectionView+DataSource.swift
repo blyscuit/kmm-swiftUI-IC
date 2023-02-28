@@ -25,9 +25,10 @@ extension SurveySelectionView {
 
         @Published private(set) var viewState = SurveySelectionViewState()
         @Published var showingLoading = false
+        @Published var isShowingPullRefresh = false
         @Published private(set) var surveys = [SurveyUiModel]()
 
-        private var cancellables = Set<AnyCancellable>()
+        var cancellables = Set<AnyCancellable>()
 
         init(
             viewModel: SurveySelectionViewModel = KoinApplication.shared.inject(),
@@ -59,6 +60,13 @@ extension SurveySelectionView {
         func showSurveyDetail() {
             guard let survey = viewModel.currentSurvey else { return }
             coordinator.showSurveyDetail(.init(survey: survey))
+        }
+
+        func reload() {
+            isShowingPullRefresh = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.isShowingPullRefresh = false
+            }
         }
 
         private func updateStates(_ state: SurveySelectionViewState) {

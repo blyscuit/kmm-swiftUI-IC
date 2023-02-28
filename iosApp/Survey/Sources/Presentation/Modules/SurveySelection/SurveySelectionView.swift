@@ -6,6 +6,7 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Combine
 import Shared
 import SwiftUI
 
@@ -16,6 +17,7 @@ struct SurveySelectionView: View {
     @Binding var isShowingAccountView: Bool
 
     @State private var currentPage = 0
+    private var cancellables = Set<AnyCancellable>()
 
     var body: some View {
         ZStack {
@@ -43,8 +45,16 @@ struct SurveySelectionView: View {
                     AnyView(SurveyItemView(survey: item))
                 },
                 items: dataSource.surveys,
-                didPullToRefresh: { done in
-                    done()
+                didPullToRefresh: { [weak dataSource] done in
+                    guard let dataSource else { return }
+                    dataSource.reload()
+                    dataSource
+                        .$isShowingPullRefresh
+                        .sink { value in
+                            guard !value else { return }
+                            done()
+                        }
+                        .store(in: &dataSource.cancellables)
                 }
             )
             .onChange(of: currentPage) { index in
