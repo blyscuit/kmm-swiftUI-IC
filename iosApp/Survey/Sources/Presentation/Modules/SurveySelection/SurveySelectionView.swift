@@ -52,6 +52,7 @@ struct SurveySelectionView: View {
                         .$isShowingPullRefresh
                         .sink { value in
                             guard !value else { return }
+                            currentPage = 0
                             done()
                         }
                         .store(in: &dataSource.cancellables)

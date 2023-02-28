@@ -21,6 +21,7 @@ private const val FETCH_MORE_TRIGGER = 2
 
 data class SurveySelectionViewState(
     val isLoading: Boolean = true,
+    val isRefreshing: Boolean = false,
     val surveyHeaderUiModel: SurveyHeaderUiModel? = null,
     val accountUiModel: AccountUiModel? = null,
     val surveys: List<SurveyUiModel> = listOf()
@@ -71,6 +72,25 @@ class SurveySelectionViewModel(
         selectingIndex = itemIndex
         if(itemIndex >= viewState.value.surveys.size - FETCH_MORE_TRIGGER) {
             fetchMoreSurvey()
+        }
+    }
+
+    fun reloadSurvey() {
+        fetchingSurvey = true
+        currentPage = 1
+        selectingIndex = 0
+        mutableViewState.update {
+            SurveySelectionViewState(
+                isLoading = false,
+                isRefreshing = true,
+                surveyHeaderUiModel = it.surveyHeaderUiModel,
+                accountUiModel = it.accountUiModel,
+                surveys = it.surveys
+            )
+        }
+        viewModelScope.launch {
+            fetchSurvey(currentPage)
+                .collect { updateSurveyState(it, replace = true)}
         }
     }
 
@@ -150,17 +170,29 @@ class SurveySelectionViewModel(
             version
         )
         mutableViewState.update {
-            SurveySelectionViewState(false, surveyHeader, account)
+            SurveySelectionViewState(
+                isLoading = false,
+                isRefreshing = false,
+                surveyHeaderUiModel = surveyHeader,
+                accountUiModel = account
+            )
         }
     }
 
-    private fun updateSurveyState(surveys: List<SurveyUiModel>) {
+    private fun updateSurveyState(surveys: List<SurveyUiModel>, replace: Boolean = false) {
         mutableViewState.update {
+            var newSurveys = it.surveys
+            if (replace) {
+                newSurveys = surveys
+            } else {
+                newSurveys += surveys
+            }
             SurveySelectionViewState(
-                false,
-                it.surveyHeaderUiModel,
-                it.accountUiModel,
-                it.surveys + surveys
+                isLoading = false,
+                isRefreshing = false,
+                surveyHeaderUiModel = it.surveyHeaderUiModel,
+                accountUiModel = it.accountUiModel,
+                surveys = newSurveys
             )
         }
         fetchingSurvey = false

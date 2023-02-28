@@ -64,15 +64,14 @@ extension SurveySelectionView {
 
         func reload() {
             isShowingPullRefresh = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                self.isShowingPullRefresh = false
-            }
+            viewModel.reloadSurvey()
         }
 
         private func updateStates(_ state: SurveySelectionViewState) {
             viewState = state
             showingLoading = state.isLoading
             surveys = state.surveys
+            isShowingPullRefresh = state.isRefreshing
         }
     }
 }
