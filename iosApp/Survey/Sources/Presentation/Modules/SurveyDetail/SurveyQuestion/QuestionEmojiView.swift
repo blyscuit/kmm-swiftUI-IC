@@ -56,7 +56,8 @@ struct QuestionEmojiView: View {
             Spacer()
         }
         .onChange(of: rating) {
-            answers = [.init(id: options[$0].id, answer: nil)]
+            guard let option = options[safe: $0] else { return }
+            answers = [.init(id: option.id, answer: nil)]
         }
     }
 

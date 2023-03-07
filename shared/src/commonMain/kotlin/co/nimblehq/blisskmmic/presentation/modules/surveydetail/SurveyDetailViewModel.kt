@@ -25,15 +25,6 @@ data class SurveyDetailViewState(
     constructor(error: String?) : this(null, false, false, error)
 }
 
-data class SurveyQuestionViewState(
-    val isShowingSubmit: Boolean = false,
-    val isLoading: Boolean = false,
-    val currentQuestionIndex: Int = 0,
-    val isShowingSuccess: Boolean = false
-) {
-    constructor() : this(currentQuestionIndex = 0)
-}
-
 @Suppress("TooManyFunctions")
 class SurveyDetailViewModel(
     private val getSurveyDetailUseCase: GetSurveyDetailUseCase,
@@ -90,17 +81,17 @@ class SurveyDetailViewModel(
     }
 
     fun submitAnswer() {
-        val currentState = questionViewState.value
-        if(!currentState.isLoading) {
-            val newState = SurveyQuestionViewState(
-                currentState.isShowingSubmit,
-                true,
-                currentState.currentQuestionIndex
-            )
-            questionMutableViewState.update {
-                newState
+        with(questionViewState.value) {
+            if (!isLoading) {
+                questionMutableViewState.update {
+                    SurveyQuestionViewState(
+                        isShowingSubmit = isShowingSubmit,
+                        isLoading = true,
+                        currentQuestionIndex = currentQuestionIndex
+                    )
+                }
+                performSubmitAnswer()
             }
-            performSubmitAnswer()
         }
     }
 
@@ -145,36 +136,31 @@ class SurveyDetailViewModel(
         val currentState = questionViewState.value
         var nextQuestionIndex = currentState.currentQuestionIndex + 1
         val isFinalQuestion = nextQuestionIndex >= (questionSize - 1)
-        val newState = SurveyQuestionViewState(
-            isFinalQuestion,
-            currentState.isLoading,
-            nextQuestionIndex
-        )
         questionMutableViewState.update {
-            newState
+            SurveyQuestionViewState(
+                isShowingSubmit = isFinalQuestion,
+                isLoading = currentState.isLoading,
+                currentQuestionIndex = nextQuestionIndex
+            )
         }
     }
 
     private fun handleSubmitError() {
-        val currentState = questionViewState.value
-        val newState = SurveyQuestionViewState(
-            currentQuestionIndex = currentState.currentQuestionIndex
-        )
         questionMutableViewState.update {
-            newState
+            SurveyQuestionViewState(
+                currentQuestionIndex = questionViewState.value.currentQuestionIndex
+            )
         }
     }
 
     private fun handleSubmitSuccess() {
-        val currentState = questionViewState.value
-        val newState = SurveyQuestionViewState(
-            isShowingSubmit = true,
-            isLoading = false,
-            currentState.currentQuestionIndex,
-            true
-        )
         questionMutableViewState.update {
-            newState
+            SurveyQuestionViewState(
+                isShowingSubmit = true,
+                isLoading = false,
+                currentQuestionIndex = questionViewState.value.currentQuestionIndex,
+                isShowingSuccess = true
+            )
         }
     }
 }
