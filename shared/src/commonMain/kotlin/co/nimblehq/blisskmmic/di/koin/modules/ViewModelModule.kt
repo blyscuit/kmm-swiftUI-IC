@@ -14,5 +14,5 @@ val viewModelModule = module {
     factoryOf(::ResetPasswordViewModel)
     factoryOf(::SplashViewModel)
     factoryOf(::SurveySelectionViewModel)
-    factory { SurveyDetailViewModel(get()) }
+    factory { SurveyDetailViewModel(get(), get()) }
 }

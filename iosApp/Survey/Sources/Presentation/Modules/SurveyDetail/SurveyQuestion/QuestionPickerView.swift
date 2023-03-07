@@ -11,7 +11,7 @@ import SwiftUI
 struct QuestionPickerView: View {
 
     @State private var selectedId = ""
-    @Binding var answers: [String]
+    @Binding var answers: [SurveyAnswer]
 
     let options: [Answer]
 
@@ -31,7 +31,7 @@ struct QuestionPickerView: View {
         }
         .pickerStyle(.wheel)
         .onChange(of: selectedId) {
-            answers = [$0]
+            answers = [.init(id: $0, answer: nil)]
         }
     }
 }
