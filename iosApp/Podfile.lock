@@ -51,6 +51,7 @@ PODS:
   - KMPNativeCoroutinesCombine (0.12.6):
     - KMPNativeCoroutinesCore (= 0.12.6)
   - KMPNativeCoroutinesCore (0.12.6)
+  - lottie-ios (4.0.1)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -83,6 +84,7 @@ DEPENDENCIES:
   - KIF/IdentifierTests
   - Kingfisher
   - KMPNativeCoroutinesCombine (= 0.12.6)
+  - lottie-ios
   - Nimble
   - NimbleExtension (from `https://github.com/nimblehq/NimbleExtension`, branch `master`)
   - Quick
@@ -113,6 +115,7 @@ SPEC REPOS:
     - Kingfisher
     - KMPNativeCoroutinesCombine
     - KMPNativeCoroutinesCore
+    - lottie-ios
     - nanopb
     - Nimble
     - PromisesObjC
@@ -155,6 +158,7 @@ SPEC CHECKSUMS:
   Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   KMPNativeCoroutinesCombine: 9c82dee7ba35c6acff4b35a9757bfecae8b335fd
   KMPNativeCoroutinesCore: 35da0312355f0e911cbb16923aea3389894affca
+  lottie-ios: 54d22edf55b839f0929cabbfe609c9aa548b1145
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   NimbleExtension: acad4290f27afd4241b1ea20f8597889085e2ce7
@@ -171,6 +175,6 @@ SPEC CHECKSUMS:
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: 2873c5a20dd4993b442c59125176e7b756c7d323
+PODFILE CHECKSUM: 8e3f5db58f6e0b8ad816e0aee214d47b1e3a98e4
 
 COCOAPODS: 1.11.3

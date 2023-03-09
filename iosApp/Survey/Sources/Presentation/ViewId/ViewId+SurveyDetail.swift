@@ -15,5 +15,6 @@ extension ViewId {
         case titleText = "survey.detail.title.text"
         case detailText = "survey.detail.detail.text"
         case mainImage = "survey.detail.main.image"
+        case submitButton = "survey.detail.submit.button"
     }
 }

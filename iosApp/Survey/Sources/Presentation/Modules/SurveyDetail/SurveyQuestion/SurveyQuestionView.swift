@@ -10,13 +10,14 @@ import Shared
 import SwiftUI
 
 typealias Answer = SurveyDetailUiModel.SurveyAnswer
+typealias SurveyAnswer = SurveySubmissionUiModel.Answer
 
 struct SurveyQuestionView: View {
 
     let detail: SurveyDetailUiModel
 
     @Binding var questionIndex: Int
-    @Binding var answers: [String]
+    @Binding var answers: [SurveyAnswer]
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -51,7 +52,6 @@ struct SurveyQuestionView: View {
 
     @ViewBuilder
     func questionView(with question: SurveyDetailUiModel.SurveyIncluded) -> some View {
-        // TODO: Show real questions
         switch question.displayType {
         case .dropdown:
             QuestionPickerView(answers: $answers, options: question.answers)
@@ -72,7 +72,11 @@ struct SurveyQuestionView: View {
         case .textfield:
             QuestionMultiFormView(answers: question.answers, currentAnswers: $answers)
         case .textarea:
-            QuestionTextAreaView(placeholder: question.answers.first?.text, answers: $answers)
+            QuestionTextAreaView(
+                id: question.id,
+                placeholder: question.answers.first?.text,
+                answers: $answers
+            )
         default: VStack {}
         }
     }

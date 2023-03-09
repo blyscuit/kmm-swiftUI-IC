@@ -17,6 +17,7 @@ target 'Survey' do
   pod 'SnapKit'
   pod 'FlowStacks'
   pod 'SkeletonUI'
+  pod 'lottie-ios'
 
   # Storage
   pod 'KeychainAccess'

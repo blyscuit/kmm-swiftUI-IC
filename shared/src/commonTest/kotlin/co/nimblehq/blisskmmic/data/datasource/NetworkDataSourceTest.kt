@@ -4,6 +4,7 @@ import app.cash.turbine.test
 import co.nimblehq.blisskmmic.data.network.core.NetworkClient
 import co.nimblehq.blisskmmic.data.network.datasource.NetworkDataSourceImpl
 import co.nimblehq.blisskmmic.data.network.target.*
+import co.nimblehq.blisskmmic.domain.model.SurveySubmission
 import co.nimblehq.blisskmmic.helpers.json.*
 import co.nimblehq.blisskmmic.helpers.mock.ktor.jsonMockEngine
 import co.nimblehq.jsonapi.model.JsonApiException
@@ -146,6 +147,23 @@ class NetworkDataSourceTest {
                 val response = awaitItem()
                 response.title shouldBe "Scarlett Bangkok"
                 response.questions.size shouldBe CORRECT_SURVEY_PAGE_SIZE
+                awaitComplete()
+            }
+    }
+
+    // Submit Survey
+
+    @Test
+    fun `When calling submit survey with success response - it returns correct object`() = runTest {
+        val submission = SurveySubmission("", listOf())
+        val engine = jsonMockEngine("", "responses")
+        val networkClient = NetworkClient(engine = engine)
+        val dataSource = NetworkDataSourceImpl(networkClient)
+        dataSource
+            .submitSurvey(SubmitSurveyTargetType(submission))
+            .test {
+                val response = awaitItem()
+                response shouldBe Unit
                 awaitComplete()
             }
     }

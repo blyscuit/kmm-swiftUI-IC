@@ -22,6 +22,9 @@ extension SurveyDetailView {
         @Published var isLoading = false
         @Published var isShowingTitle = true
         @Published var isShowingTitleNavigationBar = true
+        @Published var questionIndex = 0
+        @Published var isShowingSuccessConfirmation = false
+        @Published var isShowingSubmit = false
 
         private var cancellables = Set<AnyCancellable>()
 
@@ -33,29 +36,48 @@ extension SurveyDetailView {
             viewModel.setSurveyId(id: id)
             viewModel.getDetail()
 
-            createPublisher(for: viewModel.viewStateNative)
-                .catch { error -> Just<SurveyDetailViewState> in
-                    let surveyDetailViewState = SurveyDetailViewState(
-                        error: error.localizedDescription
-                    )
-                    return Just(surveyDetailViewState)
-                }
+            let viewState = createGuaranteedPublisher(
+                for: viewModel.viewStateNative,
+                fallback: SurveyDetailViewState()
+            )
+            let questionViewState = createGuaranteedPublisher(
+                for: viewModel.questionViewStateNative,
+                fallback: SurveyQuestionViewState()
+            )
+            viewState
+                .combineLatest(questionViewState)
                 .receive(on: DispatchQueue.main)
-                .sink { [weak self] value in
+                .sink { [weak self] viewState, questionViewState in
                     guard let self else { return }
-                    self.updateStates(value)
+                    self.updateStates(viewState, questionViewState)
                 }
                 .store(in: &cancellables)
         }
 
-        func didPressNext() {
+        func didPressStart() {
             viewModel.showQuestion()
         }
 
-        private func updateStates(_ state: SurveyDetailViewState) {
+        func didPressNext(answers: [SurveyAnswer]) {
+            viewModel.addAnswer(values: answers)
+        }
+
+        func didPressSubmit() {
+            viewModel.submitAnswer()
+        }
+
+        private func updateStates(
+            _ state: SurveyDetailViewState,
+            _ questionState: SurveyQuestionViewState
+        ) {
             viewState = state
             isShowingErrorAlert = !state.error.string.isEmpty
-            isLoading = state.isLoading && state.isShowingQuestion
+            isLoading = (state.isLoading || questionState.isLoading) && (state.isShowingQuestion)
+            isShowingSuccessConfirmation = questionState.isShowingSuccess
+            withAnimation(.easeIn(duration: .viewTransition)) {
+                isShowingSubmit = questionState.isShowingSubmit
+                questionIndex = Int(questionState.currentQuestionIndex)
+            }
             if state.surveyDetail != nil, state.isShowingQuestion {
                 isShowingTitleNavigationBar = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + .instant) {

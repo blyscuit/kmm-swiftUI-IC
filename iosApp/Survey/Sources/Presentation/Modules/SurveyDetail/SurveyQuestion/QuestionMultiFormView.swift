@@ -17,7 +17,7 @@ struct QuestionMultiFormView: View {
     }
 
     @State var multiFormAnswers = [MultiFormAnswer]()
-    @Binding var answers: [String]
+    @Binding var answers: [SurveyAnswer]
 
     var body: some View {
         VStack(spacing: .lineSpacing) {
@@ -33,11 +33,11 @@ struct QuestionMultiFormView: View {
             }
         }
         .onChange(of: multiFormAnswers) {
-            answers = $0.map { $0.input }
+            answers = $0.map { .init(id: $0.question.id, answer: $0.input) }
         }
     }
 
-    init(answers: [Answer], currentAnswers: Binding<[String]>) {
+    init(answers: [Answer], currentAnswers: Binding<[SurveyAnswer]>) {
         _multiFormAnswers = .init(
             initialValue: answers.map {
                 MultiFormAnswer(question: $0)
