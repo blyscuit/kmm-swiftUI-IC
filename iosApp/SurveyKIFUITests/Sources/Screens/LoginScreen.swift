@@ -17,11 +17,12 @@ final class LoginScreen: GenericScreen {
         if tester().tryFindingView(withAccessibilityIdentifier: ViewId.splash(.view)()) {
             tester().waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.splash(.view)())
         }
-        if tester().tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
+        while tester().tryFindingView(withAccessibilityIdentifier: ViewId.login(.view)()) {
+            system().wait(forTimeInterval: 10.0)
             tester().waitForTappableView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
             tester().tapView(withAccessibilityIdentifier: ViewId.login(.loginButton)())
-            tester().waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.login(.view)())
         }
+        tester().waitForAbsenceOfView(withAccessibilityIdentifier: ViewId.login(.view)())
     }
 
     func waitForAppearance() {
